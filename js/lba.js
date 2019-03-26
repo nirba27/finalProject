@@ -47,10 +47,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.show_group = function (item) {
         console.log("obi");
-        $("#groups").css("display","block");
         var request = $http({
             method: "POST",
-            url:"php/init_case.php",
+            url:"php/init_cases.php",
             data: $.param({
                 id:item,
             }),
