@@ -24,8 +24,16 @@ $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
+$array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    echo ($row['id'] . " " . $row['cluster'] . PHP_EOL);
+    $array[] = array(
+        'id'=>$row['id'],
+        'cluster'=>$row['cluster']
+
+    );
 }
 sqlsrv_free_stmt($getResults);
+echo json_encode($array);
+
+
 ?>
