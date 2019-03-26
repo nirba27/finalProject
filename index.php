@@ -42,7 +42,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="#intro">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -89,7 +89,7 @@
   <!-- Navbar -->
 
   <!-- Full Page Intro -->
-  <div class="view full-page-intro">
+  <div class="view full-page-intro" id="intro">
 
     <!--Video source-->
     <video class="video-intro" autoplay loop muted>
