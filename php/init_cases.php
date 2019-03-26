@@ -15,10 +15,6 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 
-$tsql= "INSERT INTO id_cluster (id,cluster) VALUES (1,3)";
-$getResults= sqlsrv_query($conn, $tsql);
-
-
 $tsql= "SELECT TOP 20 FROM id_cluster";
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
