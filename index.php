@@ -1,6 +1,3 @@
-
-
-
 <html lang="en" ng-app="template" >
 <title>LBA</title>
 <head>
