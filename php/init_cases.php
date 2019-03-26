@@ -30,8 +30,9 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
 
     );
 }
-sqlsrv_free_stmt($getResults);
+
 echo json_encode($array);
+sqlsrv_free_stmt($getResults);
 
 
 ?>

@@ -58,7 +58,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.success(function (data) {
             if (data != "0"){
                 console.log('init_cases - success');
-                $scope.cases=(data);
                 console.log(data);
             }
             else {
