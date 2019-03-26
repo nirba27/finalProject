@@ -14,14 +14,12 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql1 = "INSERT INTO id_cluster ('id','cluster') VALUES (1,3) ";
-$getResults1 = sqlsrv_query($conn, $tsql1);
-
-$tsql= "SELECT TOP 20 FROM id_cluster";
+$tsql= "SELECT * FROM id_cluster";
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
+
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
