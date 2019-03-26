@@ -1,4 +1,4 @@
-<html lang="en" ng-app="template" >
+<html lang="en" ng-app="template" sytle="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
