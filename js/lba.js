@@ -49,7 +49,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         console.log("obi");
         var request = $http({
             method: "POST",
-            url:"php/init_cases.php",
+            url:"../php/init_cases.php",
             data: $.param({
                 id:item,
             }),
