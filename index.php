@@ -1,4 +1,4 @@
-<html lang="en" ng-app="template" sytle="scroll-behavior: smooth;">
+<html lang="en" ng-app="template" >
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,7 +42,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#intro">Home
+            <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -89,7 +89,7 @@
   <!-- Navbar -->
 
   <!-- Full Page Intro -->
-  <div class="view full-page-intro" id="intro">
+  <div class="view full-page-intro">
 
     <!--Video source-->
     <video class="video-intro" autoplay loop muted>
