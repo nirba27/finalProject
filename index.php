@@ -81,7 +81,7 @@
             <a class="nav-link" href="#about" target="_self">About LBA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="" target="_blank">Statistics</a>
+            <a class="nav-link" href="pricing.html" target="_blank">Statistics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="" target="_blank">Data</a>
@@ -153,7 +153,7 @@
                 available. Create your own, stunning website.</strong>
             </p>
 
-            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white">Find Audience
+            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white">Target Audiences
               <i class="fas fa-graduation-cap ml-2"></i>
             </a>
             <a class="btn btn-outline-white" ng-click="show_group();" data-toggle="modal" data-target="#basicExampleModal">Insert New Data
