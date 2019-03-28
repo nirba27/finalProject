@@ -73,7 +73,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -81,7 +81,7 @@
             <a class="nav-link" href="#about" target="_self">About LBA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pricing.html" target="_blank">Statistics</a>
+            <a class="nav-link" href="pricing.html" target="_self">Statistics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="" target="_blank">Data</a>
