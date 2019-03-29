@@ -42,11 +42,15 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
-    $scope.init_case = function (item) {
+    $scope.myValue = false;
+
+    $scope.init_case = function (item)
+    {
+
     } //the funtion
 
-    $scope.show_group = function (item) {
-        console.log("obi");
+    $scope.show_group = function (item)
+    {
         var request = $http({
             method: "POST",
             url:"../php/init_cases.php",
@@ -65,6 +69,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
     } //the funtion
+
+
+    $scope.show_statistics = function()
+    {
+        $scope.myValue = true;
+        console.log($scope.myValue)
+    }
 
 });	 //app.controller
 
