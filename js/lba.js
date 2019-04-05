@@ -66,7 +66,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.success(function (data) {
             if (data == 1){
                 console.log('success');
-                window.location.replace("home.php");
+                window.location.pathname = 'home.php'
 
             }
             else {
