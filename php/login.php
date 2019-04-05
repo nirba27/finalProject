@@ -22,7 +22,7 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 $user = (stripslashes($_POST['user']));
 $pass = (stripslashes($_POST['pass']));
 
-$tsql= "SELECT * FROM [dbo].[lba_users] Where uname=$user";
+$tsql= "SELECT * FROM [dbo].[lba_users] Where uname='$user'";
 $getResults= sqlsrv_query($conn, $tsql);
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {

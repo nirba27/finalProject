@@ -70,7 +70,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
             else {
                 console.log(data);
-
                 console.log('failed');
             }
         }); //success
