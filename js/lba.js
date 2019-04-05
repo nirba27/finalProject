@@ -66,10 +66,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.success(function (data) {
             if (data == 1){
                 console.log('success');
-                console.log(data);
+                window.location.replace("home.php");
+
             }
             else {
-                console.log(data);
                 console.log('failed');
             }
         }); //success

@@ -28,12 +28,10 @@ $getResults= sqlsrv_query($conn, $tsql);
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
    if ($pass==$row['pass'])
    {
-       echo "Good";
        echo 1;
    }
    else
    {
-       echo "Bad";
        echo 0;
    }
 
