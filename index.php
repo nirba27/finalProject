@@ -54,7 +54,8 @@
         </div>
         <div class="call-to-action">
             <button id="login-button" type="button" ng-click="login();">Log In</button>
-            <p>Don't have an account? <a>Sign Up</a></p>
+            <center<p>Don't have an account? <br>
+                <a>Sign Up</a></p><center
         </div>
     </div>
 </div>
