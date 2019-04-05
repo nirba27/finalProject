@@ -25,7 +25,7 @@
 <div class="container">
     <div id="login" class="login">
         <div class="login-icon-field"><center>
-                <i style="margin-top:100px" class="fab fa-connectdevelop fa-7x"></i></center>
+                <i id="icon" style="margin-top:100px" class="fab fa-connectdevelop fa-7x"></i></center>
         </div>
         <div class="login-form">
             <div class="username-row row">
