@@ -53,7 +53,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.login = function (item)
     {
-        $("#icon").attr('class', 'fab fa-connectdevelop fa-7x spin');
+        $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
         console.log("login_check");
         var request = $http({
             method: "POST",
@@ -66,13 +66,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //request
         request.success(function (data) {
             if (data == 1){
-                $("#icon").attr('class', 'fas fa-check fa-7x spin');
+                $("#icon").attr('class', 'fas fa-check fa-7x').fadeIn();
                 console.log('success');
                 window.location.pathname = 'home.php'
 
             }
             else {
-                $("#icon").attr('class', 'fas fa-check fa-7x spin');
+                $("#icon").attr('class', 'fas fa-times fa-7x fa-pulse ').fadeIn();
                 console.log('failed');
             }
         }); //success
