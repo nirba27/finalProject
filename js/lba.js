@@ -72,7 +72,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
             }
             else {
-
+                $("#icon").attr('class', 'fas fa-check fa-7x spin');
                 console.log('failed');
             }
         }); //success
