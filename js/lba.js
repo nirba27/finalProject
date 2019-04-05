@@ -42,18 +42,46 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
-    $scope.myValue = false;
+    $scope.myValue = 1;
+    $scope.user = "";
+    $scope.pass = "";
 
     $scope.init_case = function (item)
     {
 
     } //the funtion
 
+    $scope.login = function (item)
+    {
+        console.log("login_check");
+        var request = $http({
+            method: "POST",
+            url:"php/login.php",
+            data: $.param({
+                user:$scope.user,
+                pass:$scope.pass,
+            }),
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }); //request
+        request.success(function (data) {
+            if (data == "1"){
+                console.log('success');
+                console.log(data);
+            }
+            else {
+                console.log(data);
+
+                console.log('failed');
+            }
+        }); //success
+    } //the funtion
+
+
     $scope.show_group = function (item)
     {
         var request = $http({
             method: "POST",
-            url:"../php/init_cases.php",
+            url:"php/init_cases.php",
             data: $.param({
                 id:item,
             }),
@@ -73,8 +101,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.show_statistics = function()
     {
-        $scope.myValue = true;
-        console.log($scope.myValue)
+        $scope.myValue = 0;
     }
 
 });	 //app.controller

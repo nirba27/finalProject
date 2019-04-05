@@ -80,10 +80,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about" target="_self">About LBA</a>
+            <a class="nav-link" href="#about" target="_self" ng-click="myValue=1">About LBA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pricing.html" target="_self" ng-click="show_statistics();">Statistics</a>
+            <a class="nav-link" href="#statistics" target="_self" ng-click="myValue=0">Statistics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="" target="_blank">Data</a>
@@ -485,12 +485,13 @@
 
       <hr class="mb-5">
 
-      <section>
+      <section id="statistics" ng-hide="myValue">
+          <h3 class="h3 text-center mb-5">Statistics</h3>
           <!--Grid row-->
-          <div class="row wow fadeIn" ng-hide="myValue">
+          <div class="row wow fadeIn" >
 
               <!--Grid column-->
-              <div class="col-md-9 mb-4">
+              <div class="col-md-9 mb-4" >
 
                   <!--Card-->
                   <div class="card">
@@ -815,9 +816,6 @@
               <!--Grid column-->
 
       </section>
-
-
-
   </div>
 </main>
 <!--Main layout-->
@@ -1007,7 +1005,7 @@
 </script>
 <!--Google Maps-->
 <script src="https://maps.google.com/maps/api/js"></script>
-
+<!--Regular map-->
 <script>
     // Regular map
     function regular_map() {
