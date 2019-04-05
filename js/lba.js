@@ -73,6 +73,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
             else {
                 $("#icon").attr('class', 'fas fa-times fa-7x').fadeIn();
+                $(".password-row").velocity("callout.shake");
                 console.log('failed');
             }
         }); //success

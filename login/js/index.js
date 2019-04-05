@@ -9,7 +9,6 @@ function slideLeftIn() {
 }
 
 function shake() {
-  $(".password-row").velocity("callout.shake");
 }
 
 
