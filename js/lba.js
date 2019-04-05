@@ -64,7 +64,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         }); //request
         request.success(function (data) {
-            if (data == "1"){
+            if (data == 1){
                 console.log('success');
                 console.log(data);
             }

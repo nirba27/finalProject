@@ -25,12 +25,8 @@ $pass = (stripslashes($_POST['pass']));
 $tsql= "SELECT * FROM [dbo].[lba_users] Where uname=$user";
 $getResults= sqlsrv_query($conn, $tsql);
 
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
-
-$array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-   if (pass==$row['pass'])
+   if ($pass==$row['pass'])
    {
        echo 1;
    }
