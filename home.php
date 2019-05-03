@@ -799,17 +799,7 @@
                       <!-- Card header -->
                       <div class="card-header">Google map</div>
 
-                      <!--Card content-->
-                      <div class="card-body">
-                          <!--Google map-->
-                          <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
-                              <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                                      style="border:0" allowfullscreen></iframe>
-                          </div>
 
-                          <!--Google Maps-->
-
-                      </div>
 
                   </div>
                   <!--/.Card-->
@@ -968,11 +958,6 @@
   <!-- Social icons -->
   <div class="pb-4">
 
-
-    <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-      <i class="fab fa-google mr-3"></i>
-    </a>
-
     <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
       <i class="fab fa-github mr-3"></i>
     </a>
@@ -984,7 +969,6 @@
   <!--Copyright-->
   <div class="footer-copyright py-3">
     © 2019 Copyright:LBA Corp.
-    <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank">  </a>
   </div>
   <!--/.Copyright-->
 
