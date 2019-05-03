@@ -193,7 +193,7 @@
   <div class="container">
 
     <!--Section: Main info-->
-    <section class="mt-5 wow fadeIn">
+    <section ng-hide="about" class="mt-5 wow fadeIn">
 
       <!--Grid row-->
       <div class="row">
