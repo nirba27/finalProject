@@ -81,13 +81,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about" target="_self" ng-click="myValue=1">About LBA</a>
+            <a class="nav-link" href="#about" target="_self" ng-click="statistics=1;about=0;info=0;;data=1;res=1;loading=1">About LBA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#statistics" target="_self" ng-click="myValue=0">Statistics</a>
+            <a class="nav-link" href="#statistics" target="_self" ng-click="statistics=0;about=1;info=1;data=1;res=1;loading=1">Statistics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#data" target="_self">Data</a>
+            <a class="nav-link" href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1">Data</a>
           </li>
         </ul>
 
@@ -247,7 +247,7 @@
     <hr class="my-5">
 
     <!--Section: Main features & Quick Start-->
-    <section id="about">
+    <section id="about" ng-hide="about">
 
       <h3 class="h3 text-center mb-5">About LBA</h3>
 
@@ -324,7 +324,7 @@
     <hr class="mb-5">
 
     <!--Section: More-->
-    <section>
+    <section ng-hide="info">
 
       <h2 class="my-5 h3 text-center">...and even more</h2>
 
@@ -484,8 +484,7 @@
     </section>
     <!--Section: More-->
 
-
-      <section id="statistics" ng-hide="myValue">
+      <section id="statistics" ng-hide="statistics">
           <hr class="mb-5">
 
           <h3 class="h3 text-center mb-5">Statistics</h3>
@@ -809,7 +808,6 @@
 
       </section>
 
-
       <!--Section: Data-->
       <section id="data" ng-hide="data">
           <hr class="mb-5">
@@ -933,6 +931,7 @@
           <!-- Material form group -->
 
       </section>
+
       <!--Section: Main features & Quick Start-->
       <section id="loading" ng-hide="loading">
           <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">

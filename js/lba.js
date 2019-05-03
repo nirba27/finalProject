@@ -42,12 +42,15 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
-    $scope.myValue = 1;
-    $scope.data = 0;
+    $scope.statistics = 1;
+    $scope.data = 1;
     $scope.res = 1;
     $scope.loading = 1;
     $scope.user = "";
     $scope.pass = "";
+    $scope.about = 0
+    $scope.info = 0
+
 
     $scope.init_case = function (item)
     {
