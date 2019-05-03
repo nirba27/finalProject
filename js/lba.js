@@ -43,6 +43,9 @@ app.service('fileUpload', ['$http', function ($http) {
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.myValue = 1;
+    $scope.data = 0;
+    $scope.res = 1;
+    $scope.loading = 1;
     $scope.user = "";
     $scope.pass = "";
 
@@ -101,6 +104,29 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //success
     } //the funtion
 
+
+    $scope.get_audience = function ()
+    {
+        console.log($scope.attr)
+        var request = $http({
+            method: "POST",
+            url:"php/get_audience.php",
+            data: $.param({
+                attr:$scope.attr,
+            }),
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }); //request
+        request.success(function (data) {
+            if (data != "0"){
+                $scope.res = 0;
+                $scope.loading = 1;
+            }
+            else {
+                $scope.res = 0;
+                $scope.loading = 1;
+            }
+        }); //success
+    } //the funtion
 
     $scope.show_statistics = function()
     {

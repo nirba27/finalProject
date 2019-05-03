@@ -38,8 +38,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="input-file-now" class="file-upload" />
+                </div>            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary btn-sm">Save changes</button>
@@ -86,7 +87,7 @@
             <a class="nav-link" href="#statistics" target="_self" ng-click="myValue=0">Statistics</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="" target="_blank">Data</a>
+            <a class="nav-link" href="#data" target="_self">Data</a>
           </li>
         </ul>
 
@@ -483,9 +484,10 @@
     </section>
     <!--Section: More-->
 
-      <hr class="mb-5">
 
       <section id="statistics" ng-hide="myValue">
+          <hr class="mb-5">
+
           <h3 class="h3 text-center mb-5">Statistics</h3>
           <!--Grid row-->
           <div class="row wow fadeIn" >
@@ -816,6 +818,145 @@
               <!--Grid column-->
 
       </section>
+
+
+      <!--Section: Data-->
+      <section id="data" ng-hide="data">
+          <hr class="mb-5">
+
+          <h3 class="h3 text-center mb-5">Audience Targeting</h3>
+          <p class="grey-text">Please insert the information about the audience you are looking for.</p>
+
+
+          <!-- Material form group -->
+          <form>
+              <label for="customRange3">Choose your targeting level</label>
+              <input type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
+
+              <!-- Material input -->
+              <div class="md-form form-group mt-5">
+                  <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="Example input">
+                  <label for="formGroupExampleInputMD">Lookalike Audiences</label>
+              </div>
+              <!-- Material input -->
+              <div class="md-form form-group mt-5">
+
+                  <select class="browser-default custom-select">
+                      <option value="" disabled selected>Status</option>
+                      <option value="1">Single</option>
+                      <option value="2">Couple</option>
+                      <option value="3">Family</option>
+                      <option value="3">All</option>
+                  </select>
+
+              </div>
+              <div class="md-form form-group mt-5">
+                  <select class="browser-default custom-select">
+                      <option value="" disabled selected>Gender</option>
+                      <option value="1">Men</option>
+                      <option value="2">Women</option>
+                      <option value="2">Both</option>
+                  </select>
+              </div>
+              <!-- Material input -->
+              <div class="md-form form-group mt-5">
+                  <!-- Grid row -->
+                  <div class="row">
+                      <!-- Grid column -->
+                      <div class="col">
+                          <!-- Material input -->
+                          <div class="md-form mt-0">
+                              <input type="text" class="form-control" placeholder="From">
+                              <label for="formGroupExampleInputMD">Age</label>
+
+                          </div>
+                      </div>
+                      <!-- Grid column -->
+
+                      <!-- Grid column -->
+                      <div class="col">
+                          <!-- Material input -->
+                          <div class="md-form mt-0">
+                              <input type="text" class="form-control" placeholder="To">
+
+                          </div>
+
+                      </div>
+                      <!-- Grid column -->
+                  </div>
+                  <!-- Grid row -->
+
+              </div>
+
+              <div class="md-form form-group mt-5">
+                  <!-- Grid row -->
+                  <div class="row">
+                      <!-- Grid column -->
+                      <div class="col">
+                          <!-- Material input -->
+                          <div class="md-form mt-0">
+                              <input type="text" class="form-control" placeholder="From">
+                              <label for="formGroupExampleInputMD">Income</label>
+
+                          </div>
+                      </div>
+                      <!-- Grid column -->
+
+                      <!-- Grid column -->
+                      <div class="col">
+                          <!-- Material input -->
+                          <div class="md-form mt-0">
+                              <input type="text" class="form-control" placeholder="To">
+
+                          </div>
+
+                      </div>
+                      <!-- Grid column -->
+                  </div>
+                  <!-- Grid row -->
+
+              </div>
+
+
+              <div class="md-form form-group mt-5">
+                  <select ng-model="attr" class="browser-default custom-select">
+                      <option value="" disabled selected>Interests</option>
+                      <option value="1">Sport</option>
+                      <option value="2">History</option>
+                      <option value="3">Children</option>
+                      <option value="4">Adventures</option>
+                  </select>
+              </div>
+
+
+              <hr class="mb-5">
+
+              <div class="md-form form-group mt-5">
+                  <input type="text" class="form-control" id="formGroupExampleInput5MD" placeholder="Another input">
+                  <label for="formGroupExampleInput2MD">Detailed Targeting</label>
+              </div>
+
+              <!-- Sign in button -->
+              <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
+
+          </form>
+          <!-- Material form group -->
+
+      </section>
+      <!--Section: Main features & Quick Start-->
+      <section id="loading" ng-hide="loading">
+          <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+              <span class="sr-only">Loading...</span>
+          </div>
+      </section>
+
+      <section id="res" ng-hide="res">
+
+          <h3 class="h3 text-center mb-5">Here are your targets</h3>
+          <p class="grey-text">Please insert the information about the audience you are looking for.</p>
+
+      </section>
+      <!--Section: Main features & Quick Start-->
   </div>
 </main>
 <!--Main layout-->
