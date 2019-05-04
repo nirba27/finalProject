@@ -234,7 +234,6 @@
             demo
             <i class="far fa-image ml-1"></i>
           </a>
-
         </div>
         <!--Grid column-->
 
@@ -941,8 +940,196 @@
 
       <section id="res" ng-hide="res">
 
-          <h3 class="h3 text-center mb-5">Here are your targets</h3>
-          <p class="grey-text">Please insert the information about the audience you are looking for.</p>
+          <h3 class="h3 text-center mb-5">Your Targeted Audience</h3>
+
+          <!--Grid row-->
+          <div class="row wow fadeIn">
+
+              <!--Grid column-->
+              <div class="col-md-12 px-4">
+
+                  <!--First row-->
+                  <div class="row">
+                      <div class="col-1 ">
+                          <i class="fas fa-sun fa-5x indigo-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Watching Time</h5>
+                          <h2 class="grey-text"> 10AM - 20PM</h2>
+                      </div>
+
+                      <div class="col-1 ">
+                          <i class="fas fa-tv fa-4x blue-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Recommended Channels</h5>
+                          <h2 class="grey-text">1011,1028,22,46
+                          </h2>
+                      </div>
+
+                      <div class="col-1">
+                          <i class="fas fa-graduation-cap fa-4x cyan-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Audience Age</h5>
+                          <h2 class="grey-text">10-22</h2>
+                      </div>
+
+                  </div>
+                  <!--/First row-->
+              </div>
+
+          </div>
+          <!--/Grid row-->
+          <div style="height:40px"></div>
+
+          <!--Grid row-->
+          <div class="row wow fadeIn">
+
+              <!--Grid column-->
+              <div class="col-md-12 px-4">
+
+                  <!--First row-->
+                  <div class="row">
+                      <div class="col-1 ">
+                          <i class="fas fa-dollar-sign fa-5x indigo-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Average Income</h5>
+                          <h2 class="grey-text"> 3000$ </h2>
+                      </div>
+
+                      <div class="col-1 ">
+                          <i class="fas fa-ring fa-4x blue-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Common status</h5>
+                          <h2 class="grey-text">Singles
+                          </h2>
+                      </div>
+
+                      <div class="col-1">
+                          <i class="fas fa-video fa-4x cyan-text"></i>
+                      </div>
+                      <div class="col-3">
+                          <h5 class="feature-title">Favourite Genre</h5>
+                          <h2 class="grey-text">Sport</h2>
+                      </div>
+
+                  </div>
+                  <!--/First row-->
+              </div>
+
+          </div>
+          <!--/Grid row-->
+          <hr class="mb-5">
+
+          <!--Grid column-->
+          <div class="col-lg-12 col-md-6 mb-4">
+
+              <!--Card-->
+              <div class="card">
+
+                  <!-- Card header -->
+                  <div class="card-header">Line chart</div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <canvas id="lineChart2"></canvas>
+
+                  </div>
+
+              </div>
+              <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+          <hr class="mb-5">
+
+          <!-- Card deck -->
+          <div class="card-deck">
+
+              <!-- Card -->
+              <div class="card mb-4 wow fadeInUp">
+
+                  <!--Card image-->
+                  <div>
+                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BYjFkMTlkYWUtZWFhNy00M2FmLThiOTYtYTRiYjVlZWYxNmJkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap">
+                      <a href="#!">
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <!--Title-->
+                      <h4 class="card-title">Card title</h4>
+                      <!--Text-->
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+                  </div>
+
+              </div>
+              <!-- Card -->
+
+              <!-- Card -->
+              <div class="card mb-4 wow fadeInUp">
+
+                  <!--Card image-->
+                  <div>
+                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap">
+                      <a href="#!">
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <!--Title-->
+                      <h4 class="card-title">Card title</h4>
+                      <!--Text-->
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+                  </div>
+
+              </div>
+              <!-- Card -->
+
+              <!-- Card -->
+              <div class="card mb-4 wow fadeInUp">
+
+                  <!--Card image-->
+                  <div >
+                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BMjRiNDRhNGUtMzRkZi00MThlLTg0ZDMtNjc5YzFjYmFjMmM4XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_UY268_CR2,0,182,268_AL_.jpg" alt="Card image cap">
+                      <a href="#!">
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
+                  </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <!--Title-->
+                      <h4 class="card-title">Card title</h4>
+                      <!--Text-->
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+                  </div>
+
+              </div>
+              <!-- Card -->
+
+          </div>
+          <!-- Card deck -->
 
       </section>
       <!--Section: Main features & Quick Start-->
@@ -980,13 +1167,11 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
-<!-- Initializations -->
 <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-
 </script>
-
+<!-- Initializations -->
 
 <!-- Charts -->
 <script>
@@ -1046,7 +1231,7 @@
         }
     });
     //line
-    var ctxL = document.getElementById("lineChart").getContext('2d');
+    var ctxL = document.getElementById("lineChart2").getContext('2d');
     var myLineChart = new Chart(ctxL, {
         type: 'line',
         data: {
@@ -1127,58 +1312,7 @@
         }
     });
 </script>
-<!--Google Maps-->
-<script src="https://maps.google.com/maps/api/js"></script>
-<!--Regular map-->
-<script>
-    // Regular map
-    function regular_map() {
-        var var_location = new google.maps.LatLng(40.725118, -73.997699);
-        var var_mapoptions = {
-            center: var_location,
-            zoom: 14
-        };
-        var var_map = new google.maps.Map(document.getElementById("map-container"),
-            var_mapoptions);
-        var var_marker = new google.maps.Marker({
-            position: var_location,
-            map: var_map,
-            title: "New York"
-        });
-    }
-    // Initialize maps
-    google.maps.event.addDomListener(window, 'load', regular_map);
-    new Chart(document.getElementById("horizontalBar"), {
-        "type": "horizontalBar",
-        "data": {
-            "labels": ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Grey"],
-            "datasets": [{
-                "label": "My First Dataset",
-                "data": [22, 33, 55, 12, 86, 23, 14],
-                "fill": false,
-                "backgroundColor": ["rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)",
-                    "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"
-                ],
-                "borderColor": ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)",
-                    "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)",
-                    "rgb(201, 203, 207)"
-                ],
-                "borderWidth": 1
-            }]
-        },
-        "options": {
-            "scales": {
-                "xAxes": [{
-                    "ticks": {
-                        "beginAtZero": true
-                    }
-                }]
-            }
-        }
-    });
-</script>
+
 
 <style type="text/css">
     html,

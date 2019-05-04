@@ -5,6 +5,11 @@
  * Date: 24/03/2019
  * Time: 20:28
  */
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $serverName = "lba.database.windows.net"; // update me
 $connectionOptions = array(
     "Database" => "lba", // update me
