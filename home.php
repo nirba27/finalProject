@@ -827,7 +827,10 @@
               <!-- Material input -->
               <div class="md-form form-group mt-5">
 
-                  <select ng-model="selectedName" ng-options="x for x in names">
+                  <select class="form-control input-sm" name="category" required>
+                      <option value="" disabled="" selected="">Select Category</option>
+                      <option
+                              ng-repeat="cat in keys" value="{{ cat.kid }}">{{cat.kid}}</option>
                   </select>
 
               </div>
