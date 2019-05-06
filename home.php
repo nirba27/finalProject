@@ -827,7 +827,7 @@
               <!-- Material input -->
               <div class="md-form form-group mt-5">
 
-                  <select ng-repeat="x in keywords.cid" class="browser-default custom-select">
+                  <select ng-repeat="x in keywords.kid" class="browser-default custom-select">
                       <option value="4">{{x}}</option>
                   </select>
 
