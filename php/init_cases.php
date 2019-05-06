@@ -19,7 +19,7 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT DISTINCT * FROM program";
+$tsql= "SELECT * FROM [dbo].[lba_users]";
 $getResults= sqlsrv_query($conn, $tsql);
 echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
@@ -28,8 +28,8 @@ if ($getResults == FALSE)
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'key'=>$row['id'],
-        'cluster'=>$row['pname']
+        'key'=>$row['name'],
+        'cluster'=>$row['pass']
 
     );
 }
