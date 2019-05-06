@@ -51,6 +51,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.about = 0;
     $scope.info = 0;
     $scope.tags = [];
+    $scope.names = ["Emil", "Tobias", "Linus"];
 
     $scope.init_case = function (item)
     {
