@@ -86,7 +86,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     } //the funtion
 
 
-    $scope.show_group = function (item)
+    $scope.init_case = function (item)
     {
         var request = $http({
             method: "POST",
