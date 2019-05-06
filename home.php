@@ -827,7 +827,12 @@
               <!-- Material input -->
               <div class="md-form form-group mt-5">
 
-                  <select ng-model="selectedName" ng-options="x for x in keys.kid">
+                  <select class="browser-default custom-select">
+                      <option value="" disabled selected>Status</option>
+                      <option ng-repeat="x in keywords.kid" value="1">{{x}}</option>
+                      <option value="2">Couple</option>
+                      <option value="3">Family</option>
+                      <option value="3">All</option>
                   </select>
 
               </div>
