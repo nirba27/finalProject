@@ -827,8 +827,8 @@
               <!-- Material input -->
               <div class="md-form form-group mt-5">
 
-                  <select ng-repeat="x in keys track by $index" class="browser-default custom-select">
-                      <option value=1>{{x.cluster}}</option>
+                  <select ng-repeat="x in keys" class="browser-default custom-select">
+                      <option value=1>{{x.kid}}</option>
                   </select>
 
               </div>
