@@ -50,7 +50,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.pass = "";
     $scope.about = 0;
     $scope.info = 0;
-    $scope.keys = "";
+    $scope.keys = [];
 
     $scope.init_case = function (item)
     {
