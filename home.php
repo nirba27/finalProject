@@ -826,6 +826,7 @@
               </div>
               <!-- Material input -->
               <div class="md-form form-group mt-5">
+                  <select ng-options="value for value in tags" ng-model="result">
 
                   <select class="form-control input-sm" name="category" required>
                       <option value="" disabled="" selected="">Select Category</option>
