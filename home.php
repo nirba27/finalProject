@@ -829,7 +829,7 @@
 
                   <select class="browser-default custom-select">
                       <option value="" disabled selected>Status</option>
-                      <option ng-repeat="x in keywords.kid" value="4">{{x}}</option>
+                      <option ng-repeat="x in keywords.cid" value="4">{{x}}</option>
                       <option value="2">Couple</option>
                       <option value="3">Family</option>
                       <option value="5">All</option>
