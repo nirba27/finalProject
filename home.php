@@ -830,7 +830,7 @@
                   <select class="form-control input-sm" name="category" required>
                       <option value="" disabled="" selected="">Select Category</option>
                       <option
-                              ng-repeat="cat in keys" value="{{ cat.kid }}">{{cat.kid}}</option>
+                              ng-repeat="cat in tags" value="{{ cat.kid }}">{{cat.kid}}</option>
                   </select>
 
               </div>
