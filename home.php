@@ -249,7 +249,6 @@
     <section id="about" ng-hide="about">
 
       <h3 class="h3 text-center mb-5">About LBA</h3>
-
       <!--Grid row-->
       <div class="row wow fadeIn">
 
@@ -300,7 +299,6 @@
             </div>
           </div>
           <!--/Third row-->
-
         </div>
         <!--/Grid column-->
 
@@ -809,6 +807,7 @@
 
       <!--Section: Data-->
       <section id="data" ng-hide="data">
+
           <hr class="mb-5">
 
           <h3 class="h3 text-center mb-5">Audience Targeting</h3>
@@ -1026,110 +1025,13 @@
 
           <!--Grid column-->
           <div class="col-lg-12 col-md-6 mb-4">
-
-              <!--Card-->
-              <div class="card">
-
-                  <!-- Card header -->
-                  <div class="card-header">Line chart</div>
-
-                  <!--Card content-->
-                  <div class="card-body">
-
-                      <canvas id="lineChart2"></canvas>
-
-                  </div>
-
-              </div>
-              <!--/.Card-->
-
           </div>
           <!--Grid column-->
           <hr class="mb-5">
 
-          <!-- Card deck -->
-          <div class="card-deck">
-
-              <!-- Card -->
-              <div class="card mb-4 wow fadeInUp">
-
-                  <!--Card image-->
-                  <div>
-                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BYjFkMTlkYWUtZWFhNy00M2FmLThiOTYtYTRiYjVlZWYxNmJkXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap">
-                      <a href="#!">
-                          <div class="mask rgba-white-slight"></div>
-                      </a>
-                  </div>
-
-                  <!--Card content-->
-                  <div class="card-body">
-
-                      <!--Title-->
-                      <h4 class="card-title">Card title</h4>
-                      <!--Text-->
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-                  </div>
-
-              </div>
-              <!-- Card -->
-
-              <!-- Card -->
-              <div class="card mb-4 wow fadeInUp">
-
-                  <!--Card image-->
-                  <div>
-                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap">
-                      <a href="#!">
-                          <div class="mask rgba-white-slight"></div>
-                      </a>
-                  </div>
-
-                  <!--Card content-->
-                  <div class="card-body">
-
-                      <!--Title-->
-                      <h4 class="card-title">Card title</h4>
-                      <!--Text-->
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-                  </div>
-
-              </div>
-              <!-- Card -->
-
-              <!-- Card -->
-              <div class="card mb-4 wow fadeInUp">
-
-                  <!--Card image-->
-                  <div >
-                      <img class="card-img-top" src="https://m.media-amazon.com/images/M/MV5BMjRiNDRhNGUtMzRkZi00MThlLTg0ZDMtNjc5YzFjYmFjMmM4XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_UY268_CR2,0,182,268_AL_.jpg" alt="Card image cap">
-                      <a href="#!">
-                          <div class="mask rgba-white-slight"></div>
-                      </a>
-                  </div>
-
-                  <!--Card content-->
-                  <div class="card-body">
-
-                      <!--Title-->
-                      <h4 class="card-title">Card title</h4>
-                      <!--Text-->
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-                  </div>
-
-              </div>
-              <!-- Card -->
-
-          </div>
-          <!-- Card deck -->
+          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.6s">
+          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.8s">
+          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.99s">
 
       </section>
       <!--Section: Main features & Quick Start-->
