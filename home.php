@@ -828,11 +828,7 @@
               <div class="md-form form-group mt-5">
 
                   <select ng-repeat="x in keywords.cid" class="browser-default custom-select">
-                      <option value="" disabled selected>Status</option>
                       <option value="4">{{x}}</option>
-                      <option value="2">Couple</option>
-                      <option value="3">Family</option>
-                      <option value="5">All</option>
                   </select>
 
               </div>
