@@ -28,8 +28,8 @@ if ($getResults == FALSE)
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'key'=>$row['key'],
-        'cluster'=>$row['cluster']
+        'key'=>$row['kid'],
+        'cluster'=>$row['cid']
 
     );
 }
