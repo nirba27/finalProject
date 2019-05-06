@@ -29,7 +29,6 @@ $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
         'kid'=>$row['id'],
-        'cid'=>$row['pname']
 
     );
 }
