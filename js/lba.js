@@ -101,7 +101,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if (data != "0"){
                 $scope.tags = data[0];
                 console.log('init_cases - success');
-                console.log(data);
+                console.log($scope.tags);
             }
             else {
                 console.log('init_case - failed');
