@@ -99,7 +99,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //request
         request.success(function (data) {
             if (data != "0"){
-                $scope.tags = data;
+                $scope.tags = data[0];
                 console.log('init_cases - success');
                 console.log(data);
             }
