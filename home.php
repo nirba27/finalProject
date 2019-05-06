@@ -827,12 +827,8 @@
               <!-- Material input -->
               <div class="md-form form-group mt-5">
 
-                  <select class="browser-default custom-select">
-                      <option value="" disabled selected>Status</option>
-                      <option ng-repeat="x in keys" value=1>{{x.cluster}}</option>
-                      <option value="2">Couple</option>
-                      <option value="3">Family</option>
-                      <option value="3">All</option>
+                  <select ng-repeat="x in keys" class="browser-default custom-select">
+                      <option value=1>{{x.cluster}}</option>
                   </select>
 
               </div>
