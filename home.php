@@ -192,8 +192,6 @@
 <main>
   <div class="container">
 
-      <select ng-model="selectedName" ng-options="x.kid for x in tags">
-      </select>
 
     <h1 ng-repeat="x in tags track by $index">{{x.kid}}</h1>
     <!--Section: Main info-->
@@ -830,12 +828,8 @@
               </div>
               <!-- Material input -->
               <div class="md-form form-group mt-5">
-                  <select ng-options="value for value in tags" ng-model="result">
 
-                  <select class="form-control input-sm" name="category" required>
-                      <option value="" disabled="" selected="">Select Category</option>
-                      <option
-                              ng-repeat="cat in tags" value="1">{{cat.kid}}</option>
+                  <select class="browser-default custom-select" ng-model="selectedName" ng-options="x.kid for x in tags">
                   </select>
 
               </div>
