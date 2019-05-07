@@ -19,7 +19,7 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT REPLACE('\"', '')kid,cid FROM key_cluster";
+$tsql= "SELECT REPLACE(kid,'\"', '') as keyword,cid FROM key_cluster";
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
@@ -28,7 +28,7 @@ if ($getResults == FALSE)
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'kid'=>$row['kid'],
+        'kid'=>$row['keyword'],
         'cid'=>$row['cid']
 
     );
