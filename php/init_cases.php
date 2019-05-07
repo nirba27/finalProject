@@ -21,9 +21,9 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 $tsql= "SELECT * FROM programs";
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
+//echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
-    echo (sqlsrv_errors());
+    //echo (sqlsrv_errors());
 
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
