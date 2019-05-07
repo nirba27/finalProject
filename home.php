@@ -193,7 +193,6 @@
   <div class="container">
 
 
-    <h1 ng-repeat="x in tags track by $index">{{x.kid}}</h1>
     <!--Section: Main info-->
     <section ng-hide="about" class="mt-5 wow fadeIn">
 
