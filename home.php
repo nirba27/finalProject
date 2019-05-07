@@ -1089,7 +1089,6 @@
                           <p>First text</p>
                       </div>
                   </div>
-                  </div>
               </div>
               <!--/.Slides-->
               <!--Controls-->
