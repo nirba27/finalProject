@@ -192,7 +192,6 @@
 <main>
   <div class="container">
 
-
     <!--Section: Main info-->
     <section ng-hide="about" class="mt-5 wow fadeIn">
 
@@ -207,37 +206,36 @@
 
         </div>
         <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
 
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
 
-          <!-- Main heading -->
-          <h3 class="h3 mb-3">Advertising Based On Watching Patterns</h3>
-          <p>This template is created with Material Design for Bootstrap (
-            <strong>MDB</strong> ) framework.</p>
-          <p>Read details below to learn more about MDB.</p>
-          <!-- Main heading -->
+              <!-- Main heading -->
+              <h3 class="h3 mb-3">Advertising Based On Watching Patterns</h3>
+              <p>This template is created with Material Design for Bootstrap (
+                  <strong>MDB</strong> ) framework.</p>
+              <p>Read details below to learn more about MDB.</p>
+              <!-- Main heading -->
 
-          <hr>
+              <hr>
 
-          <p>
-            <strong>400+</strong> material UI elements,
-            <strong>600+</strong> material icons,
-            <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-            <strong>Free for personal and commercial use.</strong>
-          </p>
+              <p>
+                  <strong>400+</strong> material UI elements,
+                  <strong>600+</strong> material icons,
+                  <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
+                  <strong>Free for personal and commercial use.</strong>
+              </p>
 
-          <!-- CTA -->
-          <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
-            <i class="fas fa-download ml-1"></i>
-          </a>
-          <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live
-            demo
-            <i class="far fa-image ml-1"></i>
-          </a>
-        </div>
-        <!--Grid column-->
-
+              <!-- CTA -->
+              <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
+                  <i class="fas fa-download ml-1"></i>
+              </a>
+              <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live
+                  demo
+                  <i class="far fa-image ml-1"></i>
+              </a>
+          </div>
+          <!--Grid column-->
       </div>
       <!--Grid row-->
 
@@ -484,7 +482,6 @@
 
       <section id="statistics" ng-hide="statistics">
           <hr class="mb-5">
-
           <h3 class="h3 text-center mb-5">Statistics</h3>
           <!--Grid row-->
           <div class="row wow fadeIn" >
@@ -569,11 +566,6 @@
 
           </div>
           <!--Grid row-->
-
-
-
-
-
           <!--Grid row-->
           <div class="row wow fadeIn">
 
@@ -689,7 +681,6 @@
 
           </div>
           <!--Grid row-->
-
           <!--Grid row-->
           <div class="row wow fadeIn">
 
@@ -782,28 +773,6 @@
               <!--Grid column-->
           </div>
           <!--Grid row-->
-
-
-          <!--Grid row-->
-          <div class="row wow fadeIn">
-
-              <!--Grid column-->
-              <div class="col-md-12 mb-4">
-
-                  <!--Card-->
-                  <div class="card">
-
-                      <!-- Card header -->
-                      <div class="card-header">Google map</div>
-
-
-
-                  </div>
-                  <!--/.Card-->
-
-              </div>
-              <!--Grid column-->
-
       </section>
 
       <!--Section: Data-->
@@ -817,21 +786,15 @@
 
           <!-- Material form group -->
           <form>
-              <label for="customRange3">Choose your targeting level</label>
-              <input type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
+              <label>{{level}}</label>
+              <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="Example input">
                   <label for="formGroupExampleInputMD">Lookalike Audiences</label>
               </div>
-              <!-- Material input -->
-              <div class="md-form form-group mt-5">
 
-                  <select class="browser-default custom-select" ng-model="selectedName" ng-options="x.kid for x in tags">
-                  </select>
-
-              </div>
               <div class="md-form form-group mt-5">
                   <select class="browser-default custom-select">
                       <option value="" disabled selected>Gender</option>
@@ -883,7 +846,6 @@
                           </div>
                       </div>
                       <!-- Grid column -->
-
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
@@ -893,31 +855,34 @@
                           </div>
 
                       </div>
-                      <!-- Grid column -->
+
                   </div>
                   <!-- Grid row -->
 
               </div>
 
 
-              <div class="md-form form-group mt-5">
-                  <select ng-model="attr" class="browser-default custom-select">
-                      <option value="" disabled selected>Interests</option>
-                      <option value="1">Sport</option>
-                      <option value="2">History</option>
-                      <option value="3">Children</option>
-                      <option value="4">Adventures</option>
+              <div ng-hide='moderate' class="md-form form-group mt-5">
+
+                  <select class="browser-default custom-select" ng-model="selectedGenre" ng-options="x.genre for x in genres_array">
                   </select>
+
               </div>
 
 
               <hr class="mb-5">
 
-              <div class="md-form form-group mt-5">
+              <div ng-hide='moderate' class="md-form form-group mt-5">
                   <input type="text" class="form-control" id="formGroupExampleInput5MD" placeholder="Another input">
                   <label for="formGroupExampleInput2MD">Detailed Targeting</label>
               </div>
+              <!-- Material input -->
+              <div ng-hide='deep' class="md-form form-group mt-5">
 
+                  <select class="browser-default custom-select" ng-model="selectedName" ng-options="x.kid for x in tags">
+                  </select>
+
+              </div>
               <!-- Sign in button -->
               <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
 
@@ -936,6 +901,7 @@
       <section id="res" ng-hide="res">
 
           <h3 class="h3 text-center mb-5">Your Targeted Audience</h3>
+
 
           <!--Grid row-->
           <div class="row wow fadeIn">
@@ -992,7 +958,7 @@
                       </div>
                       <div class="col-3">
                           <h5 class="feature-title">Average Income</h5>
-                          <h2 class="grey-text"> 3000$ </h2>
+                          <h2 class="grey-text" id="el">0 </h2>
                       </div>
 
                       <div class="col-1 ">
@@ -1036,8 +1002,8 @@
                           <thead class="blue lighten-4">
                           <tr>
                               <th>#</th>
-                              <th>Lorem</th>
-                              <th>Ipsum</th>
+                              <th>Genre</th>
+                              <th>Count</th>
                           </tr>
                           </thead>
                           <!-- Table head -->
@@ -1062,36 +1028,82 @@
           </div>
           <!--Grid column-->
 
-
-          <!--Grid column-->
-          <div class="col-lg-12 col-md-6 mb-4">
-          </div>
-          <!--Grid column-->
           <hr class="mb-5">
 
-          <!--Carousel Wrapper-->
-          <div id="carousel-example-2" ng-repeat="x in programs"   class="carousel slide carousel-fade" data-ride="carousel">
-
-              <!--Slides-->
-              <div  class="carousel-inner" role="listbox">
-                  <div class="carousel-item">
-                      <div class="view">
-                          <img class="d-block w-100" src="{{x.cover}}"
-                               alt="First slide">
-                          <div class="mask rgba-black-light"></div>
-                      </div>
-                      <div class="carousel-caption">
-                          <h3 class="h3-responsive">Light mask</h3>
-                          <p>First text</p>
-                      </div>
+          <!-- Card deck -->
+          <div class="card-deck">
+              <!-- Card -->
+              <div ng-repeat="x in programs | limitTo:5" class="card mb-4 wow fadeInUp" >
+                  <!--Card image-->
+                  <div class="view overlay">
+                      <img class="card-img-top" src="{{x.cover}}">
+                      <a href="#!">
+                          <div class="mask rgba-white-slight"></div>
+                      </a>
                   </div>
+
+                  <!--Card content-->
+                  <div class="card-body">
+                      <span class="badge badge-pill badge-default">{{x.views}}</span>
+
+                      <!--Title-->
+                      <h4 class="card-title">{{x.pname}}</h4>
+                      <!--Text-->
+                      <p class="card-text">{{x.genre}}</p>
+                      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+
+                  </div>
+
               </div>
-              <!--/.Slides-->
+              <!-- Card -->
+          </div>
+          <!-- Card deck -->
+
+          <hr class="mb-5">
+
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+              <!--Card-->
+              <div class="card">
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <!-- Table  -->
+                      <table class="table table-hover">
+                          <!-- Table head -->
+                          <thead class="blue lighten-4">
+                          <tr>
+                              <th>#</th>
+                              <th>DVR</th>
+                              <th>Count</th>
+                          </tr>
+                          </thead>
+                          <!-- Table head -->
+
+                          <!-- Table body -->
+                          <tbody>
+                          <tr ng-repeat="x in dvrs" >
+                              <th scope="row">{{$index+1}}</th>
+                              <td>{{x.dvr}}</td>
+                              <td>{{x.cnt}}</td>
+                          </tr>
+                          </tbody>
+                          <!-- Table body -->
+                      </table>
+                      <!-- Table  -->
+
+                  </div>
+
+              </div>
+              <!--/.Card-->
 
           </div>
-          <!--/.Carousel Wrapper-->
+          <!--Grid column-->
 
-          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.{{$index}}*2s">
       </section>
       <!--Section: Main features & Quick Start-->
   </div>

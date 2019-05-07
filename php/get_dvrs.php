@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 * FROM programs WHERE cluster='$cluster'";
+$tsql= "SELECT  * FROM dvr_cluster WHERE cluster='$cluster'";
 //echo ($tsql);
 
 $getResults= sqlsrv_query($conn, $tsql);
@@ -31,11 +31,8 @@ if ($getResults == FALSE)
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'pid'=>$row['id'],
-        'pname'=>$row['pname'],
-        'cover'=>$row['cover'],
-        'genre'=>$row['genre'],
-        'views'=>$row['views']
+        'dvr'=>$row['dvr'],
+        'cluster'=>$row['cluster'],
 
     );
 }

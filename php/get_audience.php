@@ -16,25 +16,18 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
+$gen =  (stripslashes($_POST['gen']));
 
-
-
-$tsql= "SELECT * FROM cluster";
+$tsql= "SELECT TOP 1 cluster,CAST(cnt AS INT) C1 FROM cluster_genre WHERE genre='$gen' ORDER BY C1 DESC";
 $getResults= sqlsrv_query($conn, $tsql);
-echo ("Reading data from table" . PHP_EOL);
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
+//echo ("Reading data from table" . PHP_EOL);
+//if ($getResults == FALSE)
+    //echo (sqlsrv_errors());
 
-$array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-    $array[] = array(
-        'id'=>$row['id'],
-        'cluster'=>$row['cluster']
-
-    );
+        echo $row['cluster'];
 }
 
-echo json_encode($array);
 sqlsrv_free_stmt($getResults);
 
 
