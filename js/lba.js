@@ -52,6 +52,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.info = 0;
     $scope.tags = [];
     $scope.programs = [];
+    $scope.geners = [];
 
 
     $scope.login = function (item)
@@ -142,6 +143,24 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.programs = data;
                 console.log('init_cases - success');
                 console.log($scope.programs);
+            }
+            else {
+                console.log('init_case - failed');
+            }
+        }); //success
+
+        var request = $http({
+            method: "POST",
+            url:"php/get_geners.php",
+            data: $.param({
+            }),
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }); //request
+        request.success(function (data) {
+            if (data != "0"){
+                $scope.geners = data;
+                console.log('init_cases - success');
+                console.log($scope.geners);
             }
             else {
                 console.log('init_case - failed');
