@@ -191,7 +191,7 @@
 <!--Main layout-->
 <main>
   <div class="container">
-    <h1 ng-repeat="x in tags">{{x.kid}}</h1>
+    <h1 ng-repeat="x in names">{{x}}</h1>
     <!--Section: Main info-->
     <section ng-hide="about" class="mt-5 wow fadeIn">
 
