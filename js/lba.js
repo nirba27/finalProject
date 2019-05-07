@@ -53,10 +53,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.tags = [];
     $scope.programs = [];
 
-    $scope.init_case = function (item)
-    {
-
-    } //the funtion
 
     $scope.login = function (item)
     {
@@ -112,7 +108,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_audience = function ()
     {
-        console.log('test');
+        console.log('test  ');
         var request = $http({
             method: "POST",
             url:"php/get_audience.php",

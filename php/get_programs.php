@@ -24,7 +24,7 @@ $tsql= "SELECT * FROM programs WHERE cluster=$cluster";
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
-    //echo (sqlsrv_errors());
+    echo (sqlsrv_errors());
 
     $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
