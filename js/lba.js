@@ -51,7 +51,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.about = 0;
     $scope.info = 0;
     $scope.tags = [];
-    $scope.names = ["Emil", "Tobias", "Linus"];
+    $scope.programs = [];
 
     $scope.init_case = function (item)
     {
@@ -131,6 +131,27 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.loading = 1;
             }
         }); //success
+
+
+        var request = $http({
+            method: "POST",
+            url:"php/init_cases.php",
+            data: $.param({
+                cluster:1,
+            }),
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }); //request
+        request.success(function (data) {
+            if (data != "0"){
+                $scope.programs = data;
+                console.log('init_cases - success');
+                console.log($scope.programs);
+            }
+            else {
+                console.log('init_case - failed');
+            }
+        }); //success
+
     } //the funtion
 
     $scope.show_statistics = function()
