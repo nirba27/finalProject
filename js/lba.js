@@ -133,7 +133,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             method: "POST",
             url:"php/get_programs.php",
             data: $.param({
-                cluster:2,
+                cluster:3,
             }),
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         }); //request
