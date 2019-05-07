@@ -19,7 +19,7 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT * FROM key_cluster";
+$tsql= "SELECT REPLACE(kid, '\"', ''),cid FROM key_cluster";
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
