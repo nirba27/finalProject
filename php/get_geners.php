@@ -19,7 +19,7 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT genre,COUNT(genre) as cnt FROM programs WHERE cluster=3 GROUP BY genre";
+$tsql= "SELECT TOP 5 genre,COUNT(genre) as cnt FROM programs WHERE cluster=3 GROUP BY genre ORDER BY cnt DESC";
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)
