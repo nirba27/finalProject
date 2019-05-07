@@ -112,7 +112,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_audience = function ()
     {
-        console.log($scope.attr)
         var request = $http({
             method: "POST",
             url:"php/get_audience.php",
