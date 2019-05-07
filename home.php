@@ -996,7 +996,6 @@
                               <th>#</th>
                               <th>Lorem</th>
                               <th>Ipsum</th>
-                              <th>Dolor</th>
                           </tr>
                           </thead>
                           <!-- Table head -->
@@ -1004,7 +1003,7 @@
                           <!-- Table body -->
                           <tbody>
                           <tr ng-repeat="x in geners" >
-                              <th scope="row">1</th>
+                              <th scope="row">{{$index}}</th>
                               <td>{{x.genre}}</td>
                               <td>{{x.cnt}}</td>
                           </tr>
