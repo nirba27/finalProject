@@ -191,6 +191,10 @@
 <!--Main layout-->
 <main>
   <div class="container">
+
+      <select ng-model="selectedName" ng-options="x.kid for x in tags">
+      </select>
+
     <h1 ng-repeat="x in tags track by $index">{{x.kid}}</h1>
     <!--Section: Main info-->
     <section ng-hide="about" class="mt-5 wow fadeIn">
