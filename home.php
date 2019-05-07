@@ -1069,6 +1069,27 @@
           <!--Grid column-->
           <hr class="mb-5">
 
+          <!--Carousel Wrapper-->
+          <div id="carousel-example-2" ng-repeat="x in programs"   class="carousel slide carousel-fade" data-ride="carousel">
+
+              <!--Slides-->
+              <div  class="carousel-inner" role="listbox">
+                  <div class="carousel-item">
+                      <div class="view">
+                          <img class="d-block w-100" src="{{x.cover}}"
+                               alt="First slide">
+                          <div class="mask rgba-black-light"></div>
+                      </div>
+                      <div class="carousel-caption">
+                          <h3 class="h3-responsive">Light mask</h3>
+                          <p>First text</p>
+                      </div>
+                  </div>
+              </div>
+              <!--/.Slides-->
+
+          </div>
+          <!--/.Carousel Wrapper-->
 
           <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.{{$index}}*2s">
       </section>
