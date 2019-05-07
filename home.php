@@ -1003,8 +1003,8 @@
 
                           <!-- Table body -->
                           <tbody>
-                          <tr>
-                              <th ng-repeat="x in geners" scope="row">1</th>
+                          <tr ng-repeat="x in geners" >
+                              <th scope="row">1</th>
                               <td>{{x.genre}}</td>
                               <td>{{x.cnt}}</td>
                           </tr>
