@@ -1068,7 +1068,7 @@
           <!--Grid column-->
           <hr class="mb-5">
 
-          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.{{$index}}s">
+          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.{{$index}}*2s">
       </section>
       <!--Section: Main features & Quick Start-->
   </div>
