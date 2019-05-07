@@ -979,48 +979,6 @@
           <div style="height:40px"></div>
 
 
-          <!--Grid column-->
-          <div class="col-md-6 mb-4">
-
-              <!--Card-->
-              <div class="card">
-
-                  <!--Card content-->
-                  <div class="card-body">
-
-                      <!-- Table  -->
-                      <table class="table table-hover">
-                          <!-- Table head -->
-                          <thead class="blue lighten-4">
-                          <tr>
-                              <th>#</th>
-                              <th>Lorem</th>
-                              <th>Ipsum</th>
-                          </tr>
-                          </thead>
-                          <!-- Table head -->
-
-                          <!-- Table body -->
-                          <tbody>
-                          <tr ng-repeat="x in geners" >
-                              <th scope="row">{{$index+1}}</th>
-                              <td>{{x.genre}}</td>
-                              <td>{{x.cnt}}</td>
-                          </tr>
-                          </tbody>
-                          <!-- Table body -->
-                      </table>
-                      <!-- Table  -->
-
-                  </div>
-
-              </div>
-              <!--/.Card-->
-
-          </div>
-          <!--Grid column-->
-
-
           <!--Grid row-->
           <div class="row wow fadeIn">
 
@@ -1062,6 +1020,49 @@
           <!--/Grid row-->
           <hr class="mb-5">
 
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+              <!--Card-->
+              <div class="card">
+
+                  <!--Card content-->
+                  <div class="card-body">
+
+                      <!-- Table  -->
+                      <table class="table table-hover">
+                          <!-- Table head -->
+                          <thead class="blue lighten-4">
+                          <tr>
+                              <th>#</th>
+                              <th>Lorem</th>
+                              <th>Ipsum</th>
+                          </tr>
+                          </thead>
+                          <!-- Table head -->
+
+                          <!-- Table body -->
+                          <tbody>
+                          <tr ng-repeat="x in geners" >
+                              <th scope="row">{{$index+1}}</th>
+                              <td>{{x.genre}}</td>
+                              <td>{{x.cnt}}</td>
+                          </tr>
+                          </tbody>
+                          <!-- Table body -->
+                      </table>
+                      <!-- Table  -->
+
+                  </div>
+
+              </div>
+              <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+          
           <!--Grid column-->
           <div class="col-lg-12 col-md-6 mb-4">
           </div>
