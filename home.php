@@ -1003,7 +1003,7 @@
                           <!-- Table body -->
                           <tbody>
                           <tr ng-repeat="x in geners" >
-                              <th scope="row">{{$index}}</th>
+                              <th scope="row">{{$index+1}}</th>
                               <td>{{x.genre}}</td>
                               <td>{{x.cnt}}</td>
                           </tr>
@@ -1068,10 +1068,7 @@
           <!--Grid column-->
           <hr class="mb-5">
 
-          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.6s">
-          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.8s">
-          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.99s">
-
+          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.{{$index}}s">
       </section>
       <!--Section: Main features & Quick Start-->
   </div>
