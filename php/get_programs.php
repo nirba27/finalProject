@@ -33,8 +33,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         'pname'=>$row['pname'],
         'cover'=>$row['cover'],
         'genre'=>$row['genre'],
-        'views'=>$row['views'],
-
+        'views'=>$row['views']
 
     );
 }
