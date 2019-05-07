@@ -1025,7 +1025,7 @@
           <!--Grid column-->
           <hr class="mb-5">
 
-          <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.6s">
+          <img ng-repeat="x in programs" src="{{x.cover}}" class="wow fadeInUp" data-wow-delay="0.6s">
           <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.8s">
           <img src="https://m.media-amazon.com/images/M/MV5BNTk2NzEyNTQtZTQ5MS00MjAyLTgzMDMtNDNkYTBkM2M2OTU3XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_SY150_CR0,0,101,150_.jpg" class="wow fadeInUp" data-wow-delay="0.99s">
 
