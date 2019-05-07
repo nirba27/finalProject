@@ -135,7 +135,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         var request = $http({
             method: "POST",
-            url:"php/init_cases.php",
+            url:"php/get_programs.php",
             data: $.param({
                 cluster:1,
             }),
