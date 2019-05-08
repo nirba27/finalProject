@@ -1149,7 +1149,7 @@
 
                   <!--Card content-->
                   <div class="card-body">
-                      <h4>><span class="badge badge-pill badge-default ">{{x.views}}</span></h4
+                      <h4><span class="badge badge-pill badge-default ">{{x.views}}</span></h4>
 
                       <!--Title-->
                       <h4 class="card-title">{{x.pname}}</h4>
