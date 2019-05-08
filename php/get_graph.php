@@ -18,17 +18,8 @@ $connectionOptions = array(
 );
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-$cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 * , ROUND(CAST(cnt AS INT) * 100.0 / total, 1) AS cnt2
-        FROM cluster_genre AS t1
-        JOIN (SELECT cluster, SUM(CAST(cnt AS INT)) total
-              FROM cluster_genre
-              WHERE genre!=''
-              GROUP BY cluster) AS t2
-        ON t1.cluster = t2.cluster
-        WHERE genre!='' AND t1.cluster='$cluster'
-        ORDER BY cnt2 DESC";
+$tsql= "SELECT * FROM graph";
 
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
@@ -38,9 +29,10 @@ if ($getResults == FALSE)
 $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'genre' => $row['genre'],
-        'cnt'=>$row['cnt2'],
-
+        'label'=>$row['cid'],
+        'x'=>$row['x'],
+        'y'=>$row['y'],
+        'r'=>$row['cnt']
     );
 }
 

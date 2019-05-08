@@ -789,20 +789,35 @@
               <label>{{level}}</label>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
-              <!-- Material input -->
-              <div class="md-form form-group mt-5">
-                  <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="Example input">
-                  <label for="formGroupExampleInputMD">Lookalike Audiences</label>
-              </div>
 
-              <div class="md-form form-group mt-5">
-                  <select class="browser-default custom-select">
-                      <option value="" disabled selected>Gender</option>
-                      <option value="1">Men</option>
-                      <option value="2">Women</option>
-                      <option value="2">Both</option>
-                  </select>
+              <!-- Grid row -->
+              <div class="row">
+                  <!-- Grid column -->
+                  <div class="col">
+                      <!-- Default input -->
+                      <select class="browser-default custom-select">
+                          <option value="" disabled selected>Gender</option>
+                          <option value="1">Men</option>
+                          <option value="2">Women</option>
+                          <option value="2">Both</option>
+                      </select>
+                  </div>
+                  <!-- Grid column -->
+
+                  <!-- Grid column -->
+                  <div class="col">
+                      <!-- Default input -->
+                      <select class="browser-default custom-select">
+                          <option value="" disabled selected>Number of residents</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                      </select>                  </div>
+                  <!-- Grid column -->
               </div>
+              <!-- Grid row -->
+
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <!-- Grid row -->
@@ -810,10 +825,10 @@
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="md-form mt-0">
-                              <input type="text" class="form-control" placeholder="From">
-                              <label for="formGroupExampleInputMD">Age</label>
-
+                          <div class="def-number-input number-input safari_only">
+                              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                              <input class="quantity" min="0" name="quantity" value="1" type="number">
+                              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                           </div>
                       </div>
                       <!-- Grid column -->
@@ -821,9 +836,10 @@
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="md-form mt-0">
-                              <input type="text" class="form-control" placeholder="To">
-
+                          <div class="def-number-input number-input safari_only">
+                              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                              <input class="quantity" min="0" name="quantity" value="1" type="number">
+                              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                           </div>
 
                       </div>
@@ -865,6 +881,7 @@
               <div ng-hide='moderate' class="md-form form-group mt-5">
 
                   <select class="browser-default custom-select" ng-model="selectedGenre" ng-options="x.genre for x in genres_array">
+                      <option value="" disabled selected>Choose somthing</option>
                   </select>
 
               </div>
@@ -880,8 +897,15 @@
               <div ng-hide='deep' class="md-form form-group mt-5">
 
                   <select class="browser-default custom-select" ng-model="selectedName" ng-options="x.kid for x in tags">
+                      <option value="" disabled selected>Choose somthing</option>
                   </select>
 
+              </div>
+
+              <!-- Material input -->
+              <div class="md-form form-group mt-5">
+                  <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="Example input">
+                  <label for="formGroupExampleInputMD">Lookalike Audiences</label>
               </div>
               <!-- Sign in button -->
               <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
@@ -900,7 +924,7 @@
 
       <section id="res" ng-hide="res">
 
-          <h3 class="h3 text-center mb-5">Your Targeted Audience</h3>
+          <h3 class="h3 text-center mb-5">Your Targeted Audience is Cluster Number {{cluster}}</h3>
 
 
           <!--Grid row-->
@@ -986,47 +1010,127 @@
           <!--/Grid row-->
           <hr class="mb-5">
 
+          <!--Grid row-->
+          <div class="row wow fadeIn">
 
-          <!--Grid column-->
-          <div class="col-md-6 mb-4">
+              <!--Grid column-->
+              <div class="col-md-12 mb-4">
 
-              <!--Card-->
-              <div class="card">
+                  <!--Card-->
+                  <div class="card mb-4">
 
-                  <!--Card content-->
-                  <div class="card-body">
+                      <!-- Card header -->
+                      <div class="card-header text-center">
+                          Watching Hours
+                      </div>
 
-                      <!-- Table  -->
-                      <table class="table table-hover">
-                          <!-- Table head -->
-                          <thead class="blue lighten-4">
-                          <tr>
-                              <th>#</th>
-                              <th>Genre</th>
-                              <th>Count</th>
-                          </tr>
-                          </thead>
-                          <!-- Table head -->
+                      <!--Card content-->
+                      <div class="card-body">
 
-                          <!-- Table body -->
-                          <tbody>
-                          <tr ng-repeat="x in geners" >
-                              <th scope="row">{{$index+1}}</th>
-                              <td>{{x.genre}}</td>
-                              <td>{{x.cnt}}</td>
-                          </tr>
-                          </tbody>
-                          <!-- Table body -->
-                      </table>
-                      <!-- Table  -->
+                          <canvas id="lineChart2"></canvas>
+
+                      </div>
 
                   </div>
+                  <!--/.Card-->
 
               </div>
-              <!--/.Card-->
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-4">
+
+                  <!--Card-->
+                  <div class="card">
+
+                      <!--Card content-->
+                      <div class="card-body">
+
+                          <!-- Table  -->
+                          <table class="table table-hover">
+                              <!-- Table head -->
+                              <thead class="blue lighten-4">
+                              <tr>
+                                  <th>#</th>
+                                  <th>Genre</th>
+                                  <th>Count</th>
+                              </tr>
+                              </thead>
+                              <!-- Table head -->
+
+                              <!-- Table body -->
+                              <tbody>
+                              <tr ng-repeat="x in geners" >
+                                  <th scope="row">{{$index+1}}</th>
+                                  <td>{{x.genre}}</td>
+                                  <td>{{x.cnt}}</td>
+                              </tr>
+                              </tbody>
+                              <!-- Table body -->
+                          </table>
+                          <!-- Table  -->
+
+                      </div>
+
+                  </div>
+                  <!--/.Card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-6 mb-4">
+
+                  <!--Card-->
+                  <div class="card">
+
+                      <!--Card content-->
+                      <div class="card-body">
+
+                          <!-- Table  -->
+                          <table class="table table-hover">
+                              <!-- Table head -->
+                              <thead class="blue lighten-4">
+                              <tr>
+                                  <th>#</th>
+                                  <th>Genre</th>
+                                  <th>Count</th>
+                              </tr>
+                              </thead>
+                              <!-- Table head -->
+
+                              <!-- Table body -->
+                              <tbody>
+                              <tr ng-repeat="x in geners" >
+                                  <th scope="row">{{$index+1}}</th>
+                                  <td>{{x.genre}}</td>
+                                  <td>{{x.cnt}}</td>
+                              </tr>
+                              </tbody>
+                              <!-- Table body -->
+                          </table>
+                          <!-- Table  -->
+
+                      </div>
+
+                  </div>
+                  <!--/.Card-->
+
+              </div>
+              <!--Grid column-->
 
           </div>
-          <!--Grid column-->
+          <!--Grid row-->
+
+
+
+
+
+          <hr class="mb-5">
+
+          <h3 class="h3 text-center mb-5">Clusters Plot</h3>
+
+          <canvas id="bubbleChart"></canvas>
 
           <hr class="mb-5">
 
@@ -1044,7 +1148,7 @@
 
                   <!--Card content-->
                   <div class="card-body">
-                      <span class="badge badge-pill badge-default">{{x.views}}</span>
+                      <h4>><span class="badge badge-pill badge-default ">{{x.views}}</span></h4
 
                       <!--Title-->
                       <h4 class="card-title">{{x.pname}}</h4>
@@ -1146,7 +1250,6 @@
 </script>
 <!-- Initializations -->
 
-<!-- Charts -->
 <script>
     // Line
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -1203,39 +1306,7 @@
             legend: false
         }
     });
-    //line
-    var ctxL = document.getElementById("lineChart2").getContext('2d');
-    var myLineChart = new Chart(ctxL, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "My First dataset",
-                backgroundColor: [
-                    'rgba(105, 0, 132, .2)',
-                ],
-                borderColor: [
-                    'rgba(200, 99, 132, .7)',
-                ],
-                borderWidth: 2,
-                data: [65, 59, 80, 81, 56, 55, 40]
-            },
-                {
-                    label: "My Second dataset",
-                    backgroundColor: [
-                        'rgba(0, 137, 132, .2)',
-                    ],
-                    borderColor: [
-                        'rgba(0, 10, 130, .7)',
-                    ],
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
+
     //radar
     var ctxR = document.getElementById("radarChart").getContext('2d');
     var myRadarChart = new Chart(ctxR, {

@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 * FROM programs WHERE cluster='$cluster'";
+$tsql= "SELECT TOP 5 * FROM programs WHERE cluster='$cluster' AND pname!='Paid Programming'";
 //echo ($tsql);
 
 $getResults= sqlsrv_query($conn, $tsql);

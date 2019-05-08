@@ -57,6 +57,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.dvrs = [];
     $scope.income = 0;
     $scope.cluster = '';
+    $scope.selectedGenre = 'Choose';
 
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
@@ -150,10 +151,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //success
 
 
+    } //the funtion
+
+    $scope.get_prog = function(id)
+    {
         var request = $http({
             method: "POST",
             url: "php/get_geners.php",
-            data: $.param({}),
+            data: $.param({
+                cluster: id,
+            }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.success(function (data) {
@@ -167,16 +174,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
 
-        $scope.animateValue("el", 200, 250, 3000);
-
-    } //the funtion
-
-    $scope.get_prog = function(id)
-    {
+        $scope.animateValue("el", 200, 3000, 5000);
 
         var request = $http({
             method: "POST",
-            url: "php/get_audience.php",
+            url: "php/get_dvrs.php",
             data: $.param({
                 cluster: id,
             }),
@@ -208,6 +210,189 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
 
+        $scope.hours = '';
+        $scope.obi = [];
+        $scope.graph = [];
+
+        var request = $http({
+            method: "POST",
+            url: "php/get_hours.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.success(function (data) {
+            if (data != "0") {
+                $scope.hours = data;
+                console.log('init_cases - success');
+                console.log($scope.hours);
+                for (x in $scope.hours) {
+                   //console.log($scope.hours[x]['cnt']);
+                   $scope.obi.push(parseInt($scope.hours[x]['cnt']));
+                }
+                console.log($scope.obi);
+                $scope.linechart($scope.obi);
+            }
+            else {
+                console.log('init_case - failed');
+            }
+        }); //success
+
+        $scope.x = []
+        $scope.y = []
+        $scope.r = []
+        $scope.labels = []
+        var request = $http({
+            method: "POST",
+            url: "php/get_graph.php",
+            data: $.param({}),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.success(function (data) {
+            if (data != "0") {
+                $scope.graph = data;
+                console.log('init_cases - success');
+                console.log($scope.graph);
+                for (i in $scope.graph) {
+                    $scope.x.push(parseInt($scope.graph[i]['x']));
+                    $scope.y.push(parseInt($scope.graph[i]['y']));
+                    $scope.r.push(parseInt($scope.graph[i]['r']));
+                    $scope.labels.push(parseInt($scope.graph[i]['label']));
+                }
+                console.log($scope.x);
+                $scope.bubleChart($scope.x,$scope.y,$scope.r,$scope.labels);
+            }
+            else {
+                console.log('init_case - failed');
+            }
+        }); //success
+
+    }
+
+    $scope.bubleChart = function (x,y,r,labels)
+    {
+        var ctxBc = document.getElementById('bubbleChart').getContext('2d');
+        var bubbleChart = new Chart(ctxBc, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: '0',
+                    data: [{
+                        x: x[0],
+                        y: y[0],
+                        r: r[0]*2
+                    }],
+                    backgroundColor: "#7189bf",
+                    hoverBackgroundColor: "#7189bf"
+                }, {
+                    label: '1',
+                    data: [{
+                        x: x[1],
+                        y: y[1],
+                        r: r[1]*2
+                    }],
+                    backgroundColor: "#df7599",
+                    hoverBackgroundColor: "#df7599"
+                }, {
+                    label: '2',
+                    data: [{
+                        x: x[2],
+                        y: y[2],
+                        r: r[2]*2
+                    }],
+                    backgroundColor: "#ffc785",
+                    hoverBackgroundColor: "#ffc785"
+                }, {
+                    label: '3',
+                    data: [{
+                        x: x[3],
+                        y: y[3],
+                        r: r[3]*2
+                    }],
+                    backgroundColor: "#ab93c9",
+                    hoverBackgroundColor: "#ab93c9"
+                }, {
+                    label: '4',
+                    data: [{
+                        x: x[4],
+                        y: y[4],
+                        r: r[4]*2
+                    }],
+                    backgroundColor: "#438a7c",
+                    hoverBackgroundColor: "#438a7c"
+                }
+                    , {
+                        label: '5',
+                        data: [{
+                            x: x[5],
+                            y: y[5],
+                            r: r[5]*2
+                        }],
+                        backgroundColor: "#ffbea3",
+                        hoverBackgroundColor: "#ffbea3"
+                    }
+                    , {
+                        label: '6',
+                        data: [{
+                            x: x[6],
+                            y: y[6],
+                            r: r[6]*2
+                        }],
+                        backgroundColor: "#5588a3",
+                        hoverBackgroundColor: "#5588a3"
+                    }
+                    , {
+                        label: '7',
+                        data: [{
+                            x: x[7],
+                            y: y[7],
+                            r: r[7]*2
+                        }],
+                        backgroundColor: "#c8e6f5",
+                        hoverBackgroundColor: "#c8e6f5"
+                    }
+                    , {
+                        label: '8',
+                        data: [{
+                            x: x[8],
+                            y: y[8],
+                            r: r[8]*2
+                        }],
+                        backgroundColor: "#00334e",
+                        hoverBackgroundColor: "#00334e"
+                    }]
+            }
+        })
+
+    }
+
+    $scope.linechart = function (obi)
+    {
+        var ctxL = document.getElementById("lineChart2").getContext('2d');
+        console.log("obi?");
+        console.log(obi[0]);
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: ["1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13", "14", "15", "16", "17", "18", "19","20","21","22","23","24"],
+                datasets: [{
+                    label: "My First dataset",
+                    data:  obi,
+                    backgroundColor: [
+                        'rgba(105, 0, 132, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(200, 99, 132, .7)',
+                    ],
+                    borderWidth: 2
+                }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
     }
 
     $scope.animateValue = function(id, start, end, duration) {
