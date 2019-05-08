@@ -313,11 +313,9 @@
 
       </div>
       <!--/Grid row-->
-
     </section>
     <!--Section: Main features & Quick Start-->
 
-    <hr class="mb-5">
 
     <!--Section: More-->
     <section ng-hide="info">
@@ -481,7 +479,7 @@
     <!--Section: More-->
 
       <section id="statistics" ng-hide="statistics">
-          <hr class="mb-5">
+
           <h3 class="h3 text-center mb-5">Statistics</h3>
           <!--Grid row-->
           <div class="row wow fadeIn" >
@@ -778,17 +776,18 @@
       <!--Section: Data-->
       <section id="data" ng-hide="data">
 
-          <hr class="mb-5">
 
           <h3 class="h3 text-center mb-5">Audience Targeting</h3>
           <p class="grey-text">Please insert the information about the audience you are looking for.</p>
 
 
           <!-- Material form group -->
-          <form>
+          <form class="text-center border border-light p-5">
+
               <label>{{level}}</label>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
+              <hr class="mb-5">
 
               <!-- Grid row -->
               <div class="row">
@@ -813,11 +812,12 @@
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
-                      </select>                  </div>
+                      </select>
+                  </div>
                   <!-- Grid column -->
               </div>
               <!-- Grid row -->
-
+              <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <!-- Grid row -->
@@ -825,10 +825,10 @@
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="def-number-input number-input safari_only">
-                              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                              <input class="quantity" min="0" name="quantity" value="1" type="number">
-                              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          <!-- Material input -->
+                          <div class="md-form">
+                              <input type="number" id="numberExample" class="form-control">
+                              <label for="numberExample">Example label</label>
                           </div>
                       </div>
                       <!-- Grid column -->
@@ -836,10 +836,10 @@
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="def-number-input number-input safari_only">
-                              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                              <input class="quantity" min="0" name="quantity" value="1" type="number">
-                              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                          <!-- Material input -->
+                          <div class="md-form">
+                              <input type="number" id="numberExample" class="form-control">
+                              <label for="numberExample">Example label</label>
                           </div>
 
                       </div>
@@ -856,9 +856,8 @@
                       <div class="col">
                           <!-- Material input -->
                           <div class="md-form mt-0">
-                              <input type="text" class="form-control" placeholder="From">
-                              <label for="formGroupExampleInputMD">Income</label>
-
+                              <input type="number" id="numberExample" class="form-control">
+                              <label for="numberExample">Example label</label>
                           </div>
                       </div>
                       <!-- Grid column -->
@@ -866,8 +865,8 @@
                       <div class="col">
                           <!-- Material input -->
                           <div class="md-form mt-0">
-                              <input type="text" class="form-control" placeholder="To">
-
+                              <input type="number" id="numberExample" class="form-control">
+                              <label for="numberExample">Example label</label>
                           </div>
 
                       </div>
@@ -876,6 +875,8 @@
                   <!-- Grid row -->
 
               </div>
+
+              <hr class="mb-5">
 
 
               <div ng-hide='moderate' class="md-form form-group mt-5">
