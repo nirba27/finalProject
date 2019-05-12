@@ -784,7 +784,9 @@
           <!-- Material form group -->
           <form class="text-center border border-light p-5">
 
-              <label>{{level}}</label>
+
+
+              <h2>{{level}}</h2>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
               <hr class="mb-5">
@@ -817,7 +819,7 @@
                   <!-- Grid column -->
               </div>
               <!-- Grid row -->
-              <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div
+              <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div>
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <!-- Grid row -->
@@ -828,7 +830,7 @@
                           <!-- Material input -->
                           <div class="md-form">
                               <input type="number" id="numberExample" class="form-control">
-                              <label for="numberExample">Example label</label>
+                              <label for="numberExample">Age Range</label>
                           </div>
                       </div>
                       <!-- Grid column -->
@@ -836,10 +838,9 @@
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <!-- Material input -->
                           <div class="md-form">
                               <input type="number" id="numberExample" class="form-control">
-                              <label for="numberExample">Example label</label>
+                              <label for="numberExample">To</label>
                           </div>
 
                       </div>
@@ -850,64 +851,74 @@
               </div>
 
               <div class="md-form form-group mt-5">
+
                   <!-- Grid row -->
                   <div class="row">
+
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="md-form mt-0">
+                          <div class="md-form">
                               <input type="number" id="numberExample" class="form-control">
-                              <label for="numberExample">Example label</label>
+                              <label for="numberExample">Income Range</label>
                           </div>
                       </div>
                       <!-- Grid column -->
+
                       <!-- Grid column -->
                       <div class="col">
                           <!-- Material input -->
-                          <div class="md-form mt-0">
+                          <!-- Material input -->
+
+                          <div class="md-form">
                               <input type="number" id="numberExample" class="form-control">
-                              <label for="numberExample">Example label</label>
+                              <label for="numberExample">To</label>
                           </div>
 
                       </div>
-
+                      <!-- Grid column -->
                   </div>
                   <!-- Grid row -->
 
               </div>
 
-              <hr class="mb-5">
-
-
               <div ng-hide='moderate' class="md-form form-group mt-5">
 
+                  <hr class="mb-5">
+
+                  <div ng-hide='moderate' class="md-form form-group mt-5">
+                      <input type="text" class="form-control" id="formGroupExampleInput5MD" placeholder="INCLUDE people who match at least ONE of the following">
+                      <label for="formGroupExampleInput2MD">Detailed Targeting</label>
+                  </div>
+
                   <select class="browser-default custom-select" ng-model="selectedGenre" ng-options="x.genre for x in genres_array">
-                      <option value="" disabled selected>Choose somthing</option>
+                      <option value="" disabled selected>Detailed Targeting</option>
                   </select>
 
               </div>
 
 
-              <hr class="mb-5">
-
-              <div ng-hide='moderate' class="md-form form-group mt-5">
-                  <input type="text" class="form-control" id="formGroupExampleInput5MD" placeholder="Another input">
-                  <label for="formGroupExampleInput2MD">Detailed Targeting</label>
-              </div>
               <!-- Material input -->
               <div ng-hide='deep' class="md-form form-group mt-5">
 
+                  <hr class="mb-5">
+
+                  <!-- Material input -->
+                  <div class="md-form form-group mt-5">
+                      <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="INCLUDE people who watch at least ONE of the following">
+                      <label for="formGroupExampleInputMD">Programs Topics Targeting</label>
+                  </div>
+
                   <select class="browser-default custom-select" ng-model="selectedName" ng-options="x.kid for x in tags">
-                      <option value="" disabled selected>Choose somthing</option>
+                      <option value="" disabled selected>Detailed Targeting</option>
                   </select>
 
+
+
               </div>
 
-              <!-- Material input -->
-              <div class="md-form form-group mt-5">
-                  <input type="text" class="form-control" id="formGroupExampleInputMD" placeholder="Example input">
-                  <label for="formGroupExampleInputMD">Lookalike Audiences</label>
-              </div>
+              <hr class="mb-5">
+
               <!-- Sign in button -->
               <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
 
@@ -941,7 +952,7 @@
                       </div>
                       <div class="col-3">
                           <h5 class="feature-title">Watching Time</h5>
-                          <h2 class="grey-text"> 10AM - 20PM</h2>
+                          <h2 class="grey-text"> {{hoursView}}</h2>
                       </div>
 
                       <div class="col-1 ">
@@ -1000,7 +1011,7 @@
                       </div>
                       <div class="col-3">
                           <h5 class="feature-title">Favourite Genre</h5>
-                          <h2 class="grey-text">Sport</h2>
+                          <h2 class="grey-text">{{genreView}}</h2>
                       </div>
 
                   </div>
@@ -1102,9 +1113,9 @@
 
                               <!-- Table body -->
                               <tbody>
-                              <tr ng-repeat="x in geners" >
+                              <tr ng-repeat="x in keywords_array" >
                                   <th scope="row">{{$index+1}}</th>
-                                  <td>{{x.genre}}</td>
+                                  <td>{{x.key}}</td>
                                   <td>{{x.cnt}}</td>
                               </tr>
                               </tbody>
@@ -1124,21 +1135,51 @@
           <!--Grid row-->
 
 
+          <div class="col-md-12 mb-4">
 
-
+          <div  id="prog_carousel" class="carousel slide wow fadeIn" data-ride="carousel"  style=" width:100%; height: 300px !important;">
+              <div  class="carousel-inner z-depth-2" style=" width:100%; height: 265px !important;">
+                  <div ng-repeat="x in programs | limitTo:20" class="carousel-item" ng-class="{active:!$index}" >
+                      <div class="card unique-color-dark white-text">
+                          <div class="row no-gutters">
+                              <div class="col-md-2" style="box-shadow: inset 3px 3px 10px 0 #000000">
+                                  <img style="opacity:0.7;" src="{{x.cover}}" height="300px">
+                              </div>
+                              <div class="col-md-10">
+                                  <div class="card-body">
+                                      <h1 class="card-title">{{x.pname}}</h1>
+                                      <h4 class="card-title text-muted" style="opacity: 0.5;font-family: 'Calibri Light'">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                      <button type="button" class="btn btn-secondary btn-md">Read more</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <a class="carousel-control-prev" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+          </div>
 
           <hr class="mb-5">
 
           <h3 class="h3 text-center mb-5">Clusters Plot</h3>
 
-          <canvas id="bubbleChart"></canvas>
+          <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
 
           <hr class="mb-5">
 
           <!-- Card deck -->
-          <div class="card-deck">
+          <div class="card-deck wow fadeInUp">
               <!-- Card -->
-              <div ng-repeat="x in programs | limitTo:5" class="card mb-4 wow fadeInUp" >
+              <div ng-repeat="x in programs | limitTo:5" class="card unique-color-dark white-text mb-4 z-depth-1-half" >
                   <!--Card image-->
                   <div class="view overlay">
                       <img class="card-img-top" src="{{x.cover}}">
@@ -1156,7 +1197,7 @@
                       <!--Text-->
                       <p class="card-text">{{x.genre}}</p>
                       <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                      <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+                      <button type="button" class="btn btn-secondary btn-md">Read more</button>
 
                   </div>
 
@@ -1164,6 +1205,10 @@
               <!-- Card -->
           </div>
           <!-- Card deck -->
+
+
+
+
 
           <hr class="mb-5">
 

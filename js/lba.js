@@ -64,6 +64,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.income = 0;
     $scope.cluster = '';
     $scope.selectedGenre = 'Choose';
+    $scope.genreView = '';
+    $scope.hourView = 0;
+    $scope.keywords_array = [];
+
+
 
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
@@ -180,6 +185,25 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
 
+
+        var request = $http({
+            method: "POST",
+            url: "php/get_keys.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.success(function (data) {
+            if (data != "0") {
+                $scope.keywords_array = data;
+                console.log('init_cases - success');
+
+            } else {
+                console.log('init_case - failed');
+            }
+        }); //success
+
         $scope.animateValue("el", 200, 3000, 5000);
 
         var request = $http({
@@ -233,10 +257,34 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.hours = data;
                 console.log('init_cases - success');
                 console.log($scope.hours);
+                $scope.hoursView = 0;
+                var max = 0;
+                var cnt = 0;
                 for (x in $scope.hours) {
                    //console.log($scope.hours[x]['cnt']);
                    $scope.obi.push(parseInt($scope.hours[x]['cnt']));
+                    cnt += 1;
+
+                    if (parseInt($scope.hours[x]['cnt'])>max)
+                   {
+                       max = parseInt($scope.hours[x]['cnt'])
+                       $scope.hoursView=cnt
+                   }
                 }
+
+                var ampm ='';
+                if (($scope.hoursView)>12)
+                {
+                    ampm = 'PM';
+                }
+                else
+                {
+                    ampm = 'AM';
+                }
+
+                var min = parseInt($scope.hoursView)-parseInt(2);
+                var max = parseInt($scope.hoursView)+parseInt(2);
+                $scope.hoursView =  min+ '-' + max + ' '+ampm;
                 console.log($scope.obi);
                 $scope.linechart($scope.obi);
             }
