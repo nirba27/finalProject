@@ -466,7 +466,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
 
     $scope.level = 'Choose your targeting level';
-    $scope.moderate = 1;
+    $scope.moderate = 0;
     $scope.deep = 1;
     $scope.change = function ()
     {
