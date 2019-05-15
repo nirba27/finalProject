@@ -788,8 +788,7 @@
 
 
               <select id="example-getting-started" multiple="multiple"  ng-model="selectedName2" >
-                  <option>{hgjh</option>
-                  <option>{hgjh1</option>
+                  <option  ng-repeat="x in tags">{{x.kid}}</option>
               </select>
 
               <h2>{{level}}</h2>
