@@ -1306,6 +1306,11 @@
     new WOW().init();
 </script>
 <!-- Initializations -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example-getting-started').multiselect();
+    });
+</script>
 
 <script>
     // Line
