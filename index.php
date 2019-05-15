@@ -18,7 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
 
 </head>
 
