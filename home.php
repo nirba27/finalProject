@@ -787,6 +787,14 @@
           <form class="text-center border border-light p-5">
 
 
+              <select id="example-getting-started" multiple="multiple"  ng-model="selectedName2"  ng-options="x.kid for x in tags">
+                  <option value="cheese">Cheese</option>
+                  <option value="tomatoes">Tomatoes</option>
+                  <option value="mozarella">Mozzarella</option>
+                  <option value="mushrooms">Mushrooms</option>
+                  <option value="pepperoni">Pepperoni</option>
+                  <option value="onions">Onions</option>
+              </select>
 
               <h2>{{level}}</h2>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
@@ -915,14 +923,6 @@
                       <option value="" disabled selected>Detailed Targeting</option>
                   </select>
 
-                  <select id="example-getting-started" multiple="multiple">
-                      <option value="cheese">Cheese</option>
-                      <option value="tomatoes">Tomatoes</option>
-                      <option value="mozarella">Mozzarella</option>
-                      <option value="mushrooms">Mushrooms</option>
-                      <option value="pepperoni">Pepperoni</option>
-                      <option value="onions">Onions</option>
-                  </select>
 
 
 
