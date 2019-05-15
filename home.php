@@ -787,13 +787,8 @@
           <form class="text-center border border-light p-5">
 
 
-              <select id="example-getting-started" multiple="multiple"  ng-model="selectedName2"  ng-options="x.kid for x in tags">
-                  <option value="cheese">Cheese</option>
-                  <option value="tomatoes">Tomatoes</option>
-                  <option value="mozarella">Mozzarella</option>
-                  <option value="mushrooms">Mushrooms</option>
-                  <option value="pepperoni">Pepperoni</option>
-                  <option value="onions">Onions</option>
+              <select id="example-getting-started" multiple="multiple"  ng-model="selectedName2" >
+                  <option  ng-repeat="x.kid for x in tags">{{x}}</option>
               </select>
 
               <h2>{{level}}</h2>
