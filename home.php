@@ -16,7 +16,9 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/lba.js"></script>
-
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
 </head>
 
 
