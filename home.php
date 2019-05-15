@@ -785,12 +785,7 @@
 
           <!-- Material form group -->
           <form class="text-center border border-light p-5">
-
-
-              <select id="example-getting-started" multiple="multiple"  ng-model="selectedName2" >
-                  <option  ng-repeat="x in tags">{{x.kid}}</option>
-              </select>
-
+              
               <h2>{{level}}</h2>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
