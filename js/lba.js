@@ -42,7 +42,30 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
+    $scope.myDropdownOptions = [{
+        id: "S",
+        label: "Standard"
+    }, {
+        id: "I",
+        label: "Intermediate"
+    }, {
+        id: "B",
+        label: "Best available"
+    }];
+    $scope.myDropdownModel = [$scope.myDropdownOptions[0]];
 
+    $scope.myDropdownSettings = {
+        styleActive: true,
+        checkBoxes: true,
+        smartButtonTextProvider(selectionArray) {
+            if (selectionArray.length === 1) {
+                return selectionArray[0].label;
+            } else {
+                return selectionArray.length + ' Selected';
+            }
+        }
+    };
+    
     $scope.example2model = [];
     $scope.example2data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}];
     $scope.example2settings = {displayProp: 'id'};
