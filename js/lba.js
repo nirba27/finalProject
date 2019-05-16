@@ -1,4 +1,4 @@
-var app = angular.module('template', []);
+var app = angular.module('template', ['angularjs-dropdown-multiselect',]);
 
 app.directive('fileModel', ['$parse', function ($parse) {
     return {

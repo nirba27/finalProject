@@ -19,6 +19,8 @@
     <!-- Include the plugin's CSS and JS: -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" type="text/css"/>
+    <script type="text/javascript" src="js/angularjs-dropdown-multiselect.js"></script>
+
 </head>
 
 
@@ -785,7 +787,7 @@
 
           <!-- Material form group -->
           <form class="text-center border border-light p-5">
-              
+
               <h2>{{level}}</h2>
               <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
 
