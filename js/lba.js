@@ -65,7 +65,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }
     };
-    
+
     $scope.example2model = [];
     $scope.example2data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}];
     $scope.example2settings = {displayProp: 'id'};

@@ -212,7 +212,9 @@
         <!--Grid column-->
           <!--Grid column-->
           <div class="col-md-6 mb-4">
-              <div ng-dropdown-multiselect="" options="myDropdownOptions" selected-model=myDropdownModel" extra-settings="myDropdownSettings"></div>
+
+
+
 
 
               <!-- Main heading -->
@@ -267,6 +269,8 @@
             <div class="col-10">
               <h5 class="feature-title">Watching Based Clustering</h5>
               <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+                <div ng-dropdown-multiselect="" options="myDropdownOptions" selected-model=myDropdownModel" extra-settings="myDropdownSettings"></div>
+
             </div>
           </div>
           <!--/First row-->
