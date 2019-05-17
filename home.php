@@ -12,9 +12,7 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.min.css" rel="stylesheet">
-    <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/angular.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.js"></script>
     <script type="text/javascript" src="js/angularjs-dropdown-multiselect.js"></script>
   <script src="js/lba.js"></script>
