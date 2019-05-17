@@ -832,7 +832,6 @@
                   <!-- Grid column -->
               </div>
               <!-- Grid row -->
-              <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div>
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <!-- Grid row -->
