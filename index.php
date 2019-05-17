@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="login/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.7.0/lodash.min.js"></script>
+    <script src="angularjs-dropdown-multiselect.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 
 
