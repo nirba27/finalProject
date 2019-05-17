@@ -203,6 +203,14 @@
       <!--Grid row-->
       <div class="row">
 
+
+
+          <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" checkboxes="true" extra-settings="setting1"></div>
+
+          <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" extra-settings="setting2"></div>
+
+          <pre>Selected Model: {{example14model}} | json</pre>
+
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
