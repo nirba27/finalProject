@@ -1,4 +1,4 @@
-var app = angular.module('template', ['ngRoute']);
+var app = angular.module('template', []);
 
 app.directive('fileModel', ['$parse', function ($parse) {
     return {
@@ -42,33 +42,8 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
-    $scope.myDropdownOptions = [{
-        id: "S",
-        label: "Standard"
-    }, {
-        id: "I",
-        label: "Intermediate"
-    }, {
-        id: "B",
-        label: "Best available"
-    }];
-    $scope.myDropdownModel = [$scope.myDropdownOptions[0]];
 
-    $scope.myDropdownSettings = {
-        styleActive: true,
-        checkBoxes: true,
-        smartButtonTextProvider(selectionArray) {
-            if (selectionArray.length === 1) {
-                return selectionArray[0].label;
-            } else {
-                return selectionArray.length + ' Selected';
-            }
-        }
-    };
 
-    $scope.example2model = [];
-    $scope.example2data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}];
-    $scope.example2settings = {displayProp: 'id'};
 
 
     $scope.statistics = 1;
@@ -91,7 +66,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.hourView = 0;
     $scope.keywords_array = [];
 
-
+    $scope.example1model = [];
+    $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
 
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
@@ -284,15 +260,15 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var max = 0;
                 var cnt = 0;
                 for (x in $scope.hours) {
-                   //console.log($scope.hours[x]['cnt']);
-                   $scope.obi.push(parseInt($scope.hours[x]['cnt']));
+                    //console.log($scope.hours[x]['cnt']);
+                    $scope.obi.push(parseInt($scope.hours[x]['cnt']));
                     cnt += 1;
 
                     if (parseInt($scope.hours[x]['cnt'])>max)
-                   {
-                       max = parseInt($scope.hours[x]['cnt'])
-                       $scope.hoursView=cnt
-                   }
+                    {
+                        max = parseInt($scope.hours[x]['cnt'])
+                        $scope.hoursView=cnt
+                    }
                 }
 
                 var ampm ='';
