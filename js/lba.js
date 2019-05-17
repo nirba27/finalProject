@@ -229,6 +229,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         "label": "Wyoming",
         "id": "WY"
     }];
+
     $scope.example2settings = {
         displayProp: 'id'
     };
