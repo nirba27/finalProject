@@ -12,12 +12,15 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.min.css" rel="stylesheet">
-
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/lba.js"></script>
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.1/lodash.js"></script>
     <script type="text/javascript" src="js/angularjs-dropdown-multiselect.js"></script>
-  <script src="js/lba.js"></script>
-
-
 
 </head>
 
@@ -199,14 +202,6 @@
 
       <!--Grid row-->
       <div class="row">
-
-
-
-          <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" checkboxes="true" extra-settings="setting1"></div>
-
-          <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" extra-settings="setting2"></div>
-
-          <pre>Selected Model: {{example14model}} | json</pre>
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
@@ -832,6 +827,7 @@
                   <!-- Grid column -->
               </div>
               <!-- Grid row -->
+              <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div>
               <!-- Material input -->
               <div class="md-form form-group mt-5">
                   <!-- Grid row -->
