@@ -1,4 +1,4 @@
-var app = angular.module('template', ['angularjs-dropdown-multiselect']);
+var app = angular.module('template', ['ngRoute']);
 
 app.directive('fileModel', ['$parse', function ($parse) {
     return {
