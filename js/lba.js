@@ -413,7 +413,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[1],
                         r: r[1]*2
                     }],
-                    borderWidth: 5,
+                    borderWidth: 7,
+                    borderColor: "#0984e3",
                     hoverBackgroundColor: $scope.getColor(1),
                     label: '2',
                     data: [{
