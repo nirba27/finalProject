@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angularjs-dropdown-multiselect/dist/src/angularjs-dropdown-multiselect.js"></script>
+
     <script src="js/lba.js"></script>
     <link rel="stylesheet" href="login/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js" type="text/javascript"></script>
