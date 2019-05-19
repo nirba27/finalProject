@@ -366,7 +366,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.labels.push(parseInt($scope.graph[i]['label']));
                 }
                 console.log($scope.x);
-                $scope.bubleChart($scope.x,$scope.y,$scope.r,$scope.labels,id);
+                $scope.bubleChart($scope.x,$scope.y,$scope.r,$scope.labels);
             }
             else {
                 console.log('init_case - failed');
@@ -376,9 +376,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     }
 
 
-    $scope.getColor = function(cluster,id)
+    $scope.getColor = function(cluster)
     {
-        if (cluster==id)
+        if (cluster==$scope.cluster)
         {
             return "#7189bf";
         }
@@ -389,7 +389,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     }
 
-    $scope.bubleChart = function (x,y,r,labels,id)
+    $scope.bubleChart = function (x,y,r,labels)
     {
         var ctxBc = document.getElementById('bubbleChart').getContext('2d');
         var bubbleChart = new Chart(ctxBc, {
@@ -402,8 +402,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[0],
                         r: r[0]*2
                     }],
-                    backgroundColor: $scope.getColor(0,id),
-                    hoverBackgroundColor:$scope.getColor(0,id),
+                    backgroundColor: $scope.getColor(0),
+                    hoverBackgroundColor:$scope.getColor(0),
                 }, {
                     label: '1',
                     data: [{
@@ -411,16 +411,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[1],
                         r: r[1]*2
                     }],
-                    backgroundColor: $scope.getColor(1,id),
-                    hoverBackgroundColor: $scope.getColor(1,id),
+                    backgroundColor: $scope.getColor(1),
+                    hoverBackgroundColor: $scope.getColor(1),
                     label: '2',
                     data: [{
                         x: x[2],
                         y: y[2],
                         r: r[2]*2
                     }],
-                    backgroundColor: $scope.getColor(2,id),
-                    hoverBackgroundColor: $scope.getColor(2,id),
+                    backgroundColor: $scope.getColor(2),
+                    hoverBackgroundColor: $scope.getColor(2),
                 }, {
                     label: '3',
                     data: [{
@@ -428,8 +428,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[3],
                         r: r[3]*2
                     }],
-                    backgroundColor: $scope.getColor(3,id),
-                    hoverBackgroundColor: $scope.getColor(3,id),
+                    backgroundColor: $scope.getColor(3),
+                    hoverBackgroundColor: $scope.getColor(3),
                 }, {
                     label: '4',
                     data: [{
@@ -437,8 +437,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[4],
                         r: r[4]*2
                     }],
-                    backgroundColor: $scope.getColor(4,id),
-                    hoverBackgroundColor: $scope.getColor(4,id),
+                    backgroundColor: $scope.getColor(4),
+                    hoverBackgroundColor: $scope.getColor(4),
                 }
                     , {
                         label: '5',
@@ -447,8 +447,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             y: y[5],
                             r: r[5]*2
                         }],
-                        backgroundColor:$scope.getColor(5,id),
-                        hoverBackgroundColor: $scope.getColor(5,id),
+                        backgroundColor:$scope.getColor(5),
+                        hoverBackgroundColor: $scope.getColor(5),
                     }
                     , {
                         label: '6',
@@ -457,8 +457,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             y: y[6],
                             r: r[6]*2
                         }],
-                        backgroundColor: $scope.getColor(6,id),
-                        hoverBackgroundColor: $scope.getColor(6,id),
+                        backgroundColor: $scope.getColor(6),
+                        hoverBackgroundColor: $scope.getColor(6),
                     }
                     , {
                         label: '7',
@@ -467,8 +467,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             y: y[7],
                             r: r[7]*2
                         }],
-                        backgroundColor:$scope.getColor(7,id),
-                        hoverBackgroundColor: $scope.getColor(7,id),
+                        backgroundColor:$scope.getColor(7),
+                        hoverBackgroundColor: $scope.getColor(7),
                     }
                     , {
                         label: '8',
@@ -477,8 +477,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             y: y[8],
                             r: r[8]*2
                         }],
-                        backgroundColor: $scope.getColor(8,id),
-                        hoverBackgroundColor: $scope.getColor(8,id),
+                        backgroundColor: $scope.getColor(8),
+                        hoverBackgroundColor: $scope.getColor(8),
                     }]
             }
         })
