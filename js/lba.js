@@ -187,9 +187,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     }
 
     $scope.get_audience = function () {
-        var genre = $scope.selectedGenre.genre;
-        console.log($scope.selectedGenre2);
-
+        var genre = $scope.selectedGenre2[0];
 
         var request = $http({
             method: "POST",
