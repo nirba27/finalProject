@@ -380,11 +380,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     {
         if (cluster==$scope.cluster)
         {
-            return "#7189bf";
+            return "#0984e3";
         }
         else
         {
-            return "#df7599";
+            return "#dfe6e9";
         }
 
     }
