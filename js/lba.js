@@ -86,7 +86,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            if (data == 1) {
+            if (data['data'] == 1) {
                 $("#icon").attr('class', 'fas fa-check fa-7x').fadeIn();
                 console.log('success');
                 window.location.pathname = 'home.php'
