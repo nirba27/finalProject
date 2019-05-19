@@ -389,7 +389,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     }
 
-    $scope.bubleChart = function (x,y,r,labels)
+    $scope.bubleChart = function (x,y,r,labels,id)
     {
         var ctxBc = document.getElementById('bubbleChart').getContext('2d');
         var bubbleChart = new Chart(ctxBc, {
