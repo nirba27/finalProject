@@ -189,6 +189,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.get_audience = function () {
 
         var genre = $scope.selectedGenre2[0];
+        console.log(genre);
 
         var request = $http({
             method: "POST",
@@ -412,7 +413,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         y: y[1],
                         r: r[1]*2
                     }],
-                    borderWidth: $scope.getColor(1),
+                    borderWidth: 5,
                     hoverBackgroundColor: $scope.getColor(1),
                     label: '2',
                     data: [{

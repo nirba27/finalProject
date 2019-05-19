@@ -27,6 +27,7 @@ $tsql= "SELECT TOP 1 * , ROUND(CAST(cnt AS INT) * 100.0 / total, 1) AS cnt2
         ON t1.cluster = t2.cluster
         WHERE genre!='' AND t1.genre='$gen'
         ORDER BY cnt2 DESC";
+
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 //if ($getResults == FALSE)
