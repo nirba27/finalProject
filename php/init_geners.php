@@ -17,9 +17,11 @@ $connectionOptions = array(
     "PWD" => "Nn123456" // update me
 );
 //Establishes the connection
-$conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT DISTINCT * FROM cluster_genre ";
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+$subject = (stripslashes($_POST['subject']));
+
+$tsql= "SELECT DISTINCT genre FROM cluster_genre WHERE category='$subject'";
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 if ($getResults == FALSE)

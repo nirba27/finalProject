@@ -2,7 +2,7 @@
 <dataSource name="lba">
   <database-model serializer="dbm" dbms="AZURE" family-id="AZURE" format-version="4.14">
     <root id="1">
-      <ServerVersion>12.0.1300</ServerVersion>
+      <ServerVersion>12.0.1400</ServerVersion>
       <Dbms>AZURE</Dbms>
     </root>
     <database id="2" parent="1" name="lba">
@@ -49,7 +49,7 @@
     </schema>
     <schema id="15" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2019-05-07.22:07:50.320</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2019-05-18.18:22:50.343</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -62,7 +62,7 @@
     <table id="18" parent="15" name="cluster_genre">
       <ObjectId>2101582525</ObjectId>
       <CreatedTimestamp>2019-05-07.22:07:47.590</CreatedTimestamp>
-      <ModifiedTimestamp>2019-05-07.22:07:47.590</ModifiedTimestamp>
+      <ModifiedTimestamp>2019-05-18.18:22:46.650</ModifiedTimestamp>
     </table>
     <table id="19" parent="15" name="cluster_hours">
       <ObjectId>2085582468</ObjectId>
@@ -106,87 +106,91 @@
       <Position>3</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="28" parent="19" name="cluster">
-      <Position>1</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="29" parent="19" name="hour">
-      <Position>2</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="30" parent="19" name="cnt">
-      <Position>3</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="31" parent="20" name="dvr">
-      <Position>1</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="32" parent="20" name="cluster">
-      <Position>2</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="33" parent="21" name="cid">
-      <Position>1</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="34" parent="21" name="x">
-      <Position>2</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="35" parent="21" name="y">
-      <Position>3</Position>
-      <DataType>varchar(500 char)|0s</DataType>
-    </column>
-    <column id="36" parent="21" name="cnt">
+    <column id="28" parent="18" name="category">
       <Position>4</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="37" parent="22" name="cid">
+    <column id="29" parent="19" name="cluster">
       <Position>1</Position>
-      <DataType>int|0s</DataType>
+      <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="38" parent="22" name="kid">
+    <column id="30" parent="19" name="hour">
       <Position>2</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="39" parent="22" name="cnt">
+    <column id="31" parent="19" name="cnt">
+      <Position>3</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="32" parent="20" name="dvr">
+      <Position>1</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="33" parent="20" name="cluster">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="34" parent="21" name="cid">
+      <Position>1</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="35" parent="21" name="x">
+      <Position>2</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="36" parent="21" name="y">
+      <Position>3</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="37" parent="21" name="cnt">
+      <Position>4</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="38" parent="22" name="cid">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="39" parent="22" name="kid">
+      <Position>2</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="40" parent="22" name="cnt">
       <Position>3</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="40" parent="23" name="name">
+    <column id="41" parent="23" name="name">
       <Position>1</Position>
       <DataType>varchar(50 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="23" name="pass">
+    <column id="42" parent="23" name="pass">
       <Position>2</Position>
       <DataType>varchar(50 char)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="24" name="id">
+    <column id="43" parent="24" name="id">
       <Position>1</Position>
       <SequenceIdentity>1</SequenceIdentity>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="24" name="pname">
+    <column id="44" parent="24" name="pname">
       <Position>2</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="44" parent="24" name="cover">
+    <column id="45" parent="24" name="cover">
       <Position>3</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="45" parent="24" name="genre">
+    <column id="46" parent="24" name="genre">
       <Position>4</Position>
       <DataType>varchar(500 char)|0s</DataType>
     </column>
-    <column id="46" parent="24" name="cluster">
+    <column id="47" parent="24" name="cluster">
       <Position>5</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="47" parent="24" name="views">
+    <column id="48" parent="24" name="views">
       <Position>6</Position>
       <DataType>int|0s</DataType>
     </column>

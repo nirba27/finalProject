@@ -42,197 +42,8 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
-    $scope.name = 'World';
-
-    $scope.example14model = [];
-    $scope.setting1 = {
-        scrollableHeight: '200px',
-        scrollable: true,
-        enableSearch: true
-    };
-
-    $scope.setting2 = {
-        scrollableHeight: '200px',
-        scrollable: true,
-        enableSearch: false
-    };
-
-    $scope.example14data = [{
-        "label": "Alabama",
-        "id": "AL"
-    }, {
-        "label": "Alaska",
-        "id": "AK"
-    }, {
-        "label": "American Samoa",
-        "id": "AS"
-    }, {
-        "label": "Arizona",
-        "id": "AZ"
-    }, {
-        "label": "Arkansas",
-        "id": "AR"
-    }, {
-        "label": "California",
-        "id": "CA"
-    }, {
-        "label": "Colorado",
-        "id": "CO"
-    }, {
-        "label": "Connecticut",
-        "id": "CT"
-    }, {
-        "label": "Delaware",
-        "id": "DE"
-    }, {
-        "label": "District Of Columbia",
-        "id": "DC"
-    }, {
-        "label": "Florida",
-        "id": "FL"
-    }, {
-        "label": "Georgia",
-        "id": "GA"
-    }, {
-        "label": "Guam",
-        "id": "GU"
-    }, {
-        "label": "Hawaii",
-        "id": "HI"
-    }, {
-        "label": "Idaho",
-        "id": "ID"
-    }, {
-        "label": "Illinois",
-        "id": "IL"
-    }, {
-        "label": "Indiana",
-        "id": "IN"
-    }, {
-        "label": "Iowa",
-        "id": "IA"
-    }, {
-        "label": "Kansas",
-        "id": "KS"
-    }, {
-        "label": "Kentucky",
-        "id": "KY"
-    }, {
-        "label": "Louisiana",
-        "id": "LA"
-    }, {
-        "label": "Maine",
-        "id": "ME"
-    }, {
-        "label": "Marshall Islands",
-        "id": "MH"
-    }, {
-        "label": "Maryland",
-        "id": "MD"
-    }, {
-        "label": "Massachusetts",
-        "id": "MA"
-    }, {
-        "label": "Michigan",
-        "id": "MI"
-    }, {
-        "label": "Minnesota",
-        "id": "MN"
-    }, {
-        "label": "Mississippi",
-        "id": "MS"
-    }, {
-        "label": "Missouri",
-        "id": "MO"
-    }, {
-        "label": "Montana",
-        "id": "MT"
-    }, {
-        "label": "Nebraska",
-        "id": "NE"
-    }, {
-        "label": "Nevada",
-        "id": "NV"
-    }, {
-        "label": "New Hampshire",
-        "id": "NH"
-    }, {
-        "label": "New Jersey",
-        "id": "NJ"
-    }, {
-        "label": "New Mexico",
-        "id": "NM"
-    }, {
-        "label": "New York",
-        "id": "NY"
-    }, {
-        "label": "North Carolina",
-        "id": "NC"
-    }, {
-        "label": "North Dakota",
-        "id": "ND"
-    }, {
-        "label": "Ohio",
-        "id": "OH"
-    }, {
-        "label": "Oklahoma",
-        "id": "OK"
-    }, {
-        "label": "Oregon",
-        "id": "OR"
-    }, {
-        "label": "Palau",
-        "id": "PW"
-    }, {
-        "label": "Pennsylvania",
-        "id": "PA"
-    }, {
-        "label": "Puerto Rico",
-        "id": "PR"
-    }, {
-        "label": "Rhode Island",
-        "id": "RI"
-    }, {
-        "label": "South Carolina",
-        "id": "SC"
-    }, {
-        "label": "South Dakota",
-        "id": "SD"
-    }, {
-        "label": "Tennessee",
-        "id": "TN"
-    }, {
-        "label": "Texas",
-        "id": "TX"
-    }, {
-        "label": "Utah",
-        "id": "UT"
-    }, {
-        "label": "Vermont",
-        "id": "VT"
-    }, {
-        "label": "Virgin Islands",
-        "id": "VI"
-    }, {
-        "label": "Virginia",
-        "id": "VA"
-    }, {
-        "label": "Washington",
-        "id": "WA"
-    }, {
-        "label": "West Virginia",
-        "id": "WV"
-    }, {
-        "label": "Wisconsin",
-        "id": "WI"
-    }, {
-        "label": "Wyoming",
-        "id": "WY"
-    }];
-    $scope.example2settings = {
-        displayProp: 'id'
-    };
-
+    $scope.example1model = [];
+    $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
 
 
     $scope.statistics = 1;
@@ -246,7 +57,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.tags = [];
     $scope.programs = [];
     $scope.geners = [];
-    $scope.geners_array = [];
+    $scope.sports = [];
+    $scope.entertainment = [];
+    $scope.intrests = [];
+    $scope.genres_array = [];
+
     $scope.dvrs = [];
     $scope.income = 0;
     $scope.cluster = '';
@@ -254,7 +69,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.genreView = '';
     $scope.hourView = 0;
     $scope.keywords_array = [];
-
+    $scope.selectedGenre2 = '';
     $scope.example1model = [];
     $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
 
@@ -270,7 +85,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data == 1) {
                 $("#icon").attr('class', 'fas fa-check fa-7x').fadeIn();
                 console.log('success');
@@ -294,9 +109,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.tags = data;
+                $scope.tags = data['data'];
                 console.log('init_cases - success');
                 console.log($scope.tags);
             } else {
@@ -304,27 +119,77 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
 
+        //$scope.sports = $scope.get_select('Sport');
+        //$scope.entertainment = $scope.get_select('Entertainment');
+        //$scope.intrests = $scope.get_select('Interests');
+       // $scope.genres = $scope.get_select('Genre');
+
+
+
         var request = $http({
             method: "POST",
             url: "php/init_geners.php",
-            data: $.param({}),
+            data: $.param({
+                subject: 'Genre',
+            }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.genres_array = data;
-                console.log('init_cases - success');
+                $scope.genres_array = data['data'];
+                //console.log($scope.genres_array);
             } else {
-                console.log('init_case - failed');
+                console.log('init - failed');
             }
         }); //success
 
+        var request = $http({
+            method: "POST",
+            url: "php/init_geners.php",
+            data: $.param({
+                subject: 'Interests',
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                $scope.intrests = data['data'];
+                //console.log($scope.intrests);
+
+            } else {
+                console.log('init - failed');
+            }
+        }); //success
+
+
+
     } //the funtion
 
+    $scope.get_select = function(subject)
+    {
+        console.log(subject);
+        var request = $http({
+            method: "POST",
+            url: "php/init_geners.php",
+            data: $.param({
+                subject: subject,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                $scope.subject = data;
+                return data['data'];
+            } else {
+                console.log('init - failed');
+            }
+        }); //success
+    }
 
     $scope.get_audience = function () {
         var genre = $scope.selectedGenre.genre;
-        console.log(genre);
+        console.log($scope.selectedGenre2);
+
 
         var request = $http({
             method: "POST",
@@ -334,11 +199,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
                 $scope.res = 0;
                 $scope.loading = 1;
-                $scope.cluster = data;
+                $scope.cluster = data['data'];
 
                 console.log($scope.cluster);
                 $scope.get_prog($scope.cluster);
@@ -362,9 +227,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.geners = data;
+                $scope.geners = data['data'];
                 console.log('init_cases - success');
                 console.log($scope.geners);
 
@@ -382,9 +247,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.keywords_array = data;
+                $scope.keywords_array = data['data'];
                 console.log('init_cases - success');
 
             } else {
@@ -402,9 +267,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.dvrs = data;
+                $scope.dvrs = data['data'];
             } else {
             }
         }); //success
@@ -418,9 +283,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.programs = data;
+                $scope.programs = data['data'];
                 console.log('init_cases - success');
                 console.log($scope.programs);
             } else {
@@ -440,9 +305,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.hours = data;
+                $scope.hours = data['data'];
                 console.log('init_cases - success');
                 console.log($scope.hours);
                 $scope.hoursView = 0;
@@ -491,9 +356,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             data: $.param({}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
-        request.success(function (data) {
+        request.then(function (data) {
             if (data != "0") {
-                $scope.graph = data;
+                $scope.graph = data['data'];
                 console.log('init_cases - success');
                 console.log($scope.graph);
                 for (i in $scope.graph) {

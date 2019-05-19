@@ -14,11 +14,17 @@
     <link href="css/style.min.css" rel="stylesheet">
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/angular.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
     <script src="js/lba.js"></script>
+    <script src="node_modules/angularjs-dropdown-multiselect/dist/src/angularjs-dropdown-multiselect.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <!-- Latest compiled and minified CSS -->
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 </head>
 
@@ -200,13 +206,6 @@
 
             <!--Grid row-->
             <div class="row">
-
-                <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" checkboxes="true" extra-settings="setting1"></div>
-
-                <div ng-dropdown-multiselect="" options="example14data" selected-model="example14model" extra-settings="setting2"></div>
-
-                <pre>Selected Model: {{example14model}} | json</pre>
-
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
@@ -250,9 +249,7 @@
 
         </section>
         <!--Section: Main info-->
-
         <hr class="my-5">
-
         <!--Section: Main features & Quick Start-->
         <section id="about" ng-hide="about">
 
@@ -324,8 +321,6 @@
             <!--/Grid row-->
         </section>
         <!--Section: Main features & Quick Start-->
-
-
         <!--Section: More-->
         <section ng-hide="info">
 
@@ -486,7 +481,6 @@
 
         </section>
         <!--Section: More-->
-
         <section id="statistics" ng-hide="statistics">
 
             <h3 class="h3 text-center mb-5">Statistics</h3>
@@ -781,11 +775,8 @@
             </div>
             <!--Grid row-->
         </section>
-
         <!--Section: Data-->
         <section id="data" ng-hide="data">
-
-
             <h3 class="h3 text-center mb-5">Audience Targeting</h3>
             <p class="grey-text">Please insert the information about the audience you are looking for.</p>
 
@@ -793,13 +784,9 @@
             <!-- Material form group -->
             <form class="text-center border border-light p-5">
 
-
-
                 <h2>{{level}}</h2>
                 <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
-
                 <hr class="mb-5">
-
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
@@ -828,7 +815,6 @@
                     <!-- Grid column -->
                 </div>
                 <!-- Grid row -->
-                <div ng-dropdown-multiselect="" options="example2data" selected-model="example2model" extra-settings="example2settings"></div>
                 <!-- Material input -->
                 <div class="md-form form-group mt-5">
                     <!-- Grid row -->
@@ -896,15 +882,35 @@
                     <hr class="mb-5">
 
                     <div ng-hide='moderate' class="md-form form-group mt-5">
-                        <input type="text" class="form-control" id="formGroupExampleInput5MD" placeholder="{{selectedGenre}}">
-                        <label for="formGroupExampleInput2MD">Detailed Targeting</label>
+
+                        <label>Detailed Targeting</label>
+
+
+                        <div class="row">
+
+
+                                <div class="col-sm-6" style="margin-top:50px">
+                                    <select ng-model="selectedGenre2"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
+                                    <optgroup data-icon="fas fa-heart" label="Interests">
+                                        <option ng-repeat="x in genres_array">{{x.genre}}</option>
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-futbol" label="Sports">
+                                        <option>Baseball</option>
+                                        <option>Basketball</option>
+                                        <option>Football</option>
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-phone" label="Hobbies" ng-click="init_case()">
+                                        <option ng-repeat="y in intrests">{{y.genre}}</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+
                     </div>
 
-                    <select class="browser-default custom-select" ng-model="selectedGenre" ng-options="x.genre for x in genres_array">
-                        <option value="" disabled selected>INCLUDE people who match at least ONE of the following</option>
-                    </select>
 
-                    <div ng-dropdown-multiselect="" options="example1data" selected-model="example1model"></div>
+
 
                 </div>
 
@@ -924,12 +930,36 @@
                         <option value="" disabled selected>Detailed Targeting</option>
                     </select>
 
+                    <div class="row">
+
+
+                        <div class="col-sm-6" style="margin-top:50px">
+
+                            <select ng-model="selectedGenre3"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
+                                <optgroup data-icon="fas fa-heart" label="Interests">
+                                    <option ng-repeat="x in tags">{{x.kid}}</option>
+                                </optgroup>
+                                <optgroup data-icon="fas fa-futbol" label="Sports">
+                                    <option>Baseball</option>
+                                    <option>Basketball</option>
+                                    <option>Football</option>
+                                </optgroup>
+                                <optgroup data-icon="fa-heart" label="Hobbies">
+                                    <option>Baseball</option>
+                                    <option>Basketball</option>
+                                    <option>Football</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
 
                 <hr class="mb-5">
 
                 <!-- Sign in button -->
                 <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
+
 
             </form>
             <!-- Material form group -->
@@ -1293,19 +1323,7 @@
 </footer>
 <!--/.Footer-->
 <!-- SCRIPTS -->
-<sciprt>
-    // To style only selects with the my-select class
-    $('.my-select').selectpicker();
 
-
-    $('#my-select').selectpicker({
-    sanitizeFn: function (domNodes) {
-    return DOMPurify.sanitize(domNodes)
-    }
-    });
-
-
-</sciprt>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -1318,6 +1336,10 @@
 </script>
 <!-- Initializations -->
 
+<!-- Initialize the plugin: -->
+<script type="text/javascript">
+    $('.my-select').selectpicker();
+</script>
 <script>
     // Line
     var ctx = document.getElementById("myChart").getContext('2d');

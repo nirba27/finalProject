@@ -1,0 +1,8 @@
+{
+  "name": "finalProject5",
+  "version": "1.0.0",
+  "dependencies": {
+    "angularjs-dropdown-multiselect": "^2.0.0-beta.10",
+    "bootstrap-select": "^1.13.10"
+  }
+}
