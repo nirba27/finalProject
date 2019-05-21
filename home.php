@@ -986,12 +986,9 @@
                                 <h2 class="card-title">Title goes here</h2>
                                 <p class="card-subtitle">Secondary text</p>
                             </div>
-                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
+                            <i class="fas fa-sun"></i>
                         </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
-                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
-                        </div>
+
                     </div>
 
                     <div class="card pmd-card">
@@ -1002,10 +999,7 @@
                             </div>
                             <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
                         </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
-                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
-                        </div>
+
                     </div>
 
                     <div class="card pmd-card">
@@ -1015,11 +1009,7 @@
                                 <p class="card-subtitle">Secondary text</p>
                             </div>
                             <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
-                        </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
-                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
-                        </div>
+
                     </div>
 
                 </div>
