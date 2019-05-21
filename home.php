@@ -980,24 +980,48 @@
 
             <div class="row">
                 <div class="card-deck">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Cluster Number</h4>
-                            <p class="card-text">{{cluster}}</p><i class="fas fa-sun"></i>
+                    <div class="card pmd-card">
+                        <div class="card-body d-flex flex-row">
+                            <div class="media-body">
+                                <h2 class="card-title">Title goes here</h2>
+                                <p class="card-subtitle">Secondary text</p>
+                            </div>
+                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
+                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Cluster Number</h4>
-                            <p class="card-text">{{cluster}}</p><i class="fas fa-sun"></i>
+
+                    <div class="card pmd-card">
+                        <div class="card-body d-flex flex-row">
+                            <div class="media-body">
+                                <h2 class="card-title">Title goes here</h2>
+                                <p class="card-subtitle">Secondary text</p>
+                            </div>
+                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
+                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Cluster Number</h4>
-                            <p class="card-text">{{cluster}}</p><i class="fas fa-sun"></i>
+
+                    <div class="card pmd-card">
+                        <div class="card-body d-flex flex-row">
+                            <div class="media-body">
+                                <h2 class="card-title">Title goes here</h2>
+                                <p class="card-subtitle">Secondary text</p>
+                            </div>
+                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn pmd-btn-flat pmd-ripple-effect btn-primary">Primary</button>
+                            <button class="btn pmd-btn-flat pmd-ripple-effect btn-dark" type="button">Action</button>
                         </div>
                     </div>
+
                 </div>
             </div>
 
