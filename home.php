@@ -978,56 +978,14 @@
             <h3 class="h3 text-center mb-5">Your Targeted Audience is Cluster Number {{cluster}}</h3>
 
 
-            <div class="row">
-                <div class="card-deck">
-                    <div class="card pmd-card">
-                        <div class="card-body d-flex flex-row">
-                            <div class="media-body">
-                                <h2 class="card-title">Title goes here</h2>
-                                <p class="card-subtitle">Secondary text</p>
-                            </div>
-                            <i class="fas fa-sun"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="card pmd-card">
-                        <div class="card-body d-flex flex-row">
-                            <div class="media-body">
-                                <h2 class="card-title">Title goes here</h2>
-                                <p class="card-subtitle">Secondary text</p>
-                            </div>
-                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
-                        </div>
-
-                    </div>
-
-                    <div class="card pmd-card">
-                        <div class="card-body d-flex flex-row">
-                            <div class="media-body">
-                                <h2 class="card-title">Title goes here</h2>
-                                <p class="card-subtitle">Secondary text</p>
-                            </div>
-                            <img class="ml-3" src="http://propeller.in/assets/images/profile-pic.png"  width="152" height="152">
-
-                    </div>
-
-                </div>
-            </div>
-
-                
-
-            <div class="card pmd-card">
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
+            <!--Grid row-->
+            <div class="row wow fadeIn">
 
                 <!--Grid column-->
                 <div class="col-md-12 px-4">
 
                     <!--First row-->
                     <div class="row">
-
                         <div class="col-1 ">
                             <i class="fas fa-sun fa-5x indigo-text"></i>
                         </div>
@@ -1058,11 +1016,7 @@
                 </div>
 
             </div>
-                <!--/Grid row-->
-
-            </div>
-
-
+            <!--/Grid row-->
             <div style="height:40px"></div>
 
 
