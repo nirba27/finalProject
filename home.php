@@ -978,6 +978,31 @@
             <h3 class="h3 text-center mb-5">Your Targeted Audience is Cluster Number {{cluster}}</h3>
 
 
+            <div class="row">
+                <div class="card-deck">
+                    <div class="card bg-primary">
+                        <div class="card-body text-center">
+                            <p class="card-text">Some text inside the first card</p>
+                        </div>
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center">
+                            <p class="card-text">Some text inside the second card</p>
+                        </div>
+                    </div>
+                    <div class="card bg-success">
+                        <div class="card-body text-center">
+                            <p class="card-text">Some text inside the third card</p>
+                        </div>
+                    </div>
+                    <div class="card bg-danger">
+                        <div class="card-body text-center">
+                            <p class="card-text">Some text inside the fourth card</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!--Grid row-->
             <div class="row wow fadeIn">
 
