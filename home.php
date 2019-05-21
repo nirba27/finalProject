@@ -1015,14 +1015,19 @@
                 </div>
             </div>
 
-            <!--Grid row-->
-            <div class="row wow fadeIn">
+                
+
+            <div class="card pmd-card">
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
 
                 <!--Grid column-->
                 <div class="col-md-12 px-4">
 
                     <!--First row-->
                     <div class="row">
+
                         <div class="col-1 ">
                             <i class="fas fa-sun fa-5x indigo-text"></i>
                         </div>
@@ -1053,7 +1058,11 @@
                 </div>
 
             </div>
-            <!--/Grid row-->
+                <!--/Grid row-->
+
+            </div>
+
+
             <div style="height:40px"></div>
 
 
