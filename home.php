@@ -980,24 +980,36 @@
 
             <div class="row">
                 <div class="card-deck">
-                    <div class="card bg-primary">
-                        <div class="card-body text-center">
-                            <p class="card-text">Some text inside the first card</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some example text. Some example text.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
-                    <div class="card bg-warning">
-                        <div class="card-body text-center">
-                            <p class="card-text">Some text inside the second card</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some example text. Some example text.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
-                    <div class="card bg-success">
-                        <div class="card-body text-center">
-                            <p class="card-text">Some text inside the third card</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some example text. Some example text.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
-                    <div class="card bg-danger">
-                        <div class="card-body text-center">
-                            <p class="card-text">Some text inside the fourth card</p>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Card title</h4>
+                            <p class="card-text">Some example text. Some example text.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
                 </div>
