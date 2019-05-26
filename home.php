@@ -1354,7 +1354,7 @@
     });
     function plotConceptMap()
     {
-        d3.json("metadata.json", function(dataJson) {
+        d3.json("metadata2.json", function(dataJson) {
             var plot = new ConceptMap("graph", "graph-info", dataJson);
         });
     }
