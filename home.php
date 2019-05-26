@@ -1295,6 +1295,19 @@
 
         </section>
         <!--Section: Main features & Quick Start-->
+
+
+        <section id="map" >
+            <link href="lib/concept-map.css" rel="stylesheet"></link>
+
+            <script src="lib/jquery-2.1.3.min.js" type="text/javascript"></script>
+            <script src="lib/d3.min.js" type="text/javascript"></script>
+            <script src="lib/packages.js" type="text/javascript"></script>
+            <script src="lib/concept-map.js" type="text/javascript"></script>
+
+            <div id="graph" class="conceptmap" ></div>
+            <div id="graph-info"></div>
+        </section>
     </div>
 </main>
 <!--Main layout-->
@@ -1335,7 +1348,17 @@
     new WOW().init();
 </script>
 <!-- Initializations -->
-
+<script>
+    $(function(){
+        plotConceptMap();
+    });
+    function plotConceptMap()
+    {
+        d3.json("metadata.json", function(dataJson) {
+            var plot = new ConceptMap("graph", "graph-info", dataJson);
+        });
+    }
+</script>
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
     $('.my-select').selectpicker();
