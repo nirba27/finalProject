@@ -1336,19 +1336,6 @@
 </footer>
 <!--/.Footer-->
 <!-- SCRIPTS -->
-<sciprt>
-    // To style only selects with the my-select class
-    $('.my-select').selectpicker();
-
-
-    $('#my-select').selectpicker({
-    sanitizeFn: function (domNodes) {
-    return DOMPurify.sanitize(domNodes)
-    }
-    });
-
-
-</sciprt>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -1360,21 +1347,10 @@
     new WOW().init();
 </script>
 <!-- Initializations -->
-<script>
-    $(function(){
-        plotConceptMap();
-    });
-    function plotConceptMap()
-    {
-        d3.json("json/metadata.json", function(dataJson) {
-            var plot = new ConceptMap("graph", "graph-info", dataJson);
-        });
-    }
-</script>
+
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
     $('.my-select').selectpicker();
-
 </script>
 <script>
     // Line
