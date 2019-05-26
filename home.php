@@ -889,8 +889,8 @@
                         <div class="row">
 
 
-                                <div class="col-sm-6" style="margin-top:50px">
-                                    <select ng-model="selectedGenre2"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
+                            <div class="col-sm-6" style="margin-top:50px">
+                                <select ng-model="selectedGenre2"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
                                     <optgroup data-icon="fas fa-heart" label="Interests">
                                         <option ng-repeat="x in genres_array">{{x.genre}}</option>
                                     </optgroup>
@@ -1293,21 +1293,33 @@
             </div>
             <!--Grid column-->
 
+            <section id="map" >
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                        <link href="lib/concept-map.css" rel="stylesheet"></link>
+
+                        <script src="lib/d3.min.js" type="text/javascript"></script>
+                        <script src="lib/packages.js" type="text/javascript"></script>
+                        <script src="lib/concept-map.js" type="text/javascript"></script>
+
+                        <div id="graph" class="conceptmap" ></div>
+                        <div id="graph-info"></div>
+
+                </div>
+            </div>
+
+            </section>
+
         </section>
         <!--Section: Main features & Quick Start-->
 
 
-        <section id="map" >
-            <link href="lib/concept-map.css" rel="stylesheet"></link>
 
-            <script src="lib/jquery-2.1.3.min.js" type="text/javascript"></script>
-            <script src="lib/d3.min.js" type="text/javascript"></script>
-            <script src="lib/packages.js" type="text/javascript"></script>
-            <script src="lib/concept-map.js" type="text/javascript"></script>
-
-            <div id="graph" class="conceptmap" ></div>
-            <div id="graph-info"></div>
-        </section>
     </div>
 </main>
 <!--Main layout-->
@@ -1336,6 +1348,19 @@
 </footer>
 <!--/.Footer-->
 <!-- SCRIPTS -->
+<sciprt>
+    // To style only selects with the my-select class
+    $('.my-select').selectpicker();
+
+
+    $('#my-select').selectpicker({
+    sanitizeFn: function (domNodes) {
+    return DOMPurify.sanitize(domNodes)
+    }
+    });
+
+
+</sciprt>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -1347,7 +1372,17 @@
     new WOW().init();
 </script>
 <!-- Initializations -->
-
+<script>
+    $(function(){
+        plotConceptMap();
+    });
+    function plotConceptMap()
+    {
+        d3.json("json/metadata.json", function(dataJson) {
+            var plot = new ConceptMap("graph", "graph-info", dataJson);
+        });
+    }
+</script>
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
     $('.my-select').selectpicker();
@@ -1408,7 +1443,6 @@
             legend: false
         }
     });
-
     //radar
     var ctxR = document.getElementById("radarChart").getContext('2d');
     var myRadarChart = new Chart(ctxR, {
@@ -1467,9 +1501,7 @@
     .view {
         height: 100%;
     }
-
     @media (max-width: 740px) {
-
         html,
         body,
         header,
@@ -1477,9 +1509,7 @@
             height: 1050px;
         }
     }
-
     @media (min-width: 800px) and (max-width: 850px) {
-
         html,
         body,
         header,
@@ -1487,13 +1517,11 @@
             height: 700px;
         }
     }
-
     @media (min-width: 800px) and (max-width: 850px) {
         .navbar:not(.top-nav-collapse) {
             background: #1C2331 !important;
         }
     }
-
 </style>
 
 
