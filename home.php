@@ -1361,7 +1361,6 @@
 </script>
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
-    $('.my-select').selectpicker();
 </script>
 <script>
     // Line
