@@ -1296,7 +1296,7 @@
             <section id="map" >
 
             <!--Grid column-->
-            <div class="col-md-6 mb-4">
+            <div class="col-md-12">
 
                 <!--Card-->
                 <div class="card">
