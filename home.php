@@ -1354,13 +1354,15 @@
     });
     function plotConceptMap()
     {
-        d3.json("metadata_test.json", function(dataJson) {
-            var plot = new ConceptMap("graph", "graph-info",  dataJson);
+        d3.json("json/metadata.json", function(dataJson) {
+            var plot = new ConceptMap("graph", "graph-info", dataJson);
         });
     }
 </script>
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
+    $('.my-select').selectpicker();
+
 </script>
 <script>
     // Line
