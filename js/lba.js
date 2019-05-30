@@ -191,8 +191,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.get_audience = function () {
 
         let search_str = ''
-        console.log($scope.gender);
-        console.log($scope.maritial);
+        console.log("GENDER:" + $scope.Gender);
+        console.log("M" + $scope.maritial);
         console.log($scope.hh_num);
 
 
