@@ -792,7 +792,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Maritial input</label>
+                        <label for="exampleForm2">Gender</label>
                         <select class="browser-default custom-select">
                             <option value="" disabled selected>Gender</option>
                             <option value="1">Men</option>
@@ -805,12 +805,99 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
+                        <label for="exampleForm2">Households</label>
                         <select class="browser-default custom-select">
                             <option value="" disabled selected>Number of residents</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Maritial status</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="1">Single</option>
+                            <option value="2">Married</option>
+                            <option value="2">Both</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Race</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Number of residents</option>
+                            <option value="1">White</option>
+                            <option value="2">Afro-american</option>
+                            <option value="3">Hispanic</option>
+                            <option value="4">Asian</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Number of Vehicles</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="1">0</option>
+                            <option value="2">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Presence of children</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Number of residents</option>
+                            <option value="1">No children</option>
+                            <option value="2">Have children</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Occupation</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="1">0</option>
+                            <option value="2">1</option>
+                            <option value="2">2+</option>
+                        </select>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col">
+                        <!-- Default input -->
+                        <label for="exampleForm2">Education</label>
+                        <select class="browser-default custom-select">
+                            <option value="" disabled selected>Number of residents</option>
+                            <option value="1">No children</option>
+                            <option value="2">Have children</option>
                         </select>
                     </div>
                     <!-- Grid column -->
