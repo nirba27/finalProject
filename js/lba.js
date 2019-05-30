@@ -74,6 +74,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.Gender = '';
     $scope.maritial = '';
     $scope.hh_num ='';
+    $scope.source = '';
 
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
