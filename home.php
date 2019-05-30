@@ -1057,7 +1057,7 @@
                 <hr class="mb-5">
 
                 <!-- Sign in button -->
-                <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience2();">Sumbit</button>
+                <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;click();">Sumbit</button>
 
 
             </form>
