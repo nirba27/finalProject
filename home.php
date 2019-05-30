@@ -792,6 +792,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
+                        <label for="exampleForm2">Maritial input</label>
                         <select class="browser-default custom-select">
                             <option value="" disabled selected>Gender</option>
                             <option value="1">Men</option>
@@ -968,7 +969,28 @@
 
         <!--Section: Main features & Quick Start-->
         <section id="loading" ng-hide="loading">
-            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-secondary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-success" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-warning" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-info" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-light" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </section>
