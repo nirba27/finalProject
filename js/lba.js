@@ -199,6 +199,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
 
     $scope.get_audience = function () {
+
+        var gender = $scope.Gender;
+        var maritial = $scope.maritial;
+        var race = $sope.race_;
+        console.log(race);
+        console.log($scope.educ);
+        console.log($scope.occu);
+
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",
