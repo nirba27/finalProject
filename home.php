@@ -792,7 +792,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="genre">
                             <option value="" disabled selected>Gender</option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
@@ -804,7 +804,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="hh_num">
                             <option value="" disabled selected>Number of Households</option>
                             <option value="ho1">1</option>
                             <option value="ho2">2</option>
@@ -822,7 +822,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="maritial">
                             <option value="" disabled selected>Maritial status</option>
                             <option value="singlee">Single</option>
                             <option value="married">Married</option>
