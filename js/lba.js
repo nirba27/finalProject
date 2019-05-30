@@ -229,7 +229,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.cluster = data['data'];
 
                 console.log($scope.cluster);
-                $scope.get_prog($scope.cluster);
+               // $scope.get_prog($scope.cluster);
 
             } else {
                 $scope.res = 0;
