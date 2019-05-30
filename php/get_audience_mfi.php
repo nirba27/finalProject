@@ -26,7 +26,9 @@ $tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
           (
             SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$gender%'
             UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'      
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'     
+            UNION ALL
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'     
           ) as tem
         GROUP BY id
         ORDER BY cnt DESC     
