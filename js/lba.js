@@ -188,6 +188,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //success
     }
 
+    $scope.get_audience2 = function () {
+
+        let search_str = '';
+        console.log("GENDER:" + $scope.Gender);
+        console.log("M" + $scope.maritial);
+
+
+
+    } //the funtion
+
+
     $scope.get_audience = function () {
 
         let search_str = ''
