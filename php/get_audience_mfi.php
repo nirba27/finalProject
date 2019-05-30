@@ -19,32 +19,13 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $gender =  (stripslashes($_POST['gender']));
 $maritial = (stripslashes($_POST['maritial']));
-$race = (stripslashes($_POST['$race']));
-$educ = (stripslashes($_POST['$educ']));
-$occu = (stripslashes($_POST['$occu']));
-$child = (stripslashes($_POST['$child']));
-$vechi = (stripslashes($_POST['$vechi']));
-$hh_num = (stripslashes($_POST['$hh_num']));
+
 
 $tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
           (
             SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$gender%'
             UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$race%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$educ%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$occu%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$child%'  
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$vechi%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$hh_num%'         
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'      
           ) as tem
         GROUP BY id
         ORDER BY cnt DESC     
