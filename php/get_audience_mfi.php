@@ -20,15 +20,26 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 $gender =  (stripslashes($_POST['gender']));
 $maritial = (stripslashes($_POST['maritial']));
 $source = (stripslashes($_POST['source']));
+$educ = (stripslashes($_POST['educ']));
+$gender = (stripslashes($_POST['gender']));
+$maritial = (stripslashes($_POST['maritial']));
+$vehicles = (stripslashes($_POST['vehicles']));
+$ocuu = (stripslashes($_POST['occu']));
 
 
 $tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
           (
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$gender%'
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'
             UNION ALL
             SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'     
             UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'     
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'  
+                        UNION ALL
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$educ%'     
+            UNION ALL
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$occu%'      
+            UNION ALL
+            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$vehicles%'    
           ) as tem
         GROUP BY id
         ORDER BY cnt DESC     
