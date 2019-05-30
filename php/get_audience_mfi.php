@@ -14,6 +14,7 @@ $connectionOptions = array(
     "Uid" => "nirbe", // update me
     "PWD" => "Nn123456" // update me
 );
+
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $gender =  (stripslashes($_POST['gender']));

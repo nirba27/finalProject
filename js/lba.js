@@ -199,23 +199,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
 
     $scope.get_audience = function () {
-
-
-
-        var genre = $scope.selectedGenre2[0];
-        console.log(genre);
-
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",
             data: $.param({
-                gender: $scope.Gender,
+                gender:$scope.Gender,
                 maritial:$scope.maritial,
                 race:$scope.race_,
                 educ:$scope.educ,
                 occu:$scope.occu,
                 child:$scope.children,
-                vechi:$scope.vechi,
+                vechi:$scope.vehicles,
                 hh_num:$scope.hh_num
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
