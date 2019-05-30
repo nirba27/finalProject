@@ -202,7 +202,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         var gender = $scope.Gender;
         var maritial = $scope.maritial;
-        var race = $sope.race_;
+        var race = $scope.race_;
         console.log(race);
         console.log($scope.educ);
         console.log($scope.occu);
