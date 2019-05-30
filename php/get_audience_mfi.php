@@ -34,7 +34,7 @@ $tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
 $getResults= sqlsrv_query($conn, $tsql);
 
 $array = array();
-
+echo $tsql;
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
         'id'=>$row['id'],
