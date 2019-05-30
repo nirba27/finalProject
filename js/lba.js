@@ -189,7 +189,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     }
 
     $scope.get_audience2 = function () {
-
+        console.log("get_audience2");
         let search_str = '';
         console.log("GENDER:" + $scope.Gender);
         console.log("M" + $scope.maritial);
