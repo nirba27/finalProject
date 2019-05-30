@@ -792,12 +792,11 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Gender</label>
                         <select class="browser-default custom-select">
                             <option value="" disabled selected>Gender</option>
-                            <option value="1">Men</option>
-                            <option value="2">Women</option>
-                            <option value="2">Both</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="MF">Both</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -805,13 +804,14 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Households</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Number of residents</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="" disabled selected>Number of Households</option>
+                            <option value="ho1">1</option>
+                            <option value="ho2">2</option>
+                            <option value="ho3">3</option>
+                            <option value="ho4">4</option>
+                            <option value="h56sz">5-6</option>
+                            <option value="9sz">7-9</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -822,12 +822,11 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Maritial status</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Gender</option>
-                            <option value="1">Single</option>
-                            <option value="2">Married</option>
-                            <option value="2">Both</option>
+                            <option value="" disabled selected>Maritial status</option>
+                            <option value="singlee">Single</option>
+                            <option value="married">Married</option>
+                            <option value="both">Both</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -835,13 +834,12 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Race</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Number of residents</option>
-                            <option value="1">White</option>
-                            <option value="2">Afro-american</option>
-                            <option value="3">Hispanic</option>
-                            <option value="4">Asian</option>
+                            <option value="" disabled selected>Race</option>
+                            <option value="white">White</option>
+                            <option value="black">Afro-american</option>
+                            <option value="hispa">Hispanic</option>
+                            <option value="assia">Asian</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -852,12 +850,12 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Number of Vehicles</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Gender</option>
-                            <option value="1">0</option>
-                            <option value="2">1</option>
-                            <option value="2">2+</option>
+                            <option value="" disabled selected>Number of Vehicles</option>
+                            <option value="nv0hs">0</option>
+                            <option value="nv1hs">1</option>
+                            <option value="nv2hs">2</option>
+                            <option value="nv3hs">3</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -865,11 +863,10 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Presence of children</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Number of residents</option>
-                            <option value="1">No children</option>
-                            <option value="2">Have children</option>
+                            <option value="" disabled selected>Presence of children</option>
+                            <option value="no_ch">No children</option>
+                            <option value="ch_pr">Have children</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -880,12 +877,25 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Occupation</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Gender</option>
-                            <option value="1">0</option>
-                            <option value="2">1</option>
-                            <option value="2">2+</option>
+                            <option value="" disabled selected>Occupation</option>
+                            <option value="oc1oc">prof_tech</option>
+                            <option value="oc2oc">ad_man</option>
+                            <option value="oc3oc">sales_service</option>
+                            <option value="oc4oc">white_colar</option>
+                            <option value="oc5oc">blue_colar</option>
+                            <option value="oc6oc">student</option>
+                            <option value="oc7oc">home_maker</option>
+                            <option value="oc9oc">farmer</option>
+                            <option value="oc8oc">retired</option>
+                            <option value="ocAoc">Military</option>
+                            <option value="ocBoc">Religious</option>
+                            <option value="ocCoc">Self_Employed</option>
+                            <option value="ocDoc">Educator</option>
+                            <option value="ocEoc">Financial_Professional</option>
+                            <option value="ocFoc">Medical_Professional</option>
+                            <option value="ocGoc">Legal_Professional</option>
+                            <option value="ocHoc">other</option>
                         </select>
                     </div>
                     <!-- Grid column -->
@@ -893,11 +903,12 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <label for="exampleForm2">Education</label>
                         <select class="browser-default custom-select">
-                            <option value="" disabled selected>Number of residents</option>
-                            <option value="1">No children</option>
-                            <option value="2">Have children</option>
+                            <option value="" disabled selected>Education</option>
+                            <option value="edhs_">High School</option>
+                            <option value="edco_">College</option>
+                            <option value="edgs_">Graduate School</option>
+                            <option value="edte_">Technical</option>
                         </select>
                     </div>
                     <!-- Grid column -->
