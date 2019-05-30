@@ -834,7 +834,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="race">
                             <option value="" disabled selected>Race</option>
                             <option value="white">White</option>
                             <option value="black">Afro-american</option>
@@ -850,7 +850,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="vehicles">
                             <option value="" disabled selected>Number of Vehicles</option>
                             <option value="nv0hs">0</option>
                             <option value="nv1hs">1</option>
@@ -863,7 +863,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="children">
                             <option value="" disabled selected>Presence of children</option>
                             <option value="no_ch">No children</option>
                             <option value="ch_pr">Have children</option>
@@ -877,7 +877,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="occu">
                             <option value="" disabled selected>Occupation</option>
                             <option value="oc1oc">prof_tech</option>
                             <option value="oc2oc">ad_man</option>
@@ -903,7 +903,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select">
+                        <select class="browser-default custom-select" ng-model="educ">
                             <option value="" disabled selected>Education</option>
                             <option value="edhs_">High School</option>
                             <option value="edco_">College</option>
