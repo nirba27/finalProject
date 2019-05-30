@@ -201,17 +201,22 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.get_audience = function () {
 
 
-        var search = $scope.Gender + ' ' + $scope.maritial + ' ' + $scope.hh_num + ' ' + $scope.educ + ' ' + $scope.occu + ' ' + $scope.children + ' ' +  $scope.vehicles;
-        console.log(search);
 
         var genre = $scope.selectedGenre2[0];
         console.log(genre);
 
         var request = $http({
             method: "POST",
-            url: "php/get_audience.php",
+            url: "php/get_audience_mfi.php",
             data: $.param({
-                gen: genre,
+                gender: $scope.Gender,
+                maritial:$scope.maritial,
+                race:$scope.race,
+                educ:$scope.edic,
+                occu:$scope.occu,
+                child:$scope.children,
+                vechi:$scope.vechi,
+                hh_num:$scope.hh_num
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
