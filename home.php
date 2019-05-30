@@ -834,7 +834,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select" ng-model="race_">
+                        <select class="browser-default custom-select" ng-model="source">
                             <option value="" disabled selected>Race</option>
                             <option value="white">White</option>
                             <option value="black">Afro-american</option>

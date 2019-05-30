@@ -19,6 +19,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $gender =  (stripslashes($_POST['gender']));
 $maritial = (stripslashes($_POST['maritial']));
+$source = (stripslashes($_POST['source']));
 
 
 $tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
