@@ -71,10 +71,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.selectedGenre2 = '';
     $scope.example1model = [];
     $scope.example1data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"} ];
-    $scope.gender = ''
+    $scope.Gender = '';
     $scope.maritial = '';
     $scope.hh_num ='';
-    
+
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
         console.log("login_check");

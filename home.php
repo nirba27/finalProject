@@ -792,7 +792,7 @@
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
-                        <select class="browser-default custom-select" ng-model="genre">
+                        <select class="browser-default custom-select" ng-model="Gender">
                             <option value="" disabled selected>Gender</option>
                             <option value="M">Male</option>
                             <option value="F">Female</option>
