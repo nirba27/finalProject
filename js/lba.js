@@ -193,7 +193,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         let search_str = ''
         console.log("GENDER:" + $scope.Gender);
         console.log("M" + $scope.maritial);
-        console.log($scope.hh_num);
 
 
         var genre = $scope.selectedGenre2[0];
