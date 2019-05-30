@@ -211,8 +211,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             data: $.param({
                 gender: $scope.Gender,
                 maritial:$scope.maritial,
-                race:$scope.race,
-                educ:$scope.edic,
+                race:$scope.race_,
+                educ:$scope.educ,
                 occu:$scope.occu,
                 child:$scope.children,
                 vechi:$scope.vechi,
