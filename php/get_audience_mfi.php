@@ -41,6 +41,7 @@ while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
         'cnt'=>$row['cnt'],
 
     );}
+echo json_encode($array);
 
 sqlsrv_free_stmt($getResults);
 
