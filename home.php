@@ -165,7 +165,7 @@
                                 available. Create your own, stunning website.</strong>
                         </p>
 
-                        <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white">Target Audiences
+                        <a target="_blank" ng-click="getJson();" class="btn btn-outline-white">Target Audiences
                             <i class="fas fa-graduation-cap ml-2"></i>
                         </a>
                         <a class="btn btn-outline-white" ng-click="show_group();" data-toggle="modal" data-target="#basicExampleModal">Insert New Data
@@ -777,8 +777,8 @@
         </section>
         <!--Section: Data-->
         <section id="data" ng-hide="data">
-            <h3 class="h3 text-center mb-5">Audience Targeting</h3>
-            <p class="grey-text">Please insert the information about the audience you are looking for.</p>
+            <h2 class="h2 text-center mb-5">Audience Targeting</h2>
+            <p class="lead">Please insert the information about the audience you are looking for</p>
 
 
             <!-- Material form group -->
@@ -788,7 +788,7 @@
                 <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
                 <hr class="mb-5">
                 <!-- Grid row -->
-                <div class="row">
+                <div class="row" style="margin-bottom: 40px;">
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
@@ -818,7 +818,7 @@
                 </div>
                 <!-- Grid row -->
                 <!-- Grid row -->
-                <div class="row">
+                <div class="row" style="margin-bottom: 40px;">
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
@@ -835,7 +835,7 @@
                     <div class="col">
                         <!-- Default input -->
                         <select class="browser-default custom-select" ng-model="source">
-                            <option value="" disabled selected>Race</option>
+                            <option value="" disabled selected>Ethnic group</option>
                             <option value="white">White</option>
                             <option value="black">Afro-american</option>
                             <option value="hispa">Hispanic</option>
@@ -846,7 +846,7 @@
                 </div>
                 <!-- Grid row -->
                 <!-- Grid row -->
-                <div class="row">
+                <div class="row" style="margin-bottom: 40px;">
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
@@ -873,7 +873,7 @@
                 </div>
                 <!-- Grid row -->
                 <!-- Grid row -->
-                <div class="row">
+                <div class="row" style="margin-bottom: 20px;">
                     <!-- Grid column -->
                     <div class="col">
                         <!-- Default input -->
@@ -939,15 +939,7 @@
 
                         </div>
                         <!-- Grid column -->
-                    </div>
-                    <!-- Grid row -->
 
-                </div>
-
-                <div class="md-form form-group mt-5">
-
-                    <!-- Grid row -->
-                    <div class="row">
 
                         <!-- Grid column -->
                         <div class="col">
@@ -971,6 +963,7 @@
 
                         </div>
                         <!-- Grid column -->
+
                     </div>
                     <!-- Grid row -->
 
@@ -1004,6 +997,7 @@
                                 </select>
                             </div>
                         </div>
+
 
 
                     </div>
@@ -1057,7 +1051,7 @@
                 <hr class="mb-5">
 
                 <!-- Sign in button -->
-                <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;get_audience();">Sumbit</button>
+                <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Sumbit</button>
 
 
             </form>
@@ -1067,35 +1061,18 @@
 
         <!--Section: Main features & Quick Start-->
         <section id="loading" ng-hide="loading">
-            <div class="spinner-grow text-primary" role="status">
-                <span class="sr-only">Loading...</span>
+            <h3>Looking for your targeted audience...</h3>
+            <div class="progress">
+                <div id='myBar' class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <div class="spinner-grow text-secondary" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-success" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-danger" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-warning" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-info" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-light" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-grow text-dark" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+            <button id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
         </section>
+
+
 
         <section id="res" ng-hide="res">
 
-            <h3 class="h3 text-center mb-5">Your Targeted Audience is Cluster Number {{cluster}}</h3>
+            <h3 class="h3 text-center mb-5">Demographic Information</h3>
 
 
             <!--Grid row-->
@@ -1107,28 +1084,28 @@
                     <!--First row-->
                     <div class="row">
                         <div class="col-1 ">
-                            <i class="fas fa-sun fa-5x indigo-text"></i>
+                            <i class="fas fa-globe-europe fa-5x indigo-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Watching Time</h5>
-                            <h2 class="grey-text"> {{hoursView}}</h2>
+                            <h5 class="feature-title">Ethnic origin</h5>
+                            <h2 class="grey-text"> {{ethnic}}</h2>
                         </div>
 
                         <div class="col-1 ">
                             <i class="fas fa-tv fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Recommended Channels</h5>
-                            <h2 class="grey-text">1011,1028,22,46
+                            <h5 class="feature-title">Children Presence</h5>
+                            <h2 class="grey-text">{{child_p}}
                             </h2>
                         </div>
 
                         <div class="col-1">
-                            <i class="fas fa-graduation-cap fa-4x cyan-text"></i>
+                            <i class="fas fa-user-graduate fa-4x green-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Audience Age</h5>
-                            <h2 class="grey-text">10-22</h2>
+                            <h5 class="feature-title">Education</h5>
+                            <h2 class="grey-text">{{education}}</h2>
                         </div>
 
                     </div>
@@ -1137,8 +1114,7 @@
 
             </div>
             <!--/Grid row-->
-            <div style="height:40px"></div>
-
+            <div style="height:50px"></div>
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -1149,28 +1125,28 @@
                     <!--First row-->
                     <div class="row">
                         <div class="col-1 ">
-                            <i class="fas fa-dollar-sign fa-5x indigo-text"></i>
+                            <i class="fas fa-dollar-sign fa-5x teal-text"></i>
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Average Income</h5>
-                            <h2 class="grey-text" id="el">0 </h2>
+                            <h2 class="grey-text" id="el">0</h2>
                         </div>
 
                         <div class="col-1 ">
-                            <i class="fas fa-ring fa-4x blue-text"></i>
+                            <i class="fas fa-ring fa-4x light-blue-text"></i>
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Common status</h5>
-                            <h2 class="grey-text">Singles
+                            <h2 class="grey-text">{{status}}
                             </h2>
                         </div>
 
                         <div class="col-1">
-                            <i class="fas fa-video fa-4x cyan-text"></i>
+                            <i class="fas fa-male fa-4x purple-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Favourite Genre</h5>
-                            <h2 class="grey-text">{{genreView}}</h2>
+                            <h5 class="feature-title">Number of Adults</h5>
+                            <h2 class="grey-text">{{NumberAdults}}</h2>
                         </div>
 
                     </div>
@@ -1179,8 +1155,52 @@
 
             </div>
             <!--/Grid row-->
-            <hr class="mb-5">
 
+            <div style="height:50px"></div>
+
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+
+                <!--Grid column-->
+                <div class="col-md-12 px-4">
+
+                    <!--First row-->
+                    <div class="row">
+                        <div class="col-1 ">
+                            <i class="fas fa-car fa-5x indigo-text"></i>
+                        </div>
+                        <div class="col-3">
+                            <h5 class="feature-title">Vechicles</h5>
+                            <h2 class="grey-text" id="el">0</h2>
+                        </div>
+
+                        <div class="col-1 ">
+                            <i class="fas fa-baby fa-4x blue-text"></i>
+                        </div>
+                        <div class="col-3">
+                            <h5 class="feature-title">Childrens</h5>
+                            <h2 class="grey-text">{{status}}
+                            </h2>
+                        </div>
+
+                        <div class="col-1">
+                            <i class="fas fa-home fa-4x cyan-text"></i>
+                        </div>
+                        <div class="col-3">
+                            <h5 class="feature-title">House value</h5>
+                            <h2 class="grey-text">{{NumberAdults}}</h2>
+                        </div>
+
+                    </div>
+                    <!--/First row-->
+                </div>
+
+            </div>
+            <!--/Grid row-->
+
+
+            <hr class="mb-5">
+            <h3 class="h3 text-center mb-5">Watching Patterns</h3>
             <!--Grid row-->
             <div class="row wow fadeIn">
 
@@ -1367,73 +1387,26 @@
 
 
 
-
+            <hr class="mb-5">
+            <section id="map" >
+                <h3 class="h3 text-center mb-5">Community Detection</h3>
+                <!--Grid column-->
+                <div class="col-md-12">
+                    <!--Card-->
+                    <link href="lib/concept-map.css" rel="stylesheet"></link>
+                    <script src="lib/d3.min.js" type="text/javascript"></script>
+                    <script src="lib/packages.js" type="text/javascript"></script>
+                    <script src="lib/concept-map.js" type="text/javascript"></script>
+                    <div id="graph" class="conceptmap" ></div>
+                    <div id="graph-info"></div>
+                </div>
+            </section>
 
             <hr class="mb-5">
 
 
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
 
-                <!--Card-->
-                <div class="card">
 
-                    <!--Card content-->
-                    <div class="card-body">
-
-                        <!-- Table  -->
-                        <table class="table table-hover">
-                            <!-- Table head -->
-                            <thead class="blue lighten-4">
-                            <tr>
-                                <th>#</th>
-                                <th>DVR</th>
-                                <th>Count</th>
-                            </tr>
-                            </thead>
-                            <!-- Table head -->
-
-                            <!-- Table body -->
-                            <tbody>
-                            <tr ng-repeat="x in dvrs" >
-                                <th scope="row">{{$index+1}}</th>
-                                <td>{{x.dvr}}</td>
-                                <td>{{x.cnt}}</td>
-                            </tr>
-                            </tbody>
-                            <!-- Table body -->
-                        </table>
-                        <!-- Table  -->
-
-                    </div>
-
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <section id="map" >
-
-            <!--Grid column-->
-            <div class="col-md-12">
-
-                <!--Card-->
-                <div class="card">
-
-                        <link href="lib/concept-map.css" rel="stylesheet"></link>
-
-                        <script src="lib/d3.min.js" type="text/javascript"></script>
-                        <script src="lib/packages.js" type="text/javascript"></script>
-                        <script src="lib/concept-map.js" type="text/javascript"></script>
-
-                        <div id="graph" class="conceptmap" ></div>
-                        <div id="graph-info"></div>
-
-                </div>
-            </div>
-
-            </section>
 
         </section>
         <!--Section: Main features & Quick Start-->
@@ -1468,19 +1441,6 @@
 </footer>
 <!--/.Footer-->
 <!-- SCRIPTS -->
-<sciprt>
-    // To style only selects with the my-select class
-    $('.my-select').selectpicker();
-
-
-    $('#my-select').selectpicker({
-    sanitizeFn: function (domNodes) {
-    return DOMPurify.sanitize(domNodes)
-    }
-    });
-
-
-</sciprt>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="js/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -1498,15 +1458,14 @@
     });
     function plotConceptMap()
     {
-        d3.json("json/metadata.json", function(dataJson) {
-            var plot = new ConceptMap("graph", "graph-info", dataJson);
-        });
+
     }
 </script>
 <!-- Initialize the plugin: -->
 <script type="text/javascript">
     $('.my-select').selectpicker();
 </script>
+
 <script>
     // Line
     var ctx = document.getElementById("myChart").getContext('2d');

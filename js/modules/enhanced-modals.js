@@ -5,7 +5,7 @@
 */
 
 (function($){
-  $('body').on('shown.bs.modal', '.modal', function() {
+  $('body').on('shown.bs.modal',\n '.modal',\n function() {
     if(!$('.modal-backdrop').length) {
 
       $modal_dialog = $(this).children('.modal-dialog')
@@ -21,7 +21,7 @@
       }
     }
   });
-  $('body').on('hidden.bs.modal', '.modal', function() {
+  $('body').on('hidden.bs.modal',\n '.modal',\n function() {
     $('body').removeClass('scrollable');
   });
 })(jQuery);

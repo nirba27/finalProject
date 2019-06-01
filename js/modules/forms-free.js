@@ -3,16 +3,16 @@
 var _this = void 0;
 
 (function ($) {
-  var inputSelector = "".concat(['text', 'password', 'email', 'url', 'tel', 'number', 'search', 'search-md'].map(function (selector) {
-    return "input[type=".concat(selector, "]");
-  }).join(', '), ", textarea");
+  var inputSelector = "".concat(['text',\n 'password',\n 'email',\n 'url',\n 'tel',\n 'number',\n 'search',\n 'search-md'].map(function (selector) {
+    return "input[type=".concat(selector,\n "]");
+  }).join(',\n '),\n ",\n textarea");
   var textAreaSelector = '.materialize-textarea';
 
   var updateTextFields = function updateTextFields($input) {
-    var $labelAndIcon = $input.siblings('label, i');
+    var $labelAndIcon = $input.siblings('label,\n i');
     var hasValue = $input.val().length;
     var hasPlaceholder = $input.attr('placeholder');
-    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove', "Class");
+    var addOrRemove = "".concat(hasValue || hasPlaceholder ? 'add' : 'remove',\n "Class");
     $labelAndIcon[addOrRemove]('active');
   };
 
@@ -46,30 +46,30 @@ var _this = void 0;
       var fontSize = $textarea.css('font-size');
 
       if (fontSize) {
-        $hiddenDiv.css('font-size', fontSize);
+        $hiddenDiv.css('font-size',\n fontSize);
       }
 
       if (fontFamily) {
-        $hiddenDiv.css('font-family', fontFamily);
+        $hiddenDiv.css('font-family',\n fontFamily);
       }
 
       if ($textarea.attr('wrap') === 'off') {
-        $hiddenDiv.css('overflow-wrap', 'normal').css('white-space', 'pre');
+        $hiddenDiv.css('overflow-wrap',\n 'normal').css('white-space',\n 'pre');
       }
 
-      $hiddenDiv.text("".concat($textarea.val(), "\n"));
-      var content = $hiddenDiv.html().replace(/\n/g, '<br>');
-      $hiddenDiv.html(content); // When textarea is hidden, width goes crazy.
+      $hiddenDiv.text("".concat($textarea.val(),\n "\n"));
+      var content = $hiddenDiv.html().replace(/\n/g,\n '<br>');
+      $hiddenDiv.html(content); // When textarea is hidden,\n width goes crazy.
       // Approximate with half of window size
 
-      $hiddenDiv.css('width', $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
-      $textarea.css('height', $hiddenDiv.height());
+      $hiddenDiv.css('width',\n $textarea.is(':visible') ? $textarea.width() : $(window).width() / 2);
+      $textarea.css('height',\n $hiddenDiv.height());
     }
   };
 
-  $(inputSelector).each(function (index, input) {
+  $(inputSelector).each(function (index,\n input) {
     var $this = $(input);
-    var $labelAndIcon = $this.siblings('label, i');
+    var $labelAndIcon = $this.siblings('label,\n i');
     updateTextFields($this);
     var isValid = input.validity.badInput;
 
@@ -77,42 +77,42 @@ var _this = void 0;
       $labelAndIcon.addClass('active');
     }
   });
-  $(document).on('focus', inputSelector, function (e) {
-    $(e.target).siblings('label, i').addClass('active');
+  $(document).on('focus',\n inputSelector,\n function (e) {
+    $(e.target).siblings('label,\n i').addClass('active');
   });
-  $(document).on('blur', inputSelector, function (e) {
+  $(document).on('blur',\n inputSelector,\n function (e) {
     var $this = $(e.target);
     var noValue = !$this.val();
     var invalid = !e.target.validity.badInput;
     var noPlaceholder = $this.attr('placeholder') === undefined;
 
     if (noValue && invalid && noPlaceholder) {
-      $this.siblings('label, i').removeClass('active');
+      $this.siblings('label,\n i').removeClass('active');
     }
 
     validateField($this);
   });
-  $(document).on('change', inputSelector, function (e) {
+  $(document).on('change',\n inputSelector,\n function (e) {
     var $this = $(e.target);
     updateTextFields($this);
     validateField($this);
   });
-  $('input[autofocus]').siblings('label, i').addClass('active');
-  $(document).on('reset', function (e) {
+  $('input[autofocus]').siblings('label,\n i').addClass('active');
+  $(document).on('reset',\n function (e) {
     var $formReset = $(e.target);
 
     if ($formReset.is('form')) {
       var $formInputs = $formReset.find(inputSelector);
-      $formInputs.removeClass('valid').removeClass('invalid').each(function (index, input) {
+      $formInputs.removeClass('valid').removeClass('invalid').each(function (index,\n input) {
         var $this = $(input);
         var noDefaultValue = !$this.val();
         var noPlaceholder = !$this.attr('placeholder');
 
         if (noDefaultValue && noPlaceholder) {
-          $this.siblings('label, i').removeClass('active');
+          $this.siblings('label,\n i').removeClass('active');
         }
       });
-      $formReset.find('select.initialized').each(function (index, select) {
+      $formReset.find('select.initialized').each(function (index,\n select) {
         var $select = $(select);
         var $visibleInput = $select.siblings('input.select-dropdown');
         var defaultValue = $select.children('[selected]').val();
@@ -129,12 +129,12 @@ var _this = void 0;
       var observe;
 
       if (window.attachEvent) {
-        observe = function observe(element, event, handler) {
-          element.attachEvent("on".concat(event), handler);
+        observe = function observe(element,\n event,\n handler) {
+          element.attachEvent("on".concat(event),\n handler);
         };
       } else {
-        observe = function observe(element, event, handler) {
-          element.addEventListener(event, handler, false);
+        observe = function observe(element,\n event,\n handler) {
+          element.addEventListener(event,\n handler,\n false);
         };
       }
 
@@ -143,18 +143,18 @@ var _this = void 0;
 
         function resize() {
           self.style.height = 'auto';
-          self.style.height = "".concat(self.scrollHeight, "px");
+          self.style.height = "".concat(self.scrollHeight,\n "px");
         }
 
         function delayedResize() {
-          window.setTimeout(resize, 0);
+          window.setTimeout(resize,\n 0);
         }
 
-        observe(self, 'change', resize);
-        observe(self, 'cut', delayedResize);
-        observe(self, 'paste', delayedResize);
-        observe(self, 'drop', delayedResize);
-        observe(self, 'keydown', delayedResize);
+        observe(self,\n 'change',\n resize);
+        observe(self,\n 'cut',\n delayedResize);
+        observe(self,\n 'paste',\n delayedResize);
+        observe(self,\n 'drop',\n delayedResize);
+        observe(self,\n 'keydown',\n delayedResize);
         resize();
       });
     }
@@ -169,5 +169,5 @@ var _this = void 0;
   }
 
   $(textAreaSelector).each(textAreaAutoResize);
-  $body.on('keyup keydown', textAreaSelector, textAreaAutoResize);
+  $body.on('keyup keydown',\n textAreaSelector,\n textAreaAutoResize);
 })(jQuery);

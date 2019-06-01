@@ -22,33 +22,37 @@ $maritial = (stripslashes($_POST['maritial']));
 $source = (stripslashes($_POST['source']));
 $educ = (stripslashes($_POST['educ']));
 $maritial = (stripslashes($_POST['maritial']));
-$vehicles = (stripslashes($_POST['vehicles']));
-$ocuu = (stripslashes($_POST['occu']));
+$vehicles = (stripslashes($_POST['vechi']));
+$occu = (stripslashes($_POST['occu']));
 $hh_num = (stripslashes($_POST['occu']));
 
 
-$tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
-          (
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$hh_num%'
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'     
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'  
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$educ%'     
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$occu%'      
-            UNION ALL
-            SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$vehicles%'    
-          ) as tem
-        GROUP BY id
-        ORDER BY cnt DESC     
-        ";
+//$tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
+        //  (
+      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$hh_num%'
+        //    UNION ALL
+      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'
+      //      UNION ALL
+      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'
+       //     UNION ALL
+      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$educ%'
+       //     UNION ALL
+       //     SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$occu%'
+       //     UNION ALL
+      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$vehicles%'
+     //     ) as tem
+    //    GROUP BY id
+    //    ORDER BY cnt DESC
+     //   ";
+
+$tsql = "SELECT TOP 10 id,COUNT(*) as cnt FROM MFI_CLUSTERS_KEYS WHERE [key]='$hh_num' or [key]='$maritial' or [key]='$source' or [key]='$occu' or [key]='$educ' or [key]='$vehicles' GROUP BY id ORDER BY cnt DESC";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
+//echo $tsql;
+
 $array = array();
-echo $tsql;
+//echo $tsql;
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
         'id'=>$row['id'],

@@ -2,7 +2,7 @@
 
 (function ($) {
   var SCROLLING_NAVBAR_OFFSET_TOP = 50;
-  $(window).on('scroll', function () {
+  $(window).on('scroll',\n function () {
     var $navbar = $('.navbar');
 
     if ($navbar.length) {

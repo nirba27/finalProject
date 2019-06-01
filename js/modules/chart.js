@@ -7,28 +7,28 @@
  * Released under the MIT license
  * https://github.com/chartjs/Chart.js/blob/master/LICENSE.md
  */
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Chart = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],\nf)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Chart = f()}})(function(){var define,\nmodule,\nexports;return (function(){function r(e,\nn,\nt){function o(i,\nf){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,\n!0);if(u)return u(i,\n!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",\na}var p=n[i]={exports:{}};e[i][0].call(p.exports,\nfunction(r){var n=e[i][1][r];return o(n||r)},\np,\np.exports,\nr,\ne,\nn,\nt)}return n[i].exports}for(var u="function"==typeof require&&require,\ni=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,\nmodule,\nexports){
 
-},{}],2:[function(require,module,exports){
+},\n{}],\n2:[function(require,\nmodule,\nexports){
 /* MIT license */
 var colorNames = require(6);
 
 module.exports = {
-   getRgba: getRgba,
-   getHsla: getHsla,
-   getRgb: getRgb,
-   getHsl: getHsl,
-   getHwb: getHwb,
-   getAlpha: getAlpha,
+   getRgba: getRgba,\n
+   getHsla: getHsla,\n
+   getRgb: getRgb,\n
+   getHsl: getHsl,\n
+   getHwb: getHwb,\n
+   getAlpha: getAlpha,\n
 
-   hexString: hexString,
-   rgbString: rgbString,
-   rgbaString: rgbaString,
-   percentString: percentString,
-   percentaString: percentaString,
-   hslString: hslString,
-   hslaString: hslaString,
-   hwbString: hwbString,
+   hexString: hexString,\n
+   rgbString: rgbString,\n
+   rgbaString: rgbaString,\n
+   percentString: percentString,\n
+   percentaString: percentaString,\n
+   hslString: hslString,\n
+   hslaString: hslaString,\n
+   hwbString: hwbString,\n
    keyword: keyword
 }
 
@@ -36,25 +36,25 @@ function getRgba(string) {
    if (!string) {
       return;
    }
-   var abbr =  /^#([a-fA-F0-9]{3})$/i,
-       hex =  /^#([a-fA-F0-9]{6})$/i,
-       rgba = /^rgba?\(\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*,\s*([+-]?\d+)\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i,
-       per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*,\s*([+-]?[\d\.]+)\%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)$/i,
+   var abbr =  /^#([a-fA-F0-9]{3})$/i,\n
+       hex =  /^#([a-fA-F0-9]{6})$/i,\n
+       rgba = /^rgba?\(\s*([+-]?\d+)\s*,\n\s*([+-]?\d+)\s*,\n\s*([+-]?\d+)\s*(?:,\n\s*([+-]?[\d\.]+)\s*)?\)$/i,\n
+       per = /^rgba?\(\s*([+-]?[\d\.]+)\%\s*,\n\s*([+-]?[\d\.]+)\%\s*,\n\s*([+-]?[\d\.]+)\%\s*(?:,\n\s*([+-]?[\d\.]+)\s*)?\)$/i,\n
        keyword = /(\w+)/;
 
-   var rgb = [0, 0, 0],
-       a = 1,
+   var rgb = [0,\n 0,\n 0],\n
+       a = 1,\n
        match = string.match(abbr);
    if (match) {
       match = match[1];
       for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = parseInt(match[i] + match[i], 16);
+         rgb[i] = parseInt(match[i] + match[i],\n 16);
       }
    }
    else if (match = string.match(hex)) {
       match = match[1];
       for (var i = 0; i < rgb.length; i++) {
-         rgb[i] = parseInt(match.slice(i * 2, i * 2 + 2), 16);
+         rgb[i] = parseInt(match.slice(i * 2,\n i * 2 + 2),\n 16);
       }
    }
    else if (match = string.match(rgba)) {
@@ -71,7 +71,7 @@ function getRgba(string) {
    }
    else if (match = string.match(keyword)) {
       if (match[1] == "transparent") {
-         return [0, 0, 0, 0];
+         return [0,\n 0,\n 0,\n 0];
       }
       rgb = colorNames[match[1]];
       if (!rgb) {
@@ -80,13 +80,13 @@ function getRgba(string) {
    }
 
    for (var i = 0; i < rgb.length; i++) {
-      rgb[i] = scale(rgb[i], 0, 255);
+      rgb[i] = scale(rgb[i],\n 0,\n 255);
    }
    if (!a && a != 0) {
       a = 1;
    }
    else {
-      a = scale(a, 0, 1);
+      a = scale(a,\n 0,\n 1);
    }
    rgb[3] = a;
    return rgb;
@@ -96,15 +96,15 @@ function getHsla(string) {
    if (!string) {
       return;
    }
-   var hsl = /^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/;
+   var hsl = /^hsla?\(\s*([+-]?\d+)(?:deg)?\s*,\n\s*([+-]?[\d\.]+)%\s*,\n\s*([+-]?[\d\.]+)%\s*(?:,\n\s*([+-]?[\d\.]+)\s*)?\)/;
    var match = string.match(hsl);
    if (match) {
       var alpha = parseFloat(match[4]);
-      var h = scale(parseInt(match[1]), 0, 360),
-          s = scale(parseFloat(match[2]), 0, 100),
-          l = scale(parseFloat(match[3]), 0, 100),
-          a = scale(isNaN(alpha) ? 1 : alpha, 0, 1);
-      return [h, s, l, a];
+      var h = scale(parseInt(match[1]),\n 0,\n 360),\n
+          s = scale(parseFloat(match[2]),\n 0,\n 100),\n
+          l = scale(parseFloat(match[3]),\n 0,\n 100),\n
+          a = scale(isNaN(alpha) ? 1 : alpha,\n 0,\n 1);
+      return [h,\n s,\n l,\n a];
    }
 }
 
@@ -112,26 +112,26 @@ function getHwb(string) {
    if (!string) {
       return;
    }
-   var hwb = /^hwb\(\s*([+-]?\d+)(?:deg)?\s*,\s*([+-]?[\d\.]+)%\s*,\s*([+-]?[\d\.]+)%\s*(?:,\s*([+-]?[\d\.]+)\s*)?\)/;
+   var hwb = /^hwb\(\s*([+-]?\d+)(?:deg)?\s*,\n\s*([+-]?[\d\.]+)%\s*,\n\s*([+-]?[\d\.]+)%\s*(?:,\n\s*([+-]?[\d\.]+)\s*)?\)/;
    var match = string.match(hwb);
    if (match) {
     var alpha = parseFloat(match[4]);
-      var h = scale(parseInt(match[1]), 0, 360),
-          w = scale(parseFloat(match[2]), 0, 100),
-          b = scale(parseFloat(match[3]), 0, 100),
-          a = scale(isNaN(alpha) ? 1 : alpha, 0, 1);
-      return [h, w, b, a];
+      var h = scale(parseInt(match[1]),\n 0,\n 360),\n
+          w = scale(parseFloat(match[2]),\n 0,\n 100),\n
+          b = scale(parseFloat(match[3]),\n 0,\n 100),\n
+          a = scale(isNaN(alpha) ? 1 : alpha,\n 0,\n 1);
+      return [h,\n w,\n b,\n a];
    }
 }
 
 function getRgb(string) {
    var rgba = getRgba(string);
-   return rgba && rgba.slice(0, 3);
+   return rgba && rgba.slice(0,\n 3);
 }
 
 function getHsl(string) {
   var hsla = getHsla(string);
-  return hsla && hsla.slice(0, 3);
+  return hsla && hsla.slice(0,\n 3);
 }
 
 function getAlpha(string) {
@@ -153,71 +153,71 @@ function hexString(rgb) {
               + hexDouble(rgb[2]);
 }
 
-function rgbString(rgba, alpha) {
+function rgbString(rgba,\n alpha) {
    if (alpha < 1 || (rgba[3] && rgba[3] < 1)) {
-      return rgbaString(rgba, alpha);
+      return rgbaString(rgba,\n alpha);
    }
-   return "rgb(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2] + ")";
+   return "rgb(" + rgba[0] + ",\n " + rgba[1] + ",\n " + rgba[2] + ")";
 }
 
-function rgbaString(rgba, alpha) {
+function rgbaString(rgba,\n alpha) {
    if (alpha === undefined) {
       alpha = (rgba[3] !== undefined ? rgba[3] : 1);
    }
-   return "rgba(" + rgba[0] + ", " + rgba[1] + ", " + rgba[2]
-           + ", " + alpha + ")";
+   return "rgba(" + rgba[0] + ",\n " + rgba[1] + ",\n " + rgba[2]
+           + ",\n " + alpha + ")";
 }
 
-function percentString(rgba, alpha) {
+function percentString(rgba,\n alpha) {
    if (alpha < 1 || (rgba[3] && rgba[3] < 1)) {
-      return percentaString(rgba, alpha);
+      return percentaString(rgba,\n alpha);
    }
-   var r = Math.round(rgba[0]/255 * 100),
-       g = Math.round(rgba[1]/255 * 100),
+   var r = Math.round(rgba[0]/255 * 100),\n
+       g = Math.round(rgba[1]/255 * 100),\n
        b = Math.round(rgba[2]/255 * 100);
 
-   return "rgb(" + r + "%, " + g + "%, " + b + "%)";
+   return "rgb(" + r + "%,\n " + g + "%,\n " + b + "%)";
 }
 
-function percentaString(rgba, alpha) {
-   var r = Math.round(rgba[0]/255 * 100),
-       g = Math.round(rgba[1]/255 * 100),
+function percentaString(rgba,\n alpha) {
+   var r = Math.round(rgba[0]/255 * 100),\n
+       g = Math.round(rgba[1]/255 * 100),\n
        b = Math.round(rgba[2]/255 * 100);
-   return "rgba(" + r + "%, " + g + "%, " + b + "%, " + (alpha || rgba[3] || 1) + ")";
+   return "rgba(" + r + "%,\n " + g + "%,\n " + b + "%,\n " + (alpha || rgba[3] || 1) + ")";
 }
 
-function hslString(hsla, alpha) {
+function hslString(hsla,\n alpha) {
    if (alpha < 1 || (hsla[3] && hsla[3] < 1)) {
-      return hslaString(hsla, alpha);
+      return hslaString(hsla,\n alpha);
    }
-   return "hsl(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%)";
+   return "hsl(" + hsla[0] + ",\n " + hsla[1] + "%,\n " + hsla[2] + "%)";
 }
 
-function hslaString(hsla, alpha) {
+function hslaString(hsla,\n alpha) {
    if (alpha === undefined) {
       alpha = (hsla[3] !== undefined ? hsla[3] : 1);
    }
-   return "hsla(" + hsla[0] + ", " + hsla[1] + "%, " + hsla[2] + "%, "
+   return "hsla(" + hsla[0] + ",\n " + hsla[1] + "%,\n " + hsla[2] + "%,\n "
            + alpha + ")";
 }
 
 // hwb is a bit different than rgb(a) & hsl(a) since there is no alpha specific syntax
 // (hwb have alpha optional & 1 is default value)
-function hwbString(hwb, alpha) {
+function hwbString(hwb,\n alpha) {
    if (alpha === undefined) {
       alpha = (hwb[3] !== undefined ? hwb[3] : 1);
    }
-   return "hwb(" + hwb[0] + ", " + hwb[1] + "%, " + hwb[2] + "%"
-           + (alpha !== undefined && alpha !== 1 ? ", " + alpha : "") + ")";
+   return "hwb(" + hwb[0] + ",\n " + hwb[1] + "%,\n " + hwb[2] + "%"
+           + (alpha !== undefined && alpha !== 1 ? ",\n " + alpha : "") + ")";
 }
 
 function keyword(rgb) {
-  return reverseNames[rgb.slice(0, 3)];
+  return reverseNames[rgb.slice(0,\n 3)];
 }
 
 // helpers
-function scale(num, min, max) {
-   return Math.min(Math.max(min, num), max);
+function scale(num,\n min,\n max) {
+   return Math.min(Math.max(min,\n num),\n max);
 }
 
 function hexDouble(num) {
@@ -232,7 +232,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 
-},{"6":6}],3:[function(require,module,exports){
+},\n{"6":6}],\n3:[function(require,\nmodule,\nexports){
 /* MIT license */
 var convert = require(5);
 var string = require(2);
@@ -247,11 +247,11 @@ var Color = function (obj) {
 
 	this.valid = false;
 	this.values = {
-		rgb: [0, 0, 0],
-		hsl: [0, 0, 0],
-		hsv: [0, 0, 0],
-		hwb: [0, 0, 0],
-		cmyk: [0, 0, 0, 0],
+		rgb: [0,\n 0,\n 0],\n
+		hsl: [0,\n 0,\n 0],\n
+		hsv: [0,\n 0,\n 0],\n
+		hwb: [0,\n 0,\n 0],\n
+		cmyk: [0,\n 0,\n 0,\n 0],\n
 		alpha: 1
 	};
 
@@ -260,24 +260,24 @@ var Color = function (obj) {
 	if (typeof obj === 'string') {
 		vals = string.getRgba(obj);
 		if (vals) {
-			this.setValues('rgb', vals);
+			this.setValues('rgb',\n vals);
 		} else if (vals = string.getHsla(obj)) {
-			this.setValues('hsl', vals);
+			this.setValues('hsl',\n vals);
 		} else if (vals = string.getHwb(obj)) {
-			this.setValues('hwb', vals);
+			this.setValues('hwb',\n vals);
 		}
 	} else if (typeof obj === 'object') {
 		vals = obj;
 		if (vals.r !== undefined || vals.red !== undefined) {
-			this.setValues('rgb', vals);
+			this.setValues('rgb',\n vals);
 		} else if (vals.l !== undefined || vals.lightness !== undefined) {
-			this.setValues('hsl', vals);
+			this.setValues('hsl',\n vals);
 		} else if (vals.v !== undefined || vals.value !== undefined) {
-			this.setValues('hsv', vals);
+			this.setValues('hsv',\n vals);
 		} else if (vals.w !== undefined || vals.whiteness !== undefined) {
-			this.setValues('hwb', vals);
+			this.setValues('hwb',\n vals);
 		} else if (vals.c !== undefined || vals.cyan !== undefined) {
-			this.setValues('cmyk', vals);
+			this.setValues('cmyk',\n vals);
 		}
 	}
 };
@@ -285,134 +285,134 @@ var Color = function (obj) {
 Color.prototype = {
 	isValid: function () {
 		return this.valid;
-	},
+	},\n
 	rgb: function () {
-		return this.setSpace('rgb', arguments);
-	},
+		return this.setSpace('rgb',\n arguments);
+	},\n
 	hsl: function () {
-		return this.setSpace('hsl', arguments);
-	},
+		return this.setSpace('hsl',\n arguments);
+	},\n
 	hsv: function () {
-		return this.setSpace('hsv', arguments);
-	},
+		return this.setSpace('hsv',\n arguments);
+	},\n
 	hwb: function () {
-		return this.setSpace('hwb', arguments);
-	},
+		return this.setSpace('hwb',\n arguments);
+	},\n
 	cmyk: function () {
-		return this.setSpace('cmyk', arguments);
-	},
+		return this.setSpace('cmyk',\n arguments);
+	},\n
 
 	rgbArray: function () {
 		return this.values.rgb;
-	},
+	},\n
 	hslArray: function () {
 		return this.values.hsl;
-	},
+	},\n
 	hsvArray: function () {
 		return this.values.hsv;
-	},
+	},\n
 	hwbArray: function () {
 		var values = this.values;
 		if (values.alpha !== 1) {
 			return values.hwb.concat([values.alpha]);
 		}
 		return values.hwb;
-	},
+	},\n
 	cmykArray: function () {
 		return this.values.cmyk;
-	},
+	},\n
 	rgbaArray: function () {
 		var values = this.values;
 		return values.rgb.concat([values.alpha]);
-	},
+	},\n
 	hslaArray: function () {
 		var values = this.values;
 		return values.hsl.concat([values.alpha]);
-	},
+	},\n
 	alpha: function (val) {
 		if (val === undefined) {
 			return this.values.alpha;
 		}
-		this.setValues('alpha', val);
+		this.setValues('alpha',\n val);
 		return this;
-	},
+	},\n
 
 	red: function (val) {
-		return this.setChannel('rgb', 0, val);
-	},
+		return this.setChannel('rgb',\n 0,\n val);
+	},\n
 	green: function (val) {
-		return this.setChannel('rgb', 1, val);
-	},
+		return this.setChannel('rgb',\n 1,\n val);
+	},\n
 	blue: function (val) {
-		return this.setChannel('rgb', 2, val);
-	},
+		return this.setChannel('rgb',\n 2,\n val);
+	},\n
 	hue: function (val) {
 		if (val) {
 			val %= 360;
 			val = val < 0 ? 360 + val : val;
 		}
-		return this.setChannel('hsl', 0, val);
-	},
+		return this.setChannel('hsl',\n 0,\n val);
+	},\n
 	saturation: function (val) {
-		return this.setChannel('hsl', 1, val);
-	},
+		return this.setChannel('hsl',\n 1,\n val);
+	},\n
 	lightness: function (val) {
-		return this.setChannel('hsl', 2, val);
-	},
+		return this.setChannel('hsl',\n 2,\n val);
+	},\n
 	saturationv: function (val) {
-		return this.setChannel('hsv', 1, val);
-	},
+		return this.setChannel('hsv',\n 1,\n val);
+	},\n
 	whiteness: function (val) {
-		return this.setChannel('hwb', 1, val);
-	},
+		return this.setChannel('hwb',\n 1,\n val);
+	},\n
 	blackness: function (val) {
-		return this.setChannel('hwb', 2, val);
-	},
+		return this.setChannel('hwb',\n 2,\n val);
+	},\n
 	value: function (val) {
-		return this.setChannel('hsv', 2, val);
-	},
+		return this.setChannel('hsv',\n 2,\n val);
+	},\n
 	cyan: function (val) {
-		return this.setChannel('cmyk', 0, val);
-	},
+		return this.setChannel('cmyk',\n 0,\n val);
+	},\n
 	magenta: function (val) {
-		return this.setChannel('cmyk', 1, val);
-	},
+		return this.setChannel('cmyk',\n 1,\n val);
+	},\n
 	yellow: function (val) {
-		return this.setChannel('cmyk', 2, val);
-	},
+		return this.setChannel('cmyk',\n 2,\n val);
+	},\n
 	black: function (val) {
-		return this.setChannel('cmyk', 3, val);
-	},
+		return this.setChannel('cmyk',\n 3,\n val);
+	},\n
 
 	hexString: function () {
 		return string.hexString(this.values.rgb);
-	},
+	},\n
 	rgbString: function () {
-		return string.rgbString(this.values.rgb, this.values.alpha);
-	},
+		return string.rgbString(this.values.rgb,\n this.values.alpha);
+	},\n
 	rgbaString: function () {
-		return string.rgbaString(this.values.rgb, this.values.alpha);
-	},
+		return string.rgbaString(this.values.rgb,\n this.values.alpha);
+	},\n
 	percentString: function () {
-		return string.percentString(this.values.rgb, this.values.alpha);
-	},
+		return string.percentString(this.values.rgb,\n this.values.alpha);
+	},\n
 	hslString: function () {
-		return string.hslString(this.values.hsl, this.values.alpha);
-	},
+		return string.hslString(this.values.hsl,\n this.values.alpha);
+	},\n
 	hslaString: function () {
-		return string.hslaString(this.values.hsl, this.values.alpha);
-	},
+		return string.hslaString(this.values.hsl,\n this.values.alpha);
+	},\n
 	hwbString: function () {
-		return string.hwbString(this.values.hwb, this.values.alpha);
-	},
+		return string.hwbString(this.values.hwb,\n this.values.alpha);
+	},\n
 	keyword: function () {
-		return string.keyword(this.values.rgb, this.values.alpha);
-	},
+		return string.keyword(this.values.rgb,\n this.values.alpha);
+	},\n
 
 	rgbNumber: function () {
 		var rgb = this.values.rgb;
 		return (rgb[0] << 16) | (rgb[1] << 8) | rgb[2];
-	},
+	},\n
 
 	luminosity: function () {
 		// http://www.w3.org/TR/WCAG20/#relativeluminancedef
@@ -420,10 +420,10 @@ Color.prototype = {
 		var lum = [];
 		for (var i = 0; i < rgb.length; i++) {
 			var chan = rgb[i] / 255;
-			lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055), 2.4);
+			lum[i] = (chan <= 0.03928) ? chan / 12.92 : Math.pow(((chan + 0.055) / 1.055),\n 2.4);
 		}
 		return 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
-	},
+	},\n
 
 	contrast: function (color2) {
 		// http://www.w3.org/TR/WCAG20/#contrast-ratiodef
@@ -433,7 +433,7 @@ Color.prototype = {
 			return (lum1 + 0.05) / (lum2 + 0.05);
 		}
 		return (lum2 + 0.05) / (lum1 + 0.05);
-	},
+	},\n
 
 	level: function (color2) {
 		var contrastRatio = this.contrast(color2);
@@ -442,103 +442,103 @@ Color.prototype = {
 		}
 
 		return (contrastRatio >= 4.5) ? 'AA' : '';
-	},
+	},\n
 
 	dark: function () {
 		// YIQ equation from http://24ways.org/2010/calculating-color-contrast
 		var rgb = this.values.rgb;
 		var yiq = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
 		return yiq < 128;
-	},
+	},\n
 
 	light: function () {
 		return !this.dark();
-	},
+	},\n
 
 	negate: function () {
 		var rgb = [];
 		for (var i = 0; i < 3; i++) {
 			rgb[i] = 255 - this.values.rgb[i];
 		}
-		this.setValues('rgb', rgb);
+		this.setValues('rgb',\n rgb);
 		return this;
-	},
+	},\n
 
 	lighten: function (ratio) {
 		var hsl = this.values.hsl;
 		hsl[2] += hsl[2] * ratio;
-		this.setValues('hsl', hsl);
+		this.setValues('hsl',\n hsl);
 		return this;
-	},
+	},\n
 
 	darken: function (ratio) {
 		var hsl = this.values.hsl;
 		hsl[2] -= hsl[2] * ratio;
-		this.setValues('hsl', hsl);
+		this.setValues('hsl',\n hsl);
 		return this;
-	},
+	},\n
 
 	saturate: function (ratio) {
 		var hsl = this.values.hsl;
 		hsl[1] += hsl[1] * ratio;
-		this.setValues('hsl', hsl);
+		this.setValues('hsl',\n hsl);
 		return this;
-	},
+	},\n
 
 	desaturate: function (ratio) {
 		var hsl = this.values.hsl;
 		hsl[1] -= hsl[1] * ratio;
-		this.setValues('hsl', hsl);
+		this.setValues('hsl',\n hsl);
 		return this;
-	},
+	},\n
 
 	whiten: function (ratio) {
 		var hwb = this.values.hwb;
 		hwb[1] += hwb[1] * ratio;
-		this.setValues('hwb', hwb);
+		this.setValues('hwb',\n hwb);
 		return this;
-	},
+	},\n
 
 	blacken: function (ratio) {
 		var hwb = this.values.hwb;
 		hwb[2] += hwb[2] * ratio;
-		this.setValues('hwb', hwb);
+		this.setValues('hwb',\n hwb);
 		return this;
-	},
+	},\n
 
 	greyscale: function () {
 		var rgb = this.values.rgb;
 		// http://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale
 		var val = rgb[0] * 0.3 + rgb[1] * 0.59 + rgb[2] * 0.11;
-		this.setValues('rgb', [val, val, val]);
+		this.setValues('rgb',\n [val,\n val,\n val]);
 		return this;
-	},
+	},\n
 
 	clearer: function (ratio) {
 		var alpha = this.values.alpha;
-		this.setValues('alpha', alpha - (alpha * ratio));
+		this.setValues('alpha',\n alpha - (alpha * ratio));
 		return this;
-	},
+	},\n
 
 	opaquer: function (ratio) {
 		var alpha = this.values.alpha;
-		this.setValues('alpha', alpha + (alpha * ratio));
+		this.setValues('alpha',\n alpha + (alpha * ratio));
 		return this;
-	},
+	},\n
 
 	rotate: function (degrees) {
 		var hsl = this.values.hsl;
 		var hue = (hsl[0] + degrees) % 360;
 		hsl[0] = hue < 0 ? 360 + hue : hue;
-		this.setValues('hsl', hsl);
+		this.setValues('hsl',\n hsl);
 		return this;
-	},
+	},\n
 
 	/**
 	 * Ported from sass implementation in C
 	 * https://github.com/sass/libsass/blob/0e6b4a2850092356aa3ece07c6b249f0221caced/functions.cpp#L209
 	 */
-	mix: function (mixinColor, weight) {
+	mix: function (mixinColor,\n weight) {
 		var color1 = this;
 		var color2 = mixinColor;
 		var p = weight === undefined ? 0.5 : weight;
@@ -551,26 +551,26 @@ Color.prototype = {
 
 		return this
 			.rgb(
-				w1 * color1.red() + w2 * color2.red(),
-				w1 * color1.green() + w2 * color2.green(),
+				w1 * color1.red() + w2 * color2.red(),\n
+				w1 * color1.green() + w2 * color2.green(),\n
 				w1 * color1.blue() + w2 * color2.blue()
 			)
 			.alpha(color1.alpha() * p + color2.alpha() * (1 - p));
-	},
+	},\n
 
 	toJSON: function () {
 		return this.rgb();
-	},
+	},\n
 
 	clone: function () {
-		// NOTE(SB): using node-clone creates a dependency to Buffer when using browserify,
-		// making the final build way to big to embed in Chart.js. So let's do it manually,
-		// assuming that values to clone are 1 dimension arrays containing only numbers,
+		// NOTE(SB): using node-clone creates a dependency to Buffer when using browserify,\n
+		// making the final build way to big to embed in Chart.js. So let's do it manually,\n
+		// assuming that values to clone are 1 dimension arrays containing only numbers,\n
 		// except 'alpha' which is a number.
 		var result = new Color();
 		var source = this.values;
 		var target = result.values;
-		var value, type;
+		var value,\n type;
 
 		for (var prop in source) {
 			if (source.hasOwnProperty(prop)) {
@@ -581,7 +581,7 @@ Color.prototype = {
 				} else if (type === '[object Number]') {
 					target[prop] = value;
 				} else {
-					console.error('unexpected color value:', value);
+					console.error('unexpected color value:',\n value);
 				}
 			}
 		}
@@ -591,19 +591,19 @@ Color.prototype = {
 };
 
 Color.prototype.spaces = {
-	rgb: ['red', 'green', 'blue'],
-	hsl: ['hue', 'saturation', 'lightness'],
-	hsv: ['hue', 'saturation', 'value'],
-	hwb: ['hue', 'whiteness', 'blackness'],
-	cmyk: ['cyan', 'magenta', 'yellow', 'black']
+	rgb: ['red',\n 'green',\n 'blue'],\n
+	hsl: ['hue',\n 'saturation',\n 'lightness'],\n
+	hsv: ['hue',\n 'saturation',\n 'value'],\n
+	hwb: ['hue',\n 'whiteness',\n 'blackness'],\n
+	cmyk: ['cyan',\n 'magenta',\n 'yellow',\n 'black']
 };
 
 Color.prototype.maxes = {
-	rgb: [255, 255, 255],
-	hsl: [360, 100, 100],
-	hsv: [360, 100, 100],
-	hwb: [360, 100, 100],
-	cmyk: [100, 100, 100, 100]
+	rgb: [255,\n 255,\n 255],\n
+	hsl: [360,\n 100,\n 100],\n
+	hsv: [360,\n 100,\n 100],\n
+	hwb: [360,\n 100,\n 100],\n
+	cmyk: [100,\n 100,\n 100,\n 100]
 };
 
 Color.prototype.getValues = function (space) {
@@ -618,11 +618,11 @@ Color.prototype.getValues = function (space) {
 		vals.a = values.alpha;
 	}
 
-	// {r: 255, g: 255, b: 255, a: 0.4}
+	// {r: 255,\n g: 255,\n b: 255,\n a: 0.4}
 	return vals;
 };
 
-Color.prototype.setValues = function (space, vals) {
+Color.prototype.setValues = function (space,\n vals) {
 	var values = this.values;
 	var spaces = this.spaces;
 	var maxes = this.maxes;
@@ -634,18 +634,18 @@ Color.prototype.setValues = function (space, vals) {
 	if (space === 'alpha') {
 		alpha = vals;
 	} else if (vals.length) {
-		// [10, 10, 10]
-		values[space] = vals.slice(0, space.length);
+		// [10,\n 10,\n 10]
+		values[space] = vals.slice(0,\n space.length);
 		alpha = vals[space.length];
 	} else if (vals[space.charAt(0)] !== undefined) {
-		// {r: 10, g: 10, b: 10}
+		// {r: 10,\n g: 10,\n b: 10}
 		for (i = 0; i < space.length; i++) {
 			values[space][i] = vals[space.charAt(i)];
 		}
 
 		alpha = vals.a;
 	} else if (vals[spaces[space][0]] !== undefined) {
-		// {red: 10, green: 10, blue: 10}
+		// {red: 10,\n green: 10,\n blue: 10}
 		var chans = spaces[space];
 
 		for (i = 0; i < space.length; i++) {
@@ -655,7 +655,7 @@ Color.prototype.setValues = function (space, vals) {
 		alpha = vals.alpha;
 	}
 
-	values.alpha = Math.max(0, Math.min(1, (alpha === undefined ? values.alpha : alpha)));
+	values.alpha = Math.max(0,\n Math.min(1,\n (alpha === undefined ? values.alpha : alpha)));
 
 	if (space === 'alpha') {
 		return false;
@@ -665,7 +665,7 @@ Color.prototype.setValues = function (space, vals) {
 
 	// cap values of the space prior converting all values
 	for (i = 0; i < space.length; i++) {
-		capped = Math.max(0, Math.min(maxes[space][i], values[space][i]));
+		capped = Math.max(0,\n Math.min(maxes[space][i],\n values[space][i]));
 		values[space][i] = Math.round(capped);
 	}
 
@@ -679,7 +679,7 @@ Color.prototype.setValues = function (space, vals) {
 	return true;
 };
 
-Color.prototype.setSpace = function (space, args) {
+Color.prototype.setSpace = function (space,\n args) {
 	var vals = args[0];
 
 	if (vals === undefined) {
@@ -687,16 +687,16 @@ Color.prototype.setSpace = function (space, args) {
 		return this.getValues(space);
 	}
 
-	// color.rgb(10, 10, 10)
+	// color.rgb(10,\n 10,\n 10)
 	if (typeof vals === 'number') {
 		vals = Array.prototype.slice.call(args);
 	}
 
-	this.setValues(space, vals);
+	this.setValues(space,\n vals);
 	return this;
 };
 
-Color.prototype.setChannel = function (space, index, val) {
+Color.prototype.setChannel = function (space,\n index,\n val) {
 	var svalues = this.values[space];
 	if (val === undefined) {
 		// color.red()
@@ -708,7 +708,7 @@ Color.prototype.setChannel = function (space, index, val) {
 
 	// color.red(100)
 	svalues[index] = val;
-	this.setValues(space, svalues);
+	this.setValues(space,\n svalues);
 
 	return this;
 };
@@ -719,73 +719,73 @@ if (typeof window !== 'undefined') {
 
 module.exports = Color;
 
-},{"2":2,"5":5}],4:[function(require,module,exports){
+},\n{"2":2,\n"5":5}],\n4:[function(require,\nmodule,\nexports){
 /* MIT license */
 
 module.exports = {
-  rgb2hsl: rgb2hsl,
-  rgb2hsv: rgb2hsv,
-  rgb2hwb: rgb2hwb,
-  rgb2cmyk: rgb2cmyk,
-  rgb2keyword: rgb2keyword,
-  rgb2xyz: rgb2xyz,
-  rgb2lab: rgb2lab,
-  rgb2lch: rgb2lch,
+  rgb2hsl: rgb2hsl,\n
+  rgb2hsv: rgb2hsv,\n
+  rgb2hwb: rgb2hwb,\n
+  rgb2cmyk: rgb2cmyk,\n
+  rgb2keyword: rgb2keyword,\n
+  rgb2xyz: rgb2xyz,\n
+  rgb2lab: rgb2lab,\n
+  rgb2lch: rgb2lch,\n
 
-  hsl2rgb: hsl2rgb,
-  hsl2hsv: hsl2hsv,
-  hsl2hwb: hsl2hwb,
-  hsl2cmyk: hsl2cmyk,
-  hsl2keyword: hsl2keyword,
+  hsl2rgb: hsl2rgb,\n
+  hsl2hsv: hsl2hsv,\n
+  hsl2hwb: hsl2hwb,\n
+  hsl2cmyk: hsl2cmyk,\n
+  hsl2keyword: hsl2keyword,\n
 
-  hsv2rgb: hsv2rgb,
-  hsv2hsl: hsv2hsl,
-  hsv2hwb: hsv2hwb,
-  hsv2cmyk: hsv2cmyk,
-  hsv2keyword: hsv2keyword,
+  hsv2rgb: hsv2rgb,\n
+  hsv2hsl: hsv2hsl,\n
+  hsv2hwb: hsv2hwb,\n
+  hsv2cmyk: hsv2cmyk,\n
+  hsv2keyword: hsv2keyword,\n
 
-  hwb2rgb: hwb2rgb,
-  hwb2hsl: hwb2hsl,
-  hwb2hsv: hwb2hsv,
-  hwb2cmyk: hwb2cmyk,
-  hwb2keyword: hwb2keyword,
+  hwb2rgb: hwb2rgb,\n
+  hwb2hsl: hwb2hsl,\n
+  hwb2hsv: hwb2hsv,\n
+  hwb2cmyk: hwb2cmyk,\n
+  hwb2keyword: hwb2keyword,\n
 
-  cmyk2rgb: cmyk2rgb,
-  cmyk2hsl: cmyk2hsl,
-  cmyk2hsv: cmyk2hsv,
-  cmyk2hwb: cmyk2hwb,
-  cmyk2keyword: cmyk2keyword,
+  cmyk2rgb: cmyk2rgb,\n
+  cmyk2hsl: cmyk2hsl,\n
+  cmyk2hsv: cmyk2hsv,\n
+  cmyk2hwb: cmyk2hwb,\n
+  cmyk2keyword: cmyk2keyword,\n
 
-  keyword2rgb: keyword2rgb,
-  keyword2hsl: keyword2hsl,
-  keyword2hsv: keyword2hsv,
-  keyword2hwb: keyword2hwb,
-  keyword2cmyk: keyword2cmyk,
-  keyword2lab: keyword2lab,
-  keyword2xyz: keyword2xyz,
+  keyword2rgb: keyword2rgb,\n
+  keyword2hsl: keyword2hsl,\n
+  keyword2hsv: keyword2hsv,\n
+  keyword2hwb: keyword2hwb,\n
+  keyword2cmyk: keyword2cmyk,\n
+  keyword2lab: keyword2lab,\n
+  keyword2xyz: keyword2xyz,\n
 
-  xyz2rgb: xyz2rgb,
-  xyz2lab: xyz2lab,
-  xyz2lch: xyz2lch,
+  xyz2rgb: xyz2rgb,\n
+  xyz2lab: xyz2lab,\n
+  xyz2lch: xyz2lch,\n
 
-  lab2xyz: lab2xyz,
-  lab2rgb: lab2rgb,
-  lab2lch: lab2lch,
+  lab2xyz: lab2xyz,\n
+  lab2rgb: lab2rgb,\n
+  lab2lch: lab2lch,\n
 
-  lch2lab: lch2lab,
-  lch2xyz: lch2xyz,
+  lch2lab: lch2lab,\n
+  lch2xyz: lch2xyz,\n
   lch2rgb: lch2rgb
 }
 
 
 function rgb2hsl(rgb) {
-  var r = rgb[0]/255,
-      g = rgb[1]/255,
-      b = rgb[2]/255,
-      min = Math.min(r, g, b),
-      max = Math.max(r, g, b),
-      delta = max - min,
-      h, s, l;
+  var r = rgb[0]/255,\n
+      g = rgb[1]/255,\n
+      b = rgb[2]/255,\n
+      min = Math.min(r,\n g,\n b),\n
+      max = Math.max(r,\n g,\n b),\n
+      delta = max - min,\n
+      h,\n s,\n l;
 
   if (max == min)
     h = 0;
@@ -796,7 +796,7 @@ function rgb2hsl(rgb) {
   else if (b == max)
     h = 4 + (r - g)/ delta;
 
-  h = Math.min(h * 60, 360);
+  h = Math.min(h * 60,\n 360);
 
   if (h < 0)
     h += 360;
@@ -810,17 +810,17 @@ function rgb2hsl(rgb) {
   else
     s = delta / (2 - max - min);
 
-  return [h, s * 100, l * 100];
+  return [h,\n s * 100,\n l * 100];
 }
 
 function rgb2hsv(rgb) {
-  var r = rgb[0],
-      g = rgb[1],
-      b = rgb[2],
-      min = Math.min(r, g, b),
-      max = Math.max(r, g, b),
-      delta = max - min,
-      h, s, v;
+  var r = rgb[0],\n
+      g = rgb[1],\n
+      b = rgb[2],\n
+      min = Math.min(r,\n g,\n b),\n
+      max = Math.max(r,\n g,\n b),\n
+      delta = max - min,\n
+      h,\n s,\n v;
 
   if (max == 0)
     s = 0;
@@ -836,38 +836,38 @@ function rgb2hsv(rgb) {
   else if (b == max)
     h = 4 + (r - g) / delta;
 
-  h = Math.min(h * 60, 360);
+  h = Math.min(h * 60,\n 360);
 
   if (h < 0)
     h += 360;
 
   v = ((max / 255) * 1000) / 10;
 
-  return [h, s, v];
+  return [h,\n s,\n v];
 }
 
 function rgb2hwb(rgb) {
-  var r = rgb[0],
-      g = rgb[1],
-      b = rgb[2],
-      h = rgb2hsl(rgb)[0],
-      w = 1/255 * Math.min(r, Math.min(g, b)),
-      b = 1 - 1/255 * Math.max(r, Math.max(g, b));
+  var r = rgb[0],\n
+      g = rgb[1],\n
+      b = rgb[2],\n
+      h = rgb2hsl(rgb)[0],\n
+      w = 1/255 * Math.min(r,\n Math.min(g,\n b)),\n
+      b = 1 - 1/255 * Math.max(r,\n Math.max(g,\n b));
 
-  return [h, w * 100, b * 100];
+  return [h,\n w * 100,\n b * 100];
 }
 
 function rgb2cmyk(rgb) {
-  var r = rgb[0] / 255,
-      g = rgb[1] / 255,
-      b = rgb[2] / 255,
-      c, m, y, k;
+  var r = rgb[0] / 255,\n
+      g = rgb[1] / 255,\n
+      b = rgb[2] / 255,\n
+      c,\n m,\n y,\n k;
 
-  k = Math.min(1 - r, 1 - g, 1 - b);
+  k = Math.min(1 - r,\n 1 - g,\n 1 - b);
   c = (1 - r - k) / (1 - k) || 0;
   m = (1 - g - k) / (1 - k) || 0;
   y = (1 - b - k) / (1 - k) || 0;
-  return [c * 100, m * 100, y * 100, k * 100];
+  return [c * 100,\n m * 100,\n y * 100,\n k * 100];
 }
 
 function rgb2keyword(rgb) {
@@ -875,42 +875,42 @@ function rgb2keyword(rgb) {
 }
 
 function rgb2xyz(rgb) {
-  var r = rgb[0] / 255,
-      g = rgb[1] / 255,
+  var r = rgb[0] / 255,\n
+      g = rgb[1] / 255,\n
       b = rgb[2] / 255;
 
   // assume sRGB
-  r = r > 0.04045 ? Math.pow(((r + 0.055) / 1.055), 2.4) : (r / 12.92);
-  g = g > 0.04045 ? Math.pow(((g + 0.055) / 1.055), 2.4) : (g / 12.92);
-  b = b > 0.04045 ? Math.pow(((b + 0.055) / 1.055), 2.4) : (b / 12.92);
+  r = r > 0.04045 ? Math.pow(((r + 0.055) / 1.055),\n 2.4) : (r / 12.92);
+  g = g > 0.04045 ? Math.pow(((g + 0.055) / 1.055),\n 2.4) : (g / 12.92);
+  b = b > 0.04045 ? Math.pow(((b + 0.055) / 1.055),\n 2.4) : (b / 12.92);
 
   var x = (r * 0.4124) + (g * 0.3576) + (b * 0.1805);
   var y = (r * 0.2126) + (g * 0.7152) + (b * 0.0722);
   var z = (r * 0.0193) + (g * 0.1192) + (b * 0.9505);
 
-  return [x * 100, y *100, z * 100];
+  return [x * 100,\n y *100,\n z * 100];
 }
 
 function rgb2lab(rgb) {
-  var xyz = rgb2xyz(rgb),
-        x = xyz[0],
-        y = xyz[1],
-        z = xyz[2],
-        l, a, b;
+  var xyz = rgb2xyz(rgb),\n
+        x = xyz[0],\n
+        y = xyz[1],\n
+        z = xyz[2],\n
+        l,\n a,\n b;
 
   x /= 95.047;
   y /= 100;
   z /= 108.883;
 
-  x = x > 0.008856 ? Math.pow(x, 1/3) : (7.787 * x) + (16 / 116);
-  y = y > 0.008856 ? Math.pow(y, 1/3) : (7.787 * y) + (16 / 116);
-  z = z > 0.008856 ? Math.pow(z, 1/3) : (7.787 * z) + (16 / 116);
+  x = x > 0.008856 ? Math.pow(x,\n 1/3) : (7.787 * x) + (16 / 116);
+  y = y > 0.008856 ? Math.pow(y,\n 1/3) : (7.787 * y) + (16 / 116);
+  z = z > 0.008856 ? Math.pow(z,\n 1/3) : (7.787 * z) + (16 / 116);
 
   l = (116 * y) - 16;
   a = 500 * (x - y);
   b = 200 * (y - z);
 
-  return [l, a, b];
+  return [l,\n a,\n b];
 }
 
 function rgb2lch(args) {
@@ -918,14 +918,14 @@ function rgb2lch(args) {
 }
 
 function hsl2rgb(hsl) {
-  var h = hsl[0] / 360,
-      s = hsl[1] / 100,
-      l = hsl[2] / 100,
-      t1, t2, t3, rgb, val;
+  var h = hsl[0] / 360,\n
+      s = hsl[1] / 100,\n
+      l = hsl[2] / 100,\n
+      t1,\n t2,\n t3,\n rgb,\n val;
 
   if (s == 0) {
     val = l * 255;
-    return [val, val, val];
+    return [val,\n val,\n val];
   }
 
   if (l < 0.5)
@@ -934,7 +934,7 @@ function hsl2rgb(hsl) {
     t2 = l + s - l * s;
   t1 = 2 * l - t2;
 
-  rgb = [0, 0, 0];
+  rgb = [0,\n 0,\n 0];
   for (var i = 0; i < 3; i++) {
     t3 = h + 1 / 3 * - (i - 1);
     t3 < 0 && t3++;
@@ -956,22 +956,22 @@ function hsl2rgb(hsl) {
 }
 
 function hsl2hsv(hsl) {
-  var h = hsl[0],
-      s = hsl[1] / 100,
-      l = hsl[2] / 100,
-      sv, v;
+  var h = hsl[0],\n
+      s = hsl[1] / 100,\n
+      l = hsl[2] / 100,\n
+      sv,\n v;
 
   if(l === 0) {
       // no need to do calc on black
       // also avoids divide by 0 error
-      return [0, 0, 0];
+      return [0,\n 0,\n 0];
   }
 
   l *= 2;
   s *= (l <= 1) ? l : 2 - l;
   v = (l + s) / 2;
   sv = (2 * s) / (l + s);
-  return [h, sv * 100, v * 100];
+  return [h,\n sv * 100,\n v * 100];
 }
 
 function hsl2hwb(args) {
@@ -988,45 +988,45 @@ function hsl2keyword(args) {
 
 
 function hsv2rgb(hsv) {
-  var h = hsv[0] / 60,
-      s = hsv[1] / 100,
-      v = hsv[2] / 100,
+  var h = hsv[0] / 60,\n
+      s = hsv[1] / 100,\n
+      v = hsv[2] / 100,\n
       hi = Math.floor(h) % 6;
 
-  var f = h - Math.floor(h),
-      p = 255 * v * (1 - s),
-      q = 255 * v * (1 - (s * f)),
-      t = 255 * v * (1 - (s * (1 - f))),
+  var f = h - Math.floor(h),\n
+      p = 255 * v * (1 - s),\n
+      q = 255 * v * (1 - (s * f)),\n
+      t = 255 * v * (1 - (s * (1 - f))),\n
       v = 255 * v;
 
   switch(hi) {
     case 0:
-      return [v, t, p];
+      return [v,\n t,\n p];
     case 1:
-      return [q, v, p];
+      return [q,\n v,\n p];
     case 2:
-      return [p, v, t];
+      return [p,\n v,\n t];
     case 3:
-      return [p, q, v];
+      return [p,\n q,\n v];
     case 4:
-      return [t, p, v];
+      return [t,\n p,\n v];
     case 5:
-      return [v, p, q];
+      return [v,\n p,\n q];
   }
 }
 
 function hsv2hsl(hsv) {
-  var h = hsv[0],
-      s = hsv[1] / 100,
-      v = hsv[2] / 100,
-      sl, l;
+  var h = hsv[0],\n
+      s = hsv[1] / 100,\n
+      v = hsv[2] / 100,\n
+      sl,\n l;
 
   l = (2 - s) * v;
   sl = s * v;
   sl /= (l <= 1) ? l : 2 - l;
   sl = sl || 0;
   l /= 2;
-  return [h, sl * 100, l * 100];
+  return [h,\n sl * 100,\n l * 100];
 }
 
 function hsv2hwb(args) {
@@ -1043,11 +1043,11 @@ function hsv2keyword(args) {
 
 // http://dev.w3.org/csswg/css-color/#hwb-to-rgb
 function hwb2rgb(hwb) {
-  var h = hwb[0] / 360,
-      wh = hwb[1] / 100,
-      bl = hwb[2] / 100,
-      ratio = wh + bl,
-      i, v, f, n;
+  var h = hwb[0] / 360,\n
+      wh = hwb[1] / 100,\n
+      bl = hwb[2] / 100,\n
+      ratio = wh + bl,\n
+      i,\n v,\n f,\n n;
 
   // wh + bl cant be > 1
   if (ratio > 1) {
@@ -1074,7 +1074,7 @@ function hwb2rgb(hwb) {
     case 5: r = v; g = wh; b = n; break;
   }
 
-  return [r * 255, g * 255, b * 255];
+  return [r * 255,\n g * 255,\n b * 255];
 }
 
 function hwb2hsl(args) {
@@ -1094,16 +1094,16 @@ function hwb2keyword(args) {
 }
 
 function cmyk2rgb(cmyk) {
-  var c = cmyk[0] / 100,
-      m = cmyk[1] / 100,
-      y = cmyk[2] / 100,
-      k = cmyk[3] / 100,
-      r, g, b;
+  var c = cmyk[0] / 100,\n
+      m = cmyk[1] / 100,\n
+      y = cmyk[2] / 100,\n
+      k = cmyk[3] / 100,\n
+      r,\n g,\n b;
 
-  r = 1 - Math.min(1, c * (1 - k) + k);
-  g = 1 - Math.min(1, m * (1 - k) + k);
-  b = 1 - Math.min(1, y * (1 - k) + k);
-  return [r * 255, g * 255, b * 255];
+  r = 1 - Math.min(1,\n c * (1 - k) + k);
+  g = 1 - Math.min(1,\n m * (1 - k) + k);
+  b = 1 - Math.min(1,\n y * (1 - k) + k);
+  return [r * 255,\n g * 255,\n b * 255];
 }
 
 function cmyk2hsl(args) {
@@ -1124,51 +1124,51 @@ function cmyk2keyword(args) {
 
 
 function xyz2rgb(xyz) {
-  var x = xyz[0] / 100,
-      y = xyz[1] / 100,
-      z = xyz[2] / 100,
-      r, g, b;
+  var x = xyz[0] / 100,\n
+      y = xyz[1] / 100,\n
+      z = xyz[2] / 100,\n
+      r,\n g,\n b;
 
   r = (x * 3.2406) + (y * -1.5372) + (z * -0.4986);
   g = (x * -0.9689) + (y * 1.8758) + (z * 0.0415);
   b = (x * 0.0557) + (y * -0.2040) + (z * 1.0570);
 
   // assume sRGB
-  r = r > 0.0031308 ? ((1.055 * Math.pow(r, 1.0 / 2.4)) - 0.055)
+  r = r > 0.0031308 ? ((1.055 * Math.pow(r,\n 1.0 / 2.4)) - 0.055)
     : r = (r * 12.92);
 
-  g = g > 0.0031308 ? ((1.055 * Math.pow(g, 1.0 / 2.4)) - 0.055)
+  g = g > 0.0031308 ? ((1.055 * Math.pow(g,\n 1.0 / 2.4)) - 0.055)
     : g = (g * 12.92);
 
-  b = b > 0.0031308 ? ((1.055 * Math.pow(b, 1.0 / 2.4)) - 0.055)
+  b = b > 0.0031308 ? ((1.055 * Math.pow(b,\n 1.0 / 2.4)) - 0.055)
     : b = (b * 12.92);
 
-  r = Math.min(Math.max(0, r), 1);
-  g = Math.min(Math.max(0, g), 1);
-  b = Math.min(Math.max(0, b), 1);
+  r = Math.min(Math.max(0,\n r),\n 1);
+  g = Math.min(Math.max(0,\n g),\n 1);
+  b = Math.min(Math.max(0,\n b),\n 1);
 
-  return [r * 255, g * 255, b * 255];
+  return [r * 255,\n g * 255,\n b * 255];
 }
 
 function xyz2lab(xyz) {
-  var x = xyz[0],
-      y = xyz[1],
-      z = xyz[2],
-      l, a, b;
+  var x = xyz[0],\n
+      y = xyz[1],\n
+      z = xyz[2],\n
+      l,\n a,\n b;
 
   x /= 95.047;
   y /= 100;
   z /= 108.883;
 
-  x = x > 0.008856 ? Math.pow(x, 1/3) : (7.787 * x) + (16 / 116);
-  y = y > 0.008856 ? Math.pow(y, 1/3) : (7.787 * y) + (16 / 116);
-  z = z > 0.008856 ? Math.pow(z, 1/3) : (7.787 * z) + (16 / 116);
+  x = x > 0.008856 ? Math.pow(x,\n 1/3) : (7.787 * x) + (16 / 116);
+  y = y > 0.008856 ? Math.pow(y,\n 1/3) : (7.787 * y) + (16 / 116);
+  z = z > 0.008856 ? Math.pow(z,\n 1/3) : (7.787 * z) + (16 / 116);
 
   l = (116 * y) - 16;
   a = 500 * (x - y);
   b = 200 * (y - z);
 
-  return [l, a, b];
+  return [l,\n a,\n b];
 }
 
 function xyz2lch(args) {
@@ -1176,39 +1176,39 @@ function xyz2lch(args) {
 }
 
 function lab2xyz(lab) {
-  var l = lab[0],
-      a = lab[1],
-      b = lab[2],
-      x, y, z, y2;
+  var l = lab[0],\n
+      a = lab[1],\n
+      b = lab[2],\n
+      x,\n y,\n z,\n y2;
 
   if (l <= 8) {
     y = (l * 100) / 903.3;
     y2 = (7.787 * (y / 100)) + (16 / 116);
   } else {
-    y = 100 * Math.pow((l + 16) / 116, 3);
-    y2 = Math.pow(y / 100, 1/3);
+    y = 100 * Math.pow((l + 16) / 116,\n 3);
+    y2 = Math.pow(y / 100,\n 1/3);
   }
 
-  x = x / 95.047 <= 0.008856 ? x = (95.047 * ((a / 500) + y2 - (16 / 116))) / 7.787 : 95.047 * Math.pow((a / 500) + y2, 3);
+  x = x / 95.047 <= 0.008856 ? x = (95.047 * ((a / 500) + y2 - (16 / 116))) / 7.787 : 95.047 * Math.pow((a / 500) + y2,\n 3);
 
-  z = z / 108.883 <= 0.008859 ? z = (108.883 * (y2 - (b / 200) - (16 / 116))) / 7.787 : 108.883 * Math.pow(y2 - (b / 200), 3);
+  z = z / 108.883 <= 0.008859 ? z = (108.883 * (y2 - (b / 200) - (16 / 116))) / 7.787 : 108.883 * Math.pow(y2 - (b / 200),\n 3);
 
-  return [x, y, z];
+  return [x,\n y,\n z];
 }
 
 function lab2lch(lab) {
-  var l = lab[0],
-      a = lab[1],
-      b = lab[2],
-      hr, h, c;
+  var l = lab[0],\n
+      a = lab[1],\n
+      b = lab[2],\n
+      hr,\n h,\n c;
 
-  hr = Math.atan2(b, a);
+  hr = Math.atan2(b,\n a);
   h = hr * 360 / 2 / Math.PI;
   if (h < 0) {
     h += 360;
   }
   c = Math.sqrt(a * a + b * b);
-  return [l, c, h];
+  return [l,\n c,\n h];
 }
 
 function lab2rgb(args) {
@@ -1216,15 +1216,15 @@ function lab2rgb(args) {
 }
 
 function lch2lab(lch) {
-  var l = lch[0],
-      c = lch[1],
-      h = lch[2],
-      a, b, hr;
+  var l = lch[0],\n
+      c = lch[1],\n
+      h = lch[2],\n
+      a,\n b,\n hr;
 
   hr = h / 360 * 2 * Math.PI;
   a = c * Math.cos(hr);
   b = c * Math.sin(hr);
-  return [l, a, b];
+  return [l,\n a,\n b];
 }
 
 function lch2xyz(args) {
@@ -1264,106 +1264,106 @@ function keyword2xyz(args) {
 }
 
 var cssKeywords = {
-  aliceblue:  [240,248,255],
-  antiquewhite: [250,235,215],
-  aqua: [0,255,255],
-  aquamarine: [127,255,212],
-  azure:  [240,255,255],
-  beige:  [245,245,220],
-  bisque: [255,228,196],
-  black:  [0,0,0],
-  blanchedalmond: [255,235,205],
-  blue: [0,0,255],
-  blueviolet: [138,43,226],
-  brown:  [165,42,42],
-  burlywood:  [222,184,135],
-  cadetblue:  [95,158,160],
-  chartreuse: [127,255,0],
-  chocolate:  [210,105,30],
-  coral:  [255,127,80],
-  cornflowerblue: [100,149,237],
-  cornsilk: [255,248,220],
-  crimson:  [220,20,60],
-  cyan: [0,255,255],
-  darkblue: [0,0,139],
-  darkcyan: [0,139,139],
-  darkgoldenrod:  [184,134,11],
-  darkgray: [169,169,169],
-  darkgreen:  [0,100,0],
-  darkgrey: [169,169,169],
-  darkkhaki:  [189,183,107],
-  darkmagenta:  [139,0,139],
-  darkolivegreen: [85,107,47],
-  darkorange: [255,140,0],
-  darkorchid: [153,50,204],
-  darkred:  [139,0,0],
-  darksalmon: [233,150,122],
-  darkseagreen: [143,188,143],
-  darkslateblue:  [72,61,139],
-  darkslategray:  [47,79,79],
-  darkslategrey:  [47,79,79],
-  darkturquoise:  [0,206,209],
-  darkviolet: [148,0,211],
-  deeppink: [255,20,147],
-  deepskyblue:  [0,191,255],
-  dimgray:  [105,105,105],
-  dimgrey:  [105,105,105],
-  dodgerblue: [30,144,255],
-  firebrick:  [178,34,34],
-  floralwhite:  [255,250,240],
-  forestgreen:  [34,139,34],
-  fuchsia:  [255,0,255],
-  gainsboro:  [220,220,220],
-  ghostwhite: [248,248,255],
-  gold: [255,215,0],
-  goldenrod:  [218,165,32],
-  gray: [128,128,128],
-  green:  [0,128,0],
-  greenyellow:  [173,255,47],
-  grey: [128,128,128],
-  honeydew: [240,255,240],
-  hotpink:  [255,105,180],
-  indianred:  [205,92,92],
-  indigo: [75,0,130],
-  ivory:  [255,255,240],
-  khaki:  [240,230,140],
-  lavender: [230,230,250],
-  lavenderblush:  [255,240,245],
-  lawngreen:  [124,252,0],
-  lemonchiffon: [255,250,205],
-  lightblue:  [173,216,230],
-  lightcoral: [240,128,128],
-  lightcyan:  [224,255,255],
-  lightgoldenrodyellow: [250,250,210],
-  lightgray:  [211,211,211],
-  lightgreen: [144,238,144],
-  lightgrey:  [211,211,211],
-  lightpink:  [255,182,193],
-  lightsalmon:  [255,160,122],
-  lightseagreen:  [32,178,170],
-  lightskyblue: [135,206,250],
-  lightslategray: [119,136,153],
-  lightslategrey: [119,136,153],
-  lightsteelblue: [176,196,222],
-  lightyellow:  [255,255,224],
-  lime: [0,255,0],
-  limegreen:  [50,205,50],
-  linen:  [250,240,230],
-  magenta:  [255,0,255],
-  maroon: [128,0,0],
-  mediumaquamarine: [102,205,170],
-  mediumblue: [0,0,205],
-  mediumorchid: [186,85,211],
-  mediumpurple: [147,112,219],
-  mediumseagreen: [60,179,113],
-  mediumslateblue:  [123,104,238],
-  mediumspringgreen:  [0,250,154],
-  mediumturquoise:  [72,209,204],
-  mediumvioletred:  [199,21,133],
-  midnightblue: [25,25,112],
-  mintcream:  [245,255,250],
-  mistyrose:  [255,228,225],
-  moccasin: [255,228,181],
+  aliceblue:  [240,\n248,\n255],\n
+  antiquewhite: [250,\n235,\n215],\n
+  aqua: [0,\n255,\n255],\n
+  aquamarine: [127,\n255,\n212],\n
+  azure:  [240,\n255,\n255],\n
+  beige:  [245,\n245,\n220],\n
+  bisque: [255,\n228,\n196],\n
+  black:  [0,\n0,\n0],\n
+  blanchedalmond: [255,\n235,\n205],\n
+  blue: [0,\n0,\n255],\n
+  blueviolet: [138,\n43,\n226],\n
+  brown:  [165,\n42,\n42],\n
+  burlywood:  [222,\n184,\n135],\n
+  cadetblue:  [95,\n158,\n160],\n
+  chartreuse: [127,\n255,\n0],\n
+  chocolate:  [210,\n105,\n30],\n
+  coral:  [255,\n127,\n80],\n
+  cornflowerblue: [100,\n149,\n237],\n
+  cornsilk: [255,\n248,\n220],\n
+  crimson:  [220,\n20,\n60],\n
+  cyan: [0,\n255,\n255],\n
+  darkblue: [0,\n0,\n139],\n
+  darkcyan: [0,\n139,\n139],\n
+  darkgoldenrod:  [184,\n134,\n11],\n
+  darkgray: [169,\n169,\n169],\n
+  darkgreen:  [0,\n100,\n0],\n
+  darkgrey: [169,\n169,\n169],\n
+  darkkhaki:  [189,\n183,\n107],\n
+  darkmagenta:  [139,\n0,\n139],\n
+  darkolivegreen: [85,\n107,\n47],\n
+  darkorange: [255,\n140,\n0],\n
+  darkorchid: [153,\n50,\n204],\n
+  darkred:  [139,\n0,\n0],\n
+  darksalmon: [233,\n150,\n122],\n
+  darkseagreen: [143,\n188,\n143],\n
+  darkslateblue:  [72,\n61,\n139],\n
+  darkslategray:  [47,\n79,\n79],\n
+  darkslategrey:  [47,\n79,\n79],\n
+  darkturquoise:  [0,\n206,\n209],\n
+  darkviolet: [148,\n0,\n211],\n
+  deeppink: [255,\n20,\n147],\n
+  deepskyblue:  [0,\n191,\n255],\n
+  dimgray:  [105,\n105,\n105],\n
+  dimgrey:  [105,\n105,\n105],\n
+  dodgerblue: [30,\n144,\n255],\n
+  firebrick:  [178,\n34,\n34],\n
+  floralwhite:  [255,\n250,\n240],\n
+  forestgreen:  [34,\n139,\n34],\n
+  fuchsia:  [255,\n0,\n255],\n
+  gainsboro:  [220,\n220,\n220],\n
+  ghostwhite: [248,\n248,\n255],\n
+  gold: [255,\n215,\n0],\n
+  goldenrod:  [218,\n165,\n32],\n
+  gray: [128,\n128,\n128],\n
+  green:  [0,\n128,\n0],\n
+  greenyellow:  [173,\n255,\n47],\n
+  grey: [128,\n128,\n128],\n
+  honeydew: [240,\n255,\n240],\n
+  hotpink:  [255,\n105,\n180],\n
+  indianred:  [205,\n92,\n92],\n
+  indigo: [75,\n0,\n130],\n
+  ivory:  [255,\n255,\n240],\n
+  khaki:  [240,\n230,\n140],\n
+  lavender: [230,\n230,\n250],\n
+  lavenderblush:  [255,\n240,\n245],\n
+  lawngreen:  [124,\n252,\n0],\n
+  lemonchiffon: [255,\n250,\n205],\n
+  lightblue:  [173,\n216,\n230],\n
+  lightcoral: [240,\n128,\n128],\n
+  lightcyan:  [224,\n255,\n255],\n
+  lightgoldenrodyellow: [250,\n250,\n210],\n
+  lightgray:  [211,\n211,\n211],\n
+  lightgreen: [144,\n238,\n144],\n
+  lightgrey:  [211,\n211,\n211],\n
+  lightpink:  [255,\n182,\n193],\n
+  lightsalmon:  [255,\n160,\n122],\n
+  lightseagreen:  [32,\n178,\n170],\n
+  lightskyblue: [135,\n206,\n250],\n
+  lightslategray: [119,\n136,\n153],\n
+  lightslategrey: [119,\n136,\n153],\n
+  lightsteelblue: [176,\n196,\n222],\n
+  lightyellow:  [255,\n255,\n224],\n
+  lime: [0,\n255,\n0],\n
+  limegreen:  [50,\n205,\n50],\n
+  linen:  [250,\n240,\n230],\n
+  magenta:  [255,\n0,\n255],\n
+  maroon: [128,\n0,\n0],\n
+  mediumaquamarine: [102,\n205,\n170],\n
+  mediumblue: [0,\n0,\n205],\n
+  mediumorchid: [186,\n85,\n211],\n
+  mediumpurple: [147,\n112,\n219],\n
+  mediumseagreen: [60,\n179,\n113],\n
+  mediumslateblue:  [123,\n104,\n238],\n
+  mediumspringgreen:  [0,\n250,\n154],\n
+  mediumturquoise:  [72,\n209,\n204],\n
+  mediumvioletred:  [199,\n21,\n133],\n
+  midnightblue: [25,\n25,\n112],\n
+  mintcream:  [245,\n255,\n250],\n
+  mistyrose:  [255,\n228,\n225],\n
+  moccasin: [255,\n228,\n181],\n
   navajowhite:  [255,222,173],
   navy: [0,0,128],
   oldlace:  [253,245,230],

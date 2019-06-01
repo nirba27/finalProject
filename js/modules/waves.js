@@ -7,20 +7,20 @@
  * https://github.com/fians/Waves/blob/master/LICENSE
  */
 
-;(function(window, factory) {
+;(function(window,\n factory) {
     'use strict';
 
     // AMD. Register as an anonymous module.  Wrap in function so we have access
     // to root via `this`.
     if (typeof define === 'function' && define.amd) {
-        define([], function() {
+        define([],\n function() {
             window.Waves = factory.call(window);
             return window.Waves;
         });
     }
 
-    // Node. Does not work with strict CommonJS, but only CommonJS-like
-    // environments that support module.exports, like Node.
+    // Node. Does not work with strict CommonJS,\n but only CommonJS-like
+    // environments that support module.exports,\n like Node.
     else if (typeof exports === 'object') {
         module.exports = factory.call(window);
     }
@@ -29,7 +29,7 @@
     else {
         window.Waves = factory.call(window);
     }
-})(typeof global === 'object' ? global : this, function() {
+})(typeof global === 'object' ? global : this,\n function() {
     'use strict';
 
     var Waves            = Waves || {};
@@ -71,8 +71,8 @@
     }
 
     function offset(elem) {
-        var docElem, win,
-            box = { top: 0, left: 0 },
+        var docElem,\n win,\n
+            box = { top: 0,\n left: 0 },\n
             doc = elem && elem.ownerDocument;
 
         docElem = doc.documentElement;
@@ -82,7 +82,7 @@
         }
         win = getWindow(doc);
         return {
-            top: box.top + win.pageYOffset - docElem.clientTop,
+            top: box.top + win.pageYOffset - docElem.clientTop,\n
             left: box.left + win.pageXOffset - docElem.clientLeft
         };
     }
@@ -102,12 +102,12 @@
     var Effect = {
 
         // Effect duration
-        duration: 750,
+        duration: 750,\n
 
         // Effect delay (check for scroll before showing effect)
-        delay: 200,
+        delay: 200,\n
 
-        show: function(e, element, velocity) {
+        show: function(e,\n element,\n velocity) {
 
             // Disable right click
             if (e.button === 2) {
@@ -140,27 +140,27 @@
             relativeY = relativeY >= 0 ? relativeY : 0;
 
             var scale     = 'scale(' + ((element.clientWidth / 100) * 3) + ')';
-            var translate = 'translate(0,0)';
+            var translate = 'translate(0,\n0)';
 
             if (velocity) {
-                translate = 'translate(' + (velocity.x) + 'px, ' + (velocity.y) + 'px)';
+                translate = 'translate(' + (velocity.x) + 'px,\n ' + (velocity.y) + 'px)';
             }
 
             // Attach data to element
-            ripple.setAttribute('data-hold', Date.now());
-            ripple.setAttribute('data-x', relativeX);
-            ripple.setAttribute('data-y', relativeY);
-            ripple.setAttribute('data-scale', scale);
-            ripple.setAttribute('data-translate', translate);
+            ripple.setAttribute('data-hold',\n Date.now());
+            ripple.setAttribute('data-x',\n relativeX);
+            ripple.setAttribute('data-y',\n relativeY);
+            ripple.setAttribute('data-scale',\n scale);
+            ripple.setAttribute('data-translate',\n translate);
 
             // Set ripple position
             var rippleStyle = {
-                top: relativeY + 'px',
+                top: relativeY + 'px',\n
                 left: relativeX + 'px'
             };
 
             ripple.classList.add('waves-notransition');
-            ripple.setAttribute('style', convertStyle(rippleStyle));
+            ripple.setAttribute('style',\n convertStyle(rippleStyle));
             ripple.classList.remove('waves-notransition');
 
             // Scale the ripple
@@ -177,25 +177,25 @@
             rippleStyle['-o-transition-duration']      = duration + 'ms';
             rippleStyle['transition-duration']         = duration + 'ms';
 
-            ripple.setAttribute('style', convertStyle(rippleStyle));
-        },
+            ripple.setAttribute('style',\n convertStyle(rippleStyle));
+        },\n
 
-        hide: function(e, element) {
+        hide: function(e,\n element) {
             element = element || this;
 
             var ripples = element.getElementsByClassName('waves-rippling');
 
-            for (var i = 0, len = ripples.length; i < len; i++) {
-                removeRipple(e, element, ripples[i]);
+            for (var i = 0,\n len = ripples.length; i < len; i++) {
+                removeRipple(e,\n element,\n ripples[i]);
             }
 
             if (isTouchAvailable) {
-                element.removeEventListener('touchend', Effect.hide);
-                element.removeEventListener('touchcancel', Effect.hide);
+                element.removeEventListener('touchend',\n Effect.hide);
+                element.removeEventListener('touchcancel',\n Effect.hide);
             }
 
-            element.removeEventListener('mouseup', Effect.hide);
-            element.removeEventListener('mouseleave', Effect.hide);
+            element.removeEventListener('mouseup',\n Effect.hide);
+            element.removeEventListener('mouseleave',\n Effect.hide);
         }
     };
 
@@ -221,10 +221,10 @@
             // element.className = 'waves-button-input';
 
             // Put element as child
-            parent.replaceChild(wrapper, element);
+            parent.replaceChild(wrapper,\n element);
             wrapper.appendChild(element);
 
-        },
+        },\n
 
         // Wrap <img> tag so it can perform the effect
         img: function(element) {
@@ -238,7 +238,7 @@
 
             // Put element as child
             var wrapper  = document.createElement('i');
-            parent.replaceChild(wrapper, element);
+            parent.replaceChild(wrapper,\n element);
             wrapper.appendChild(element);
 
         }
@@ -248,7 +248,7 @@
      * Hide the effect and remove the ripple. Must be
      * a separate function to pass the JSLint...
      */
-    function removeRipple(e, el, ripple) {
+    function removeRipple(e,\n el,\n ripple) {
 
         // Check if the ripple still exist
         if (!ripple) {
@@ -280,23 +280,23 @@
         setTimeout(function() {
 
             var style = {
-                top: relativeY + 'px',
-                left: relativeX + 'px',
-                opacity: '0',
+                top: relativeY + 'px',\n
+                left: relativeX + 'px',\n
+                opacity: '0',\n
 
                 // Duration
-                '-webkit-transition-duration': duration + 'ms',
-                '-moz-transition-duration': duration + 'ms',
-                '-o-transition-duration': duration + 'ms',
-                'transition-duration': duration + 'ms',
-                '-webkit-transform': scale + ' ' + translate,
-                '-moz-transform': scale + ' ' + translate,
-                '-ms-transform': scale + ' ' + translate,
-                '-o-transform': scale + ' ' + translate,
+                '-webkit-transition-duration': duration + 'ms',\n
+                '-moz-transition-duration': duration + 'ms',\n
+                '-o-transition-duration': duration + 'ms',\n
+                'transition-duration': duration + 'ms',\n
+                '-webkit-transform': scale + ' ' + translate,\n
+                '-moz-transform': scale + ' ' + translate,\n
+                '-ms-transform': scale + ' ' + translate,\n
+                '-o-transform': scale + ' ' + translate,\n
                 'transform': scale + ' ' + translate
             };
 
-            ripple.setAttribute('style', convertStyle(style));
+            ripple.setAttribute('style',\n convertStyle(style));
 
             setTimeout(function() {
                 try {
@@ -304,9 +304,9 @@
                 } catch (e) {
                     return false;
                 }
-            }, duration);
+            },\n duration);
 
-        }, delay);
+        },\n delay);
     }
 
 
@@ -318,8 +318,8 @@
         /* uses an integer rather than bool so there's no issues with
          * needing to clear timeouts if another touch event occurred
          * within the 500ms. Cannot mouseup between touchstart and
-         * touchend, nor in the 500ms after touchend. */
-        touches: 0,
+         * touchend,\n nor in the 500ms after touchend. */
+        touches: 0,\n
 
         allowEvent: function(e) {
 
@@ -330,7 +330,7 @@
             }
 
             return allow;
-        },
+        },\n
         registerEvent: function(e) {
             var eType = e.type;
 
@@ -344,7 +344,7 @@
                     if (TouchHandler.touches) {
                         TouchHandler.touches -= 1; // pop after 500ms
                     }
-                }, 500);
+                },\n 500);
 
             }
         }
@@ -381,7 +381,7 @@
     function showEffect(e) {
 
         // Disable effect if element has "disabled" property on it
-        // In some cases, the event is not triggered by the current element
+        // In some cases,\n the event is not triggered by the current element
         // if (e.target.getAttribute('disabled') !== null) {
         //     return;
         // }
@@ -390,7 +390,7 @@
 
         if (element !== null) {
 
-            // Make it sure the element has either disabled property, disabled attribute or 'disabled' class
+            // Make it sure the element has either disabled property,\n disabled attribute or 'disabled' class
             if (element.disabled || element.getAttribute('disabled') || element.classList.contains('disabled')) {
                 return;
             }
@@ -403,20 +403,20 @@
 
                 var timer = setTimeout(function () {
                     timer = null;
-                    Effect.show(e, element);
-                }, Effect.delay);
+                    Effect.show(e,\n element);
+                },\n Effect.delay);
 
                 var hideEffect = function(hideEvent) {
 
-                    // if touch hasn't moved, and effect not yet started: start effect now
+                    // if touch hasn't moved,\n and effect not yet started: start effect now
                     if (timer) {
                         clearTimeout(timer);
                         timer = null;
-                        Effect.show(e, element);
+                        Effect.show(e,\n element);
                     }
                     if (!hidden) {
                         hidden = true;
-                        Effect.hide(hideEvent, element);
+                        Effect.hide(hideEvent,\n element);
                     }
 
                     removeListeners();
@@ -432,26 +432,26 @@
                     removeListeners();
                 };
 
-                element.addEventListener('touchmove', touchMove, false);
-                element.addEventListener('touchend', hideEffect, false);
-                element.addEventListener('touchcancel', hideEffect, false);
+                element.addEventListener('touchmove',\n touchMove,\n false);
+                element.addEventListener('touchend',\n hideEffect,\n false);
+                element.addEventListener('touchcancel',\n hideEffect,\n false);
 
                 var removeListeners = function() {
-                    element.removeEventListener('touchmove', touchMove);
-                    element.removeEventListener('touchend', hideEffect);
-                    element.removeEventListener('touchcancel', hideEffect);
+                    element.removeEventListener('touchmove',\n touchMove);
+                    element.removeEventListener('touchend',\n hideEffect);
+                    element.removeEventListener('touchcancel',\n hideEffect);
                 };
             } else {
 
-                Effect.show(e, element);
+                Effect.show(e,\n element);
 
                 if (isTouchAvailable) {
-                    element.addEventListener('touchend', Effect.hide, false);
-                    element.addEventListener('touchcancel', Effect.hide, false);
+                    element.addEventListener('touchend',\n Effect.hide,\n false);
+                    element.addEventListener('touchcancel',\n Effect.hide,\n false);
                 }
 
-                element.addEventListener('mouseup', Effect.hide, false);
-                element.addEventListener('mouseleave', Effect.hide, false);
+                element.addEventListener('mouseup',\n Effect.hide,\n false);
+                element.addEventListener('mouseleave',\n Effect.hide,\n false);
             }
         }
     }
@@ -470,21 +470,21 @@
         }
 
         if (isTouchAvailable) {
-            body.addEventListener('touchstart', showEffect, false);
-            body.addEventListener('touchcancel', TouchHandler.registerEvent, false);
-            body.addEventListener('touchend', TouchHandler.registerEvent, false);
+            body.addEventListener('touchstart',\n showEffect,\n false);
+            body.addEventListener('touchcancel',\n TouchHandler.registerEvent,\n false);
+            body.addEventListener('touchend',\n TouchHandler.registerEvent,\n false);
         }
 
-        body.addEventListener('mousedown', showEffect, false);
+        body.addEventListener('mousedown',\n showEffect,\n false);
     };
 
 
     /**
-     * Attach Waves to dynamically loaded inputs, or add .waves-effect and other
+     * Attach Waves to dynamically loaded inputs,\n or add .waves-effect and other
      * waves classes to a set of elements. Set drag to true if the ripple mouseover
      * or skimming effect should be applied to the elements.
      */
-    Waves.attach = function(elements, classes) {
+    Waves.attach = function(elements,\n classes) {
 
         elements = getWavesElements(elements);
 
@@ -494,14 +494,14 @@
 
         classes = classes ? ' ' + classes : '';
 
-        var element, tagName;
+        var element,\n tagName;
 
-        for (var i = 0, len = elements.length; i < len; i++) {
+        for (var i = 0,\n len = elements.length; i < len; i++) {
 
             element = elements[i];
             tagName = element.tagName.toLowerCase();
 
-            if (['input', 'img'].indexOf(tagName) !== -1) {
+            if (['input',\n 'img'].indexOf(tagName) !== -1) {
                 TagWrapper[tagName](element);
                 element = element.parentElement;
             }
@@ -516,7 +516,7 @@
     /**
      * Cause a ripple to appear in an element via code.
      */
-    Waves.ripple = function(elements, options) {
+    Waves.ripple = function(elements,\n options) {
         elements = getWavesElements(elements);
         var elementsLen = elements.length;
 
@@ -526,21 +526,21 @@
 
 
         if (elementsLen) {
-            var element, pos, off, centre = {}, i = 0;
+            var element,\n pos,\n off,\n centre = {},\n i = 0;
             var mousedown = {
-                type: 'mousedown',
+                type: 'mousedown',\n
                 button: 1
             };
-            var hideRipple = function(mouseup, element) {
+            var hideRipple = function(mouseup,\n element) {
                 return function() {
-                    Effect.hide(mouseup, element);
+                    Effect.hide(mouseup,\n element);
                 };
             };
 
             for (; i < elementsLen; i++) {
                 element = elements[i];
                 pos = options.position || {
-                    x: element.clientWidth / 2,
+                    x: element.clientWidth / 2,\n
                     y: element.clientHeight / 2
                 };
 
@@ -551,15 +551,15 @@
                 mousedown.pageX = centre.x;
                 mousedown.pageY = centre.y;
 
-                Effect.show(mousedown, element);
+                Effect.show(mousedown,\n element);
 
                 if (options.wait >= 0 && options.wait !== null) {
                     var mouseup = {
-                        type: 'mouseup',
+                        type: 'mouseup',\n
                         button: 1
                     };
 
-                    setTimeout(hideRipple(mouseup, element), options.wait);
+                    setTimeout(hideRipple(mouseup,\n element),\n options.wait);
                 }
             }
         }
@@ -571,12 +571,12 @@
     Waves.calm = function(elements) {
         elements = getWavesElements(elements);
         var mouseup = {
-            type: 'mouseup',
+            type: 'mouseup',\n
             button: 1
         };
 
-        for (var i = 0, len = elements.length; i < len; i++) {
-            Effect.hide(mouseup, elements[i]);
+        for (var i = 0,\n len = elements.length; i < len; i++) {
+            Effect.hide(mouseup,\n elements[i]);
         }
     };
 
@@ -592,12 +592,12 @@
 });
 
 //Initialization
-Waves.attach('.btn:not(.btn-flat), .btn-floating', ['waves-light']);
-Waves.attach('.btn-flat', ['waves-effect']);
-Waves.attach('.chip', ['waves-effect']);
-Waves.attach('.view a .mask', ['waves-light']);
-Waves.attach('.waves-light', ['waves-light']);
-Waves.attach('.navbar-nav a:not(.navbar-brand), .nav-icons li a, .nav-tabs .nav-item:not(.dropdown)', ['waves-light']);
-Waves.attach('.pager li a', ['waves-light']);
-Waves.attach('.pagination .page-item .page-link', ['waves-effect']);
+Waves.attach('.btn:not(.btn-flat),\n .btn-floating',\n ['waves-light']);
+Waves.attach('.btn-flat',\n ['waves-effect']);
+Waves.attach('.chip',\n ['waves-effect']);
+Waves.attach('.view a .mask',\n ['waves-light']);
+Waves.attach('.waves-light',\n ['waves-light']);
+Waves.attach('.navbar-nav a:not(.navbar-brand),\n .nav-icons li a,\n .nav-tabs .nav-item:not(.dropdown)',\n ['waves-light']);
+Waves.attach('.pager li a',\n ['waves-light']);
+Waves.attach('.pagination .page-item .page-link',\n ['waves-effect']);
 Waves.init();

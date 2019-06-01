@@ -1,179 +1,178 @@
 {
-  "ditems": [{"type": "ditem", "name": "0000000ef3e1", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000ef3e1", "links": ["Animated", "Comedy", "Children", "Adventure"]}, {"type": "DVR", "name": "000000033b0c", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "000000033b0c", "links": ["Children", "Educational", "Talk", "Animated"]}, {"type": "DVR", "name": "0000000a5c0b", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000a5c0b", "links": ["Shopping", "Music", "News", "Musical"]}, {"type": "DVR", "name": "0000001093cd", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000001093cd", "links": ["Sports non-event", "News", "Sports talk", "Children"]}, {"type": "DVR", "name": "0000001296d5", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000001296d5", "links": ["Children", "Comedy", "Fantasy", "Animated"]}, {"type": "DVR", "name": "144223", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "144223", "links": []}, {"type": "DVR", "name": "33403", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "33403", "links": []}, {"type": "DVR", "name": "00000007a069", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000007a069", "links": ["Children", "Animated", "Sports non-event", "News"]}, {"type": "DVR", "name": "0000000eed65", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000eed65", "links": ["Children", "Comedy", "Fantasy", "Animated"]}, {"type": "DVR", "name": "0000000a56b0", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000a56b0", "links": ["Animated", "Children", "Comedy", "Religious"]}, {"type": "DVR", "name": "0000000eeb32", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000eeb32", "links": ["Animated", "Sitcom", "Children", "Comedy"]}, {"type": "DVR", "name": "0000000cad13", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000cad13", "links": ["Animated", "Children", "Educational", "Comedy"]}, {"type": "DVR", "name": "00000019552d", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000019552d", "links": ["Sitcom", "Animated", "Travel", "Cooking"]}, {"type": "DVR", "name": "00000019469a", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000019469a", "links": ["Animated", "Sitcom", "Children", "Reality"]}, {"type": "DVR", "name": "00000004efe1", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000004efe1", "links": ["", "Animated", "Adventure", "Children"]}, {"type": "DVR", "name": "00000004ea77", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000004ea77", "links": ["Comedy", "Reality", "Special", "Documentary"]}, {"type": "DVR", "name": "0000000e51b8", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000e51b8", "links": ["Children", "Reality", "Animated", "Comedy"]}, {"type": "DVR", "name": "000000144c0c", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "000000144c0c", "links": ["Sitcom", "Reality", "Animated", "Cooking"]}, {"type": "DVR", "name": "0000001095d5", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000001095d5", "links": ["Animated", "Comedy", "Sitcom", "Children"]}, {"type": "DVR", "name": "00000017af1a", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000017af1a", "links": ["Animated", "Comedy", "Football", "Sitcom"]}, {"type": "DVR", "name": "0000000a049f", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "0000000a049f", "links": ["Consumer", "", "Adventure", "Children"]}, {"type": "DVR", "name": "8260", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "8260", "links": []}, {"type": "DVR", "name": "00000005332c", "description": "Desc", "ditem": 0
-  , "date": "2012-05-05 23:50:11", "slug": "00000005332c", "links": ["Reality", "Sports non-event", "Romance", "Outdoors"]}],
-  "themes": [{"type": "theme", "name": "Animated", "desc": "", "slug": "Animated"}, {"type": "theme", "name": "Comedy", "desc": "", "slug": "Comedy"},
-    {"type": "theme", "name": "Children", "desc": "", "slug": "Children"},
-    {"type": "theme", "name": "Adventure", "desc": "", "slug": "Adventure"},
-    {"type": "theme", "name": "Educational", "desc": "", "slug": "Educational"},
-    {"type": "theme", "name": "Talk", "desc": "", "slug": "Talk"},
-    {"type": "theme", "name": "Shopping", "desc": "", "slug": "Shopping"},
-    {"type": "theme", "name": "Music", "desc": "", "slug": "Music"},
-    {"type": "theme", "name": "News", "desc": "", "slug": "News"},
-    {"type": "theme", "name": "Musical", "desc": "", "slug": "Musical"},
-    {"type": "theme", "name": "Sports non-event", "desc": "", "slug": "Sports non-event"},
-    {"type": "theme", "name": "Sports talk", "desc": "", "slug": "Sports talk"},
-    {"type": "theme", "name": "Fantasy", "desc": "", "slug": "Fantasy"},
-    {"type": "theme", "name": "Religious", "desc": "", "slug": "Religious"},
-    {"type": "theme", "name": "Sitcom", "desc": "", "slug": "Sitcom"},
-    {"type": "theme", "name": "Travel", "desc": "", "slug": "Travel"},
-    {"type": "theme", "name": "Cooking", "desc": "", "slug": "Cooking"},
-    {"type": "theme", "name": "Reality", "desc": "", "slug": "Reality"},
-    {"type": "theme", "name": "", "desc": "", "slug": ""},
-    {"type": "theme", "name": "Special", "desc": "", "slug": "Special"},
-    {"type": "theme", "name": "Documentary", "desc": "", "slug": "Documentary"},
-    {"type": "theme", "name": "Football", "desc": "", "slug": "Football"},
-    {"type": "theme", "name": "Consumer", "desc": "", "slug": "Consumer"},
-    {"type": "theme", "name": "Romance", "desc": "", "slug": "Romance"},
-    {"type": "theme", "name": "Outdoors", "desc": "", "slug": "Outdoors"}],
+  "ditems": [{"type": "ditem",\n "name": "0000000ef3e1",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000ef3e1",\n "links": ["Animated",\n "Comedy",\n "Children",\n "Adventure"]},\n {"type": "DVR",\n "name": "000000033b0c",\n "description": "Desc",\n "ditem": 0,\n "date": "2012-05-05 23:50:11",\n "slug": "000000033b0c",\n "links": ["Children",\n "Educational",\n "Talk",\n "Animated"]},\n {"type": "DVR",\n "name": "0000000a5c0b",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000a5c0b",\n "links": ["Shopping",\n "Music",\n "News",\n "Musical"]},\n {"type": "DVR",\n "name": "0000001093cd",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000001093cd",\n "links": ["Sports non-event",\n "News",\n "Sports talk",\n "Children"]},\n {"type": "DVR",\n "name": "0000001296d5",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000001296d5",\n "links": ["Children",\n "Comedy",\n "Fantasy",\n "Animated"]},\n {"type": "DVR",\n "name": "144223",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "144223",\n "links": []},\n {"type": "DVR",\n "name": "33403",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "33403",\n "links": []},\n {"type": "DVR",\n "name": "00000007a069",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000007a069",\n "links": ["Children",\n "Animated",\n "Sports non-event",\n "News"]},\n {"type": "DVR",\n "name": "0000000eed65",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000eed65",\n "links": ["Children",\n "Comedy",\n "Fantasy",\n "Animated"]},\n {"type": "DVR",\n "name": "0000000a56b0",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000a56b0",\n "links": ["Animated",\n "Children",\n "Comedy",\n "Religious"]},\n {"type": "DVR",\n "name": "0000000eeb32",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000eeb32",\n "links": ["Animated",\n "Sitcom",\n "Children",\n "Comedy"]},\n {"type": "DVR",\n "name": "0000000cad13",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000cad13",\n "links": ["Animated",\n "Children",\n "Educational",\n "Comedy"]},\n {"type": "DVR",\n "name": "00000019552d",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000019552d",\n "links": ["Sitcom",\n "Animated",\n "Travel",\n "Cooking"]},\n {"type": "DVR",\n "name": "00000019469a",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000019469a",\n "links": ["Animated",\n "Sitcom",\n "Children",\n "Reality"]},\n {"type": "DVR",\n "name": "00000004efe1",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000004efe1",\n "links": ["",\n "Animated",\n "Adventure",\n "Children"]},\n {"type": "DVR",\n "name": "00000004ea77",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000004ea77",\n "links": ["Comedy",\n "Reality",\n "Special",\n "Documentary"]},\n {"type": "DVR",\n "name": "0000000e51b8",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000e51b8",\n "links": ["Children",\n "Reality",\n "Animated",\n "Comedy"]},\n {"type": "DVR",\n "name": "000000144c0c",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "000000144c0c",\n "links": ["Sitcom",\n "Reality",\n "Animated",\n "Cooking"]},\n {"type": "DVR",\n "name": "0000001095d5",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000001095d5",\n "links": ["Animated",\n "Comedy",\n "Sitcom",\n "Children"]},\n {"type": "DVR",\n "name": "00000017af1a",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000017af1a",\n "links": ["Animated",\n "Comedy",\n "Football",\n "Sitcom"]},\n {"type": "DVR",\n "name": "0000000a049f",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "0000000a049f",\n "links": ["Consumer",\n "",\n "Adventure",\n "Children"]},\n {"type": "DVR",\n "name": "8260",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "8260",\n "links": []},\n {"type": "DVR",\n "name": "00000005332c",\n "description": "Desc",\n "ditem": 0
+  ,\n "date": "2012-05-05 23:50:11",\n "slug": "00000005332c",\n "links": ["Reality",\n "Sports non-event",\n "Romance",\n "Outdoors"]}],\n
+  "themes": [{"type": "theme",\n "name": "Animated",\n "desc": "",\n "slug": "Animated"},\n {"type": "theme",\n "name": "Comedy",\n "desc": "",\n "slug": "Comedy"},\n
+    {"type": "theme",\n "name": "Children",\n "desc": "",\n "slug": "Children"},\n
+    {"type": "theme",\n "name": "Adventure",\n "desc": "",\n "slug": "Adventure"},\n
+    {"type": "theme",\n "name": "Educational",\n "desc": "",\n "slug": "Educational"},\n
+    {"type": "theme",\n "name": "Talk",\n "desc": "",\n "slug": "Talk"},\n
+    {"type": "theme",\n "name": "Shopping",\n "desc": "",\n "slug": "Shopping"},\n
+    {"type": "theme",\n "name": "Music",\n "desc": "",\n "slug": "Music"},\n
+    {"type": "theme",\n "name": "News",\n "desc": "",\n "slug": "News"},\n
+    {"type": "theme",\n "name": "Musical",\n "desc": "",\n "slug": "Musical"},\n
+    {"type": "theme",\n "name": "Sports non-event",\n "desc": "",\n "slug": "Sports non-event"},\n
+    {"type": "theme",\n "name": "Sports talk",\n "desc": "",\n "slug": "Sports talk"},\n
+    {"type": "theme",\n "name": "Fantasy",\n "desc": "",\n "slug": "Fantasy"},\n
+    {"type": "theme",\n "name": "Religious",\n "desc": "",\n "slug": "Religious"},\n
+    {"type": "theme",\n "name": "Sitcom",\n "desc": "",\n "slug": "Sitcom"},\n
+    {"type": "theme",\n "name": "Travel",\n "desc": "",\n "slug": "Travel"},\n
+    {"type": "theme",\n "name": "Cooking",\n "desc": "",\n "slug": "Cooking"},\n
+    {"type": "theme",\n "name": "Reality",\n "desc": "",\n "slug": "Reality"},\n
+    {"type": "theme",\n "name": "",\n "desc": "",\n "slug": ""},\n
+    {"type": "theme",\n "name": "Special",\n "desc": "",\n "slug": "Special"},\n
+    {"type": "theme",\n "name": "Documentary",\n "desc": "",\n "slug": "Documentary"},\n
+    {"type": "theme",\n "name": "Football",\n "desc": "",\n "slug": "Football"},\n
+    {"type": "theme",\n "name": "Consumer",\n "desc": "",\n "slug": "Consumer"},\n
+    {"type": "theme",\n "name": "Romance",\n "desc": "",\n "slug": "Romance"},\n
+    {"type": "theme",\n "name": "Outdoors",\n "desc": "",\n "slug": "Outdoors"}],\n
   "perspectives": [
     {
-      "type": "perspective",
-      "name": "Biocentric",
-      "description": "To varying degrees, these conversations treat human life as having <a href=\"http://en.wikipedia.org/wiki/Biocentrism_%28ethics%29\">similar or equal moral weight</a> to other life. We are also including broader-than-life value sources like <a href=\"http://en.wikipedia.org/wiki/Ecocentrism\">ecocentrism</a> in this category. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#anthropocentric\">anthropocentric</a>.",
-      "slug": "biocentric-value-source",
-      "count": "10",
+      "type": "perspective",\n
+      "name": "Biocentric",\n
+      "description": "To varying degrees,\n these conversations treat human life as having <a href=\"http://en.wikipedia.org/wiki/Biocentrism_%28ethics%29\">similar or equal moral weight</a> to other life. We are also including broader-than-life value sources like <a href=\"http://en.wikipedia.org/wiki/Ecocentrism\">ecocentrism</a> in this category. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#anthropocentric\">anthropocentric</a>.",\n
+      "slug": "biocentric-value-source",\n
+      "count": "10",\n
       "group": "281"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Anthropocentric",
-      "description": "To varying degrees, these conversations treat human life as having <a href=\"http://en.wikipedia.org/wiki/Anthropocentrism\">greater moral weight</a> than other life. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#biocentric\">biocentric</a>.",
-      "slug": "anthropocentric-value-source",
-      "count": "26",
+      "type": "perspective",\n
+      "name": "Anthropocentric",\n
+      "description": "To varying degrees,\n these conversations treat human life as having <a href=\"http://en.wikipedia.org/wiki/Anthropocentrism\">greater moral weight</a> than other life. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#biocentric\">biocentric</a>.",\n
+      "slug": "anthropocentric-value-source",\n
+      "count": "26",\n
       "group": "281"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Collectivist",
-      "description": "Every society attempts to balance individual freedom with collective good. These ditems feature conversations that suggest we have slid too far towards individualism and need to move towards the group. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#individualist\">individualist</a>.",
-      "slug": "collectivist",
-      "count": "21",
+      "type": "perspective",\n
+      "name": "Collectivist",\n
+      "description": "Every society attempts to balance individual freedom with collective good. These ditems feature conversations that suggest we have slid too far towards individualism and need to move towards the group. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#individualist\">individualist</a>.",\n
+      "slug": "collectivist",\n
+      "count": "21",\n
       "group": "284"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Individualist",
-      "description": "Every society attempts to balance personal freedom with collective good. These ditems feature conversations that suggest we have slid too far towards collectivism and need to push towards individualism. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#collectivist\">collectivist</a>.",
-      "slug": "individualist",
-      "count": "9",
+      "type": "perspective",\n
+      "name": "Individualist",\n
+      "description": "Every society attempts to balance personal freedom with collective good. These ditems feature conversations that suggest we have slid too far towards collectivism and need to push towards individualism. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#collectivist\">collectivist</a>.",\n
+      "slug": "individualist",\n
+      "count": "9",\n
       "group": "284"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Centralized",
-      "description": "These ditems feature interviewees who feel the problems they are discussing can be better addressed through centralized systems than localized ones. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#localized\">localized</a>.",
-      "slug": "centralized",
-      "count": "11",
+      "type": "perspective",\n
+      "name": "Centralized",\n
+      "description": "These ditems feature interviewees who feel the problems they are discussing can be better addressed through centralized systems than localized ones. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#localized\">localized</a>.",\n
+      "slug": "centralized",\n
+      "count": "11",\n
       "group": "287"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Localized",
-      "description": "These ditems feature interviewees who feel the problems they are discussing can be better addressed through localized systems than centralized ones. Antonym: <a>centralized</a>.",
-      "slug": "localized",
-      "count": "22",
+      "type": "perspective",\n
+      "name": "Localized",\n
+      "description": "These ditems feature interviewees who feel the problems they are discussing can be better addressed through localized systems than centralized ones. Antonym: <a>centralized</a>.",\n
+      "slug": "localized",\n
+      "count": "22",\n
       "group": "287"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Dualist",
-      "description": "These conversations contain suggestions that reality is composed of <a href=\"http://plato.stanford.edu/entries/dualism/\">more than physical material</a>, whether mind, soul, spirit, etc. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#physicalist\">physicalist</a>.",
-      "slug": "dualist",
-      "count": "17",
+      "type": "perspective",\n
+      "name": "Dualist",\n
+      "description": "These conversations contain suggestions that reality is composed of <a href=\"http://plato.stanford.edu/entries/dualism/\">more than physical material</a>,\n whether mind,\n soul,\n spirit,\n etc. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#physicalist\">physicalist</a>.",\n
+      "slug": "dualist",\n
+      "count": "17",\n
       "group": "290"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Physicalist",
-      "description": "These conversations contain suggestions that reality is composed entirely of <a href=\"http://plato.stanford.edu/entries/physicalism/\">physical elements</a>, typically (but not inherently) knowable and measurable. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#dualist\">dualist</a>.",
-      "slug": "physicalist-2",
-      "count": "15",
+      "type": "perspective",\n
+      "name": "Physicalist",\n
+      "description": "These conversations contain suggestions that reality is composed entirely of <a href=\"http://plato.stanford.edu/entries/physicalism/\">physical elements</a>,\n typically (but not inherently) knowable and measurable. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#dualist\">dualist</a>.",\n
+      "slug": "physicalist-2",\n
+      "count": "15",\n
       "group": "290"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Objectivist",
-      "description": "These conversations include a diverse array of thinkers who seem to suggest that there is an ultimately <a href=\"http://en.wikipedia.org/wiki/Objectivity_%28philosophy%29\">knowable reality</a> unaffected by our perception. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#subjectivist\">subjectivist</a>.",
-      "slug": "objectivist",
-      "count": "17",
+      "type": "perspective",\n
+      "name": "Objectivist",\n
+      "description": "These conversations include a diverse array of thinkers who seem to suggest that there is an ultimately <a href=\"http://en.wikipedia.org/wiki/Objectivity_%28philosophy%29\">knowable reality</a> unaffected by our perception. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#subjectivist\">subjectivist</a>.",\n
+      "slug": "objectivist",\n
+      "count": "17",\n
       "group": "306"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Subjectivist",
-      "description": "These conversations include a diverse array of thinkers who seem to suggest that <a href=\"http://en.wikipedia.org/wiki/Subjectivist\">each person experiences an independent reality</a> and that an external, objective reality is either unknowable or nonexistent. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#objectivist\">objectivist</a>.",
-      "slug": "subjectivist",
-      "count": "16",
+      "type": "perspective",\n
+      "name": "Subjectivist",\n
+      "description": "These conversations include a diverse array of thinkers who seem to suggest that <a href=\"http://en.wikipedia.org/wiki/Subjectivist\">each person experiences an independent reality</a> and that an external,\n objective reality is either unknowable or nonexistent. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#objectivist\">objectivist</a>.",\n
+      "slug": "subjectivist",\n
+      "count": "16",\n
       "group": "306"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Determinism",
-      "description": "Episodes in this category include perspectives ranging from strict <a href=\"http://plato.stanford.edu/entries/determinism-causal/\">determinism</a> to determinism tempered by free will. Determinism is a broad category and includes the sense that human actions are largely shaped by the <a href=\"http://en.wikipedia.org/wiki/Environmental_determinism\">environment</a>, <a href=\"http://en.wikipedia.org/wiki/Technological_determinism\">technology</a>, a divine plan, etc. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#free-will\">free will</a>.",
-      "slug": "determinism",
-      "count": "3",
+      "type": "perspective",\n
+      "name": "Determinism",\n
+      "description": "Episodes in this category include perspectives ranging from strict <a href=\"http://plato.stanford.edu/entries/determinism-causal/\">determinism</a> to determinism tempered by free will. Determinism is a broad category and includes the sense that human actions are largely shaped by the <a href=\"http://en.wikipedia.org/wiki/Environmental_determinism\">environment</a>,\n <a href=\"http://en.wikipedia.org/wiki/Technological_determinism\">technology</a>,\n a divine plan,\n etc. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#free-will\">free will</a>.",\n
+      "slug": "determinism",\n
+      "count": "3",\n
       "group": "1259"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Free Will",
-      "description": "Episodes in this category include lean towards attributing human behavior to <a href=\"http://plato.stanford.edu/entries/freewill/\">free will</a>. Human agency may be influenced by larger systems (environmental, technological, atomic, divine), but it is not a prisoner to them. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#determinism\">determinism</a>.",
-      "slug": "free-will",
-      "count": "25",
+      "type": "perspective",\n
+      "name": "Free Will",\n
+      "description": "Episodes in this category include lean towards attributing human behavior to <a href=\"http://plato.stanford.edu/entries/freewill/\">free will</a>. Human agency may be influenced by larger systems (environmental,\n technological,\n atomic,\n divine),\n but it is not a prisoner to them. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#determinism\">determinism</a>.",\n
+      "slug": "free-will",\n
+      "count": "25",\n
       "group": "1259"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Biological Continuity",
-      "description": "Personal identity over time stems from <a href=\"http://plato.stanford.edu/entries/identity-personal/#SomApp\">physical continuity</a>. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#psychological-continuity\">psychological continuity</a>.",
-      "slug": "biology-personal-identity",
-      "count": "6",
+      "type": "perspective",\n
+      "name": "Biological Continuity",\n
+      "description": "Personal identity over time stems from <a href=\"http://plato.stanford.edu/entries/identity-personal/#SomApp\">physical continuity</a>. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#psychological-continuity\">psychological continuity</a>.",\n
+      "slug": "biology-personal-identity",\n
+      "count": "6",\n
       "group": "1261"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Psychological Continuity",
-      "description": "Personal identity over time stems from <a href=\"http://plato.stanford.edu/entries/identity-personal/#PsyApp\">psychological continuity</a>. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#biological-continuity\">biological continuity</a>.",
-      "slug": "psychology-personal-identity",
-      "count": "4",
+      "type": "perspective",\n
+      "name": "Psychological Continuity",\n
+      "description": "Personal identity over time stems from <a href=\"http://plato.stanford.edu/entries/identity-personal/#PsyApp\">psychological continuity</a>. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#biological-continuity\">biological continuity</a>.",\n
+      "slug": "psychology-personal-identity",\n
+      "count": "4",\n
       "group": "1261"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Extrinsic",
-      "description": "Value is assigned to by humans to non-human things, whether animals, plants, or inanimate objects. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#intrinsic\">intrinsic</a>.",
-      "slug": "extrinsic",
-      "count": "8",
+      "type": "perspective",\n
+      "name": "Extrinsic",\n
+      "description": "Value is assigned to by humans to non-human things,\n whether animals,\n plants,\n or inanimate objects. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#intrinsic\">intrinsic</a>.",\n
+      "slug": "extrinsic",\n
+      "count": "8",\n
       "group": "1265"
-    },
+    },\n
     {
-      "type": "perspective",
-      "name": "Intrinsic",
-      "description": "Value is intrinsic to things, whether people, animals, or inanimate objects. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#extrinsic\">extrinsic</a>.",
-      "slug": "intrinsic",
-      "count": "12",
+      "type": "perspective",\n
+      "name": "Intrinsic",\n
+      "description": "Value is intrinsic to things,\n whether people,\n animals,\n or inanimate objects. Antonym: <a href=\"http://www.findtheconversation.com/concept-map/#extrinsic\">extrinsic</a>.",\n
+      "slug": "intrinsic",\n
+      "count": "12",\n
       "group": "1265"
     }
   ]
