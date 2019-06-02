@@ -3,7 +3,7 @@
 // This is to check if the request is coming from a specific URL
 $ref = $_SERVER['HTTP_REFERER'];
 
-if($ref !== 'https://lba.azurewebsites.net/index.php') {
+if($ref !== 'https://lba.azurewebsites.net') {
     die("Hotlinking not permitted");
 }
 
