@@ -29,9 +29,12 @@
 <body id="allBody"  ng-controller='ng-cases' ng-init="init_case();">
 
 <div class="container">
+
     <div id="login" class="login">
-        <div class="login-icon-field"><center>
-                <i id="icon" style="margin-top:100px" class="fab fa-connectdevelop fa-7x"></i></center>
+        <div class="login-icon-field">
+            <center><i id="icon" style="margin-top:50px" class="fab fa-connectdevelop fa-7x"></i></center>
+            <center><h3>LBA <p>Learning Based Advertising</p></h3></center>
+
         </div>
         <div class="login-form">
             <div class="username-row row">
@@ -60,8 +63,6 @@
         </div>
         <div class="call-to-action">
             <button id="login-button" type="button" ng-click="login();">Log In</button>
-            <p>Don't have an account? <br>
-                <a>Sign Up</a></p>
         </div>
     </div>
 </div>
