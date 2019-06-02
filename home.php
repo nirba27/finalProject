@@ -4,7 +4,7 @@
 $ref = $_SERVER['HTTP_REFERER'];
 $refData = parse_url($ref);
 
-if($refData['host'] !== 'https://lba.azurewebsites.net') {
+if($refData['host'] !== 'https://lba.azurewebsites.net/index.php') {
     // Output string and stop execution
     die("Hotlinking not permitted");
 }
