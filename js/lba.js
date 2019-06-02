@@ -27,12 +27,12 @@ app.service('fileUpload', ['$http', function ($http) {
             headers: {'Content-Type': undefined,'Process-Data': false}
         })
             .success(function(data){
-                console.log(data);
+                //console.log(data);
 
-                console.log("Success");
+                //console.log("Success");
             })
             .error(function(){
-                console.log("Success");
+                //console.log("Success");
             });
     }
 }]);
@@ -138,6 +138,27 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
     }
 
+    $scope.getClusters = function(id)
+    {
+        var request = $http({
+            method: "POST",
+            url: "php/getClusterById.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            ////console.log(data);
+            if(data!=0)
+            {
+                console.log(data['data']);
+                return(data['data']);
+            }
+         });
+    }
+
+
     $scope.getJson = function(ids)
     {
         var request = $http({
@@ -149,29 +170,45 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data);
+            ////console.log(data);
             if(data!=0)
             {
+                var soft_clustering = {}
                 var ditems = []
                 var themes = []
                 var data = data['data'];
                 var cnt = 0;
                 var array = [];
                 var array2 = [];
+                var perspectives = []
                 for (x in data){
+                    var id = String(data[x]['id']);
+                    var pres = {
+                        "type": "perspective",
+                        "name": id,
+                        "description": "",
+                        "slug": id,
+                        "count": "10",
+                        "group": ""
+                    }
+                    perspectives.push(pres);
                     var records = data[x]['records'];
                     var records = records.split(' ');
                     var links = data[x]['key'];
                     var links = links.split(' ');
                     var tran_links = [];
+                    var all_links = [];
+                    var clusters = [];
+                    all_links.push(id);
                     for(k in links)
                     {
                         tran_links.push($scope.translate(links[k]))
+                        all_links.push($scope.translate(links[k]))
                     }
-                    console.log(tran_links);
+                    ////console.log(tran_links);
                     for(i in records)
                     {
-                        if(array2.includes(records[i]) )
+                        if(array2.includes(records[i]))
                         {
 
                         }
@@ -183,7 +220,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                                 'ditem': cnt,
                                 'date': '',
                                 'slug': records[i],
-                                'links': tran_links
+                                'links': all_links
                             }
                             cnt += 1;
                             ditems.push(ditem);
@@ -211,26 +248,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                     }
                 }
-                console.log(ditems);
-                console.log(themes);
-                var perspectives = [
-                    {
-                        "type": "perspective",
-                        "name": "Comedy",
-                        "description": "",
-                        "slug": "biocentric-value-source",
-                        "count": "10",
-                        "group": "281"
-                    },
-                    {
-                        "type": "perspective",
-                        "name": "Anthropocentric",
-                        "description": "",
-                        "slug": "anthropocentric-value-source",
-                        "count": "26",
-                        "group": "281"
-                    }
-                ]
+                
+                //console.log(ditems);
+                //console.log(themes);
+                //console.log(perspectives);
+
 
 
 
@@ -249,7 +271,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    //console.log(data['data']);
+                    ////console.log(data['data']);
 
                     d3.json("php/myfile2.json", function(dataJson) {
                         var plot = new ConceptMap("graph", "graph-info", dataJson);
@@ -269,7 +291,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         var width = 1;
         var id = setInterval(frame, 15);
-        function frame() {//console.log(width);
+        function frame() {////console.log(width);
             if (width >= 100) {
                 width++;
                 if(width==180){
@@ -285,7 +307,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.login = function (item) {
         $("#icon").attr('class', 'fab fa-connectdevelop fa-7x fa-spin');
-        console.log("login_check");
+        //console.log("login_check");
         var request = $http({
             method: "POST",
             url: "php/login.php",
@@ -298,13 +320,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data['data'] == 1) {
                 $("#icon").attr('class', 'fas fa-check fa-7x').fadeIn();
-                console.log('success');
+                //console.log('success');
                 window.location.pathname = 'home.php'
 
             } else {
                 $("#icon").attr('class', 'fas fa-times fa-7x').fadeIn();
                 $(".password-row").velocity("callout.shake");
-                console.log('failed');
+                //console.log('failed');
             }
         }); //success
     } //the funtion
@@ -321,10 +343,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.tags = data['data'];
-                //console.log('init_cases - success');
-                //console.log($scope.tags);
+                ////console.log('init_cases - success');
+                ////console.log($scope.tags);
             } else {
-                //console.log('init_case - failed');
+                ////console.log('init_case - failed');
             }
         }); //success
 
@@ -339,9 +361,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.genres_array = data['data'];
-                //console.log($scope.genres_array);
+                ////console.log($scope.genres_array);
             } else {
-                console.log('init - failed');
+                //console.log('init - failed');
             }
         }); //success
 
@@ -356,10 +378,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.intrests = data['data'];
-                //console.log($scope.intrests);
+                ////console.log($scope.intrests);
 
             } else {
-                console.log('init - failed');
+                //console.log('init - failed');
             }
         }); //success
 
@@ -367,7 +389,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_select = function(subject)
     {
-        console.log(subject);
+        //console.log(subject);
         var request = $http({
             method: "POST",
             url: "php/init_geners.php",
@@ -381,7 +403,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.subject = data;
                 return data['data'];
             } else {
-                console.log('init - failed');
+                //console.log('init - failed');
             }
         }); //success
     }
@@ -389,7 +411,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.get_audience = function () {
 
         var genre = $scope.selectedGenre2[0];
-        console.log(genre);
+        //console.log(genre);
 
         var request = $http({
             method: "POST",
@@ -405,7 +427,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.loading = 1;
                 $scope.cluster = data['data'];
 
-                //console.log($scope.cluster);
+                ////console.log($scope.cluster);
                 $scope.get_prog($scope.cluster);
 
             } else {
@@ -428,7 +450,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var maritial = $scope.maritial;
         var race = $scope.race_;
         //(race);
-        //console.log($scope.educ);
+        ////console.log($scope.educ);
         //.log($scope.occu);
 
         var request = $http({
@@ -447,14 +469,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data['data'])
+            //console.log(data['data'])
             var obi = '';
             var hobi = '';
             if (data != "0") {
                 $scope.res = 0;
                 $scope.loading = 1;
                 $scope.cluster = data['data'];
-                //console.log($scope.cluster);
+                ////console.log($scope.cluster);
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
@@ -465,7 +487,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 obi = obi.substr(0,len-3);
                 hobi = hobi.substr(0,len2-3);
 
-                console.log("hobi:" + hobi);
+                //console.log("hobi:" + hobi);
 
                 $scope.hours = '';
                 $scope.obi = [];
@@ -480,14 +502,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    console.log(data['data']);
+                    //console.log(data['data']);
                     if (data != "0") {
                         $scope.obi = data['data'][0];
-                        console.log($scope.obi);
+                        //console.log($scope.obi);
                         $scope.linechart($scope.obi);
                     }
                     else {
-                        console.log('init_case - failed');
+                        //console.log('init_case - failed');
                     }
                 }); //success
 
@@ -501,11 +523,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     if (data != "0") {
                         $scope.attr = data['data'];
-                        //console.log('init_cases - success');
-                       // console.log($scope.attr);
+                        ////console.log('init_cases - success');
+                       // //console.log($scope.attr);
                         for (x in $scope.attr) {
                             var key = $scope.attr[x]['key'];
                             if(key=='edhs_')
@@ -595,7 +617,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         }
 
                     } else {
-                        console.log('init_case - failed');
+                        //console.log('init_case - failed');
                     }
                 }); //success
 
@@ -620,11 +642,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.geners = data['data'];
-                console.log('init_cases - success');
-                console.log($scope.geners);
+                //console.log('init_cases - success');
+                //console.log($scope.geners);
 
             } else {
-                console.log('init_case - failed');
+                //console.log('init_case - failed');
             }
         }); //success
 
@@ -640,10 +662,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.keywords_array = data['data'];
-                console.log('init_cases - success');
+                //console.log('init_cases - success');
 
             } else {
-                console.log('init_case - failed');
+                //console.log('init_case - failed');
             }
         }); //success
 
@@ -663,7 +685,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }); //success
 
-        console.log(id);
+        //console.log(id);
         var request = $http({
             method: "POST",
             url: "php/get_programs.php",
@@ -675,10 +697,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.programs = data['data'];
-                console.log('init_cases - success');
-                console.log($scope.programs);
+                //console.log('init_cases - success');
+                //console.log($scope.programs);
             } else {
-                console.log('init_case - failed');
+                //console.log('init_case - failed');
             }
         }); //success
 
@@ -697,19 +719,19 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.graph = data['data'];
-                console.log('init_cases - success');
-                console.log($scope.graph);
+                //console.log('init_cases - success');
+                //console.log($scope.graph);
                 for (i in $scope.graph) {
                     $scope.x.push(parseInt($scope.graph[i]['x']));
                     $scope.y.push(parseInt($scope.graph[i]['y']));
                     $scope.r.push(parseInt($scope.graph[i]['r']));
                     $scope.labels.push(parseInt($scope.graph[i]['label']));
                 }
-                console.log($scope.x);
+                //console.log($scope.x);
                 $scope.bubleChart($scope.x,$scope.y,$scope.r,$scope.labels);
             }
             else {
-                console.log('init_case - failed');
+                //console.log('init_case - failed');
             }
         }); //success
 
@@ -828,8 +850,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.linechart = function (obi)
     {
         var ctxL = document.getElementById("lineChart2").getContext('2d');
-       // console.log("obi?");
-       // console.log(obi[0]);
+       // //console.log("obi?");
+       // //console.log(obi[0]);
         var myLineChart = new Chart(ctxL, {
             type: 'line',
             data: {

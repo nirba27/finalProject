@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 * FROM MFI_CLUSTERS WHERE $cluster ";
+$tsql= "SELECT * FROM MFI_CLUSTERS_RECORDS WHERE record=$cluster ";
 
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
@@ -33,9 +33,7 @@ $array = array();
 
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'id' => $row['id'],
-        'records' => $row['records'],
-        'key'=>$row['key'],
+        'id' => $row['id']
     );
 }
 
