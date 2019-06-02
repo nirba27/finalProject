@@ -1,3 +1,18 @@
+
+<?php
+// This is to check if the request is coming from a specific domain
+$ref = $_SERVER['HTTP_REFERER'];
+$refData = parse_url($ref);
+
+if($refData['host'] !== 'https://lba.azurewebsites.net') {
+    // Output string and stop execution
+    die("Hotlinking not permitted");
+}
+
+echo "Executing code here";
+?>
+
+
 <html lang="en" ng-app="template" >
 <head>
     <meta charset="utf-8">
