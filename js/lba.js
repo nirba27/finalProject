@@ -181,6 +181,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         var records = data[x]['records'];
                         for(i in records)
                         {
+                            console.log(records[i]);
                             if (records[i] in records_dict)
                                 {
                                     records_dict[records[i]].push(id)
