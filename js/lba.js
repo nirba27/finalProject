@@ -165,7 +165,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             method: "POST",
             url: "php/getJson.php",
             data: $.param({
-                cluster: "id='1' or id='2'",
+                cluster: ids,
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
@@ -174,7 +174,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if(data!=0)
             {
                 var data = data['data'];
-                records_dict = {}
+                records_dict = {};
                 for (x in data)
                     {
                         console.log(data);
