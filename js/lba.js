@@ -180,7 +180,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         console.log(data);
                         var id = String(data[x]['id']);
                         var records = data[x]['records'];
+                        console.log(records);
                         var records = records.split(' ');
+                        console.log(records);
 
                         for(i in records)
                         {
