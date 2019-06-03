@@ -1078,7 +1078,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: Main features & Quick Start-->
         <section id="loading" ng-hide="loading">
             <h3 id="loadNotDone">Looking for your targeted audience...</h3>
-            <h3 id="loadDone" style="display: none">Done<i class="fas fa-check"></i></h3>
+            <h1 color="dark-blue" id="loadDone" style="display: none">Done <i class="fas fa-check"></i></h1>
             <div class="progress">
                 <div id='myBar' class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
