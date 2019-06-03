@@ -297,9 +297,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 width++;
                 if(width==180){
                     clearInterval(id);
-                    document.getElementById('ctn_btn').style.display='block';
                     document.getElementById('loadDone').style.display='block';
                     document.getElementById('loadNotDone').style.display='none';
+                    document.getElementById('ctn_btn').style.display='block';
 
                 }
             } else {
