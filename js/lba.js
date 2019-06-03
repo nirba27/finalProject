@@ -183,7 +183,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         console.log(records);
                         var records = records.split(' ');
                         console.log(records);
-
                         for(i in records)
                         {
                             console.log(records[i]);
@@ -197,10 +196,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                                 records_dict[records[i]].push(id)
                             }
 
-
                         }
-
-
 
                     }
                 console.log(records_dict);
@@ -209,7 +205,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             })
         }
 
-    $scope.getJson2 = function(ids)
+    $scope.getJson = function(ids)
     {
         var request = $http({
             method: "POST",
@@ -227,6 +223,33 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var ditems = []
                 var themes = []
                 var data = data['data'];
+
+
+                for (x in data)
+                {
+                    //console.log(data);
+                    var id = String(data[x]['id']);
+                    var records = data[x]['records'];
+                    //console.log(records);
+                    var records = records.split(' ');
+                    //console.log(records);
+                    for(i in records)
+                    {
+                        //console.log(records[i]);
+                        if (records[i] in records_dict)
+                        {
+                            records_dict[records[i]].push(id)
+                        }
+                        else
+                        {
+                            records_dict[records[i]]=[]
+                            records_dict[records[i]].push(id)
+                        }
+
+                    }
+
+                }
+
                 var cnt = 0;
                 var array = [];
                 var array2 = [];
@@ -240,7 +263,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         "slug": id,
                         "count": "10",
                         "group": ""
-                    }
+                    };
                     perspectives.push(pres);
                     var records = data[x]['records'];
                     var records = records.split(' ');
@@ -256,12 +279,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         all_links.push($scope.translate(links[k]))
                     }
                     ////console.log(tran_links);
+
                     for(i in records)
                     {
-                        if(array2.includes(records[i]))
-                        {
 
-                        }
+                        console.log(records_dict[records[i]])
+                        if(array2.includes(records[i])) {}
                         else {
                             var ditem = {
                                 'type': 'ditem',
@@ -275,15 +298,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             cnt += 1;
                             ditems.push(ditem);
                             array2.push(records[i]);
-
                         }
                     }
                     for(j in tran_links)
                     {
-                        if(array.includes(tran_links[j]) )
-                        {
-
-                        }
+                        if(array.includes(tran_links[j]))
+                        {}
                         else
                         {
                             var theme = {
