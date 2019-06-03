@@ -173,7 +173,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             ////console.log(data);
             if(data!=0)
             {
-
+                var data = data['data'];
                 records_dict = {}
                 for (x in data)
                     {
