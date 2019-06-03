@@ -81,6 +81,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.child_p = 'Have children';
     $scope.ctn_btn = 1;
     $scope.json = [];
+    $scope.loadMessage = 'Looking for your targeted audience...';
 
     $scope.tranlated = ['58c','2ad','2 Adults',
         '5ad',
@@ -297,6 +298,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 if(width==180){
                     clearInterval(id);
                     document.getElementById('ctn_btn').style.display='block';
+                    $scope.loadMessage = 'Done! Proceed to see the results';
                 }
             } else {
                 width++;
