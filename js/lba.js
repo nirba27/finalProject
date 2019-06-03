@@ -223,6 +223,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var ditems = []
                 var themes = []
                 var data = data['data'];
+                records_dict = {};
 
 
                 for (x in data)
