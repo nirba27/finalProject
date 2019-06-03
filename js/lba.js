@@ -283,8 +283,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                     for(i in records)
                     {
-
-                        console.log(records_dict[records[i]])
+                        var obi = (records_dict[records[i]]);
+                        var links2 = all_links;
+                        for(i in obi)
+                        {
+                            links2.push(i);
+                        }
                         if(array2.includes(records[i])) {}
                         else {
                             var ditem = {
@@ -294,7 +298,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                                 'ditem': cnt,
                                 'date': '',
                                 'slug': records[i],
-                                'links': all_links
+                                'links': links2
                             }
                             cnt += 1;
                             ditems.push(ditem);
