@@ -76,7 +76,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.education = 'NA';
     $scope.ethnic = 'Mixed';
     $scope.income = 'NA';
-    $scope.status = 'Married And Singles';
+    $scope.status = 'Married';
     $scope.NumberAdults = 0;
     $scope.child_p = 'Have children';
     $scope.ctn_btn = 1;
@@ -298,7 +298,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 if(width==180){
                     clearInterval(id);
                     document.getElementById('ctn_btn').style.display='block';
-                    $scope.loadMessage = 'Done! Proceed to see the results';
+                    document.getElementById('loadDone').style.display='block';
+                    document.getElementById('loadNotDone').style.display='none';
+
                 }
             } else {
                 width++;
