@@ -159,8 +159,51 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
          });
     }
 
-
     $scope.getJson = function(ids)
+    {
+        var request = $http({
+            method: "POST",
+            url: "php/getJson.php",
+            data: $.param({
+                cluster: ids,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            ////console.log(data);
+            if(data!=0)
+            {
+
+                records_dict = {}
+                for (x in data)
+                    {
+                        var id = String(data[x]['id']);
+                        var records = data[x]['records'];
+                        for(i in records)
+                        {
+                            if (records[i] in records_dict)
+                                {
+                                    records_dict[records[i]].push(id)
+                                }
+                            else
+                            {
+                                records_dict[records[i]]=[]
+                                records_dict[records[i]].push(id)
+                            }
+
+
+                        }
+
+
+
+                    }
+                console.log(records_dict);
+                }
+
+            })
+        }
+
+    $scope.getJson2 = function(ids)
     {
         var request = $http({
             method: "POST",
