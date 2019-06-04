@@ -325,7 +325,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: More-->
         <section ng-hide="info">
 
-            <h2 class="my-5 h3 text-center">What makes us unique.</h2>
+            <h2 class="my-5 h3 text-center">What makes us unique</h2>
 
             <!--First row-->
             <div class="row features-small mt-5 wow fadeIn">
