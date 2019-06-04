@@ -282,6 +282,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                     for(i in records)
                     {
+                        console.log(records[i]);
                         var obi = (records_dict[records[i]]);
                         var links2 = all_links;
                         for(i in obi)
