@@ -289,8 +289,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         {
                             links2.push(i);
                         }
-                        if(array2.includes(records[i])) {}
+                        if(array2.includes(records[i])) {
+                            console.log('Already in');
+                        }
                         else {
+                            console.log('Inserting');
                             var ditem = {
                                 'type': 'ditem',
                                 'name': records[i],
