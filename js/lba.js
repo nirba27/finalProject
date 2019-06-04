@@ -304,9 +304,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                                 'slug': records[i],
                                 'links': links2
                             }
+                            array2.push(records[i]);
                             cnt += 1;
                             ditems.push(ditem);
-                            array2.push(records[i]);
                         }
                     }
                     for(j in tran_links)
