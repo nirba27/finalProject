@@ -282,6 +282,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                     for(i in records)
                     {
+                        console.log(i);
                         var obi = (records_dict[records[i]]);
                         var links2 = all_links;
                         for(i in obi)
@@ -290,12 +291,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         }
                         console.log(array2);
                         if(array2.includes(records[i])) {
-                            console.log(records[i]);
-                            console.log('Already in');
+                            //console.log(records[i]);
+                            //console.log('Already in');
                         }
                         else {
-                            console.log(records[i]);
-                            console.log('Inserting');
+                            //console.log(records[i]);
+                            //console.log('Inserting');
                             var ditem = {
                                 'type': 'ditem',
                                 'name': records[i],
