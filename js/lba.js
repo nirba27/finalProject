@@ -289,6 +289,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         {
                             links2.push(i);
                         }
+                        console.log(array2);
                         if(array2.includes(records[i])) {
                             console.log('Already in');
                         }
