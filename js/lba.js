@@ -216,7 +216,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data['data']);
+            //console.log(data['data']);
             if(data!=0)
             {
                 var soft_clustering = {}
@@ -272,8 +272,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     var links = links.split(' ');
                     var tran_links = [];
                     var all_links = [];
-                    var clusters = [];
-                    all_links.push(id);
+                    //all_links.push(id);
                     for(k in links)
                     {
                         tran_links.push($scope.translate(links[k]))
