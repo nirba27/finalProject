@@ -243,21 +243,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     <hr>
 
-                    <p>
-                        <strong>400+</strong> material UI elements,
-                        <strong>600+</strong> material icons,
-                        <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
-                        <strong>Free for personal and commercial use.</strong>
-                    </p>
-
-                    <!-- CTA -->
-                    <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
-                        <i class="fas fa-download ml-1"></i>
-                    </a>
-                    <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live
-                        demo
-                        <i class="far fa-image ml-1"></i>
-                    </a>
                 </div>
                 <!--Grid column-->
             </div>
@@ -269,7 +254,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: Main features & Quick Start-->
         <section id="about" ng-hide="about">
 
-            <h3 class="h3 text-center mb-5">About LBA</h3>
+            <h3 class="h3 text-center mb-5">What we do</h3>
             <!--Grid row-->
             <div class="row wow fadeIn">
 
@@ -326,7 +311,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <!--Grid column-->
                 <div class="col-lg-6 col-md-12">
 
-                    <p class="h5 text-center mb-4">Watch our demo</p>
+                    <p class="h5 text-center mb-4">Targeted Advertising</p>
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/0B6Q4I8Ingg" allowfullscreen></iframe>
                     </div>
@@ -340,7 +325,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: More-->
         <section ng-hide="info">
 
-            <h2 class="my-5 h3 text-center">...and even more</h2>
+            <h2 class="my-5 h3 text-center">What makes us unique.</h2>
 
             <!--First row-->
             <div class="row features-small mt-5 wow fadeIn">
