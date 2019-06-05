@@ -82,56 +82,196 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.ctn_btn = 1;
     $scope.json = [];
     $scope.loadMessage = 'Looking for your targeted audience...';
+    $scope.income_low = '';
+    $scope.income_top = '';
+    $scope.tran = {
+        "nv1hs": "1 Car",
+        "nv2hs": "2 Cars",
+        "nv3hs": "3 or More Cars",
+        "ch0ch": "No Children",
+        "c12ch": "Children",
+        "c456h": "Many Children",
+        "lo03r": "Length of Residence 0-3",
+        "46r": "Length of Residence 0-3",
+        "lo46r": "Length of Residence 4-6",
+        "o03": "Length of Residence 4-6",
+        "79r": "Length of Residence 4-6",
+        "lo79r": "Length of Residence 7-9",
+        "o46": "Length of Residence 7-9",
+        "12r": "Length of Residence 7-9",
+        "lo12r": "Length of Residence 10-12",
+        "o79": "Length of Residence 10-12",
+        "15r": "Length of Residence 10-12",
+        "lo15r": "Length of Residence 13-15",
+        "o12": "Length of Residence 13-15",
+        "hmADv": "Low Home Value",
+        "ADv": ":Low Home Value ",
+        "hmEKv": "Mid Home Value",
+        "hmE": "Mid Home Value",
+        "EKv": "Mid Home Value",
+        "hmLPv": "High Home Value",
+        "hmL": "High Home Value",
+        "LPv": "High Home Value",
+        "hmQSv": "Very High Home Value",
+        "hmQ": "Very High Home Value",
+        "nt12w": "Low Net Worth",
+        "12w": "Low Net Worth",
+        "nt34w": "Mid-Low Net",
+        "nt1": "Mid-Low Net",
+        "56w": "Mid-Low Net",
+        "nt56w": "Mid-High Net",
+        "nt3": "Mid-High Net",
+        "78w": "Mid-High Net",
+        "nt78w": "High Net",
+        "nt5": "High Net",
+        "_9w": "High Net",
+        "nt_9w": "Very High Net",
+        "nt7": "Very High Net",
+        "in14c": "Low Income",
+        "58c": "Low Income",
+        "in58c": "Mid Income",
+        "92c": "Mid Income",
+        "in1": "Mid Income",
+        "in92c": "High Income",
+        "31c": "High Income",
+        "in5": "High Income",
+        "in31c": "Very High Income",
+        "in9": "Very High Income",
+        "agYOe": "Young Adult",
+        "agMIe": "Adult",
+        "agADe": "Middle Aged",
+        "agOLe": "Old",
+        "agYe2": "2nd Young Adult",
+        "agMe2": "2nd Adult",
+        "agAe2": "2nd Middle Aged",
+        "agOe2": "2nd Old",
+        "ho1sz": "1 person",
+        "2sz": "1 person",
+        "ho2sz": "2 people",
+        "3sz": "2 people",
+        "ho1": "2 people",
+        "ho3sz": "3 people",
+        "4sz": "3 people",
+        "ho2": "3 people",
+        "ho4sz": "4 people",
+        "6sz": "4 people",
+        "ho3": "4 people ",
+        "h56sz": "5-6 people",
+        "9sz": "5-6 people",
+        "ho4": "5-6 people",
+        "h79sz": "7-9 people",
+        "h56": "7-9 people",
+        "no1ad": "1 Adult",
+        "2ad": "1 Adult",
+        "no2ad": "2 Adults",
+        "3ad": "2 Adults",
+        "no1": "2 Adults",
+        "no3ad": "3 Adults",
+        "4ad": "3 Adults",
+        "no2": "3 Adults",
+        "no4ad": "4 Adults",
+        "5ad": "4 Adults",
+        "no3": "4 Adults",
+        "no5ad": "5 Adults",
+        "6ad": "5 Adults",
+        "no4": "5 Adults",
+        "no6ad": "5+ Adults",
+        "no5": "5+ Adults",
+        "ge1ts": "1 Gen in House",
+        "ge2ts": "2 Gen in House",
+        "ge3ts": "3 Gen in House",
+        "18M24": "Males 18-24",
+        "18F24": "Females 18-24",
+        "18U24": "Unknown Gender 18-24",
+        "25M34": "Males 25-34",
+        "25F34": "Females 25-34",
+        "25U34": "Unknown Gender 25-34",
+        "35M44": "Males 35-44",
+        "35F44": "Females 35-44",
+        "35U44": "Unknown Gender 35-44",
+        "45M54": "Males 45-54",
+        "45F54": "Females 45-54",
+        "45U54": "Unknown Gender 45-54",
+        "55M64": "Males 55-64",
+        "55F64": "Females 55-64",
+        "55U64": "Unknown Gender 55-64",
+        "65M74": "Males 65-74",
+        "65F74": "Females 65-74",
+        "65U74": "Unknown Gender 65-74",
+        "75Mpl": "Males 75+",
+        "75Fpl": "Females 75+",
+        "75Upl": "Unknown Gender 75+",
+        "married": "Married",
+        "singlee": "Single",
+        "assia": "Asian",
+        "black": "Black",
+        "hispa": "Hispanic",
+        "white": "White",
+        "no_ch": "No Children present",
+        "ch_pr": "Children present",
+        "owma_": "Owner is Male",
+        "owfe_": "Owner is Female",
+        "edhs_": "Completed High School",
+        "edco_": "Completed College",
+        "edgs_": "Completed Graduate School",
+        "edte_": "Attended Vocational/Technical",
+        "oc1oc": "Professional/Technical",
+        "oc2oc": "Administration/Managerial",
+        "oc3oc": "Sales/Service",
+        "oc4oc": "Clerical/White Collar",
+        "oc5oc": "Craftsman/Blue Collar",
+        "oc6oc": "Student",
+        "oc7oc": "Homemaker",
+        "oc8oc": "Retired",
+        "oc9oc": "Farmer",
+        "ocAoc": "Military",
+        "ocBoc": "Religious",
+        "ocCoc": "Self Employed",
+        "ocDoc": "Educator",
+        "ocEoc": "Financial Professional",
+        "ocFoc": "Legal Professional",
+        "ocGoc": "Medical Professional",
+        "ocHoc": "Other",
+        "ed2hs": "Completed High School",
+        "ed2co": "Completed College",
+        "ed2gs": "Completed Graduate School",
+        "ed2te": "Attended Vocational/Technical",
+        "2oc1o": "Professional/Technical",
+        "2oc2o": "Administration/Managerial",
+        "2oc3o": "Sales/Service",
+        "2oc4o": "Clerical/White Collar",
+        "2oc5o": "Craftsman/Blue Collar",
+        "2oc6o": "Student",
+        "2oc7o": "Homemaker",
+        "2oc8o": "Retired",
+        "2oc9o": "Farmer",
+        "2ocAo": "Military",
+        "2ocBo": "Religious",
+        "2ocCo": "Self Employed",
+        "2ocDo": "Educator",
+        "2ocEo": "Financial Professional",
+        "2ocFo": "Legal Professional",
+        "2ocGo": "Medical Professional",
+        "2ocHo": "Other",
+        "voDvo": "Voter Democrat",
+        "voRvo": "Voter Republican",
+        "voIvo": "Voter Independent",
+        "voVvo": "Voter No Party",
+        "voUvo": "Voter Unknown",
+        "adv":"Home Market Value E-K",
+        "hmadv":"Home Market Value E-K",
+        "hmE":"Home Market Value A-D",
+        "ekv":"Home Market Value L-P",
+        "hmhekv":"Home Market Value E-K",
 
-    $scope.tranlated = ['58c','2ad','2 Adults',
-        '5ad',
-        'no1',
-        'no2',
-        'no3',
-        'no4',
-        'no5',
-        'h56sz',
-        'ho4sz',
-        'ho3sz',
-        'nt7',
-        'edgs_',
-        'oc8oc',
-        'h02sz',
-        '78w',
-        '3sz',
-        'ho1',
-        '3ad',
-        '2oc8o']
 
-    $scope.trnaslate = {
-        '58c': 'Medium Income',
-        '3ad': '3 Adults',
-        '2ad': '2 Adults',
-        '5ad': '5 Adults',
-        'no1': '1 Adults',
-        'no2': '2 Adults',
-        'no3': '3 Adults',
-        'no4': '4 Adults',
-        'no5': '5 Adults',
-        'h56sz': 'Household size=5-6',
-        'ho4sz': 'Household size=4',
-        'ho3sz': 'Household size=3',
-        'nt7': 'net_worth_mid_high',
-        'edgs_':'Grad School',
-        'oc8oc' : 'Retired',
-        'h02sz' : 'Household size=2',
-        '78w': 'net_worth_high',
-        '3sz' : 'Household size=3',
-        'ho1' : 'Household size=1',
-        '3ad' : '3 Adults',
-        '2oc8o' : 'retired'
     };
 
     $scope.translate = function(word)
     {
-        if($scope.tranlated .includes(word))
+        if(word in $scope.tran)
         {
-            return $scope.trnaslate[word];
+            return $scope.tran[word];
         }
         else
         {
@@ -159,7 +299,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
          });
     }
 
-    $scope.getJson = function(ids)
+    $scope.getJson_1 = function(ids)
     {
         var request = $http({
             method: "POST",
@@ -170,40 +310,133 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            ////console.log(data);
+            //console.log(data['data']);
             if(data!=0)
             {
+                var theme = [];
+                var pres = [];
+                var ditems = [];
                 var data = data['data'];
-                records_dict = {};
-                for (x in data)
-                    {
-                        console.log(data);
-                        var id = String(data[x]['id']);
-                        var records = data[x]['records'];
-                        console.log(records);
-                        var records = records.split(' ');
-                        console.log(records);
-                        for(i in records)
-                        {
-                            console.log(records[i]);
-                            if (records[i] in records_dict)
-                                {
-                                    records_dict[records[i]].push(id)
-                                }
-                            else
-                            {
-                                records_dict[records[i]]=[]
-                                records_dict[records[i]].push(id)
-                            }
+                var records_dict = {};
+                for(x in data)
+               {
+                   var id = String(data[x]['id']);
+                   var records = data[x]['records'];
+                   var records = records.split(' ');
+                   var links = data[x]['key'];
+                   var links = links.split(' ');
+                   for(i in records)
+                   {
+                       if(!(pres.includes(id)))
+                       {
+                           pres.push(id);
+                       }
+                       if(!(records[i] in ditems))
+                       {
+                           ditems.push(records[i]);
+                       }
+                       if (records[i] in records_dict)
+                       {
+                           records_dict[records[i]].push(id);
+                       }
+                       else
+                       {
+                           records_dict[records[i]]=[];
+                           records_dict[records[i]].push(id);
+                       }
+                       for(j in links)
+                       {
+                           var tlink = (links[j]);
+                           if(!(theme.includes(tlink)))
+                           {
+                               theme.push(tlink);
+                           }
+                           if(!(records_dict[records[i]].includes(tlink)))
+                           {
+                               records_dict[records[i]].push(tlink);
+                           }
+                       }
 
-                        }
 
-                    }
-                console.log(records_dict);
+                   }
+
+               }
+               console.log(records_dict);
+                console.log(theme);
+                console.log(pres);
+                var ditems = []
+                var themes = []
+                var perspectives = []
+                var cnt = 0;
+                for(i in records_dict)
+                {
+                    var ditem = {
+                        'type': 'ditem',
+                        'name': i,
+                        'description': 'desc',
+                        'ditem': cnt,
+                        'date': '',
+                        'slug': i,
+                        'links': records_dict[i],
+                    };
+                    cnt += 1;
+                    ditems.push(ditem);
                 }
 
-            })
-        }
+
+                pres.forEach(function(entry) {
+                    var pres = {
+                        "type": "perspective",
+                        "name": entry,
+                        "description": "",
+                        "slug": entry,
+                        "count": "10",
+                        "group": ""
+                    };
+                    perspectives.push(pres);
+                });
+
+
+                theme.forEach(function(entry) {
+                    var theme = {
+                        "type": "perspective",
+                        "name": entry,
+                        "description": "",
+                        "slug": entry,
+                        "count": "10",
+                        "group": ""
+                    };
+                    themes.push(theme);
+                });
+
+                var array = {
+                    'ditems' : ditems,
+                    'themes' : themes,
+                    'perspectives' : perspectives
+                };
+
+                console.log(array);
+
+                var request = $http({
+                    method: "POST",
+                    url: "php/writeJson.php",
+                    data: $.param({
+                        array: array,
+                    }),
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }); //request
+                request.then(function (data) {
+                    ////console.log(data['data']);
+
+                    d3.json("php/myfile2.json", function(dataJson) {
+                        var plot = new ConceptMap("graph", "graph-info", dataJson);
+                    });
+                })
+
+            }
+        })
+    }
+
 
     $scope.getJson = function(ids)
     {
@@ -223,49 +456,52 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var ditems = []
                 var themes = []
                 var data = data['data'];
-                records_dict = {};
-
-
-                for (x in data)
-                {
-                    //console.log(data);
-                    var id = String(data[x]['id']);
-                    var records = data[x]['records'];
-                    //console.log(records);
-                    var records = records.split(' ');
-                    //console.log(records);
-                    for(i in records)
-                    {
-                        //console.log(records[i]);
-                        if (records[i] in records_dict)
-                        {
-                            records_dict[records[i]].push(id)
-                        }
-                        else
-                        {
-                            records_dict[records[i]]=[]
-                            records_dict[records[i]].push(id)
-                        }
-
-                    }
-
-                }
-
                 var cnt = 0;
                 var array = [];
                 var array2 = [];
-                var perspectives = []
+                var perspectives = [];
+
+
+
+                var records_dict = {};
+                for(x in data)
+                {
+                    var id = String(data[x]['id']);
+                    var records = data[x]['records'];
+                    var records = records.split(' ');
+                    var links = data[x]['key'];
+                    var links = links.split(' ');
+                    for(i in records)
+                    {
+                        if (records[i] in records_dict)
+                        {
+                            records_dict[records[i]].push(id);
+                        }
+                        else
+                        {
+                            records_dict[records[i]]=[];
+                            records_dict[records[i]].push(id);
+                        }
+                        for(j in links)
+                        {
+                            var tlink = $scope.translate(links[j]);
+                            if(!(records_dict[records[i]].includes(tlink)))
+                            {
+                                records_dict[records[i]].push(tlink);
+                            }
+                        }
+                    }
+
+                }
+                //console.log(records_dict);
+                var pres = [];
+
                 for (x in data){
                     var id = String(data[x]['id']);
-                    var pres = {
-                        "type": "perspective",
-                        "name": id,
-                        "description": "",
-                        "slug": id,
-                        "count": "10",
-                        "group": ""
-                    };
-                    perspectives.push(pres);
+                    if(!(pres.includes(id)))
+                    {
+                        pres.push(id);
+                    }
                     var records = data[x]['records'];
                     var records = records.split(' ');
                     var links = data[x]['key'];
@@ -282,33 +518,35 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                     for(i in records)
                     {
-                        console.log(records[i]);
-                        var obi = (records_dict[records[i]]);
-                        var links2 = all_links;
-                        for(i in obi)
-                        {
-                            links2.push(i);
-                        }
-                        console.log(array2);
-                        if(array2.includes(records[i])) {
-                            //console.log(records[i]);
-                            //console.log('Already in');
-                        }
-                        else {
-                            //console.log(records[i]);
-                            //console.log('Inserting');
-                            var ditem = {
-                                'type': 'ditem',
-                                'name': records[i],
-                                'description': 'desc',
-                                'ditem': cnt,
-                                'date': '',
-                                'slug': records[i],
-                                'links': links2
-                            };
-                            array2.push(records[i]);
-                            cnt += 1;
-                            ditems.push(ditem);
+                        var clinks = records_dict[records[i]];
+                        //console.log(clinks);
+                        var links2 = [];
+                        clinks.forEach(function(entry) {
+                            if(!(links2.includes(entry)))
+                            {
+                                if(entry!='0')
+                                {
+                                    links2.push(entry);
+                                }
+                            }
+                        });
+                        if(!(array2.includes(records[i]))) {
+                            if(records[i]!='0')
+                            {
+                                var ditem = {
+                                    'type': 'ditem',
+                                    'name': records[i],
+                                    'description': 'desc',
+                                    'ditem': cnt,
+                                    'date': '',
+                                    'slug': records[i],
+                                    'links': links2
+                                };
+                                array2.push(records[i]);
+                                cnt += 1;
+                                ditems.push(ditem);
+                            }
+
                         }
                     }
                     for(j in tran_links)
@@ -317,22 +555,38 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         {}
                         else
                         {
-                            var theme = {
-                                'type':'theme',
-                                'name':tran_links[j],
-                                'description':'desc',
-                                'slug':tran_links[j]
+                            if(tran_links[j]!='0')
+                            {
+                                var theme = {
+                                    'type':'theme',
+                                    'name':tran_links[j],
+                                    'description':'desc',
+                                    'slug':tran_links[j]
+                                }
+                                themes.push(theme);
+                                array.push(tran_links[j]);
                             }
-                            themes.push(theme);
-                            array.push(tran_links[j]);
+
                         }
 
                     }
                 }
-                
-                //console.log(ditems);
-                //console.log(themes);
-                //console.log(perspectives);
+
+                pres.forEach(function(entry) {
+                    var pres = {
+                        "type": "perspective",
+                        "name": entry,
+                        "description": "",
+                        "slug": entry,
+                        "count": "10",
+                        "group": ""
+                    };
+                    perspectives.push(pres);
+                });
+
+                console.log(ditems);
+                console.log(themes);
+                console.log(perspectives);
 
 
 
@@ -512,8 +766,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.cluster = data['data'];
 
                 ////console.log($scope.cluster);
-                $scope.get_prog($scope.cluster);
+                if($scope.slider==2)
+                {
+                    $scope.get_prog($scope.cluster);
 
+                }
             } else {
                 $scope.res = 0;
                 $scope.loading = 1;
@@ -536,6 +793,19 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         //(race);
         ////console.log($scope.educ);
         //.log($scope.occu);
+        var income = '';
+        if ($scope.income_low > 400000 && $scope.income_top < 700000)
+        {
+            income = 'med';
+        }
+        else if($scope.income_low > 700000)
+        {
+            income = 'high';
+        }
+        else
+        {
+            income = 'low';
+        }
 
         var request = $http({
             method: "POST",
@@ -548,7 +818,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 occu:$scope.occu,
                 child:$scope.children,
                 vechi:$scope.vehicles,
-                hh_num:$scope.hh_num
+                hh_num:$scope.hh_num,
+                income:income
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
@@ -630,26 +901,26 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             if(key=='in14c' || key=='in1')
                             {
                                 $scope.income=39999;
-                                $scope.animateValue("el", 39799, 39999, 500);
+                                $scope.animateValue("el", 39799, 39999, 1000);
 
                             }
                             else if(key=='58c' || key=='in58c')
                             {
                                 $scope.income=79999;
-                                $scope.animateValue("el", 79799, 79999, 500);
+                                $scope.animateValue("el", 79799, 79999, 1000);
 
 
                             }
                             else if(key=='31c' || key=='in31c')
                             {
                                 $scope.income=999999;
-                                $scope.animateValue("el", 999799, 999999, 500);
+                                $scope.animateValue("el", 999799, 999999, 1000);
 
                             }
                             else if(key=='92c' || key=='in92c')
                             {
                                 $scope.income=499999
-                                $scope.animateValue("el", 499799, 499999, 500);
+                                $scope.animateValue("el", 499799, 499999, 1000);
                             }
                             if(key=='singlee')
                             {
@@ -813,6 +1084,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
                 //console.log($scope.x);
                 $scope.bubleChart($scope.x,$scope.y,$scope.r,$scope.labels);
+
             }
             else {
                 //console.log('init_case - failed');
@@ -917,6 +1189,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         hoverBackgroundColor: $scope.getColor(7),
                     }
                     , {
+                        label: '9',
+                        data: [{
+                            x: x[9],
+                            y: y[9],
+                            r: r[9]*2
+                        }],
+                        backgroundColor:$scope.getColor(9),
+                        hoverBackgroundColor: $scope.getColor(9),
+                    }
+                    , {
                         label: '8',
                         data: [{
                             x: x[8],
@@ -981,13 +1263,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     {
         if ($scope.slider == 1)
         {
-            $scope.level = "Flat - Demographic data only";
+            $scope.level = "Analyze only demographic info";
             $scope.moderate = 1;
             $scope.deep = 1;
         }
         else if($scope.slider==2)
         {
-            $scope.level = "Moderate - Including watching patterns";
+            $scope.level = "Analyze watching patterns";
             $scope.moderate = 0;
             $scope.deep = 1;
         }

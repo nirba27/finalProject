@@ -1,4 +1,4 @@
-<?php
+<!--?php
 // You'd put this code at the top of any "protected" page you create
 
 // Always start this first
@@ -11,7 +11,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
     // Redirect them to the login page
     header("Location: https://lba.azurewebsites.net");
 }
-?>
+?>-->
 
 
 <html lang="en" ng-app="template" >
@@ -946,7 +946,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <div class="col">
                             <!-- Material input -->
                             <div class="md-form">
-                                <input type="number" id="numberExample" class="form-control">
+                                <input ng-model="income_top" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">Income Range</label>
                             </div>
                         </div>
@@ -958,7 +958,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <!-- Material input -->
 
                             <div class="md-form">
-                                <input type="number" id="numberExample" class="form-control">
+                                <input ng-model="income_low" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">To</label>
                             </div>
 
