@@ -59,6 +59,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.genres_array = [];
     $scope.dvrs = [];
     $scope.cluster = '';
+    $scope.Kcluster = '';
     $scope.selectedGenre = 'Choose';
     $scope.genreView = '';
     $scope.hourView = 0;
@@ -747,10 +748,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     }
 
     $scope.get_audience = function () {
-
+        $scope.get_genres_hist(1);
         var genre = $scope.selectedGenre2[0];
-        //console.log(genre);
-
         var request = $http({
             method: "POST",
             url: "php/get_audience.php",
@@ -763,12 +762,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if (data != "0") {
                 $scope.res = 0;
                 $scope.loading = 1;
-                $scope.cluster = data['data'];
+                $scope.Kcluster = data['data'];
 
-                ////console.log($scope.cluster);
-                if($scope.slider==2)
+                if($scope.slider == 2)
                 {
-                    $scope.get_prog($scope.cluster);
+                    $scope.get_prog($scope.Kcluster);
 
                 }
             } else {
@@ -776,17 +774,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.loading = 1;
             }
         }); //success
-
-
         $scope.education = 'NA';
         $scope.ethnic = 'Mixed';
         $scope.income = 'NA';
         $scope.status = 'Married And Singles';
         $scope.NumberAdults = 0;
         $scope.child_p = 'Have children';
-
-
-
         var gender = $scope.Gender;
         var maritial = $scope.maritial;
         var race = $scope.race_;
@@ -984,6 +977,153 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     } //the funtion
 
+    $scope.get_genres_hist = function(id,genre)
+    {
+        var News = [];
+        var Comedy = [];
+        var Drama = [];
+        var Entertainment = [];
+        var Children = [];
+        var Sports = [];
+        var Knowledge = [];
+        var Other = [];
+        var request = $http({
+            method: "POST",
+            url: "php/get_geners_hist.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                console.log(data["data"]);
+                for(i in data["data"])
+                {
+                    News.push(data["data"][i]["News"]);
+                    Comedy.push(data["data"][i]["Comedy"]);
+                    Drama.push(data["data"][i]["Drama"]);
+                    Entertainment.push(data["data"][i]["Entertainment"]);
+                    Children.push(data["data"][i]["Children"]);
+                    Sports.push(data["data"][i]["Sports"]);
+                    Knowledge.push(data["data"][i]["Knowledge"]);
+                    Other.push(data["data"][i]["Other"]);
+
+                }
+            } else {
+                //console.log('init_case - failed');
+            }
+        }); //success
+
+        //line
+        var ctxL = document.getElementById("lineChart3").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: ["0-3", "3-6", "6-9", "9-12", "12-15", "15-18", "18-21","21-0"],
+                datasets: [{
+                    label: "Comedy",
+                    data: Comedy,
+                    backgroundColor: [
+                        'rgba(105, 0, 132, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(200, 99, 132, .7)',
+                    ],
+                    borderWidth: 2
+                },
+                    {
+                        label: "News",
+                        data: News,
+                        backgroundColor: [
+                            'rgba(0, 137, 132, .2)',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Drama",
+                        data: Drama,
+                        backgroundColor: [
+                            '#c9d0d7',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Entertainment",
+                        data: Entertainment,
+                        backgroundColor: [
+                            '#ead6d1',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Children",
+                        data: Children,
+                        backgroundColor: [
+                            '#cac6dc',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Sports",
+                        data: Sports,
+                        backgroundColor: [
+                            '#ceb5d4',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Knowledge",
+                        data: Knowledge,
+                        backgroundColor: [
+                            '#ead6d1',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                    ,
+                    {
+                        label: "Other",
+                        data: Other,
+                        backgroundColor: [
+                            '#e8cee2',
+                        ],
+                        borderColor: [
+                            'rgba(0, 10, 130, .7)',
+                        ],
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+    }
+
     $scope.get_prog = function(id)
     {
         var request = $http({
@@ -1095,7 +1235,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.getColor = function(cluster)
     {
-        if (cluster==$scope.cluster)
+        if (cluster==$scope.Kcluster)
         {
             return "#0984e3";
         }
@@ -1108,6 +1248,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.bubleChart = function (x,y,r,labels)
     {
+        console.log("cluster:"+ $scope.Kcluster);
         var ctxBc = document.getElementById('bubbleChart').getContext('2d');
         var bubbleChart = new Chart(ctxBc, {
             type: 'bubble',
@@ -1215,6 +1356,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.linechart = function (obi)
     {
+
         var ctxL = document.getElementById("lineChart2").getContext('2d');
        // //console.log("obi?");
        // //console.log(obi[0]);

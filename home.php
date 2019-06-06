@@ -85,7 +85,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+            <a class="navbar-brand" target="_blank">
                 <strong>LBA</strong>
             </a>
 
@@ -1067,7 +1067,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <div class="progress">
                 <div id='myBar' class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <button id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
+            <button href='#res' id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
         </section>
 
 
@@ -1230,7 +1230,35 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 </div>
                 <!--Grid column-->
 
-                <!--Grid column-->
+                <h3 class="h3 text-center mb-5">Watching Patterns</h3>
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4">
+
+                        <!--Card-->
+                        <div class="card mb-4">
+
+                            <!-- Card header -->
+                            <div class="card-header text-center">
+                                Watching Hours
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <canvas id="lineChart3"></canvas>
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
                     <!--Card-->
