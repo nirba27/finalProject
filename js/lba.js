@@ -977,7 +977,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     } //the funtion
 
-    $scope.get_genres_hist = function(id,genre)
+    $scope.get_genres_hist = function(id)
     {
         var News = [];
         var Comedy = [];
@@ -1010,119 +1010,116 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     Other.push(data["data"][i]["Other"]);
 
                 }
+                var ctxL = document.getElementById("lineChart3").getContext('2d');
+                var myLineChart = new Chart(ctxL, {
+                    type: 'line',
+                    data: {
+                        labels: ["0-3", "3-6", "6-9", "9-12", "12-15", "15-18", "18-21","21-0"],
+                        datasets: [
+                            {
+                                label: "Comedy",
+                                data: Comedy,
+                                backgroundColor: [
+                                    'rgba(105, 0, 132, .2)',
+                                ],
+                                borderColor: [
+                                    'rgba(200, 99, 132, .7)',
+                                ],
+                                borderWidth: 2
+                            },
+                            {
+                                label: "News",
+                                data: News,
+                                backgroundColor: [
+                                    'rgba(0, 137, 132, .2)',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Drama",
+                                data: Drama,
+                                backgroundColor: [
+                                    '#c9d0d7',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Entertainment",
+                                data: Entertainment,
+                                backgroundColor: [
+                                    '#ead6d1',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Children",
+                                data: Children,
+                                backgroundColor: [
+                                    '#cac6dc',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Sports",
+                                data: Sports,
+                                backgroundColor: [
+                                    '#ceb5d4',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Knowledge",
+                                data: Knowledge,
+                                backgroundColor: [
+                                    '#ead6d1',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                            ,
+                            {
+                                label: "Other",
+                                data: Other,
+                                backgroundColor: [
+                                    '#e8cee2',
+                                ],
+                                borderColor: [
+                                    'rgba(0, 10, 130, .7)',
+                                ],
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                });
             } else {
                 //console.log('init_case - failed');
             }
         }); //success
-
-        //line
-        var ctxL = document.getElementById("lineChart3").getContext('2d');
-        var myLineChart = new Chart(ctxL, {
-            type: 'line',
-            data: {
-                labels: ["0-3", "3-6", "6-9", "9-12", "12-15", "15-18", "18-21","21-0"],
-                datasets: [
-                    {
-                    label: "Comedy",
-                    data: Comedy,
-                    backgroundColor: [
-                        'rgba(105, 0, 132, .2)',
-                    ],
-                    borderColor: [
-                        'rgba(200, 99, 132, .7)',
-                    ],
-                    borderWidth: 2
-                },
-                    {
-                        label: "News",
-                        data: News,
-                        backgroundColor: [
-                            'rgba(0, 137, 132, .2)',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Drama",
-                        data: Drama,
-                        backgroundColor: [
-                            '#c9d0d7',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Entertainment",
-                        data: Entertainment,
-                        backgroundColor: [
-                            '#ead6d1',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Children",
-                        data: Children,
-                        backgroundColor: [
-                            '#cac6dc',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Sports",
-                        data: Sports,
-                        backgroundColor: [
-                            '#ceb5d4',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Knowledge",
-                        data: Knowledge,
-                        backgroundColor: [
-                            '#ead6d1',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                    ,
-                    {
-                        label: "Other",
-                        data: Other,
-                        backgroundColor: [
-                            '#e8cee2',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                ]
-            },
-            options: {
-                responsive: true
-            }
-        });
-
     }
 
     $scope.get_prog = function(id)
