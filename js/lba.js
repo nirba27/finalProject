@@ -1021,7 +1021,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             type: 'line',
             data: {
                 labels: ["0-3", "3-6", "6-9", "9-12", "12-15", "15-18", "18-21","21-0"],
-                datasets: [{
+                datasets: [
+                    {
                     label: "Comedy",
                     data: Comedy,
                     backgroundColor: [
