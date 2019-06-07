@@ -984,16 +984,139 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                             <div class="col-sm-6" style="margin-top:50px">
                                 <select ng-model="selectedGenre2"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
-                                    <optgroup data-icon="fas fa-heart" label="Interests">
-                                        <option ng-repeat="x in genres_array">{{x.genre}}</option>
+                                    <optgroup data-icon="fas fa-heart" label="News">
+                                        <option>News</option>
+                                        <option>Newsmagazine</option>
+                                        <option>Weather</option>
                                     </optgroup>
                                     <optgroup data-icon="fas fa-futbol" label="Sports">
-                                        <option>Baseball</option>
-                                        <option>Basketball</option>
-                                        <option>Football</option>
+                                        <option>	Sports event	</option>
+                                        <option>	Football	</option>
+                                        <option>	Playoff sports	</option>
+                                        <option>	Sports non-event	</option>
+                                        <option>	Volleyball	</option>
+                                        <option>	Sports talk	</option>
+                                        <option>	Basketball	</option>
+                                        <option>	Mixed martial arts	</option>
+                                        <option>	Hockey	</option>
+                                        <option>	Soccer	</option>
+                                        <option>	Martial arts	</option>
+                                        <option>	Boxing	</option>
+                                        <option>	Baseball	</option>
+                                        <option>	Card games	</option>
+                                        <option>	Poker	</option>
+                                        <option>	Shooting	</option>
+                                        <option>	Action sports	</option>
+                                        <option>	Bowling	</option>
+                                        <option>	Wrestling	</option>
+                                        <option>	Exercise	</option>
+                                        <option>	Golf	</option>
                                     </optgroup>
-                                    <optgroup data-icon="fas fa-phone" label="Hobbies" ng-click="init_case()">
-                                        <option ng-repeat="y in intrests">{{y.genre}}</option>
+                                    <optgroup data-icon="fas fa-book" label="Intrests">
+                                        <option>	Anthology	</option>
+                                        <option>	Paranormal	</option>
+                                        <option>	Great Job	</option>
+                                        <option>	Music	</option>
+                                        <option>	Special	</option>
+                                        <option>	Parade	</option>
+                                        <option>	Religious	</option>
+                                        <option>	Travel	</option>
+                                        <option>	Shopping	</option>
+                                        <option>	Consumer	</option>
+                                        <option>	Animals	</option>
+                                        <option>	Relieve Back Pain	</option>
+                                        <option>	Public affairs	</option>
+                                        <option>	Man	</option>
+                                        <option>	Health	</option>
+                                        <option>	Community	</option>
+                                        <option>	Standup	</option>
+                                        <option>	Where Are You!	</option>
+                                        <option>	Technology	</option>
+                                        <option>	Hunting	</option>
+                                        <option>	Texas Ranger	</option>
+                                        <option>	Less Stress	</option>
+                                        <option>	Outdoors	</option>
+                                        <option>	Fashion	</option>
+                                        <option>	Event	</option>
+                                        <option>	Politics	</option>
+                                        <option>	Isle of Wight	</option>
+                                        <option>	Little Anthony	</option>
+                                        <option>	Drive-Ins and Dives	</option>
+                                        <option>	Fishing	</option>
+                                        <option>	Dance	</option>
+                                        <option>	Richard Roberts	</option>
+                                        <option>	Self improvement	</option>
+                                        <option>	Gay/lesbian	</option>
+                                        <option>	Adults only	</option>
+                                        <option>	Computers	</option>
+                                        <option>	Awards	</option>
+                                        <option>	All the Worst 2014: AC360	</option>
+                                        <option>	Collectibles	</option>
+                                        <option>	Gaming	</option>
+                                        <option>	Jr. Show	</option>
+                                        <option>	Horse	</option>
+                                        <option>	Arts/crafts	</option>
+                                        <option>	Rod Stewart	</option>
+                                        <option>	Celine Dion	</option>
+                                        <option>	Environment	</option>
+
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-baby" label="Children">
+                                        <option>Children</option>
+                                        <option>Animated</option>
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-video" label="Genre">
+                                        <option>	Crime drama	</option>
+                                        <option>	Science fiction	</option>
+                                        <option>	Fantasy	</option>
+                                        <option>	Suspense	</option>
+                                        <option>	Action	</option>
+                                        <option>	Adventure	</option>
+                                        <option>	Mystery	</option>
+                                        <option>	Drama	</option>
+                                        <option>	Reality	</option>
+                                        <option>	Documentary	</option>
+                                        <option>	Talk	</option>
+                                        <option>	Comedy	</option>
+                                        <option>	Entertainment	</option>
+                                        <option>	Law	</option>
+                                        <option>	Crime	</option>
+                                        <option>	Historical drama	</option>
+                                        <option>	Horror	</option>
+                                        <option>	Comedy-drama	</option>
+                                        <option>	Romance-comedy	</option>
+                                        <option>	Romance	</option>
+                                        <option>	Soap	</option>
+                                        <option>	Variety	</option>
+                                        <option>	Game show	</option>
+                                        <option>	Western	</option>
+                                        <option>	War	</option>
+                                        <option>	Miniseries	</option>
+                                        <option>	Interview	</option>
+                                        <option>	Musical	</option>
+                                        <option>	Musical comedy	</option>
+                                        <option>	Docudrama	</option>
+
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-globe-americas" label="Languahes">
+                                        <option>Spanish</option>
+                                        <option>English</option>
+                                    </optgroup>
+                                    <optgroup data-icon="fas fa-hamburger" label="Knowledge">
+                                        <option>	Nature	</option>
+                                        <option>	Medical	</option>
+                                        <option>	Cooking	</option>
+                                        <option>	Auto	</option>
+                                        <option>	History	</option>
+                                        <option>	House/garden	</option>
+                                        <option>	Bus./financial	</option>
+                                        <option>	How-to	</option>
+                                        <option>	Home improvement	</option>
+                                        <option>	Educational	</option>
+                                        <option>	Military	</option>
+                                        <option>	Parenting	</option>
+                                        <option>	Science	</option>
+                                        <option>	Biography	</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -1075,7 +1198,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <section id="res" ng-hide="res">
 
             <h3 class="h3 text-center mb-5">Demographic Information</h3>
-
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -1173,14 +1295,14 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Vechicles</h5>
-                            <h2 class="grey-text" id="el">0</h2>
+                            <h2 class="grey-text" id="el">3</h2>
                         </div>
 
                         <div class="col-1 ">
                             <i class="fas fa-baby fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Childrens</h5>
+                            <h5 class="feature-title">?</h5>
                             <h2 class="grey-text">{{status}}
                             </h2>
                         </div>
@@ -1202,6 +1324,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
             <hr class="mb-5">
+
             <h3 class="h3 text-center mb-5">Watching Patterns</h3>
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -1230,7 +1353,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 </div>
                 <!--Grid column-->
 
-                <h3 class="h3 text-center mb-5">Watching Patterns</h3>
+                <h3 class="h3 text-center mb-5">Genre by hours</h3>
                 <!--Grid row-->
                 <div class="row wow fadeIn">
 
@@ -1343,81 +1466,87 @@ if ( isset( $_SESSION['user_id'] ) ) {
             </div>
             <!--Grid row-->
 
+            <section id="kmeans" ng-hide="level2">
+                <div class="col-md-12 mb-4">
 
-            <div class="col-md-12 mb-4">
-
-                <div  id="prog_carousel" class="carousel slide wow fadeIn" data-ride="carousel"  style=" width:100%; height: 300px !important;">
-                    <div  class="carousel-inner z-depth-2" style=" width:100%; height: 265px !important;">
-                        <div ng-repeat="x in programs | limitTo:20" class="carousel-item" ng-class="{active:!$index}" >
-                            <div class="card unique-color-dark white-text">
-                                <div class="row no-gutters">
-                                    <div class="col-md-2" style="box-shadow: inset 3px 3px 10px 0 #000000">
-                                        <img style="opacity:0.7;" src="{{x.cover}}" height="300px">
-                                    </div>
-                                    <div class="col-md-10">
-                                        <div class="card-body">
-                                            <h1 class="card-title">{{x.pname}}</h1>
-                                            <h4 class="card-title text-muted" style="opacity: 0.5;font-family: 'Calibri Light'">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            <button type="button" class="btn btn-secondary btn-md">Read more</button>
+                    <div  id="prog_carousel" class="carousel slide wow fadeIn" data-ride="carousel"  style="margin-top: 20px; width:100%; height: 300px !important;">
+                        <div  class="carousel-inner z-depth-2" style=" width:100%; height: 265px !important;">
+                            <div ng-repeat="x in programs | limitTo:20" class="carousel-item" ng-class="{active:!$index}" >
+                                <div class="card unique-color-dark white-text">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-2" style="box-shadow: inset 3px 3px 10px 0 #000000">
+                                            <img style="opacity:0.7;" src="{{x.cover}}" height="300px">
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="card-body">
+                                                <h1 class="card-title">{{x.pname}}</h1>
+                                                <h4 class="card-title text-muted" style="opacity: 0.5;font-family: 'Calibri Light'">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h4>
+                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                <button type="button" class="btn btn-secondary btn-md">Read more</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <a class="carousel-control-prev" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-
-            <hr class="mb-5">
-
-            <h3 class="h3 text-center mb-5">Clusters Plot</h3>
-
-            <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
-
-            <hr class="mb-5">
-
-            <!-- Card deck -->
-            <div class="card-deck wow fadeInUp">
-                <!-- Card -->
-                <div ng-repeat="x in programs | limitTo:5" class="card unique-color-dark white-text mb-4 z-depth-1-half" >
-                    <!--Card image-->
-                    <div class="view overlay">
-                        <img class="card-img-top" src="{{x.cover}}">
-                        <a href="#!">
-                            <div class="mask rgba-white-slight"></div>
+                        <a class="carousel-control-prev" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" style="height: 300px !important;" href="#prog_carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
                         </a>
                     </div>
+                </div>
 
-                    <!--Card content-->
-                    <div class="card-body">
-                        <h4><span class="badge badge-pill badge-default ">{{x.views}}</span></h4>
+                <hr class="mb-5" style="margin-bottom: 20px;">
 
-                        <!--Title-->
-                        <h4 class="card-title">{{x.pname}}</h4>
-                        <!--Text-->
-                        <p class="card-text">{{x.genre}}</p>
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <button type="button" class="btn btn-secondary btn-md">Read more</button>
+                <h3 class="h3 text-center mb-5">Clusters Plot</h3>
+
+                <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
+
+                <hr class="mb-5">
+
+                <!-- Card deck -->
+                <div class="card-deck wow fadeInUp">
+                    <!-- Card -->
+                    <div ng-repeat="x in programs | limitTo:5" class="card unique-color-dark white-text mb-4 z-depth-1-half" >
+                        <!--Card image-->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="{{x.cover}}">
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <!--Card content-->
+                        <div class="card-body">
+                            <h4><span class="badge badge-pill badge-default ">{{x.views}}</span></h4>
+
+                            <!--Title-->
+                            <h4 class="card-title">{{x.pname}}</h4>
+                            <!--Text-->
+                            <p class="card-text">{{x.genre}}</p>
+                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                            <button type="button" class="btn btn-secondary btn-md">Read more</button>
+
+                        </div>
 
                     </div>
-
+                    <!-- Card -->
                 </div>
-                <!-- Card -->
-            </div>
-            <!-- Card deck -->
+                <!-- Card deck -->
+
+
+
+            </section>
+
 
 
 
             <hr class="mb-5">
+
             <section id="map" >
                 <h3 class="h3 text-center mb-5">Community Detection</h3>
                 <!--Grid column-->

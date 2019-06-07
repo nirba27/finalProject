@@ -49,6 +49,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.user = "";
     $scope.pass = "";
     $scope.about = 0;
+    $scope.level2 = 1;
     $scope.info = 0;
     $scope.tags = [];
     $scope.programs = [];
@@ -871,11 +872,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    //console.log(data);
                     if (data != "0") {
                         $scope.attr = data['data'];
-                        ////console.log('init_cases - success');
-                       // //console.log($scope.attr);
                         for (x in $scope.attr) {
                             var key = $scope.attr[x]['key'];
                             if(key=='edhs_')
@@ -1406,12 +1404,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             $scope.level = "Analyze only demographic info";
             $scope.moderate = 1;
             $scope.deep = 1;
+            $scope.level2 = 1;
+
         }
         else if($scope.slider==2)
         {
             $scope.level = "Analyze watching patterns";
             $scope.moderate = 0;
             $scope.deep = 1;
+            $scope.level2 = 0;
+
         }
         else
         {

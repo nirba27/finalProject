@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT [key],COUNT(*) as cnt FROM MFI_CLUSTERS_KEYS WHERE $cluster GROUP BY [key] ORDER BY cnt DESC";
+$tsql= "SELECT [key],COUNT(*) as cnt FROM MFI_CLUSTERS_KEYS WHERE $cluster GROUP BY [key] ORDER BY cnt ASC";
 
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
