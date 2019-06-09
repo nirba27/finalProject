@@ -479,14 +479,14 @@ if ( isset( $_SESSION['user_id'] ) ) {
             </div>
 
 
-            <h1 class="h4 text-center mb-5">Here's how to target an audience</h1>
+            <h2 class="my-5 h3 text-center">Here's how to target an audience</h2>
 
             <div class="accordion" id="accordionExample" width="100%">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Select your audience
+                                Select your audience &nbsp           <i class="fas fa-plus grey-text"></i>
                             </button>
                         </h5>
                     </div>
@@ -502,7 +502,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Analyze your data
+                                Analyze your data &nbsp  <i class="fas fa-plus grey-text"></i>
                             </button>
                         </h5>
                     </div>
@@ -517,7 +517,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="card-header" id="headingThree">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Export the data to your mail
+                                Export the data to your mail &nbsp  <i class="fas fa-plus grey-text"></i>
                             </button>
                         </h5>
                     </div>
