@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 * FROM mfi_final WHERE $cluster ";
+$tsql= "SELECT TOP 6 * FROM mfi_final WHERE $cluster ";
 
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);

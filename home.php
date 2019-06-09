@@ -76,7 +76,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
 <!-- Central Modal Small -->
 
 
-<body id="allBody" style="text-align: center" ng-controller='ng-cases' ng-init="init_case();">
 
 <header>
 
@@ -85,7 +84,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand" target="_blank">
+            <a class="navbar-brand white-text" target="_blank">
                 <strong>LBA</strong>
             </a>
 
@@ -101,7 +100,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home
+                        <a class="nav-link" href="home.php">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -112,7 +111,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <a class="nav-link" href="#statistics" target="_self" ng-click="statistics=0;about=1;info=1;data=1;res=1;loading=1">Statistics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1">Target Audience</a>
+                        <a class="nav-link font-weight-bold" href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1">Target Audience</a>
                     </li>
                 </ul>
 
@@ -203,15 +202,18 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 </header>
 
+
+<body id="allBody" style="text-align: center" ng-controller='ng-cases' ng-init="init_case();">
+
 <!--Main layout-->
 <main>
     <div class="container">
 
         <!--Section: Main info-->
-        <section ng-hide="about" class="mt-5 wow fadeIn">
+        <section class="mt-5 wow fadeIn">
 
             <!--Grid row-->
-            <div class="row">
+            <div class="row" ng-hide="about" >
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
@@ -1245,7 +1247,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <div class="progress">
                 <div id='myBar' class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <button href='#res' id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
+            <button autoscroll="false" id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
         </section>
 
         <section id="res" ng-hide="res">
@@ -1274,16 +1276,16 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="col-md-7 text-md-left ml-3 mt-3">
 
                         <!-- Excerpt -->
-                        <a href="#!" class="green-text">
+                        <a href="#!" class="cyan-text">
                             <h3 class="h3 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h3>
                         </a>
 
                         <h4 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h4>
 
                         <h5 class="font-weight-normal">
-                            This cluster audience is mainly watching between {{hourView}}
-                            <br> Mostyl watching these genres : <label ng-repeat="x in geners|limitTo:3">{{x.genre}},</label>
-                            <br> And top watcher of this attributes : <label ng-repeat="x in selectedGenre2">{{x}},</label> </h4>
+                            Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
+                            <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">{{x.genre}}</span>
+                            <br>And a top viewer of <span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">{{x}}</span></h4>
                         </h5>
 
 
