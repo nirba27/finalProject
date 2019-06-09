@@ -852,10 +852,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
                 else if(key=='knowledge1')
                 {
-                    $scope.fa = 'hamburger';
+                    $scope.fa = 'book';
                     $scope.bg = 'https://www.yesmagazine.org/issues/affordable-housing/cooking-stirs-the-pot-for-social-change-20180627/sioux-chef-cooking.jpg/image';
                 }
-                else if(key=='drama1')
+                else if(key=='drama')
                 {
                     $scope.fa = 'heart-broken';
                     $scope.bg = 'https://media1.giphy.com/media/3ohs4eRA3r65FC4EsU/giphy.gif';

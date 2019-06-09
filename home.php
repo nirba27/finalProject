@@ -112,7 +112,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <a class="nav-link" href="#statistics" target="_self" ng-click="statistics=0;about=1;info=1;data=1;res=1;loading=1">Statistics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1">Data</a>
+                        <a class="nav-link" href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1">Target Audience</a>
                     </li>
                 </ul>
 
@@ -171,7 +171,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 available. Create your own, stunning website.</strong>
                         </p>
 
-                        <a target="_blank" ng-click="getJson();" class="btn btn-outline-white">Target Audiences
+                        <a href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1" class="btn btn-outline-white">Target Audiences
                             <i class="fas fa-graduation-cap ml-2"></i>
                         </a>
                         <a class="btn btn-outline-white" ng-click="show_group();" data-toggle="modal" data-target="#basicExampleModal">Insert New Data
@@ -469,6 +469,68 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
             </div>
             <!--/Second row-->
+
+
+            <div class="jumbotron jumbotron-fluid" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLGcpluuQ6g6NzkRWMaUCswVv3nTVRRL5xFy5pK_NBA5gLfSgU); background-size: 100% 100%;">
+                <div class="container">
+                    <h2 class="display-7 white-text">10,000 House Holds, More than 200,000 DVRs</h2>
+                    <p class="lead grey-text">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                </div>
+            </div>
+
+
+            <h1 class="h4 text-center mb-5">Here's how to target an audience</h1>
+
+            <div class="accordion" id="accordionExample" width="100%">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Select your audience
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Next, choose where you want to run your ad – whether that's on Facebook, Instagram, Messenger, Audience Network or across them all. In this step, you can also choose to run ads on specific mobile devices.
+                        </div>
+                        <img src="img\1.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Analyze your data
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            dsdsfadsfadafsdfs
+                        </div>
+                        <img src="img\2.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Export the data to your mail
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            When you submit your ad, it goes to our ad auction which helps get it to the right people.
+                        </div>
+                        <img src="img\3.png">
+                    </div>
+                </div>
+            </div>
+
+
 
         </section>
         <!--Section: More-->
@@ -776,7 +838,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <form class="text-center border border-light p-5">
 
                 <h2>{{level}}</h2>
-                <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="3" step="1" id="customRange3">
+                <input ng-model="slider"  ng-change="change()" type="range" class="custom-range" min="1" max="2" step="1" id="customRange3">
                 <hr class="mb-5">
                 <!-- Grid row -->
                 <div class="row" style="margin-bottom: 40px;">
@@ -956,183 +1018,173 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <!-- Grid column -->
 
                     </div>
-                    <!-- Grid row -->
-                    <div class="row">
-
-                    <!-- Grid column -->
-                        <div class="col">
-                            <!-- Default input -->
-                            <select class="browser-default custom-select" ng-model="topic">
-                                <option value="" disabled selected>Mainly watching</option>
-                                <option value="sports1">Sports</option>
-                                <option value="knowledge1">Knowledge</option>
-                                <option value="show1">Talk shows</option>
-                                <option value="children1">Children</option>
-                                <option value="drama1">Drama</option>
-                                <option value="action1">Action</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div ng-hide='moderate' class="md-form form-group mt-5">
-
                     <hr class="mb-5">
 
-                    <div ng-hide='moderate' class="md-form form-group mt-5">
-
-                        <label>Detailed Targeting</label>
+                </div>
 
 
-                        <div class="row">
+                <div ng-hide='moderate' class="md-form form-group mt-5">
+                        <h4 class="h4 text-center mb-5">Detailed Targeting</h4>
+                        <p class="lead">INCLUDE people who match at least ONE of the following</p>
+                    <hr class="mb-5">
 
-
-                            <div class="col-sm-6" style="margin-top:50px">
-                                <select ng-model="selectedGenre2"  data-style="btn-info" data-width="100%" class="selectpicker" data-live-search="true" multiple>
-                                    <optgroup data-icon="fas fa-heart" label="News">
-                                        <option>News</option>
-                                        <option>Newsmagazine</option>
-                                        <option>Weather</option>
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-futbol" label="Sports">
-                                        <option>Sports event</option>
-                                        <option>Football</option>
-                                        <option>Playoff sports</option>
-                                        <option>Sports non-event</option>
-                                        <option>Volleyball</option>
-                                        <option>Sports talk</option>
-                                        <option>Basketball</option>
-                                        <option>Mixed martial arts</option>
-                                        <option>Hockey</option>
-                                        <option>Soccer</option>
-                                        <option>Martial arts</option>
-                                        <option>Boxing</option>
-                                        <option>Baseball</option>
-                                        <option>Card games</option>
-                                        <option>Poker</option>
-                                        <option>Shooting</option>
-                                        <option>Action sports</option>
-                                        <option>Bowling</option>
-                                        <option>Wrestling</option>
-                                        <option>Exercise</option>
-                                        <option>Golf</option>
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-book" label="Intrests">
-                                        <option>Anthology</option>
-                                        <option>Paranormal</option>
-                                        <option>Great Job</option>
-                                        <option>Music</option>
-                                        <option>Special</option>
-                                        <option>Parade</option>
-                                        <option>Religious</option>
-                                        <option>Travel</option>
-                                        <option>Shopping</option>
-                                        <option>Consumer</option>
-                                        <option>Animals</option>
-                                        <option>Relieve Back Pain</option>
-                                        <option>Public affairs</option>
-                                        <option>Man</option>
-                                        <option>Health</option>
-                                        <option>Community</option>
-                                        <option>Standup</option>
-                                        <option>Where Are You!</option>
-                                        <option>Technology</option>
-                                        <option>Hunting</option>
-                                        <option>Texas Ranger</option>
-                                        <option>Less Stress</option>
-                                        <option>Outdoors</option>
-                                        <option>Fashion</option>
-                                        <option>Event</option>
-                                        <option>Politics</option>
-                                        <option>Isle of Wight</option>
-                                        <option>Little Anthony</option>
-                                        <option>Drive-Ins and Dives</option>
-                                        <option>Fishing</option>
-                                        <option>Dance</option>
-                                        <option>Richard Roberts</option>
-                                        <option>Self improvement</option>
-                                        <option>Gay/lesbian</option>
-                                        <option>Adults only</option>
-                                        <option>Computers</option>
-                                        <option>Awards</option>
-                                        <option>All the Worst 2014: AC360</option>
-                                        <option>Collectibles</option>
-                                        <option>Gaming</option>
-                                        <option>Jr. Show</option>
-                                        <option>Horse</option>
-                                        <option>Arts/crafts</option>
-                                        <option>Rod Stewart</option>
-                                        <option>Celine Dion</option>
-                                        <option>Environment</option>
-
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-baby" label="Children">
-                                        <option>Children</option>
-                                        <option>Animated</option>
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-video" label="Genre">
-                                        <option>Crime drama</option>
-                                        <option>Science fiction</option>
-                                        <option>Fantasy</option>
-                                        <option>Suspense</option>
-                                        <option>Action</option>
-                                        <option>Adventure</option>
-                                        <option>Mystery</option>
-                                        <option>Drama</option>
-                                        <option>Reality</option>
-                                        <option>Documentary</option>
-                                        <option>Talk</option>
-                                        <option>Comedy</option>
-                                        <option>Entertainment</option>
-                                        <option>Law</option>
-                                        <option>Crime</option>
-                                        <option>Historical drama</option>
-                                        <option>Horror</option>
-                                        <option>Comedy-drama</option>
-                                        <option>Romance-comedy</option>
-                                        <option>Romance</option>
-                                        <option>Soap</option>
-                                        <option>Variety</option>
-                                        <option>Game show</option>
-                                        <option>Western</option>
-                                        <option>War</option>
-                                        <option>Miniseries</option>
-                                        <option>Interview</option>
-                                        <option>Musical</option>
-                                        <option>Musical comedy</option>
-                                        <option>Docudrama</option>
-
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-globe-americas" label="Languahes">
-                                        <option>Spanish</option>
-                                        <option>English</option>
-                                    </optgroup>
-                                    <optgroup data-icon="fas fa-hamburger" label="Knowledge">
-                                        <option>Nature</option>
-                                        <option>Medical</option>
-                                        <option>Cooking</option>
-                                        <option>Auto</option>
-                                        <option>History</option>
-                                        <option>House/garden</option>
-                                        <option>Bus./financial</option>
-                                        <option>How-to</option>
-                                        <option>Home improvement</option>
-                                        <option>Educational</option>
-                                        <option>Military</option>
-                                        <option>Parenting</option>
-                                        <option>Science</option>
-                                        <option>Biography</option>
-                                    </optgroup>
+                    <!-- Grid row -->
+                    <div class="row">
+                        <!-- Grid column -->
+                            <div class="col-sm-12"><!-- Default input -->
+                                <select class="browser-default custom-select" ng-model="topic">
+                                    <option value="" disabled selected>Mainly watching</option>
+                                    <option value="sports1">Sports</option>
+                                    <option value="knowledge1">Knowledge</option>
+                                    <option value="show1">Talk shows</option>
+                                    <option value="children1">Children</option>
+                                    <option value="drama1">Drama</option>
+                                    <option value="action1">Action</option>
                                 </select>
                             </div>
+                        <div class="col-sm-12" style="margin-top:25px">
+                            <select ng-model="selectedGenre2"  data-style="btn-light" data-width="100%" class="selectpicker" data-live-search="true" multiple>
+                                <optgroup data-icon="fas fa-heart" label="News">
+                                    <option>News</option>
+                                    <option>Newsmagazine</option>
+                                    <option>Weather</option>
+                                </optgroup>
+                                <optgroup data-icon="fas fa-futbol" label="Sports">
+                                    <option>Sports event</option>
+                                    <option>Football</option>
+                                    <option>Playoff sports</option>
+                                    <option>Sports non-event</option>
+                                    <option>Volleyball</option>
+                                    <option>Sports talk</option>
+                                    <option>Basketball</option>
+                                    <option>Mixed martial arts</option>
+                                    <option>Hockey</option>
+                                    <option>Soccer</option>
+                                    <option>Martial arts</option>
+                                    <option>Boxing</option>
+                                    <option>Baseball</option>
+                                    <option>Card games</option>
+                                    <option>Poker</option>
+                                    <option>Shooting</option>
+                                    <option>Action sports</option>
+                                    <option>Bowling</option>
+                                    <option>Wrestling</option>
+                                    <option>Exercise</option>
+                                    <option>Golf</option>
+                                </optgroup>
+                                <optgroup data-icon="fas fa-book" label="Intrests">
+                                    <option>Anthology</option>
+                                    <option>Paranormal</option>
+                                    <option>Great Job</option>
+                                    <option>Music</option>
+                                    <option>Special</option>
+                                    <option>Parade</option>
+                                    <option>Religious</option>
+                                    <option>Travel</option>
+                                    <option>Shopping</option>
+                                    <option>Consumer</option>
+                                    <option>Animals</option>
+                                    <option>Relieve Back Pain</option>
+                                    <option>Public affairs</option>
+                                    <option>Man</option>
+                                    <option>Health</option>
+                                    <option>Community</option>
+                                    <option>Standup</option>
+                                    <option>Where Are You!</option>
+                                    <option>Technology</option>
+                                    <option>Hunting</option>
+                                    <option>Texas Ranger</option>
+                                    <option>Less Stress</option>
+                                    <option>Outdoors</option>
+                                    <option>Fashion</option>
+                                    <option>Event</option>
+                                    <option>Politics</option>
+                                    <option>Isle of Wight</option>
+                                    <option>Little Anthony</option>
+                                    <option>Drive-Ins and Dives</option>
+                                    <option>Fishing</option>
+                                    <option>Dance</option>
+                                    <option>Richard Roberts</option>
+                                    <option>Self improvement</option>
+                                    <option>Gay/lesbian</option>
+                                    <option>Adults only</option>
+                                    <option>Computers</option>
+                                    <option>Awards</option>
+                                    <option>All the Worst 2014: AC360</option>
+                                    <option>Collectibles</option>
+                                    <option>Gaming</option>
+                                    <option>Jr. Show</option>
+                                    <option>Horse</option>
+                                    <option>Arts/crafts</option>
+                                    <option>Rod Stewart</option>
+                                    <option>Celine Dion</option>
+                                    <option>Environment</option>
+
+                                </optgroup>
+                                <optgroup data-icon="fas fa-baby" label="Children">
+                                    <option>Children</option>
+                                    <option>Animated</option>
+                                </optgroup>
+                                <optgroup data-icon="fas fa-video" label="Genre">
+                                    <option>Crime drama</option>
+                                    <option>Science fiction</option>
+                                    <option>Fantasy</option>
+                                    <option>Suspense</option>
+                                    <option>Action</option>
+                                    <option>Adventure</option>
+                                    <option>Mystery</option>
+                                    <option>Drama</option>
+                                    <option>Reality</option>
+                                    <option>Documentary</option>
+                                    <option>Talk</option>
+                                    <option>Comedy</option>
+                                    <option>Entertainment</option>
+                                    <option>Law</option>
+                                    <option>Crime</option>
+                                    <option>Historical drama</option>
+                                    <option>Horror</option>
+                                    <option>Comedy-drama</option>
+                                    <option>Romance-comedy</option>
+                                    <option>Romance</option>
+                                    <option>Soap</option>
+                                    <option>Variety</option>
+                                    <option>Game show</option>
+                                    <option>Western</option>
+                                    <option>War</option>
+                                    <option>Miniseries</option>
+                                    <option>Interview</option>
+                                    <option>Musical</option>
+                                    <option>Musical comedy</option>
+                                    <option>Docudrama</option>
+
+                                </optgroup>
+                                <optgroup data-icon="fas fa-globe-americas" label="Languahes">
+                                    <option>Spanish</option>
+                                    <option>English</option>
+                                </optgroup>
+                                <optgroup data-icon="fas fa-hamburger" label="Knowledge">
+                                    <option>Nature</option>
+                                    <option>Medical</option>
+                                    <option>Cooking</option>
+                                    <option>Auto</option>
+                                    <option>History</option>
+                                    <option>House/garden</option>
+                                    <option>Bus./financial</option>
+                                    <option>How-to</option>
+                                    <option>Home improvement</option>
+                                    <option>Educational</option>
+                                    <option>Military</option>
+                                    <option>Parenting</option>
+                                    <option>Science</option>
+                                    <option>Biography</option>
+                                </optgroup>
+                            </select>
                         </div>
-
-
 
                     </div>
 
-
-
+                    <div class="row">
+                        </div>
 
                 </div>
 
@@ -1179,7 +1231,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
                 <!-- Sign in button -->
-                <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Sumbit</button>
+                <button style='margin-top:25px;' class="btn btn-primary btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Sumbit</button>
 
 
             </form>
@@ -1571,35 +1623,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                 <hr class="mb-5">
 
-                <!-- Card deck -->
-                <div class="card-deck wow fadeInUp">
-                    <!-- Card -->
-                    <div ng-repeat="x in programs | limitTo:5" class="card unique-color-dark white-text mb-4 z-depth-1-half" >
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img class="card-img-top" src="{{x.cover}}">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
 
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h4><span class="badge badge-pill badge-default ">{{x.views}}</span></h4>
-
-                            <!--Title-->
-                            <h4 class="card-title">{{x.pname}}</h4>
-                            <!--Text-->
-                            <p class="card-text">{{x.genre}}</p>
-                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                            <button type="button" class="btn btn-secondary btn-md">Read more</button>
-
-                        </div>
-
-                    </div>
-                    <!-- Card -->
-                </div>
-                <!-- Card deck -->
 
 
             </section>
