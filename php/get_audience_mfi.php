@@ -26,6 +26,7 @@ $vehicles = (stripslashes($_POST['vechi']));
 $occu = (stripslashes($_POST['occu']));
 $hh_num = (stripslashes($_POST['occu']));
 $income = (stripslashes($_POST['income']));
+$topic = (stripslashes($_POST['topic']));
 
 if($income=='high')
 {
@@ -41,25 +42,26 @@ else
 }
 
 
-//$tsql= "SELECT TOP 20 tem.id,COUNT(*) as cnt FROM
-        //  (
-      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$hh_num%'
-        //    UNION ALL
-      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$maritial%'
-      //      UNION ALL
-      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$source%'
-       //     UNION ALL
-      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$educ%'
-       //     UNION ALL
-       //     SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$occu%'
-       //     UNION ALL
-      //      SELECT id FROM MFI_CLUSTERS WHERE [key] LIKE '%$vehicles%'
-     //     ) as tem
-    //    GROUP BY id
-    //    ORDER BY cnt DESC
-     //   ";
+$tsql= "SELECT TOP 10 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt FROM
+          (
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$hh_num%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$maritial%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$source%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$educ%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$occu%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$vehicles%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$topic%'
+          ) as tem
+        GROUP BY id,records,mkey
+        ORDER BY cnt DESC";
 
-$tsql = "SELECT TOP 5 id,COUNT(*) as cnt FROM MFI_CLUSTERS_KEYS WHERE $income [key]='$hh_num' or [key]='$maritial' or [key]='$source' or [key]='$occu' or [key]='$educ' or [key]='$vehicles' GROUP BY id ORDER BY cnt DESC";
+//$tsql = "SELECT TOP 5 id,COUNT(*) as cnt FROM MFI_CLUSTERS_KEYS WHERE $income [key]='$hh_num' or [key]='$maritial' or [key]='$source' or [key]='$occu' or [key]='$educ' or [key]='$vehicles' or [key]='$topic' GROUP BY id ORDER BY cnt DESC";
 
 $getResults= sqlsrv_query($conn, $tsql);
 
@@ -70,7 +72,8 @@ $array = array();
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
         'id'=>$row['id'],
-        'cnt'=>$row['cnt'],
+        'records'=>$row['rec'],
+        'mkey' => $row['mkey']
 
     );}
 echo json_encode($array);

@@ -119,16 +119,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <!-- Right -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a href="https://www.facebook.com/" class="nav-link" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://twitter.com/" class="nav-link" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="https://github.com/nirba27/finalProject" class="nav-link" target="_blank">
                             <i class="fab fa-github mr-2"></i>
                         </a>
@@ -967,7 +957,22 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     </div>
                     <!-- Grid row -->
+                    <div class="row">
 
+                    <!-- Grid column -->
+                        <div class="col">
+                            <!-- Default input -->
+                            <select class="browser-default custom-select" ng-model="topic">
+                                <option value="" disabled selected>Mainly watching</option>
+                                <option value="sports1">Sports</option>
+                                <option value="knowledge1">Knowledge</option>
+                                <option value="show1">Talk shows</option>
+                                <option value="children1">Children</option>
+                                <option value="drama1">Drama</option>
+                                <option value="action1">Action</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 <div ng-hide='moderate' class="md-form form-group mt-5">
@@ -990,75 +995,75 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                         <option>Weather</option>
                                     </optgroup>
                                     <optgroup data-icon="fas fa-futbol" label="Sports">
-                                        <option>	Sports event	</option>
-                                        <option>	Football	</option>
-                                        <option>	Playoff sports	</option>
-                                        <option>	Sports non-event	</option>
-                                        <option>	Volleyball	</option>
-                                        <option>	Sports talk	</option>
-                                        <option>	Basketball	</option>
-                                        <option>	Mixed martial arts	</option>
-                                        <option>	Hockey	</option>
-                                        <option>	Soccer	</option>
-                                        <option>	Martial arts	</option>
-                                        <option>	Boxing	</option>
-                                        <option>	Baseball	</option>
-                                        <option>	Card games	</option>
-                                        <option>	Poker	</option>
-                                        <option>	Shooting	</option>
-                                        <option>	Action sports	</option>
-                                        <option>	Bowling	</option>
-                                        <option>	Wrestling	</option>
-                                        <option>	Exercise	</option>
-                                        <option>	Golf	</option>
+                                        <option>Sports event</option>
+                                        <option>Football</option>
+                                        <option>Playoff sports</option>
+                                        <option>Sports non-event</option>
+                                        <option>Volleyball</option>
+                                        <option>Sports talk</option>
+                                        <option>Basketball</option>
+                                        <option>Mixed martial arts</option>
+                                        <option>Hockey</option>
+                                        <option>Soccer</option>
+                                        <option>Martial arts</option>
+                                        <option>Boxing</option>
+                                        <option>Baseball</option>
+                                        <option>Card games</option>
+                                        <option>Poker</option>
+                                        <option>Shooting</option>
+                                        <option>Action sports</option>
+                                        <option>Bowling</option>
+                                        <option>Wrestling</option>
+                                        <option>Exercise</option>
+                                        <option>Golf</option>
                                     </optgroup>
                                     <optgroup data-icon="fas fa-book" label="Intrests">
-                                        <option>	Anthology	</option>
-                                        <option>	Paranormal	</option>
-                                        <option>	Great Job	</option>
-                                        <option>	Music	</option>
-                                        <option>	Special	</option>
-                                        <option>	Parade	</option>
-                                        <option>	Religious	</option>
-                                        <option>	Travel	</option>
-                                        <option>	Shopping	</option>
-                                        <option>	Consumer	</option>
-                                        <option>	Animals	</option>
-                                        <option>	Relieve Back Pain	</option>
-                                        <option>	Public affairs	</option>
-                                        <option>	Man	</option>
-                                        <option>	Health	</option>
-                                        <option>	Community	</option>
-                                        <option>	Standup	</option>
-                                        <option>	Where Are You!	</option>
-                                        <option>	Technology	</option>
-                                        <option>	Hunting	</option>
-                                        <option>	Texas Ranger	</option>
-                                        <option>	Less Stress	</option>
-                                        <option>	Outdoors	</option>
-                                        <option>	Fashion	</option>
-                                        <option>	Event	</option>
-                                        <option>	Politics	</option>
-                                        <option>	Isle of Wight	</option>
-                                        <option>	Little Anthony	</option>
-                                        <option>	Drive-Ins and Dives	</option>
-                                        <option>	Fishing	</option>
-                                        <option>	Dance	</option>
-                                        <option>	Richard Roberts	</option>
-                                        <option>	Self improvement	</option>
-                                        <option>	Gay/lesbian	</option>
-                                        <option>	Adults only	</option>
-                                        <option>	Computers	</option>
-                                        <option>	Awards	</option>
-                                        <option>	All the Worst 2014: AC360	</option>
-                                        <option>	Collectibles	</option>
-                                        <option>	Gaming	</option>
-                                        <option>	Jr. Show	</option>
-                                        <option>	Horse	</option>
-                                        <option>	Arts/crafts	</option>
-                                        <option>	Rod Stewart	</option>
-                                        <option>	Celine Dion	</option>
-                                        <option>	Environment	</option>
+                                        <option>Anthology</option>
+                                        <option>Paranormal</option>
+                                        <option>Great Job</option>
+                                        <option>Music</option>
+                                        <option>Special</option>
+                                        <option>Parade</option>
+                                        <option>Religious</option>
+                                        <option>Travel</option>
+                                        <option>Shopping</option>
+                                        <option>Consumer</option>
+                                        <option>Animals</option>
+                                        <option>Relieve Back Pain</option>
+                                        <option>Public affairs</option>
+                                        <option>Man</option>
+                                        <option>Health</option>
+                                        <option>Community</option>
+                                        <option>Standup</option>
+                                        <option>Where Are You!</option>
+                                        <option>Technology</option>
+                                        <option>Hunting</option>
+                                        <option>Texas Ranger</option>
+                                        <option>Less Stress</option>
+                                        <option>Outdoors</option>
+                                        <option>Fashion</option>
+                                        <option>Event</option>
+                                        <option>Politics</option>
+                                        <option>Isle of Wight</option>
+                                        <option>Little Anthony</option>
+                                        <option>Drive-Ins and Dives</option>
+                                        <option>Fishing</option>
+                                        <option>Dance</option>
+                                        <option>Richard Roberts</option>
+                                        <option>Self improvement</option>
+                                        <option>Gay/lesbian</option>
+                                        <option>Adults only</option>
+                                        <option>Computers</option>
+                                        <option>Awards</option>
+                                        <option>All the Worst 2014: AC360</option>
+                                        <option>Collectibles</option>
+                                        <option>Gaming</option>
+                                        <option>Jr. Show</option>
+                                        <option>Horse</option>
+                                        <option>Arts/crafts</option>
+                                        <option>Rod Stewart</option>
+                                        <option>Celine Dion</option>
+                                        <option>Environment</option>
 
                                     </optgroup>
                                     <optgroup data-icon="fas fa-baby" label="Children">
@@ -1066,36 +1071,36 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                         <option>Animated</option>
                                     </optgroup>
                                     <optgroup data-icon="fas fa-video" label="Genre">
-                                        <option>	Crime drama	</option>
-                                        <option>	Science fiction	</option>
-                                        <option>	Fantasy	</option>
-                                        <option>	Suspense	</option>
-                                        <option>	Action	</option>
-                                        <option>	Adventure	</option>
-                                        <option>	Mystery	</option>
-                                        <option>	Drama	</option>
-                                        <option>	Reality	</option>
-                                        <option>	Documentary	</option>
-                                        <option>	Talk	</option>
-                                        <option>	Comedy	</option>
-                                        <option>	Entertainment	</option>
-                                        <option>	Law	</option>
-                                        <option>	Crime	</option>
-                                        <option>	Historical drama	</option>
-                                        <option>	Horror	</option>
-                                        <option>	Comedy-drama	</option>
-                                        <option>	Romance-comedy	</option>
-                                        <option>	Romance	</option>
-                                        <option>	Soap	</option>
-                                        <option>	Variety	</option>
-                                        <option>	Game show	</option>
-                                        <option>	Western	</option>
-                                        <option>	War	</option>
-                                        <option>	Miniseries	</option>
-                                        <option>	Interview	</option>
-                                        <option>	Musical	</option>
-                                        <option>	Musical comedy	</option>
-                                        <option>	Docudrama	</option>
+                                        <option>Crime drama</option>
+                                        <option>Science fiction</option>
+                                        <option>Fantasy</option>
+                                        <option>Suspense</option>
+                                        <option>Action</option>
+                                        <option>Adventure</option>
+                                        <option>Mystery</option>
+                                        <option>Drama</option>
+                                        <option>Reality</option>
+                                        <option>Documentary</option>
+                                        <option>Talk</option>
+                                        <option>Comedy</option>
+                                        <option>Entertainment</option>
+                                        <option>Law</option>
+                                        <option>Crime</option>
+                                        <option>Historical drama</option>
+                                        <option>Horror</option>
+                                        <option>Comedy-drama</option>
+                                        <option>Romance-comedy</option>
+                                        <option>Romance</option>
+                                        <option>Soap</option>
+                                        <option>Variety</option>
+                                        <option>Game show</option>
+                                        <option>Western</option>
+                                        <option>War</option>
+                                        <option>Miniseries</option>
+                                        <option>Interview</option>
+                                        <option>Musical</option>
+                                        <option>Musical comedy</option>
+                                        <option>Docudrama</option>
 
                                     </optgroup>
                                     <optgroup data-icon="fas fa-globe-americas" label="Languahes">
@@ -1103,20 +1108,20 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                         <option>English</option>
                                     </optgroup>
                                     <optgroup data-icon="fas fa-hamburger" label="Knowledge">
-                                        <option>	Nature	</option>
-                                        <option>	Medical	</option>
-                                        <option>	Cooking	</option>
-                                        <option>	Auto	</option>
-                                        <option>	History	</option>
-                                        <option>	House/garden	</option>
-                                        <option>	Bus./financial	</option>
-                                        <option>	How-to	</option>
-                                        <option>	Home improvement	</option>
-                                        <option>	Educational	</option>
-                                        <option>	Military	</option>
-                                        <option>	Parenting	</option>
-                                        <option>	Science	</option>
-                                        <option>	Biography	</option>
+                                        <option>Nature</option>
+                                        <option>Medical</option>
+                                        <option>Cooking</option>
+                                        <option>Auto</option>
+                                        <option>History</option>
+                                        <option>House/garden</option>
+                                        <option>Bus./financial</option>
+                                        <option>How-to</option>
+                                        <option>Home improvement</option>
+                                        <option>Educational</option>
+                                        <option>Military</option>
+                                        <option>Parenting</option>
+                                        <option>Science</option>
+                                        <option>Biography</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -1172,7 +1177,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                 </div>
 
-                <hr class="mb-5">
 
                 <!-- Sign in button -->
                 <button class="btn btn-info btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Sumbit</button>
@@ -1182,7 +1186,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <!-- Material form group -->
 
         </section>
-
         <!--Section: Main features & Quick Start-->
         <section id="loading" ng-hide="loading">
             <h3 id="loadNotDone">Looking for your targeted audience...</h3>
@@ -1193,9 +1196,56 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <button href='#res' id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
         </section>
 
-
-
         <section id="res" ng-hide="res">
+
+            <!-- News jumbotron -->
+            <div class="jumbotron text-center hoverable p-4">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+                        <!-- Featured image -->
+                        <div class="view overlay">
+                            <img src="{{bg}}" class="img-fluid" alt="Sample image for first version of blog listing">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-7 text-md-left ml-3 mt-3">
+
+                        <!-- Excerpt -->
+                        <a href="#!" class="green-text">
+                            <h3 class="h3 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h3>
+                        </a>
+
+                        <h4 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h4>
+
+                        <h5 class="font-weight-normal">
+                            This cluster audience is mainly watching between {{hourView}}
+                            <br> Mostyl watching these genres : <label ng-repeat="x in geners|limitTo:3">{{x.genre}},</label>
+                            <br> And top watcher of this attributes : <label ng-repeat="x in selectedGenre2">{{x}},</label> </h4>
+                        </h5>
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- News jumbotron -->
+
+
+            <hr class="mb-5">
 
             <h3 class="h3 text-center mb-5">Demographic Information</h3>
 
@@ -1216,7 +1266,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
 
                         <div class="col-1 ">
-                            <i class="fas fa-tv fa-4x blue-text"></i>
+                            <i class="fas fa-baby-carriage fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Children Presence</h5>
@@ -1260,8 +1310,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-ring fa-4x light-blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Common status</h5>
-                            <h2 class="grey-text">{{status}}
+                            <h5 class="feature-title">Common Gender,Age</h5>
+                            <h2 class="grey-text">{{age}}
                             </h2>
                         </div>
 
@@ -1295,15 +1345,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Vechicles</h5>
-                            <h2 class="grey-text" id="el">3</h2>
+                            <h2 class="grey-text" id="el">2</h2>
                         </div>
 
                         <div class="col-1 ">
-                            <i class="fas fa-baby fa-4x blue-text"></i>
+                            <i class="fas fa-chart-line fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">?</h5>
-                            <h2 class="grey-text">{{status}}
+                            <h5 class="feature-title">Net Value</h5>
+                            <h2 class="grey-text">{{nt}}
                             </h2>
                         </div>
 
@@ -1312,7 +1362,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">House value</h5>
-                            <h2 class="grey-text">{{NumberAdults}}</h2>
+                            <h2 class="grey-text">{{homeVal}}</h2>
                         </div>
 
                     </div>
@@ -1321,6 +1371,21 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
             </div>
             <!--/Grid row-->
+            <hr class="mb-5">
+
+            <section id="map" >
+                <h3 class="h3 text-center mb-5">Community Detection</h3>
+                <!--Grid column-->
+                <div class="col-md-12">
+                    <!--Card-->
+                    <link href="lib/concept-map.css" rel="stylesheet"></link>
+                    <script src="lib/d3.min.js" type="text/javascript"></script>
+                    <script src="lib/packages.js" type="text/javascript"></script>
+                    <script src="lib/concept-map.js" type="text/javascript"></script>
+                    <div id="graph" class="conceptmap" ></div>
+                    <div id="graph-info"></div>
+                </div>
+            </section>
 
 
             <hr class="mb-5">
@@ -1351,9 +1416,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!--/.Card-->
 
                 </div>
-                <!--Grid column-->
 
-                <h3 class="h3 text-center mb-5">Genre by hours</h3>
                 <!--Grid row-->
                 <div class="row wow fadeIn">
 
@@ -1539,39 +1602,56 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <!-- Card deck -->
 
 
-
             </section>
-
-
 
 
             <hr class="mb-5">
 
-            <section id="map" >
-                <h3 class="h3 text-center mb-5">Community Detection</h3>
+
                 <!--Grid column-->
-                <div class="col-md-12">
+                <div class="col-md-12 mb-4" style="margin-top:50px;">
+
                     <!--Card-->
-                    <link href="lib/concept-map.css" rel="stylesheet"></link>
-                    <script src="lib/d3.min.js" type="text/javascript"></script>
-                    <script src="lib/packages.js" type="text/javascript"></script>
-                    <script src="lib/concept-map.js" type="text/javascript"></script>
-                    <div id="graph" class="conceptmap" ></div>
-                    <div id="graph-info"></div>
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!-- Table  -->
+                            <table class="table table-hover">
+                                <!-- Table head -->
+                                <thead class="blue lighten-4">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>DVR</th>
+                                    <th>Count</th>
+                                </tr>
+                                </thead>
+                                <!-- Table head -->
+                                <!-- Table body -->
+                                <tbody>
+                                <tr ng-repeat="x in dvrs" >
+                                    <th scope="row">{{x.id}}</th>
+                                    <td>{{x.DVR}}</td>
+                                    <td><input type="checkbox" name={{x.DVR}} value="checked" /></td>
+                                </tr>
+                                </tbody>
+                                <!-- Table body -->
+                            </table>
+                            <!-- Table  -->
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+
                 </div>
-            </section>
+                <!--Grid column-->
 
-            <hr class="mb-5">
-
-
-
+                <button  id='ctn_btn_2' class="btn btn-primary btn-block my-4" type="submit">Export</button>
 
 
         </section>
         <!--Section: Main features & Quick Start-->
-
-
-
     </div>
 </main>
 <!--Main layout-->

@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 5 *,CAST(cnt as INT) as C1
+$tsql= "SELECT TOP 10 *,CAST(cnt as INT) as C1
 FROM key_cluster
 WHERE cid='$cluster'
 ORDER BY C1 DESC";

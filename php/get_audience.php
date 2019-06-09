@@ -18,16 +18,18 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $gen =  (stripslashes($_POST['gen']));
 
-$tsql= "SELECT TOP 1 * , ROUND(CAST(cnt AS INT) * 100.0 / total, 1) AS cnt2
+$tsql= "SELECT TOP 1 t1.cluster,SUM((ROUND(CAST(cnt AS INT) * 100.0 / total, 1))) as cnt
         FROM cluster_genre AS t1
-        JOIN (SELECT cluster, SUM(CAST(cnt AS INT)) total
-              FROM cluster_genre
-              WHERE genre!=''
-              GROUP BY cluster) AS t2
+          JOIN (SELECT cluster, SUM(CAST(cnt AS INT)) total
+          FROM cluster_genre
+          WHERE genre!=''
+          GROUP BY cluster) AS t2
         ON t1.cluster = t2.cluster
-        WHERE genre!='' AND t1.genre='$gen'
-        ORDER BY cnt2 DESC";
+        WHERE genre!='' AND ($gen)
+        GROUP BY t1.cluster
+        ORDER BY cnt DESC";
 
+//echo $tsql;
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
 //if ($getResults == FALSE)
