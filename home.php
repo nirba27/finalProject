@@ -1038,9 +1038,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                     <option value="" disabled selected>Mainly watching</option>
                                     <option value="sports1">Sports</option>
                                     <option value="knowledge1">Knowledge</option>
-                                    <option value="show1">Talk shows</option>
+                                    <option value="talk">Talk shows</option>
                                     <option value="children1">Children</option>
-                                    <option value="drama1">Drama</option>
+                                    <option value="drama">Drama</option>
                                     <option value="action1">Action</option>
                                 </select>
                             </div>
@@ -1277,16 +1277,14 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                         <!-- Excerpt -->
                         <a href="#!" class="cyan-text">
-                            <h3 class="h3 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h3>
+                            <h1 class="h3 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h1>
                         </a>
 
-                        <h4 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h4>
-
-                        <h5 class="font-weight-normal">
+                        <h4 class="font-weight-normal">
                             Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
                             <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">{{x.genre}}</span>
                             <br>And a top viewer of <span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">{{x}}</span></h4>
-                        </h5>
+                        </h4>
 
 
                     </div>
@@ -1619,7 +1617,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                 <hr class="mb-5" style="margin-bottom: 20px;">
 
-                <h3 class="h3 text-center mb-5">Clusters Plot</h3>
+
+                <h1 class="h3 text-center mb-5">Clusters Plot</h1>
+                <h5 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h5>
 
                 <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
 

@@ -42,7 +42,7 @@ else
 }
 
 
-$tsql= "SELECT TOP 10 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt FROM
+$tsql= "SELECT TOP 20 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt FROM
           (
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$hh_num%'
             UNION ALL

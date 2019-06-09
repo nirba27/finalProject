@@ -796,7 +796,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.dvrs = data['data'];
                 $scope.get_genres_hist($scope.dvrs);
             } else {
-                $scope.getNames("C2='000000007156'");
             }
         }); //success
     }
@@ -1003,7 +1002,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //request
         request.then(function (data) {
             var temp_data = data['data'];
-            //console.log(data);
+            console.log(data);
             var keys = {};
             for(i in temp_data)
             {
@@ -1105,8 +1104,19 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var Sports = [];
         var Knowledge = [];
         var Other = [];
-
         var str = '';
+        if($scope.topic.includes('child'))
+        {
+            str = "C2='000000007156' OR ";
+        }
+        else if($scope.topic.includes('sport'))
+        {
+            str = "C2='00000000bce6' OR ";
+        }
+        else
+        {
+            str = "C2='000000009e6d' OR ";
+        }
        // console.log($scope.dvrs);
 
         for(i in $scope.dvrs)
