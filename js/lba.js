@@ -205,9 +205,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         "no4": "5 Adults",
         "no6ad": "5+ Adults",
         "no5": "5+ Adults",
-        "ge1ts": "1 Gen in House",
-        "ge2ts": "2 Gen in House",
-        "ge3ts": "3 Gen in House",
+        "ge1ts": "1 Gen",
+        "ge2ts": "2 Gen",
+        "ge3ts": "3 Gen",
         "18M24": "Males 18-24",
         "18F24": "Females 18-24",
         "18U24": "Unknown Gender 18-24",
@@ -906,7 +906,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
                 }
             }
-            else if((key.includes('edh')||key.includes('edg')||key.includes('edt')||key.includes('eds')) && $scope.education=='NA')
+            else if((key.includes('edh')||key.includes('edc')||key.includes('edt')||key.includes('edg')) && $scope.education=='NA')
             {
                 $scope.education = $scope.translate(key);
             }
@@ -918,6 +918,37 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.homeVal = $scope.translate(key);
             }
+            else if(key.includes('ch') && $scope.child_p=='NA')
+            {
+                $scope.child_p = $scope.translate(key);
+            }
+            else if((key.includes('14c')||key.includes('31c')||key.includes('92c')||key.includes('58c')) && $scope.income=='NA')
+            {
+                if ($scope.translate(key).includes('High'))
+                {
+                    $scope.animateValue('el',599199, 599999, 1000);
+                    $scope.homeVal = 'High';
+
+                }
+                else if($scope.translate(key).includes('Very'))
+                {
+                    $scope.animateValue('el',999199, 999999, 1000);
+                    $scope.homeVal = 'Very High';
+
+                }
+                else if($scope.translate(key).includes('Low'))
+                {
+                    $scope.animateValue('el',399199, 399999, 1000);
+                    $scope.homeVal = 'Low';
+
+                }
+                else
+                {
+                    $scope.animateValue('el',499199, 499999, 10000);
+                    $scope.homeVal = 'Medium';
+                }
+            }
+
         }
 
 

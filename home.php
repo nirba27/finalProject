@@ -1420,7 +1420,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
 
                         <div class="col-1 ">
-                            <i class="fas fa-ring fa-4x light-blue-text"></i>
+                            <i class="fas fa-venus-mars fa-4x light-blue-text"></i>
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title">Common Gender,Age</h5>
