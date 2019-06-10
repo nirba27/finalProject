@@ -295,6 +295,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     };
     $scope.dvrs = [];
+    $scope.charts = [];
 
     $scope.translate = function(word)
     {
@@ -820,25 +821,45 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         $scope.age = 'NA';
         $scope.numberAdults = 'NA';
         $scope.bg = 'NA';
-
-
+        var pie_labels = [];
+        var pie_count = [];
         // Create items array
         var items = Object.keys(keys).map(function(key) {
             return [key, keys[key]];
         });
+
+
 
         // Sort the array based on the second element
         items.sort(function(first, second) {
             return second[1] - first[1];
         });
 
+
+        cnt = 0;
+        var rlab = [];
+        var rcnt = [];
+        for(i in items)
+        {
+            if(cnt==7)
+            {
+                break;
+            }
+            cnt+=1;
+            rlab.push($scope.translate(items[i][0]));
+            rcnt.push(items[i][1]);
+        }
+
         // Create a new array with only the first 5 items
         //console.log(items);
+        var radar_cnt = [1,1,1,1,1,1];
 
         for(i in items)
         {
+            pie_labels.push($scope.translate(items[i][0]));
+            pie_count.push(items[i][1]);
             var key = items[i][0];
-            console.log(key);
+            //console.log(key);
             if(key.includes('nt') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
@@ -867,53 +888,78 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                 }
             }
-            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk')) && $scope.topic=='NA')
+            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk')))
             {
                 $scope.topic = key;
                 if(key=='sports1')
                 {
-                    $scope.fa = 'football-ball';
-                    $scope.bg = 'https://media2.giphy.com/media/3pBrLqNFnsnwqBn4Yh/source.gif';
-                    $scope.jbg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4qlJZPy2HgmEGyfKOWeevOor4mxlcx7Y8aKMLUNoAT8HOrX0f';
+                    radar_cnt[3]+=1;
+                    if ($scope.topic=='NA') {
+                        $scope.fa = 'football-ball';
+                        $scope.bg = 'img/sports_gif.gif';
+                        $scope.jbg = 'img/sports_bg.jpg';
+                    }
                 }
                 else if(key=='knowledge1')
                 {
-                    $scope.fa = 'book';
-                    $scope.bg = 'https://media2.giphy.com/media/nqtA5obHo3CSelfeKS/source.gif';
-                    $scope.jbg = 'https://www.livehappy.com/sites/default/files/styles/article_featured/public/main/articles/peppers-pan-stove-flame.jpg?itok=Po__tNob';
+                    radar_cnt[4]+=1;
+                    if ($scope.topic=='NA') {
+                        $scope.fa = 'book';
+                        $scope.jbg = 'img/knowledge_gif.gif';
+                        $scope.jbg = 'img/knowledge_bg.jpg';
+                    }
                 }
                 else if(key=='drama')
                 {
-                    $scope.fa = 'heart-broken';
-                    $scope.bg = 'https://media1.giphy.com/media/3ohs4eRA3r65FC4EsU/giphy.gif';
-                    $scope.jbg = 'https://imgix.bustle.com/uploads/image/2017/10/2/add72a55-6da1-4bc2-8c46-9fb7192b6b71-dynasty1_group_0515.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70';
+                    radar_cnt[0]+=1;
+                    if ($scope.topic=='NA') {
+                        $scope.fa = 'heart-broken';
+                        $scope.jbg = 'img/drama_gif.gif';
+                        $scope.jbg = 'img/drama_bg.jpg';
+                    }
                 }
                 else if(key=='comedy1')
                 {
+                    radar_cnt[1]+=1;
+                    if ($scope.topic=='NA')
+                    {
                     $scope.fa = 'grin-squint-tears';
-                    $scope.bg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKib5DTgZU2E7B0SQgIkLyOvIlmS5bkzdeE9jgUyG0zpcbH_-TtA';
-                    $scope.jbg = 'http://www.yeahwrite.org/wp-content/uploads/comedy-greshams-940x601.jpg';
+                        $scope.jbg = 'img/comedy_gif.gif';
+                    $scope.jbg = 'img/comedy_bg.jpg';
+                    }
                 }
                 else if(key=='children1')
                 {
-                    $scope.fa = 'child';
-                    $scope.bg = 'https://media.giphy.com/media/qGm12PYvhCuoU/giphy.gif';
-                    $scope.jbg = 'https://cdn.vox-cdn.com/thumbor/djy3JGjyIcVacRNR3FAl-0Hkalk=/0x0:1600x900/1200x800/filters:focal(672x322:928x578)/cdn.vox-cdn.com/uploads/chorus_image/image/63751148/tghjmldn9kihxbe7xacl.6.png';
-
+                    radar_cnt[2]+=1;
+                    if ($scope.topic=='NA') {
+                        $scope.fa = 'child';
+                        $scope.bg = 'img/children_gif.gif';
+                        $scope.jbg = 'img/children_bg.jpg';
+                    }
                 }
-                else if(key=='talk')
+                else if(key=='shows1')
                 {
-                    $scope.fa = 'chair';
-                    $scope.bg = 'https://media.giphy.com/media/XFza8e9pHT7Ak/giphy.gif';
-                    $scope.jbg = 'https://ewedit.files.wordpress.com/2018/10/150470_dsc00532.jpg';
+                    radar_cnt[6]+=1;
+                    if ($scope.topic=='NA')
+                    {
+                        $scope.fa = 'chair';
+                        $scope.bg = 'talk_bg.gif';
+                        $scope.jbg = 'talk_bg.jpg';
+                    }
 
                 }
                 else if(key=='action')
                 {
-                    $scope.fa = 'gun';
-                    $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
-                    $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
+                    radar_cnt[5]+=1;
+                    if ($scope.topic=='NA')
+                    {
+                        $scope.fa = 'gun';
+                        $scope.bg = 'img/action_gif.gif';
+                        $scope.jbg = 'img/action_bg.jpg';
+                    }
+
                 }
+
             }
             else if((key.includes('edh')||key.includes('edc')||key.includes('edt')||key.includes('edg')) && $scope.education=='NA')
             {
@@ -959,6 +1005,50 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
 
         }
+
+        console.log(radar_cnt);
+
+
+        //radar
+        var ctxR = document.getElementById("radarChart2").getContext('2d');
+        var myRadarChart = new Chart(ctxR, {
+            type: 'radar',
+            data: {
+                labels: rlab,
+                datasets: [{
+                    label: "Clusters Scatter",
+                    data: rcnt,
+                    backgroundColor: [
+                        'rgba(105, 0, 132, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(200, 99, 132, .7)',
+                    ],
+                    borderWidth: 2
+                }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        //pie
+        var ctxP = document.getElementById("pieChart2").getContext('2d');
+        var myPieChart = new Chart(ctxP, {
+            type: 'pie',
+            data: {
+                labels: pie_labels,
+                datasets: [{
+                    data: pie_count,
+                    backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360",'#55efc4','#81ecec','#74b9ff','#a29bfe','#0984e3','#2d3436','#dfe6e9','#b2bec3','#636e72','#fdcb6e','#e17055','#ff7675','#ffeaa7','#00b894'],
+                    hoverBackgroundColor:["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360",'#55efc4','#81ecec','#74b9ff','#a29bfe','#0984e3','#2d3436','#dfe6e9','#b2bec3','#636e72','#fdcb6e','#e17055','#ff7675','#ffeaa7','#00b894']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
 
 
     }
@@ -1108,7 +1198,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 var temp_keys = temp_data[i]['mkey'];
                 temp_keys = temp_keys.split(' ');
-                console.log(temp_keys);
+                //console.log(temp_keys);
                 for(j in temp_keys)
                 {
                     if(!(temp_keys[j] in keys))
@@ -1121,6 +1211,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     }
                 }
             }
+
+
 
             //console.log(keys);
             $scope.analyze_cluster(keys);
@@ -1651,6 +1743,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.linechart = function (obi)
     {
+
 
         var ctxL = document.getElementById("lineChart2").getContext('2d');
        // ////console.log("obi?");

@@ -1550,7 +1550,50 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     </div>
                     <!--Grid column-->
+
                     <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!-- Table  -->
+                                <canvas id="radarChart2"></canvas>
+                                <!-- Table  -->
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!--Card-->
+                        <div class="card">
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!-- Table  -->
+                                <canvas id="pieChart2"></canvas>
+                                <!-- Table  -->
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+
+                    </div>
+                    <!--Grid column-->
+
+                <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
                     <!--Card-->
