@@ -1372,7 +1372,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!--First row-->
                     <div class="row">
                             <div class="col-1">
-                                <i class="fas fa-globe-europe fa-2x indigo-text"></i>
+                                <i class="fas fa-globe-europe fa-5x indigo-text"></i>
                             </div>
                             <div class="col-3">
                                 <h5 class="feature-title">Ethnic origin</h5>
