@@ -219,15 +219,16 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                         <hr class="hr-light">
 
-                        <p>
-                            <strong>Best & free guide of responsive web design</strong>
-                        </p>
+                        <h3>
+                            <strong>Target future customers and buyers.</strong>
+                        </h3>
 
-                        <p class="mb-4 d-none d-md-block">
-                            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and
-                                written versions
-                                available. Create your own, stunning website.</strong>
-                        </p>
+                        <h5 class="mb-4 d-none d-md-block">
+                            <strong>
+                                LBA provide a simple way to reach your audience.
+                                no matter what kind of audience you want to reach, you'll find them here.
+                            </strong>
+                        </h5>
 
                         <a href="#data" target="_self" ng-click="statistics=1;about=1;info=1;data=0;res=1;loading=1" class="btn btn-outline-white">Target Audiences
                             <i class="fas fa-graduation-cap ml-2"></i>
@@ -286,10 +287,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
                     <!-- Main heading -->
-                    <h3 class="h3 mb-3">Advertising Based On Watching Patterns</h3>
-                    <p>This template is created with Material Design for Bootstrap (
-                        <strong>MDB</strong> ) framework.</p>
-                    <p>Read details below to learn more about MDB.</p>
+                    <h3 class="h3 mb-3">Help your ads find the people who will love your business.</h3>
+                    <h5>Our powerful audience selection tools let you show ads to the people who are exactly right for your business.</h5>
+
                     <!-- Main heading -->
 
                     <hr>
@@ -305,7 +305,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: Main features & Quick Start-->
         <section id="about" ng-hide="about">
 
-            <h3 class="h3 text-center mb-5">What we do</h3>
+            <h3 class="h3 text-center mb-5">Reach your core target audience.</h3>
             <!--Grid row-->
             <div class="row wow fadeIn">
 
@@ -318,8 +318,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-code fa-2x indigo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">Watching Based Clustering</h5>
-                            <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+                            <h5 class="feature-title">Demographics</h5>
+                            <p class="grey-text">Select an audience based on age, gender, education, relationship status, job title and more.</p>
                         </div>
                     </div>
                     <!--/First row-->
@@ -332,10 +332,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-book fa-2x blue-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">Entity Resolution</h5>
-                            <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help
-                                you to implement your ideas
-                                easily.
+                            <h5 class="feature-title">Interests</h5>
+                            <p class="grey-text">Choose the interests and hobbies of the people you want your ad to reach – from organic food to action films.
                             </p>
                         </div>
                     </div>
@@ -349,10 +347,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">User Customized Advertising</h5>
-                            <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials,
-                                which allow you to learn
-                                how to use MDB as well as other technologies.</p>
+                            <h5 class="feature-title">Connections</h5>
+                            <p class="grey-text">Find people who are similar to your current customers.</p>
                         </div>
                     </div>
                     <!--/Third row-->
@@ -386,12 +382,13 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fab fa-firefox fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2 pl-3">
-                            <h5 class="feature-title font-bold mb-1">Natural Language Processing</h5>
-                            <p class="grey-text mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers;
-                                all browsers love MDB.
+                            <h5 class="feature-title font-bold mb-1">MFI-Blocks</h5>
+                            <p class="grey-text mt-2">
+                                Using the MFI algorithm developed by Professor Avigdor Gal of the Faculty of Industrial Engineering & Management at the Technion to find cluster based on similarity between the DVR records attributes.
+
                             </p>
                         </div>
                     </div>
@@ -407,9 +404,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-level-up-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Language Models Retrieving</h5>
-                            <p class="grey-text mt-2">MDB becomes better every month. We love the project and enhance as much as
-                                possible.
+                            <h5 class="feature-title font-bold mb-1">Data Enrichment</h5>
+                            <p class="grey-text mt-2">
+                                All of data is being proccesed and enriched in order to get the best results.
                             </p>
                         </div>
                     </div>
@@ -422,12 +419,12 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-comments fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-cloud fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Entity Resolution</h5>
-                            <p class="grey-text mt-2">Our society grows day by day. Visit our forum and check how it is to be a
-                                part of our family.
+                            <h5 class="feature-title font-bold mb-1">Azure DB</h5>
+                            <p class="grey-text mt-2">
+                                All of the analyzed data can be reached from anywhere using Azure DB cloud service.
                             </p>
                         </div>
                     </div>
@@ -440,13 +437,11 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-2">
-                            <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+                            <i class="fas fa-eye fa-2x mb-1 indigo-text" aria-hidden="true"></i>
                         </div>
                         <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Clustering Algorithms</h5>
-                            <p class="grey-text mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest
-                                features which come along with
-                                it.
+                            <h5 class="feature-title font-bold mb-1">Visualizations</h5>
+                            <p class="grey-text mt-2">The results are presented in a simple easy to understand way using top level visualizations.
                             </p>
                         </div>
                     </div>
@@ -457,84 +452,11 @@ if ( isset( $_SESSION['user_id'] ) ) {
             </div>
             <!--/First row-->
 
-            <!--Second row-->
-            <div class="row features-small mt-4 wow fadeIn">
-
-                <!--Grid column-->
-                <div class="col-xl-3 col-lg-6">
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Data Enrichment</h5>
-                            <p class="grey-text mt-2">Material Design for Bootstrap comes with both, compiled, ready to use
-                                libraries including all features as
-                                well as modules for CSS (SASS files) and JS.</p>
-                        </div>
-                    </div>
-                    <!--/Grid row-->
-                </div>
-                <!--/Grid column-->
-
-                <!--Grid column-->
-                <div class="col-xl-3 col-lg-6">
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-question fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Ads Database</h5>
-                            <p class="grey-text mt-2">We care about reliability. If you have any questions - do not hesitate to
-                                contact us.
-                            </p>
-                        </div>
-                    </div>
-                    <!--/Grid row-->
-                </div>
-                <!--/Grid column-->
-
-                <!--Grid column-->
-                <div class="col-xl-3 col-lg-6">
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-th fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Flexibility</h5>
-                            <p class="grey-text mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
-                        </div>
-                    </div>
-                    <!--/Grid row-->
-                </div>
-                <!--/Grid column-->
-
-                <!--Grid column-->
-                <div class="col-xl-3 col-lg-6">
-                    <!--Grid row-->
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="far fa-file-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            <h5 class="feature-title font-bold mb-1">Cloud Service</h5>
-                            <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
-                        </div>
-                    </div>
-                    <!--/Grid row-->
-                </div>
-                <!--/Grid column-->
-
-            </div>
-            <!--/Second row-->
 
 
             <div class="jumbotron jumbotron-fluid" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLGcpluuQ6g6NzkRWMaUCswVv3nTVRRL5xFy5pK_NBA5gLfSgU); background-size: 100% 100%;">
                 <div class="container">
-                    <h2 class="display-7 white-text">10,000 House Holds, More than 200,000 DVRs</h2>
+                    <h2 class="display-7 white-text">58,000 House Holds, More than 70,000 DVRs</h2>
                     <p class="lead grey-text">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 </div>
             </div>
@@ -554,7 +476,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            Next, choose where you want to run your ad – whether that's on Facebook, Instagram, Messenger, Audience Network or across them all. In this step, you can also choose to run ads on specific mobile devices.
+                            First go to the target audience page and fill in the details of your desired audience &nbsp           <i class="fas fa-plus grey-text"></i>
                         </div>
                         <img src="img\1.png">
                     </div>
@@ -569,7 +491,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            dsdsfadsfadafsdfs
+                            Next, your query will be analyzed and you will be route to the results page where you could see all the details of your matched audience.
                         </div>
                         <img src="img\2.png">
                     </div>
@@ -584,7 +506,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            When you submit your ad, it goes to our ad auction which helps get it to the right people.
+                            Now you can check the names of the DVRs you want to advertise to and the result will be sent to your mail.
                         </div>
                         <img src="img\3.png">
                     </div>
@@ -628,7 +550,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                         <!-- Card header -->
                         <div class="card-header text-center">
-                            Pie chart
+                            Education
                         </div>
 
                         <!--Card content-->
@@ -649,25 +571,18 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                             <!-- List group links -->
                             <div class="list-group list-group-flush">
-                                <a class="list-group-item list-group-item-action waves-effect">Sales
-                                    <span class="badge badge-success badge-pill pull-right">22%
-                    <i class="fas fa-arrow-up ml-1"></i>
-                  </span>
+                                <a class="list-group-item list-group-item-action waves-effect">DVRs
+                                    <span class="badge badge-success badge-pill pull-right">78777
+                                  </span>
+                                 </a>
+                                 <a class="list-group-item list-group-item-action waves-effect">Clusters
+                                <span class="badge badge-danger badge-pill pull-right">6824
+                                  </span>
                                 </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Traffic
-                                    <span class="badge badge-danger badge-pill pull-right">5%
-                    <i class="fas fa-arrow-down ml-1"></i>
-                  </span>
+                                <a class="list-group-item list-group-item-action waves-effect">House Holds
+                                    <span class="badge badge-primary badge-pill pull-right">58061</span>
                                 </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Orders
-                                    <span class="badge badge-primary badge-pill pull-right">14</span>
-                                </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Issues
-                                    <span class="badge badge-primary badge-pill pull-right">123</span>
-                                </a>
-                                <a class="list-group-item list-group-item-action waves-effect">Messages
-                                    <span class="badge badge-primary badge-pill pull-right">8</span>
-                                </a>
+
                             </div>
                             <!-- List group links -->
 
@@ -699,9 +614,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <thead class="blue-grey lighten-4">
                                 <tr>
                                     <th>#</th>
-                                    <th>Lorem</th>
-                                    <th>Ipsum</th>
-                                    <th>Dolor</th>
+                                    <th>Hours</th>
                                 </tr>
                                 </thead>
                                 <!-- Table head -->
@@ -710,21 +623,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
+                                    <td>21</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
+                                    <td>20</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
+                                    <td>7</td>
                                 </tr>
                                 </tbody>
                                 <!-- Table body -->
@@ -754,9 +661,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <thead class="blue lighten-4">
                                 <tr>
                                     <th>#</th>
-                                    <th>Lorem</th>
-                                    <th>Ipsum</th>
-                                    <th>Dolor</th>
+                                    <th>Genre</th>
                                 </tr>
                                 </thead>
                                 <!-- Table head -->
@@ -765,21 +670,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
+                                    <td>News</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
+                                    <td>Sports</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
+                                    <td>Reality</td>
                                 </tr>
                                 </tbody>
                                 <!-- Table body -->
@@ -806,29 +705,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="card">
 
                         <!-- Card header -->
-                        <div class="card-header">Line chart</div>
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <canvas id="lineChart"></canvas>
-
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-6 col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card">
-
-                        <!-- Card header -->
-                        <div class="card-header">Radar Chart</div>
+                        <div class="card-header">Watching Time</div>
 
                         <!--Card content-->
                         <div class="card-body">
@@ -850,7 +727,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="card">
 
                         <!-- Card header -->
-                        <div class="card-header">Doughnut Chart</div>
+                        <div class="card-header">Income</div>
 
                         <!--Card content-->
                         <div class="card-body">
@@ -865,27 +742,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 </div>
                 <!--Grid column-->
 
-                <!--Grid column-->
-                <div class="col-lg-6 col-md-6 mb-4">
 
-                    <!--Card-->
-                    <div class="card">
-
-                        <!-- Card header -->
-                        <div class="card-header">Horizontal Bar Chart</div>
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <canvas id="horizontalBar"></canvas>
-
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-
-                </div>
-                <!--Grid column-->
             </div>
             <!--Grid row-->
         </section>
@@ -1321,7 +1178,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                             <!-- Featured image -->
                             <div class="view overlay">
-                                <img src="{{bg}}" class="img-fluid" alt="Sample image for first version of blog listing">
+                                <img src={{bg}} class="img-fluid" alt="Sample image for first version of blog listing">
                                 <a>
                                     <div class="mask rgba-white-slight"></div>
                                 </a>
@@ -1984,10 +1841,10 @@ if ( isset( $_SESSION['user_id'] ) ) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["Comedy", "Knowledge", "Drama", "Action", "Sports", "Children"],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: '# of Hits for each Cateogry',
+                data: [859, 620, 834, 834, 838, 733],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -2022,9 +1879,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
     var myPieChart = new Chart(ctxP, {
         type: 'pie',
         data: {
-            labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+            labels: ["College", "High School", "Grad", "Tech"],
             datasets: [{
-                data: [300, 50, 100, 40, 120],
+                data: [1631,1513, 2035, 130],
                 backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
                 hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
             }]
@@ -2039,25 +1896,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
     var myRadarChart = new Chart(ctxR, {
         type: 'radar',
         data: {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+            labels: ["Morning", "Noon", "Evening", "Night"],
             datasets: [{
                 label: "My First dataset",
-                data: [65, 59, 90, 81, 56, 55, 40],
+                data: [100, 59, 120, 39],
                 backgroundColor: [
                     'rgba(105, 0, 132, .2)',
                 ],
                 borderColor: [
                     'rgba(200, 99, 132, .7)',
-                ],
-                borderWidth: 2
-            }, {
-                label: "My Second dataset",
-                data: [28, 48, 40, 19, 96, 27, 100],
-                backgroundColor: [
-                    'rgba(0, 250, 220, .2)',
-                ],
-                borderColor: [
-                    'rgba(0, 213, 132, .7)',
                 ],
                 borderWidth: 2
             }]
@@ -2071,9 +1918,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
     var myLineChart = new Chart(ctxD, {
         type: 'doughnut',
         data: {
-            labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+            labels: ["Very High", "High", "Medium", "Low"],
             datasets: [{
-                data: [300, 50, 100, 40, 120],
+                data: [2540, 2031 ,2364, 2563],
                 backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
                 hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
             }]
@@ -2082,6 +1929,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             responsive: true
         }
     });
+
 </script>
 
 
