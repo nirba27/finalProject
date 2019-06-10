@@ -45,7 +45,66 @@ if ( isset( $_SESSION['user_id'] ) ) {
 </head>
 
 
+<!-- Modal -->
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Sign up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Default form register -->
+                <form class="text-center border border-light p-5">
 
+                    <p class="h4 mb-4">Sign up</p>
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <!-- First name -->
+                            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <!-- E-mail -->
+                    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+                    <!-- Password -->
+                    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small>
+
+
+                    <!-- Newsletter -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+                        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Get updates</label>
+                    </div>
+
+                    <!-- Sign up button -->
+                    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+
+                    <hr>
+
+                    <!-- Terms of service -->
+                    <p>By clicking
+                        <em>Sign up</em> you agree to our
+                        <a href="" target="_blank">terms of service</a>
+
+                </form>
+                <!-- Default form register -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Central Modal Small -->
 <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -123,7 +182,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
+                        <a data-toggle="modal" data-target="#signup" class="nav-link border border-light rounded"
                            target="_blank">
                             <i class="fas fa-user mr-2"></i>Sign Up
                         </a>
@@ -1252,7 +1311,11 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
         <section id="res" ng-hide="res">
 
-            <!-- News jumbotron -->
+
+
+
+
+                <!-- News jumbotron -->
             <div class="jumbotron text-center hoverable p-4">
 
                 <!-- Grid row -->
@@ -1306,17 +1369,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                 <!--Grid column-->
                 <div class="col-md-12 px-4">
-
                     <!--First row-->
                     <div class="row">
-                        <div class="col-1 ">
-                            <i class="fas fa-globe-europe fa-5x indigo-text"></i>
-                        </div>
-                        <div class="col-3">
-                            <h5 class="feature-title">Ethnic origin</h5>
-                            <h2 class="grey-text"> {{ethnic}}</h2>
-                        </div>
-
+                            <div class="col-1">
+                                <i class="fas fa-globe-europe fa-2x indigo-text"></i>
+                            </div>
+                            <div class="col-3">
+                                <h5 class="feature-title">Ethnic origin</h5>
+                                <h2 class="grey-text"> {{ethnic}}</h2>
+                            </div>
                         <div class="col-1 ">
                             <i class="fas fa-baby-carriage fa-4x blue-text"></i>
                         </div>
@@ -1420,7 +1481,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     </div>
                     <!--/First row-->
                 </div>
-
             </div>
             <!--/Grid row-->
             <hr class="mb-5">
@@ -1495,7 +1555,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     </div>
                     <!--Grid column-->
-
                     <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
@@ -1622,6 +1681,156 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <h5 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h5>
 
                 <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
+
+                <!-- Modal -->
+                <div class="modal fade" id="cluster_info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cluster {{cluster_id_check}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <!--Grid row-->
+                                <div class="row wow fadeIn">
+                                <div class="col-md-6 mb-4">
+
+                                    <!--Card-->
+                                    <div class="card">
+
+                                        <!--Card content-->
+                                        <div class="card-body">
+
+                                            <!-- Table  -->
+                                            <table class="table table-hover">
+                                                <!-- Table head -->
+                                                <thead class="blue lighten-4">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Genre</th>
+                                                    <th>Count</th>
+                                                </tr>
+                                                </thead>
+                                                <!-- Table head -->
+
+                                                <!-- Table body -->
+                                                <tbody>
+                                                <tr ng-repeat="x in geners_modal | limitTo:5" >
+                                                    <th scope="row">{{$index+1}}</th>
+                                                    <td>{{x.genre}}</td>
+                                                    <td>{{x.cnt}}</td>
+                                                </tr>
+                                                </tbody>
+                                                <!-- Table body -->
+                                            </table>
+                                            <!-- Table  -->
+
+                                        </div>
+
+                                    </div>
+                                    <!--/.Card-->
+
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-6 mb-4">
+
+                                    <!--Card-->
+                                    <div class="card">
+
+                                        <!--Card content-->
+                                        <div class="card-body">
+
+                                            <!-- Table  -->
+                                            <table class="table table-hover">
+                                                <!-- Table head -->
+                                                <thead class="blue lighten-4">
+                                                <tr>
+                                                    <th>Prog</th>
+                                                    <th>Count</th>
+                                                </tr>
+                                                </thead>
+                                                <!-- Table head -->
+                                                <!-- Table body -->
+                                                <tbody>
+                                                <tr ng-repeat="x in prog_modal | limitTo:5" >
+                                                    <td>{{x.pname}}</td>
+                                                    <td><input type="checkbox" name={{x.pname}} value="checked" /></td>
+                                                </tr>
+                                                </tbody>
+                                                <!-- Table body -->
+                                            </table>
+                                            <!-- Table  -->                                            <!-- Table  -->
+
+                                        </div>
+
+                                    </div>
+                                    <!--/.Card-->
+
+                                </div>
+                                <!--Grid column-->
+                                </div>
+
+
+                                <!--Card-->
+                                <div class="card">
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <!-- Table  -->
+                                        <table class="table table-hover">
+                                            <!-- Table head -->
+                                            <thead class="blue lighten-4">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>DVR</th>
+                                                <th>Count</th>
+                                            </tr>
+                                            </thead>
+                                            <!-- Table head -->
+                                            <!-- Table body -->
+                                            <tbody>
+                                            <tr ng-repeat="x in dvrs_modal" >
+                                                <th scope="row">{{x.id}}</th>
+                                                <td>{{x.DVR}}</td>
+                                                <td><input type="checkbox" name={{x.DVR}} value="checked" /></td>
+                                            </tr>
+                                            </tbody>
+                                            <!-- Table body -->
+                                        </table>
+                                        <!-- Table  -->
+                                    </div>
+                                </div>
+                                <!--/.Card-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group" >
+                    <div class="col-sm-6" style="margin-top: 20px;"><!-- Default input -->
+                        <select class="browser-default custom-select" ng-model="cluster_id_check">
+                            <option value="" disabled selected>Cluster</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                    <button style="margin-top: 20px;" data-target="#cluster_info" data-toggle="modal" class="btn btn-primary col-sm-6" ng-click="get_dvrs();">Check this cluster</button>
+
+                </div>
+
 
                 <hr class="mb-5">
 

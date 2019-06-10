@@ -88,6 +88,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.income_low = '';
     $scope.income_top = '';
     $scope.cluste_ids = '';
+    $scope.cluster_id_check = '';
     $scope.hmax = 0;
     $scope.tran = {
         "25f34":"female 25-34",
@@ -1265,6 +1266,76 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     }
 
+    $scope.prog_modal = [];
+    $scope.genres_modal = [];
+
+    $scope.get_dvrs = function()
+    {
+        console.log($scope.cluster_id_check);
+        var id =  $scope.cluster_id_check;
+        var request = $http({
+            method: "POST",
+            url: "php/get_dvrs.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                console.log(data['data']);
+                $scope.dvrs_modal = data['data'];
+            }
+            else {
+
+            }
+        }); //success
+
+
+        var request = $http({
+            method: "POST",
+            url: "php/get_geners.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            //console.log(data['data']);
+            if (data != "0") {
+                $scope.geners_modal = data['data'];
+                ////console.log('init_cases - success');
+               console.log($scope.geners_modal);
+
+            } else {
+                ////console.log('init_case - failed');
+            }
+        }); //success
+
+
+        ////console.log(id);
+        var request = $http({
+            method: "POST",
+            url: "php/get_programs.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                $scope.prog_modal= data['data'];
+                ////console.log('init_cases - success');
+                ///console.log($scope.prog_modal);
+            } else {
+                ////console.log('init_case - failed');
+            }
+        }); //success
+
+
+    }
+
+
     $scope.get_prog = function(id)
     {
         var request = $http({
@@ -1302,22 +1373,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
             } else {
                 ////console.log('init_case - failed');
-            }
-        }); //success
-
-
-        var request = $http({
-            method: "POST",
-            url: "php/get_dvrs.php",
-            data: $.param({
-                cluster: $scope.cluster,
-            }),
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }); //request
-        request.then(function (data) {
-            if (data != "0") {
-                //$scope.dvrs = data['data'];
-            } else {
             }
         }); //success
 
@@ -1371,9 +1426,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 ////console.log('init_case - failed');
             }
         }); //success
-        event.preventDefault();
-
-
     }
 
     $scope.getColor = function(cluster)
