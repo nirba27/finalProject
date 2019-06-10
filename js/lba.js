@@ -954,6 +954,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     }
 
+    $scope.age_low = '';
+    $scope.age_top = '';
     $scope.get_audience = function () {
         var genre = $scope.selectedGenre2;
         var query = '';
@@ -1015,11 +1017,68 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             income = 'low';
         }
 
+
+        var gender = '';
+        if ($scope.Gender == 'F')
+        {
+            if($scope.age_low>75)
+            {
+                gender = '75fpl';
+            }
+            else if($scope.age_low>55 || $scope.age_top<65)
+            {
+                gender = '55f64';
+            }
+            else if($scope.age_low>45 || $scope.age_top<55)
+            {
+                gender ='45f54';
+            }
+            else if($scope.age_low>35 || $scope.age_top<65)
+            {
+                gender ='35f44';
+            }
+            else if($scope.age_low>25 || $scope.age_top<35)
+            {
+                gender ='25f34';
+            }
+            else if($scope.age_top<25)
+            {
+                gender ='18f24';
+            }
+        }
+        else if ($scope.Gender == 'M')
+        {
+            if($scope.age_low>75)
+            {
+                gender = '75mpl';
+            }
+            else if($scope.age_low>55 || $scope.age_top<65)
+            {
+                gender = '55m64';
+            }
+            else if($scope.age_low>45 || $scope.age_top<55)
+            {
+                gender ='45m54';
+            }
+            else if($scope.age_low>35 || $scope.age_top<65)
+            {
+                gender ='35m44';
+            }
+            else if($scope.age_low>25 || $scope.age_top<35)
+            {
+                gender ='25m34';
+            }
+            else if($scope.age_top<25)
+            {
+                gender ='18m24';
+            }
+        }
+
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",
             data: $.param({
-                gender:$scope.Gender,
+                gender:gender,
                 maritial:$scope.maritial,
                 source:$scope.source,
                 educ:$scope.educ,
@@ -1380,9 +1439,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             if (data != "0") {
                 $scope.geners = data['data'];
-                ////console.log('init_cases - success');
-                ////console.log($scope.geners);
-
+                $scope.genres_tags = data['data'].slice(6, 15);
             } else {
                 ////console.log('init_case - failed');
             }

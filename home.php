@@ -1037,7 +1037,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <!-- Material input -->
                             <!-- Material input -->
                             <div class="md-form">
-                                <input type="number" id="numberExample" class="form-control">
+                                <input ng-model="age_low" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">Age Range</label>
                             </div>
                         </div>
@@ -1047,7 +1047,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <div class="col">
                             <!-- Material input -->
                             <div class="md-form">
-                                <input type="number" id="numberExample" class="form-control">
+                                <input ng-model="age_top" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">To</label>
                             </div>
 
@@ -1059,7 +1059,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <div class="col">
                             <!-- Material input -->
                             <div class="md-form">
-                                <input ng-model="income_top" type="number" id="numberExample" class="form-control">
+                                <input ng-model="income_low" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">Income Range</label>
                             </div>
                         </div>
@@ -1071,7 +1071,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <!-- Material input -->
 
                             <div class="md-form">
-                                <input ng-model="income_low" type="number" id="numberExample" class="form-control">
+                                <input ng-model="income_top" type="number" id="numberExample" class="form-control">
                                 <label for="numberExample">To</label>
                             </div>
 
@@ -1345,8 +1345,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                         <h4 class="font-weight-normal">
                             Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
-                            <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">{{x.genre}}</span>
-                            <br>And a top viewer of <span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">{{x}}</span></h4>
+                            <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">#{{x.genre}}</span>
+                            <br>And a top viewer of <span  class="badge badge-pill badge-info" ng-repeat="x in genres_tags">#{{x.genre}}</span><span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">#{{x}}</span></h4>
                         </h4>
 
 
@@ -1362,7 +1362,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
             <hr class="mb-5">
 
-            <h3 class="h3 text-center mb-5">Demographic Information</h3>
+            <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Demographic Information</h2>
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -1375,14 +1375,14 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <i class="fas fa-globe-europe fa-5x indigo-text"></i>
                             </div>
                             <div class="col-3">
-                                <h5 class="feature-title">Ethnic origin</h5>
+                                <h5 class="feature-title font-weight-bold blue-grey-text">Ethnic origin</h5>
                                 <h2 class="grey-text"> {{ethnic}}</h2>
                             </div>
                         <div class="col-1 ">
                             <i class="fas fa-baby-carriage fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Children Presence</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Children Presence</h5>
                             <h2 class="grey-text">{{child_p}}
                             </h2>
                         </div>
@@ -1391,7 +1391,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-user-graduate fa-4x green-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Education</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Education</h5>
                             <h2 class="grey-text">{{education}}</h2>
                         </div>
 
@@ -1415,7 +1415,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-dollar-sign fa-5x teal-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Average Income</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Average Income</h5>
                             <h2 class="grey-text" id="el">0</h2>
                         </div>
 
@@ -1423,7 +1423,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-venus-mars fa-4x light-blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Common Gender,Age</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Common Gender,Age</h5>
                             <h2 class="grey-text">{{age}}
                             </h2>
                         </div>
@@ -1432,7 +1432,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-male fa-4x purple-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Number of Adults</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Number of Adults</h5>
                             <h2 class="grey-text">{{NumberAdults}}</h2>
                         </div>
 
@@ -1457,7 +1457,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-car fa-5x indigo-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Vechicles</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Vechicles</h5>
                             <h2 class="grey-text" id="el">2</h2>
                         </div>
 
@@ -1465,7 +1465,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-chart-line fa-4x blue-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">Net Value</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Net Value</h5>
                             <h2 class="grey-text">{{nt}}
                             </h2>
                         </div>
@@ -1474,7 +1474,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-home fa-4x cyan-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title">House value</h5>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">House value</h5>
                             <h2 class="grey-text">{{homeVal}}</h2>
                         </div>
 
@@ -1486,7 +1486,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <hr class="mb-5">
 
             <section id="map" >
-                <h3 class="h3 text-center mb-5">Community Detection</h3>
+                <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Community Detection</h2>
                 <!--Grid column-->
                 <div class="col-md-12">
                     <!--Card-->
@@ -1502,7 +1502,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
             <hr class="mb-5">
 
-            <h3 class="h3 text-center mb-5">Watching Patterns</h3>
+            <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Watching Patterns</h2>
             <!--Grid row-->
             <div class="row wow fadeIn">
 
@@ -1578,7 +1578,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                                 <!-- Table body -->
                                 <tbody>
-                                <tr ng-repeat="x in geners" >
+                                <tr ng-repeat="x in geners | limitTo:10" >
                                     <th scope="row">{{$index+1}}</th>
                                     <td>{{x.genre}}</td>
                                     <td>{{x.cnt}}</td>
@@ -1677,7 +1677,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 <hr class="mb-5" style="margin-bottom: 20px;">
 
 
-                <h1 class="h3 text-center mb-5">Clusters Plot</h1>
+                <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Clusters Plot</h2>
                 <h5 class="h4 mb-4">Your Targeted Cluster is {{Kcluster}}</h5>
 
                 <canvas id="bubbleChart" class="z-depth-1-half"></canvas>
