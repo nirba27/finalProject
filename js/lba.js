@@ -809,6 +809,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.homeVal = 'NA';
     $scope.fa = 'NA';
     $scope.bg = 'NA';
+    $scope.jbg = 'NA';
     $scope.income = 'NA';
 
     $scope.analyze_cluster = function (keys)
@@ -873,37 +874,45 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 {
                     $scope.fa = 'football-ball';
                     $scope.bg = 'https://media2.giphy.com/media/3pBrLqNFnsnwqBn4Yh/source.gif';
+                    $scope.jbg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4qlJZPy2HgmEGyfKOWeevOor4mxlcx7Y8aKMLUNoAT8HOrX0f';
                 }
                 else if(key=='knowledge1')
                 {
                     $scope.fa = 'book';
                     $scope.bg = 'https://media2.giphy.com/media/nqtA5obHo3CSelfeKS/source.gif';
+                    $scope.jbg = 'https://www.livehappy.com/sites/default/files/styles/article_featured/public/main/articles/peppers-pan-stove-flame.jpg?itok=Po__tNob';
                 }
                 else if(key=='drama')
                 {
                     $scope.fa = 'heart-broken';
                     $scope.bg = 'https://media1.giphy.com/media/3ohs4eRA3r65FC4EsU/giphy.gif';
+                    $scope.jbg = 'https://imgix.bustle.com/uploads/image/2017/10/2/add72a55-6da1-4bc2-8c46-9fb7192b6b71-dynasty1_group_0515.jpg?w=970&h=546&fit=crop&crop=faces&auto=format&q=70';
                 }
                 else if(key=='comedy1')
                 {
                     $scope.fa = 'grin-squint-tears';
                     $scope.bg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKib5DTgZU2E7B0SQgIkLyOvIlmS5bkzdeE9jgUyG0zpcbH_-TtA';
+                    $scope.jbg = 'http://www.yeahwrite.org/wp-content/uploads/comedy-greshams-940x601.jpg';
                 }
                 else if(key=='children1')
                 {
                     $scope.fa = 'child';
                     $scope.bg = 'https://media.giphy.com/media/qGm12PYvhCuoU/giphy.gif';
+                    $scope.jbg = 'https://cdn.vox-cdn.com/thumbor/djy3JGjyIcVacRNR3FAl-0Hkalk=/0x0:1600x900/1200x800/filters:focal(672x322:928x578)/cdn.vox-cdn.com/uploads/chorus_image/image/63751148/tghjmldn9kihxbe7xacl.6.png';
+
                 }
                 else if(key=='talk')
                 {
                     $scope.fa = 'chair';
                     $scope.bg = 'https://media.giphy.com/media/XFza8e9pHT7Ak/giphy.gif';
+                    $scope.jbg = 'https://ewedit.files.wordpress.com/2018/10/150470_dsc00532.jpg';
+
                 }
                 else if(key=='action')
                 {
                     $scope.fa = 'gun';
                     $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
-                    $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
+                    $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
                 }
             }
             else if((key.includes('edh')||key.includes('edc')||key.includes('edt')||key.includes('edg')) && $scope.education=='NA')

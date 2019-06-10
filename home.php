@@ -1310,52 +1310,47 @@ if ( isset( $_SESSION['user_id'] ) ) {
         </section>
 
         <section id="res" ng-hide="res">
-
-
-
-
-
-                <!-- News jumbotron -->
-            <div class="jumbotron text-center hoverable p-4">
-
+            <!-- News jumbotron -->
+            <div class="card card-image" style="background-size:100%;background-image: url({{jbg}});">
+                <div class="text-white text-center rgba-stylish-strong py-5 px-4">
                 <!-- Grid row -->
-                <div class="row">
+                    <div class="row">
 
-                    <!-- Grid column -->
-                    <div class="col-md-4 offset-md-1 mx-3 my-3">
+                        <!-- Grid column -->
+                        <div class="col-md-4 offset-md-1 mx-3 my-3">
 
-                        <!-- Featured image -->
-                        <div class="view overlay">
-                            <img src="{{bg}}" class="img-fluid" alt="Sample image for first version of blog listing">
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                            <!-- Featured image -->
+                            <div class="view overlay">
+                                <img src="{{bg}}" class="img-fluid" alt="Sample image for first version of blog listing">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
                         </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-7 text-md-left ml-3 mt-3">
+
+                            <!-- Excerpt -->
+                            <a href="#!" class="cyan-text">
+                                <h1 class="h1 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h1>
+                            </a>
+
+                            <h4 class="font-weight-normal">
+                                Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
+                                <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">#{{x.genre}}</span>
+                                <br>And a top viewer of <span  class="badge badge-pill badge-info" ng-repeat="x in genres_tags">#{{x.genre}}</span><span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">#{{x}}</span></h4>
+                            </h4>
+
+
+                        </div>
+                        <!-- Grid column -->
 
                     </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-7 text-md-left ml-3 mt-3">
-
-                        <!-- Excerpt -->
-                        <a href="#!" class="cyan-text">
-                            <h1 class="h3 pb-1"><i class="fas fa-{{fa}} pr-1"></i> {{topic}}</h1>
-                        </a>
-
-                        <h4 class="font-weight-normal">
-                            Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
-                            <br>Your audience is most likely to watch <span class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">#{{x.genre}}</span>
-                            <br>And a top viewer of <span  class="badge badge-pill badge-info" ng-repeat="x in genres_tags">#{{x.genre}}</span><span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">#{{x}}</span></h4>
-                        </h4>
-
-
-                    </div>
-                    <!-- Grid column -->
-
-                </div>
                 <!-- Grid row -->
-
+                </div>
             </div>
             <!-- News jumbotron -->
 
