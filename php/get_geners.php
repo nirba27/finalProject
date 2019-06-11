@@ -20,7 +20,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT  TOP 20 * , ROUND(CAST(cnt AS INT) * 100.0 / total, 1) AS cnt2
+$tsql= "SELECT  TOP 20 * , ROUND(CAST(cnt AS INT) * 100.0 / total, -1) AS cnt2
         FROM cluster_genre AS t1
         JOIN (SELECT cluster, SUM(CAST(cnt AS INT)) total
               FROM cluster_genre

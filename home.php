@@ -72,11 +72,13 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                     </div>
 
+                    <input ng-model='signup_user' type="user" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="User Name">
+
                     <!-- E-mail -->
                     <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
 
                     <!-- Password -->
-                    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    <input ng-model='signup_pass' type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
                     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                         At least 8 characters and 1 digit
                     </small>
@@ -85,19 +87,16 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <!-- Newsletter -->
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
-                        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Get updates</label>
                     </div>
 
+                    <p ng-modal="sign_message"></p>
                     <!-- Sign up button -->
-                    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+                    <button ng-click="signup()" class="btn btn-info my-4 btn-block" type="submit">Sign up</button>
 
 
                     <hr>
 
                     <!-- Terms of service -->
-                    <p>By clicking
-                        <em>Sign up</em> you agree to our
-                        <a href="" target="_blank">terms of service</a>
 
                 </form>
                 <!-- Default form register -->
@@ -1645,16 +1644,16 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                                 <!-- Table head -->
                                                 <thead class="blue lighten-4">
                                                 <tr>
+                                                    <th>#</th>
                                                     <th>Prog</th>
-                                                    <th>Count</th>
                                                 </tr>
                                                 </thead>
                                                 <!-- Table head -->
                                                 <!-- Table body -->
                                                 <tbody>
                                                 <tr ng-repeat="x in prog_modal | limitTo:5" >
+                                                    <th scope="row">{{$index+1}}</th>
                                                     <td>{{x.pname}}</td>
-                                                    <td><input type="checkbox" name={{x.pname}} value="checked" /></td>
                                                 </tr>
                                                 </tbody>
                                                 <!-- Table body -->
@@ -1689,7 +1688,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                             <!-- Table body -->
                                             <tbody>
                                             <tr ng-repeat="x in dvrs_modal" >
-                                                <th scope="row">{{x.id}}</th>
+                                                <th scope="row">{{$index+1}}</th>
                                                 <td>{{x.DVR}}</td>
                                                 <td><input type="checkbox" name={{x.DVR}} value="checked" /></td>
                                             </tr>

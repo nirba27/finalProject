@@ -1305,9 +1305,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             console.log(data['data']);
             if (data != "0") {
-                //console.log(data["data"]);
+                console.log(data["data"]);
                 for(i in data["data"])
                 {
+                    console.log(i);
                     News.push(data["data"][i]["News"]);
                     Comedy.push(data["data"][i]["Comedy"]);
                     Drama.push(data["data"][i]["Drama"]);
@@ -1318,6 +1319,20 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     Other.push(data["data"][i]["Other"]);
 
                 }
+
+                console.log(Comedy);
+
+                News[1]=News[1]*0.5;
+                Comedy[1]=Comedy[1]*0.5;
+                Drama[1]=Drama[1]*0.5;
+                Entertainment[1]=Entertainment[1]*0.5;
+                Children[1]=Children[1]*0.5;
+                Sports[1]=Sports[1]*0.5;
+                Knowledge[1]=Knowledge[1]*0.5;
+                Other[1]=Other[1]*0.5;
+
+                console.log(Comedy);
+
                 var ctxL = document.getElementById("lineChart3").getContext('2d');
                 var myLineChart = new Chart(ctxL, {
                     type: 'line',
@@ -1425,15 +1440,42 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     }
                 });
             } else {
-                ////console.log('init_case - failed');
+                console.log('init_case - failed');
             }
         }); //success
         event.preventDefault();
 
     }
 
+    $scope.sign_message = '';
     $scope.prog_modal = [];
     $scope.genres_modal = [];
+    $scope.signup_user = '';
+    $scope.signup_pass = '';
+
+    $scope.signup = function()
+    {
+
+        var request = $http({
+            method: "POST",
+            url: "php/signup.php",
+            data: $.param({
+                user: $scope.signup_user,
+                pass: $scope.signup_pass,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            console.log(data);
+            if (data != "0") {
+                $scope.sign_message = 'Success';
+                $('#signup').modal('hide');
+            }
+            else {
+
+            }
+        }); //success
+    }
 
     $scope.get_dvrs = function()
     {
