@@ -1475,7 +1475,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <tr ng-repeat="x in geners | limitTo:10" >
                                     <th scope="row">{{$index+1}}</th>
                                     <td>{{x.genre}}</td>
-                                    <td>{{x.cnt}}</td>
+                                    <td>{{x.cnt}}%</td>
                                 </tr>
                                 </tbody>
                                 <!-- Table body -->
