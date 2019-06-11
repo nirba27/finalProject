@@ -158,7 +158,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                 <!-- Left -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="home.php">Home
                             <span class="sr-only">(current)</span>
                         </a>
@@ -372,7 +372,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         <!--Section: More-->
         <section ng-hide="info">
 
-            <h2 class="my-5 h3 text-center">What makes us unique</h2>
+            <h2 class="my-5 h3 text-center"></h2>
 
             <!--First row-->
             <div class="row features-small mt-5 wow fadeIn">
@@ -387,7 +387,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <div class="col-10 mb-2 pl-3">
                             <h5 class="feature-title font-bold mb-1">MFI-Blocks</h5>
                             <p class="grey-text mt-2">
-                                Using the MFI algorithm developed by Professor Avigdor Gal of the Faculty of Industrial Engineering & Management at the Technion to find cluster based on similarity between the DVR records attributes.
+                                Using the MFI algorithm which was developed by Professor Avigdor Gal of the Faculty of Industrial Engineering & Management at the Technion to find cluster based on similarity between the DVR records attributes.
 
                             </p>
                         </div>
@@ -424,7 +424,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <div class="col-10 mb-2">
                             <h5 class="feature-title font-bold mb-1">Azure DB</h5>
                             <p class="grey-text mt-2">
-                                All of the analyzed data can be reached from anywhere using Azure DB cloud service.
+                                The analyzed data can be reached from anywhere using Azure DB cloud service.
                             </p>
                         </div>
                     </div>
@@ -441,7 +441,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                         <div class="col-10 mb-2">
                             <h5 class="feature-title font-bold mb-1">Visualizations</h5>
-                            <p class="grey-text mt-2">The results are presented in a simple easy to understand way using top level visualizations.
+                            <p class="grey-text mt-2">The results are presented in a simple and easy to understand way using top level visualizations.
                             </p>
                         </div>
                     </div>
@@ -456,8 +456,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
             <div class="jumbotron jumbotron-fluid" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLGcpluuQ6g6NzkRWMaUCswVv3nTVRRL5xFy5pK_NBA5gLfSgU); background-size: 100% 100%;">
                 <div class="container">
-                    <h2 class="display-7 white-text">58,000 House Holds, More than 70,000 DVRs</h2>
-                    <p class="lead grey-text">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    <h2 class="display-7 white-text">58,000 Households, More than 70,000 DVRs</h2>
+                    <p class="lead grey-text"></p>
                 </div>
             </div>
 
@@ -467,11 +467,11 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <div class="accordion" id="accordionExample" width="100%">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
+                        <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Select your audience &nbsp           <i class="fas fa-plus grey-text"></i>
                             </button>
-                        </h5>
+                        </h2>
                     </div>
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -623,15 +623,15 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>21</td>
+                                    <td>21:00-22:00</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>20</td>
+                                    <td>20:00-21:00</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>7</td>
+                                    <td>7:00-8:00</td>
                                 </tr>
                                 </tbody>
                                 <!-- Table body -->
@@ -776,7 +776,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="col">
                         <!-- Default input -->
                         <select class="browser-default custom-select" ng-model="hh_num">
-                            <option value="" disabled selected>Number of Households</option>
+                            <option value="" disabled selected>Size of Household</option>
                             <option value="ho1">1</option>
                             <option value="ho2">2</option>
                             <option value="ho3">3</option>
@@ -794,7 +794,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <div class="col">
                         <!-- Default input -->
                         <select class="browser-default custom-select" ng-model="maritial">
-                            <option value="" disabled selected>Maritial status</option>
+                            <option value="" disabled selected>Marital status</option>
                             <option value="singlee">Single</option>
                             <option value="married">Married</option>
                             <option value="both">Both</option>
@@ -956,8 +956,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                     <option value="knowledge1">Knowledge</option>
                                     <option value="talk">Talk shows</option>
                                     <option value="children1">Children</option>
-                                    <option value="drama">Drama</option>
-                                    <option value="action1">Action</option>
+                                    <option value="drama">Drama-Action</option>
+                                    <option value="news">News</option>
                                 </select>
                             </div>
                         <div class="col-sm-12" style="margin-top:25px">
@@ -1149,7 +1149,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
                 <!-- Sign in button -->
-                <button style='margin-top:25px;' class="btn btn-primary btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Sumbit</button>
+                <button style='margin-top:25px;' class="btn btn-primary btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Submit</button>
 
 
             </form>
@@ -1841,10 +1841,10 @@ if ( isset( $_SESSION['user_id'] ) ) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Comedy", "Knowledge", "Drama", "Action", "Sports", "Children"],
+            labels: ["Comedy", "Knowledge", "Drama-Action", "News", "Sports", "Children","Talk Show"],
             datasets: [{
                 label: '# of Hits for each Cateogry',
-                data: [859, 620, 834, 834, 838, 733],
+                data: [859, 620, 834, 834, 838, 933 ,633],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -1898,7 +1898,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         data: {
             labels: ["Morning", "Noon", "Evening", "Night"],
             datasets: [{
-                label: "My First dataset",
+                label: "Popular watching time",
                 data: [100, 59, 120, 39],
                 backgroundColor: [
                     'rgba(105, 0, 132, .2)',
