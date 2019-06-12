@@ -919,7 +919,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 {
                     $scope.fa = 'child';
                     $scope.bg = 'https://media.giphy.com/media/qGm12PYvhCuoU/giphy.gif';
-                    $scope.jbg = 'https://cdn.vox-cdn.com/thumbor/djy3JGjyIcVacRNR3FAl-0Hkalk=/0x0:1600x900/1200x800/filters:focal(672x322:928x578)/cdn.vox-cdn.com/uploads/chorus_image/image/63751148/tghjmldn9kihxbe7xacl.6.png';
+                    $scope.jbg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbLBz0g22tYLUeJoiZHBoTVVJ96G51RpEbAnBNsc0a-c_cUokZ';
 
                 }
                 else if(key=='talk')
