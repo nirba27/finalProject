@@ -1199,7 +1199,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 location.href = "#res";
                 $scope.loading = 1;
                 $scope.cluster = data['data'];
-                hobi = "mfiID='1' OR ";
+                hobi = "mfiID='1' OR mfiID='100' OR mfiID='200' OR ";
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
