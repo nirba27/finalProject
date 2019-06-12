@@ -856,11 +856,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         for(i in items)
         {
+
             pie_labels.push($scope.translate(items[i][0]));
             pie_count.push(items[i][1]);
             var key = items[i][0];
             var trans_key = $scope.translate(key);
-            //console.log(key);
+            console.log(trans_key);
             if(trans_key.includes('Net') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
