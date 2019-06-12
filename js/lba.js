@@ -1199,7 +1199,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 location.href = "#res";
                 $scope.loading = 1;
                 $scope.cluster = data['data'];
-                //////console.log($scope.cluster);
+                hobi = "mfiID='1' OR ";
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
@@ -1308,36 +1308,31 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 console.log(data["data"]);
                 for(i in data["data"])
                 {
-                    //console.log(i);
-                    News.push(data["data"][i]["News"]);
-                    Comedy.push(data["data"][i]["Comedy"]);
-                    Drama.push(data["data"][i]["Drama"]);
-                    Entertainment.push(data["data"][i]["Entertainment"]);
-                    Children.push(data["data"][i]["Children"]);
-                    Sports.push(data["data"][i]["Sports"]);
-                    Knowledge.push(data["data"][i]["Knowledge"]);
-                    Other.push(data["data"][i]["Other"]);
+                    if(i==0 || i==1)
+                    {
+                        News.push(data["data"][i]["News"]*0.3);
+                        Comedy.push(data["data"][i]["Comedy"]*0.3);
+                        Drama.push(data["data"][i]["Drama"]*0.3);
+                        Entertainment.push(data["data"][i]["Entertainment"]*0.3);
+                        Children.push(data["data"][i]["Children"]*0.3);
+                        Sports.push(data["data"][i]["Sports"]*0.3);
+                        Knowledge.push(data["data"][i]["Knowledge"]*0.3);
+                        Other.push(data["data"][i]["Other"]*0.3);
+                    }
+                    else
+                    {
+                        News.push(data["data"][i]["News"]);
+                        Comedy.push(data["data"][i]["Comedy"]);
+                        Drama.push(data["data"][i]["Drama"]);
+                        Entertainment.push(data["data"][i]["Entertainment"]);
+                        Children.push(data["data"][i]["Children"]);
+                        Sports.push(data["data"][i]["Sports"]);
+                        Knowledge.push(data["data"][i]["Knowledge"]);
+                        Other.push(data["data"][i]["Other"]);
+                    }
+
 
                 }
-
-
-                News[0]=News[1]*0.5;
-                Comedy[0]=Comedy[1]*0.5;
-                Drama[0]=Drama[1]*0.5;
-                Entertainment[0]=Entertainment[1]*0.5;
-                Children[0]=Children[1]*0.5;
-                Sports[0]=Sports[1]*0.5;
-                Knowledge[0]=Knowledge[1]*0.5;
-                Other[0]=Other[1]*0.5;
-                News[1]=News[1]*0.5;
-                Comedy[1]=Comedy[1]*0.5;
-                Drama[1]=Drama[1]*0.5;
-                Entertainment[1]=Entertainment[1]*0.5;
-                Children[1]=Children[1]*0.5;
-                Sports[1]=Sports[1]*0.5;
-                Knowledge[1]=Knowledge[1]*0.5;
-                Other[1]=Other[1]*0.5;
-
 
                 var ctxL = document.getElementById("lineChart3").getContext('2d');
                 var myLineChart = new Chart(ctxL, {
