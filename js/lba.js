@@ -73,6 +73,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.educ = '';
     $scope.occu ='';
     $scope.children = '';
+    $scope.cars = 'NA';
     $scope.ages = '';
     $scope.topic = '';
     $scope.vehicles = '';
@@ -954,6 +955,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.child_p = $scope.translate(key);
             }
+            else if(trans_key.includes('Car') && $scope.car=='NA')
+            {
+                $scope.cars = $scope.translate(key);
+            }
             else if((key.includes('14c')||key.includes('31c')||key.includes('92c')||key.includes('58c')) && $scope.income=='NA')
             {
                 if ($scope.translate(key).includes('High'))
@@ -1243,13 +1248,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                             }
                         }
                         var time = parseInt(hour);
-                        var timel = time-1;
+                        var time_low = time-1;
                         var time2 = time+1;
-                        if(time1==-1)
+                        if(time_low==-1)
                         {
-                            time1=23;
+                            time_low=23;
                         }
-                        $scope.hmax = timel + ' To ' + time2;
+                        $scope.hmax = time_low + ' To ' + time2;
                     }
                     else {
                         ////console.log('init_case - failed');
