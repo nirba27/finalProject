@@ -1778,7 +1778,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 </div>
                 <!--Grid column-->
 
-                <button  id='ctn_btn_2' class="btn btn-primary btn-block my-4" type="submit">Export</button>
+                <button  id='ctn_btn_2' class="btn btn-primary btn-block my-4" type="submit" ng-click="export()">Export</button>
 
 
         </section>

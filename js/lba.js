@@ -1480,6 +1480,27 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //success
     }
 
+    $scope.export = function()
+    {
+
+        var request = $http({
+            method: "POST",
+            url: "php/send_mail.php",
+            data: $.param({
+                cluster: id,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+            if (data != "0") {
+                console.log('Sent');
+            }
+            else {
+
+            }
+        }); //success
+    }
+
     $scope.get_dvrs = function()
     {
         console.log($scope.cluster_id_check);
