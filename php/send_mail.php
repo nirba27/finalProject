@@ -8,8 +8,8 @@
 // Always start this first
         session_start();
 
-        $user = (stripslashes($_POST['user']));
-        $pass = (stripslashes($_POST['pass']));
+        $user = (stripslashes($_POST['cluster']));
+        //$pass = (stripslashes($_POST['pass']));
 
         // the message
         $msg = "First line of text\nSecond line of text";

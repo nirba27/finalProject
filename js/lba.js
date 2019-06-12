@@ -1482,7 +1482,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.export = function()
     {
-
+        var id = 1;
         var request = $http({
             method: "POST",
             url: "php/send_mail.php",
