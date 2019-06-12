@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 echo 'bla';
 //require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // Comment out the above line if not using Composer
