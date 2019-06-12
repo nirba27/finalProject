@@ -957,6 +957,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                     <option value="children1">Children</option>
                                     <option value="drama">Drama-Action</option>
                                     <option value="news">News</option>
+                                    <option value="other">Entertainment</option>
+                                    <option value="entert">Other</option>
                                 </select>
                             </div>
                         <div class="col-sm-12" style="margin-top:25px">
