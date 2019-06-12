@@ -1487,7 +1487,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             method: "POST",
             url: "php/send_mail.php",
             data: $.param({
-                cluster: id,
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
