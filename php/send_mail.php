@@ -1,5 +1,12 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpMailer/src/Exception.php';
+require 'phpMailer/src/PHPMailer.php';
+require 'phpMailer/src/SMTP.php';
+
 
 $mail = new PHPMailer(true);
 
