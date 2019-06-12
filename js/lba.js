@@ -475,7 +475,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            //console.log(data['data']);
+            console.log('Json' + data['data']);
             if(data!=0)
             {
                 var soft_clustering = {}
