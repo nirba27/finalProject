@@ -1224,7 +1224,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    ////console.log(data['data']);
+                    console.log(data['data']);
                     if (data != "0") {
                         $scope.obi = data['data'][0];
                         ////console.log($scope.obi);
@@ -1308,7 +1308,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 console.log(data["data"]);
                 for(i in data["data"])
                 {
-                    console.log(i);
+                    //console.log(i);
                     News.push(data["data"][i]["News"]);
                     Comedy.push(data["data"][i]["Comedy"]);
                     Drama.push(data["data"][i]["Drama"]);
@@ -1320,8 +1320,15 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                 }
 
-                console.log(Comedy);
 
+                News[0]=News[1]*0.5;
+                Comedy[0]=Comedy[1]*0.5;
+                Drama[0]=Drama[1]*0.5;
+                Entertainment[0]=Entertainment[1]*0.5;
+                Children[0]=Children[1]*0.5;
+                Sports[0]=Sports[1]*0.5;
+                Knowledge[0]=Knowledge[1]*0.5;
+                Other[0]=Other[1]*0.5;
                 News[1]=News[1]*0.5;
                 Comedy[1]=Comedy[1]*0.5;
                 Drama[1]=Drama[1]*0.5;
@@ -1331,7 +1338,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 Knowledge[1]=Knowledge[1]*0.5;
                 Other[1]=Other[1]*0.5;
 
-                console.log(Comedy);
 
                 var ctxL = document.getElementById("lineChart3").getContext('2d');
                 var myLineChart = new Chart(ctxL, {
