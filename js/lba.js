@@ -859,8 +859,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             pie_labels.push($scope.translate(items[i][0]));
             pie_count.push(items[i][1]);
             var key = items[i][0];
+            var trans_key = $scope.translate(key);
             //console.log(key);
-            if($scope.translate(key).includes('Net') && $scope.nt=='NA')
+            if(trans_key.includes('Net') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
                 if ($scope.translate(key).includes('High'))
@@ -936,7 +937,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
                 }
             }
-            else if($scope.translate(key).includes('Completed') && $scope.education=='NA')
+            else if(trans_key.includes('Completed') && $scope.education=='NA')
             {
                 $scope.education = $scope.translate(key);
             }
@@ -1199,7 +1200,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 location.href = "#res";
                 $scope.loading = 1;
                 $scope.cluster = data['data'];
-                hobi = "mfiID='30212' OR mfiID='30256' OR ";
+                hobi = "mfiID='30256' OR ";
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
