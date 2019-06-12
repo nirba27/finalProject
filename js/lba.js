@@ -860,7 +860,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             pie_count.push(items[i][1]);
             var key = items[i][0];
             //console.log(key);
-            if(key.includes('nt') && $scope.nt=='NA')
+            if($scope.translate(key).includes('Net') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
                 if ($scope.translate(key).includes('High'))
@@ -936,7 +936,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
                 }
             }
-            else if((key.includes('edh')||key.includes('edc')||key.includes('edt')||key.includes('edg')) && $scope.education=='NA')
+            else if($scope.translate(key).includes('Completed') && $scope.education=='NA')
             {
                 $scope.education = $scope.translate(key);
             }
