@@ -1,34 +1,28 @@
 <?php
-
-require 'phpMailer/src/PHPMailer.php';
-
-
-$mail = new PHPMailer(true);
-
-//Send mail using gmail
-if($send_using_gmail){
-    $mail->IsSMTP(); // telling the class to use SMTP
-    $mail->SMTPAuth = true; // enable SMTP authentication
-    $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-    $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-    $mail->Port = 465; // set the SMTP port for the GMAIL server
-    $mail->Username = "lba.technion@gmail.com"; // GMAIL username
-    $mail->Password = "Lba123456"; // GMAIL password
+//require 'vendor/autoload.php'; // If you're using Composer (recommended)
+// Comment out the above line if not using Composer
+require("sendgrid/sendgrid-php.php");
+// If not using Composer, uncomment the above line and
+// download sendgrid-php.zip from the latest release here,
+// replacing <PATH TO> with the path to the sendgrid-php.php file,
+// which is included in the download:
+// https://github.com/sendgrid/sendgrid-php/releases
+$email = new \SendGrid\Mail\Mail();
+$email->setFrom("test@example.com", "Example User");
+$email->setSubject("Sending with SendGrid is Fun");
+$email->addTo("nirbe@campus.technion.ac.il", "Example User");
+$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+$email->addContent(
+    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+);
+$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) {
+    echo 'Caught exception: '. $e->getMessage() ."\n";
 }
-
-//Typical mail data
-$mail->AddAddress($email, $name);
-$mail->SetFrom($email_from, $name_from);
-$mail->Subject = "My Subject";
-$mail->Body = "nirbe@campus.technion.ac.il";
-
-try{
-    $mail->Send();
-    echo "Success!";
-} catch(Exception $e){
-    //Something went bad
-    echo "Fail - " . $mail->ErrorInfo;
-}
-
 
 ?>
