@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 echo 'bla';
 //require 'vendor/autoload.php'; // If you're using Composer (recommended)
 // Comment out the above line if not using Composer
-require_once(__DIR__ . '\endgrid\sendgrid-php.php');
+require_once(__DIR__ . '\sendgrid\sendgrid-php.php');
 
 // If not using Composer, uncomment the above line and
 // download sendgrid-php.zip from the latest release here,
