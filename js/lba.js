@@ -1492,6 +1492,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
+            console.log(data);
             if (data != "0") {
                 console.log('Sent');
             }
