@@ -1245,6 +1245,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                         var time = parseInt(hour);
                         var timel = time-1;
                         var time2 = time+1;
+                        if(time1==-1)
+                        {
+                            time1=23;
+                        }
                         $scope.hmax = timel + ' To ' + time2;
                     }
                     else {
