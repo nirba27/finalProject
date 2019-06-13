@@ -1311,7 +1311,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         </div>
                         <div class="col-3">
                             <h5 class="feature-title font-weight-bold blue-grey-text">Vechicles</h5>
-                            <h2 class="grey-text" id="el">{{car}}</h2>
+                            <h2 class="grey-text" id="el">{{cars}}</h2>
                         </div>
 
                         <div class="col-1 ">

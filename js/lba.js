@@ -81,7 +81,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.ethnic = 'Mixed';
     $scope.income = 'NA';
     $scope.status = 'Married';
-    $scope.NumberAdults = 0;
+    $scope.NumberAdults = 2;
     $scope.child_p = 'Have children';
     $scope.ctn_btn = 1;
     $scope.json = [];
@@ -891,6 +891,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                 }
             }
+            else if(trans_key.includes('Adults') && $scope.numberAdults=='NA')
+            {
+                $scope.numberAdults = trans_key;
+            }
             else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk')) && $scope.topic=='NA')
             {
                 $scope.topic = key;
@@ -1039,6 +1043,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.age_top = '';
     $scope.get_audience = function () {
         var genre = $scope.selectedGenre2;
+        console.log(genre);
+        if (genre=='')
+        {
+            genre = ['News'];
+        }
         var query = '';
         for(i in genre) {
             query += "genre='" + genre[i] + "' OR ";
@@ -1076,7 +1085,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         $scope.ethnic = 'Mixed';
         $scope.income = 'NA';
         $scope.status = 'Married And Singles';
-        $scope.NumberAdults = 0;
+        $scope.NumberAdults = 2;
         $scope.child_p = 'Have children';
         var gender = $scope.Gender;
         var maritial = $scope.maritial;
