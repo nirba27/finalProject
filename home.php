@@ -359,7 +359,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     <p class="h5 text-center mb-4">Targeted Advertising</p>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://youtu.be/Yst_dqNCsyg" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Yst_dqNCsyg" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!--/Grid column-->
