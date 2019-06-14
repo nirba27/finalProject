@@ -1173,7 +1173,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 gender ='18m24';
             }
         }
-
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",

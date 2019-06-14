@@ -63,6 +63,8 @@ $tsql= "SELECT TOP 20 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$vehicles%'
             UNION ALL
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$topic%'
+             UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$income%'
           ) as tem
         GROUP BY id,records,mkey
         ORDER BY cnt DESC";
