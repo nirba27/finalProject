@@ -1150,7 +1150,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
                 <!-- Sign in button -->
-                <button style='margin-top:25px;' class="btn btn-primary btn-block my-4" type="submit" ng-click="data=1;loading=0;move();">Submit</button>
+                <button style='margin-top:25px;' class="btn btn-primary btn-block my-4" type="submit" ng-click="data=1;loading=0;move();get_audience();">Submit</button>
 
 
             </form>
@@ -1164,7 +1164,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
             <div class="progress">
                 <div id='myBar' class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <button autoscroll="false" id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="get_audience();">Show Results</button>
+            <button autoscroll="false" id='ctn_btn' class="btn btn-info btn-block my-4" style="display: none" type="submit" ng-click="continue();">Show Results</button>
         </section>
 
         <section id="res" ng-hide="res">
@@ -1778,8 +1778,10 @@ if ( isset( $_SESSION['user_id'] ) ) {
                 </div>
                 <!--Grid column-->
 
-                <button  id='ctn_btn_2' class="btn btn-primary btn-block my-4" type="submit" ng-click="export()">Export</button>
-
+                <button ng-hide="export_hide"  id='ctn_btn_2' class="btn btn-primary btn-block my-4" type="submit" ng-click="export()">Export</button>
+                <div ng-hide='sucess' class="col-sm-12 alert alert-success alert-dismissible fade show" role="alert">
+                   Done! Check out your e-mail for the DVR list.
+                </div>
 
         </section>
         <!--Section: Main features & Quick Start-->

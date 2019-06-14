@@ -42,6 +42,8 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
+    $scope.sucess = 1;
+    $scope.sucess = 1;
     $scope.statistics = 1;
     $scope.data = 1;
     $scope.res = 1;
@@ -455,7 +457,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    //////console.log(data['data']);
+
+                    d3.select("#graph").selectAll("svg").remove();
+
+
 
                     d3.json("php/myfile2.json", function(dataJson) {
                         var plot = new ConceptMap("graph", "graph-info", dataJson);
@@ -487,9 +492,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var array = [];
                 var array2 = [];
                 var perspectives = [];
-
-
-
                 var records_dict = {};
                 for(x in data)
                 {
@@ -663,7 +665,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         document.getElementById('ctn_btn').style.display='none';
 
         var width = 1;
-        var id = setInterval(frame, 15);
+        var id = setInterval(frame, 80);
         function frame() {//////console.log(width);
             if (width >= 100) {
                 width++;
@@ -857,12 +859,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         for(i in items)
         {
-
-            pie_labels.push($scope.translate(items[i][0]));
-            pie_count.push(items[i][1]);
+            if(items[i][0]!='0')
+            {
+                pie_labels.push($scope.translate(items[i][0]));
+                pie_count.push(items[i][1]);
+            }
             var key = items[i][0];
             var trans_key = $scope.translate(key);
-            console.log(trans_key);
+            //console.log(trans_key);
             if(trans_key.includes('Net') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
@@ -936,11 +940,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.jbg = 'https://ewedit.files.wordpress.com/2018/10/150470_dsc00532.jpg';
 
                 }
-                else if(key=='action')
+                else if(key=='action1')
                 {
                     $scope.fa = 'gun';
                     $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
                     $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
+                }
+                else
+                {
+                    $scope.fa = 'other';
+                    $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
+                    $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
                 }
             }
             else if(trans_key.includes('Completed') && $scope.education=='NA')
@@ -959,7 +969,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.child_p = $scope.translate(key);
             }
-            else if(trans_key.includes('Car') && $scope.car=='NA')
+            else if(trans_key.includes('Car') && $scope.cars=='NA')
             {
                 $scope.cars = $scope.translate(key);
             }
@@ -1065,9 +1075,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             //console.log(data);
             if (data != "0") {
-                $scope.res = 0;
-                location.href = "#res";
-                $scope.loading = 1;
+
                 $scope.Kcluster = data['data'];
                 //console.log($scope.Kcluster);
                 if($scope.slider == 2)
@@ -1075,9 +1083,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.get_prog($scope.Kcluster);
                 }
             } else {
-                $scope.res = 0;
-                location.href = "#res";
-                $scope.loading = 1;
+
             }
         }); //success
 
@@ -1211,11 +1217,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             var obi = '';
             var hobi = '';
             if (data != "0") {
-                $scope.res = 0;
-                location.href = "#res";
-                $scope.loading = 1;
+
                 $scope.cluster = data['data'];
-                hobi = "mfiID='30256' OR ";
+                hobi = "mfiID='6' OR ";
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
@@ -1231,6 +1235,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.obi = [];
                 $scope.graph = [];
 
+                console.log(hobi);
                 var request = $http({
                     method: "POST",
                     url: "php/get_hours_mfi.php",
@@ -1273,12 +1278,23 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
             else
                 {
-                $scope.res = 0;
-                location.href = "#res";
-                $scope.loading = 1;
+
                 }
         }); //success
         event.preventDefault();
+    }
+
+    $scope.continue = function()
+    {
+        d3.select(".graph").selectAll("*").remove();
+
+        $scope.sucess = 1;
+        $scope.export_hide = 0;
+        $scope.res = 0;
+        location.href = "#res";
+        $scope.loading = 1;
+        document.getElementById('loadDone').style.display='none';
+        document.getElementById('loadNotDone').style.display='block';
     }
 
     $scope.get_genres_hist = function()
@@ -1323,7 +1339,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data['data']);
+            //console.log(data['data']);
             if (data != "0") {
                 console.log(data["data"]);
                 for(i in data["data"])
@@ -1500,6 +1516,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.export = function()
     {
+
+        $scope.sucess = 0;
+        $scope.export_hide = 1;
+
         var id = 1;
         var request = $http({
             method: "POST",
@@ -1803,10 +1823,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.linechart = function (obi)
     {
 
-
+        console.log(obi);
         var ctxL = document.getElementById("lineChart2").getContext('2d');
-       // ////console.log("obi?");
-       // ////console.log(obi[0]);
         var myLineChart = new Chart(ctxL, {
             type: 'line',
             data: {
