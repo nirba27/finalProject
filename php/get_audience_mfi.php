@@ -36,6 +36,10 @@ elseif ($income=='low')
 {
     $income = "[key]='hmADv' or [key]='ADv' or [key]='nt12w' or [key]='12w' or [key]='nt34w' or [key]='nt1' or [key]='56w' or [key]='in14c' or [key]='58c' or";
 }
+elseif ($income=='very')
+{
+    $income = "[key]='92c' or [key]='hmQSv' or [key]='hmQ' or [key]='nt_9w' or key]='nt7' or key]='in31c' or key]='in9' or ";
+}
 else
 {
     $income = "";
