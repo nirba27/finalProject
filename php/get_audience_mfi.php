@@ -28,6 +28,7 @@ $hh_num = (stripslashes($_POST['occu']));
 $income = (stripslashes($_POST['income']));
 $topic = (stripslashes($_POST['topic']));
 
+
 if($income=='high')
 {
     $income = "key]='hmLPv' OR [key]='hmL' OR [key]='LPv' OR [key]='hmQSv' OR [key]='hmQ' OR [key]='nt56w' OR [key]='nt3' OR [key]='78w' OR [key]='nt78w' OR [key]='nt5' OR [key]='_9w' OR [key]='nt_9w' OR [key]='nt7' OR [key]='in92c' OR [key]='31c' OR [key]='in5' OR [key]='in31c' OR [key]='in9' or";
@@ -76,7 +77,7 @@ $getResults= sqlsrv_query($conn, $tsql);
 //echo $tsql;
 
 $array = array();
-//echo $tsql;
+echo $tsql;
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
         'id'=>$row['id'],

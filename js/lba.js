@@ -1100,14 +1100,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         //////console.log($scope.educ);
         //.log($scope.occu);
         var income = '';
-        if ($scope.income_low > 300000 && $scope.income_top < 500000)
-        {
-            income = 'med';
-        }
-        else if($scope.income_low > 700000)
+        console.log($scope.income_low);
+
+       if($scope.income_low > 700000)
         {
             income = 'very';
         }
+       else  if ($scope.income_low > 300000 && $scope.income_top < 500000)
+        {
+            income = 'med';
+        }
+
         else if($scope.income_low > 500000  && $scope.income_top < 700000)
         {
             income = 'high';
@@ -1117,6 +1120,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             income = 'low';
         }
 
+        console.log(income);
 
         var gender = '';
         if ($scope.Gender == 'F')
