@@ -1198,8 +1198,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                             <h4 class="font-weight-normal">
                                 Most popular watching time is between <label class="h5 cyan-text font-weight-bold">{{hmax}}</label>
-                                <br>Your audience is most likely to watch <span ng-if="x.genre.includes('sport')!=-1" class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">#{{x.genre}}</span>
-                                <br>And a top viewer of <span  class="badge badge-pill badge-info" ng-repeat="x in genres_tags">#{{x.genre}}</span><span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">#{{x}}</span></h4>
+                                <br>Your audience is most likely to watch <span ng-if="x.genre.includes('port')!=-1" class="badge badge-pill badge-info" ng-repeat="x in geners|limitTo:3">#{{x.genre}}</span>
+                                <br>And a top viewer of <span  ng-if="x.genre.includes('port')!=-1" class="badge badge-pill badge-info" ng-repeat="x in genres_tags">#{{x.genre}}</span><span class="badge badge-pill badge-info" ng-repeat="x in selectedGenre2">#{{x}}</span></h4>
                             </h4>
 
 
