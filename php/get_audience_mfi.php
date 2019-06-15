@@ -27,7 +27,7 @@ $occu = (stripslashes($_POST['occu']));
 $hh_num = (stripslashes($_POST['occu']));
 $income = (stripslashes($_POST['income']));
 $topic = (stripslashes($_POST['topic']));
-
+$child = (stripslashes($_POST['child']));
 
 if($income=='high')
 {
@@ -70,6 +70,8 @@ else
 $tsql= "SELECT TOP 20 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt FROM
           (
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$gender%'
+            UNION ALL
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$child%'
             UNION ALL
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$hh_num%'
             UNION ALL
