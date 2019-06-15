@@ -950,7 +950,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 else
                 {
                     $scope.fa = 'other';
-                    $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
+                    $scope.bg = 'https://media.giphy.com/media/XhT868oxljs88/giphy.gif';
                     $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
                 }
             }
@@ -1003,7 +1003,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         }
 
-        if(scope.topic=='NA')
+        if($scope.topic=='NA')
         {
             $scope.fa = 'other';
             $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
