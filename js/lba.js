@@ -84,7 +84,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.income = 'NA';
     $scope.status = 'Married';
     $scope.NumberAdults = 2;
-    $scope.child_p = 'Have children';
+    $scope.child_p = 'NA';
     $scope.ctn_btn = 1;
     $scope.json = [];
     $scope.loadMessage = 'Looking for your targeted audience...';
@@ -966,7 +966,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.homeVal = $scope.translate(key);
             }
-            else if(key.includes('ch') && $scope.child_p=='NA')
+            else if(trans_key.includes('Children') && $scope.child_p=='NA')
             {
                 $scope.child_p = $scope.translate(key);
             }
@@ -1093,7 +1093,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         $scope.income = 'NA';
         $scope.status = 'Married And Singles';
         $scope.NumberAdults = 2;
-        $scope.child_p = 'Have children';
+        $scope.child_p = 'NA';
         var gender = $scope.Gender;
         var maritial = $scope.maritial;
         var race = $scope.race_;
