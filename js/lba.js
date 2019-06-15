@@ -1342,19 +1342,19 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var str = '';
         if($scope.topic.includes('child'))
         {
-            str = "C2='000000007156' OR ";
+            str = "C2='000000007156' OR C2='00000000bce6' OR ";
         }
         else if($scope.topic.includes('sport'))
         {
-            str = "C2='00000000bce6' OR ";
+            str = "C2='00000000bce6' OR C2='000003e2dfd5' OR ";
         }
         else if($scope.topic.includes('darama'))
         {
-            str = "C2='000000009e6d' OR ";
+            str = "C2='000000009e6d' OR C2='000003e2afce' OR C2='000003e29b7b' OR ";
         }
         else
         {
-            str = "C2='00000000dcbf' OR ";
+            str = "C2='00000000dcbf' OR C2='000003e2dfd5'  OR C2='000003e2d34f' OR ";
         }
        // console.log($scope.dvrs);
 
@@ -1641,9 +1641,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     }
 
+    $scope.geners_top = [];
+
 
     $scope.get_prog = function(id)
     {
+        $scope.genres_top = [];
         var request = $http({
             method: "POST",
             url: "php/get_geners.php",
@@ -1656,6 +1659,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if (data != "0") {
                 $scope.geners = data['data'];
                 $scope.genres_tags = data['data'].slice(6, 15);
+                for(i in $scope.geners)
+                {
+                    if(!($scope.geners[i]['genre'].includes('Sports')) && !($scope.geners[i]['genre'].includes('sports')))
+                    {
+                        $scope.geners_top.push($scope.geners[i]['genre']);
+                    }
+
+                }
+
+
             } else {
                 ////console.log('init_case - failed');
             }
