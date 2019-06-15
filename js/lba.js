@@ -900,7 +900,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.numberAdults = trans_key;
             }
-            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk')) && $scope.topic=='NA')
+            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk') || key.includes('other')) && $scope.topic=='NA')
             {
                 $scope.topic = key;
                 if(key=='sports1')
@@ -1001,6 +1001,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
             }
 
+        }
+
+        if(scope.topic=='NA')
+        {
+            $scope.fa = 'other';
+            $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
+            $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
         }
 
         //console.log(radar_cnt);
@@ -1341,9 +1348,13 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         {
             str = "C2='00000000bce6' OR ";
         }
-        else
+        else if($scope.topic.includes('darama'))
         {
             str = "C2='000000009e6d' OR ";
+        }
+        else
+        {
+            str = "C2='00000000dcbf' OR ";
         }
        // console.log($scope.dvrs);
 
