@@ -871,7 +871,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.nt = $scope.translate(key);
 
-                if($scope.translate(key).includes('Very'))
+                if(trans_key.includes('Very'))
                 {
                     $scope.animateValue('el',999199, 999999, 1000);
                     $scope.homeVal = 'Very High';
@@ -896,7 +896,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
                 }
             }
-            else if(trans_key.includes('Adults') && $scope.numberAdults=='NA')
+            else if((trans_key.includes('Adults') || trans_key.includes('people'))  && $scope.numberAdults=='NA')
             {
                 $scope.numberAdults = trans_key;
             }
@@ -976,16 +976,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
             else if((key.includes('14c')||key.includes('31c')||key.includes('92c')||key.includes('58c')) && $scope.income=='NA')
             {
-                if ($scope.translate(key).includes('High'))
-                {
-                    $scope.animateValue('el',599199, 599999, 1000);
-                    $scope.homeVal = 'High';
-
-                }
-                else if($scope.translate(key).includes('Very'))
+                if($scope.translate(key).includes('Very'))
                 {
                     $scope.animateValue('el',999199, 999999, 1000);
                     $scope.homeVal = 'Very High';
+
+                }
+                else if ($scope.translate(key).includes('High'))
+                {
+                    $scope.animateValue('el',599199, 599999, 1000);
+                    $scope.homeVal = 'High';
 
                 }
                 else if($scope.translate(key).includes('Low'))
@@ -1116,10 +1116,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         {
             income = 'high';
         }
-        else
+        else if ($scope.income_low > 0  && $scope.income_top < 300000)
         {
             income = 'low';
         }
+        else
+       {
+           income = '';
+
+       }
+
 
         console.log(income);
 
@@ -1178,6 +1184,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 gender ='18m24';
             }
         }
+
+        console.log(gender + ',' +
+            $scope.maritial + ',' +
+            $scope.source + ',' +
+            $scope.educ + ',' +
+            $scope.occu+ ',' +
+            $scope.children+ ',' +
+            $scope.vehicles+ ','+
+            $scope.hh_num+ ','+
+            income+ ','+
+            $scope.topic)
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",

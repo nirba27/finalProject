@@ -31,15 +31,13 @@ $topic = (stripslashes($_POST['topic']));
 
 if($income=='high')
 {
-    $income = "%hmL%' 
+    $income = "%in5%' 
                 UNION ALL
                 SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%LPv%' 
                 UNION ALL
                 SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%nt5%' 
                 UNION ALL
-                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%78w%' 
-                UNION ALL
-                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in5%";
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%78w%";
 }
 elseif ($income=='low')
 {
@@ -61,9 +59,7 @@ elseif ($income=='very')
                 UNION ALL
                 SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%nt7%' 
                 UNION ALL
-                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in9%' 
-                UNION ALL
-                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in31c%";
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in9%";
 }
 else
 {
