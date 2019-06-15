@@ -870,16 +870,17 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if(trans_key.includes('Net') && $scope.nt=='NA')
             {
                 $scope.nt = $scope.translate(key);
-                if ($scope.translate(key).includes('High'))
-                {
-                    $scope.animateValue('el',599199, 599999, 1000);
-                    $scope.homeVal = 'High';
 
-                }
-                else if($scope.translate(key).includes('Very'))
+                if($scope.translate(key).includes('Very'))
                 {
                     $scope.animateValue('el',999199, 999999, 1000);
                     $scope.homeVal = 'Very High';
+
+                }
+                else if ($scope.translate(key).includes('High'))
+                {
+                    $scope.animateValue('el',599199, 599999, 1000);
+                    $scope.homeVal = 'High';
 
                 }
                 else if($scope.translate(key).includes('Low'))
@@ -957,7 +958,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.education = $scope.translate(key);
             }
-            else if((key.includes('f') || key.includes('m')) && $scope.age=='NA')
+            else if(trans_key.includes('male') && $scope.age=='NA')
             {
                 $scope.age = $scope.translate(key);
             }

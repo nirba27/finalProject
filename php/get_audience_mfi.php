@@ -31,15 +31,39 @@ $topic = (stripslashes($_POST['topic']));
 
 if($income=='high')
 {
-    $income = "key]='hmLPv' OR [key]='hmL' OR [key]='LPv' OR [key]='hmQSv' OR [key]='hmQ' OR [key]='nt56w' OR [key]='nt3' OR [key]='78w' OR [key]='nt78w' OR [key]='nt5' OR [key]='_9w' OR [key]='nt_9w' OR [key]='nt7' OR [key]='in92c' OR [key]='31c' OR [key]='in5' OR [key]='in31c' OR [key]='in9' or";
+    $income = "%hmL%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%LPv%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%nt5%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%78w%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in5%";
 }
 elseif ($income=='low')
 {
-    $income = "[key]='hmADv' or [key]='ADv' or [key]='nt12w' or [key]='12w' or [key]='nt34w' or [key]='nt1' or [key]='56w' or [key]='in14c' or [key]='58c' or";
+    $income = "%ADv%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%58c%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%12w%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%nt1%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%56w%";
 }
 elseif ($income=='very')
 {
-    $income = "[key]='92c' or [key]='hmQSv' or [key]='hmQ' or [key]='nt_9w' or key]='nt7' or key]='in31c' or key]='in9' or ";
+    $income = "%92c%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%hmQ%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%nt7%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in9%' 
+                UNION ALL
+                SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%in31c%";
 }
 else
 {
@@ -65,7 +89,7 @@ $tsql= "SELECT TOP 20 tem.id,tem.mkey as mkey,tem.records as rec,COUNT(*) as cnt
             UNION ALL
             SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$topic%'
              UNION ALL
-            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '%$income%'
+            SELECT id,records,mkey FROM mfi_final WHERE mkey LIKE '$income'
           ) as tem
         GROUP BY id,records,mkey
         ORDER BY cnt DESC";
