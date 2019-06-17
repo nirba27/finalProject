@@ -1005,6 +1005,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         if($scope.topic=='NA')
         {
+            $scope.topic= 'other';
             $scope.fa = 'other';
             $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
             $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
