@@ -815,7 +815,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.bg = 'NA';
     $scope.jbg = 'NA';
     $scope.income = 'NA';
-    $scope.dvrs_test = '';
 
     $scope.analyze_cluster = function (keys)
     {
@@ -950,6 +949,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
                 else
                 {
+                    $scope.topic = 'other';
                     $scope.fa = 'other';
                     $scope.bg = 'https://media.giphy.com/media/XhT868oxljs88/giphy.gif';
                     $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
@@ -1006,7 +1006,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         if($scope.topic=='NA')
         {
-            $scope.topic= 'other';
             $scope.fa = 'other';
             $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
             $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
@@ -1250,7 +1249,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
             var obi = '';
             var hobi = '';
-            var obi2 = '';
             if (data != "0") {
 
                 $scope.cluster = data['data'];
@@ -1258,12 +1256,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
-                    obi2 += ("C1 LIKE '%" + $scope.cluster[x]['id'] +"%' or ");
-
 
                 }
-
-                $scope.dvrs_test = obi2;
                 var len = obi.length;
                 var len2 = hobi.length;
                 $scope.cluste_ids = hobi;
@@ -1338,7 +1332,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_genres_hist = function()
     {
-        console.log($scope.dvrs);
         var News = [];
         var Comedy = [];
         var Drama = [];
@@ -1373,12 +1366,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
 
         str = str.substr(0,str.length-3)
-       console.log($scope.dvrs_test);
+       // console.log(str);
         var request = $http({
             method: "POST",
             url: "php/get_geners_hist.php",
             data: $.param({
-                cluster: $scope.dvrs_test,
+                cluster: str,
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
