@@ -1258,7 +1258,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
-                    obi2 += ("C1=" + $scope.cluster[x]['id'] +" or ");
+                    obi2 += ("C1 LIKE '%" + $scope.cluster[x]['id'] +"%' or ");
 
 
                 }
