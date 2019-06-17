@@ -1331,6 +1331,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_genres_hist = function()
     {
+        console.log($scope.dvrs);
         var News = [];
         var Comedy = [];
         var Drama = [];
