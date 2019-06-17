@@ -1285,8 +1285,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                             <i class="fas fa-male fa-4x purple-text"></i>
                         </div>
                         <div class="col-3">
-                            <h5 class="feature-title font-weight-bold blue-grey-text">Number of Adults</h5>
-                            <h2 class="grey-text">{{NumberAdults}}</h2>
+                            <h5 class="feature-title font-weight-bold blue-grey-text">Home residents</h5>
+                            <h2 class="grey-text">{{numberAdults}}</h2>
                         </div>
 
                     </div>

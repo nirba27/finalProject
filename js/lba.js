@@ -1099,7 +1099,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         $scope.ethnic = 'Mixed';
         $scope.income = 'NA';
         $scope.status = 'Married And Singles';
-        $scope.NumberAdults = 2;
         $scope.child_p = 'NA';
         var gender = $scope.Gender;
         var maritial = $scope.maritial;
