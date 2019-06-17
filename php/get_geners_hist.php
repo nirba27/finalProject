@@ -30,7 +30,7 @@ $tsql= "SELECT C3 as hour,AVG(C4) as News,AVG(C5) as Comedy
     FROM genres_hist WHERE $cluster
     GROUP BY C3";
 
-echo $tsql;
+//echo $tsql;
 
 
 $getResults= sqlsrv_query($conn, $tsql);
