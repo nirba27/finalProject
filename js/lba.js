@@ -446,7 +446,8 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     'perspectives' : perspectives
                 };
 
-
+                $('#graph').empty();
+                $('#graph-info').empty();
 
                 var request = $http({
                     method: "POST",
