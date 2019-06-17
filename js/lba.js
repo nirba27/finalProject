@@ -1373,7 +1373,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
 
         str = str.substr(0,str.length-3)
-       // console.log(str);
+       console.log($scope.dvrs_test);
         var request = $http({
             method: "POST",
             url: "php/get_geners_hist.php",
