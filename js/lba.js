@@ -328,7 +328,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 //console.log(data['data']);
                 return(data['data']);
             }
-         });
+        });
     }
     $scope.getJson_1 = function(ids)
     {
@@ -350,49 +350,49 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 var data = data['data'];
                 var records_dict = {};
                 for(x in data)
-               {
-                   var id = String(data[x]['id']);
-                   var records = data[x]['records'];
-                   var records = records.split(' ');
-                   var links = data[x]['key'];
-                   var links = links.split(' ');
-                   for(i in records)
-                   {
-                       if(!(pres.includes(id)))
-                       {
-                           pres.push(id);
-                       }
-                       if(!(records[i] in ditems))
-                       {
-                           ditems.push(records[i]);
-                       }
-                       if (records[i] in records_dict)
-                       {
-                           records_dict[records[i]].push(id);
-                       }
-                       else
-                       {
-                           records_dict[records[i]]=[];
-                           records_dict[records[i]].push(id);
-                       }
-                       for(j in links)
-                       {
-                           var tlink = (links[j]);
-                           if(!(theme.includes(tlink)))
-                           {
-                               theme.push(tlink);
-                           }
-                           if(!(records_dict[records[i]].includes(tlink)))
-                           {
-                               records_dict[records[i]].push(tlink);
-                           }
-                       }
+                {
+                    var id = String(data[x]['id']);
+                    var records = data[x]['records'];
+                    var records = records.split(' ');
+                    var links = data[x]['key'];
+                    var links = links.split(' ');
+                    for(i in records)
+                    {
+                        if(!(pres.includes(id)))
+                        {
+                            pres.push(id);
+                        }
+                        if(!(records[i] in ditems))
+                        {
+                            ditems.push(records[i]);
+                        }
+                        if (records[i] in records_dict)
+                        {
+                            records_dict[records[i]].push(id);
+                        }
+                        else
+                        {
+                            records_dict[records[i]]=[];
+                            records_dict[records[i]].push(id);
+                        }
+                        for(j in links)
+                        {
+                            var tlink = (links[j]);
+                            if(!(theme.includes(tlink)))
+                            {
+                                theme.push(tlink);
+                            }
+                            if(!(records_dict[records[i]].includes(tlink)))
+                            {
+                                records_dict[records[i]].push(tlink);
+                            }
+                        }
 
 
-                   }
+                    }
 
-               }
-               //console.log(records_dict);
+                }
+                //console.log(records_dict);
                 //console.log(theme);
                 //console.log(pres);
                 var ditems = []
@@ -656,7 +656,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 })
 
             }
-         })
+        })
     }
     $scope.move = function()
     {
@@ -949,7 +949,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
                 else
                 {
-                    $scope.topic = 'other';
                     $scope.fa = 'other';
                     $scope.bg = 'https://media.giphy.com/media/XhT868oxljs88/giphy.gif';
                     $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
@@ -1111,11 +1110,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var income = '';
         console.log($scope.income_low);
 
-       if($scope.income_low > 700000)
+        if($scope.income_low > 700000)
         {
             income = 'very';
         }
-       else  if ($scope.income_low > 300000 && $scope.income_top < 500000)
+        else  if ($scope.income_low > 300000 && $scope.income_top < 500000)
         {
             income = 'med';
         }
@@ -1129,10 +1128,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             income = 'low';
         }
         else
-       {
-           income = '';
+        {
+            income = '';
 
-       }
+        }
 
 
         console.log(income);
@@ -1310,9 +1309,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.getJson(obi);
             }
             else
-                {
+            {
 
-                }
+            }
         }); //success
         event.preventDefault();
     }
@@ -1332,6 +1331,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
     $scope.get_genres_hist = function()
     {
+        var query = '';
+        for (x in $scope.cluster) {
+            query += ("C1=" + $scope.cluster[x]['id'] +" or ");
+
+        }
+        query = query.substr(0,query.length-3);
         var News = [];
         var Comedy = [];
         var Drama = [];
@@ -1357,7 +1362,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         {
             str = "C2='00000000dcbf' OR C2='000003e2dfd5'  OR C2='000003e2d34f' OR ";
         }
-       // console.log($scope.dvrs);
+        // console.log($scope.dvrs);
 
         for(i in $scope.dvrs)
         {
@@ -1366,12 +1371,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
 
         str = str.substr(0,str.length-3)
-       // console.log(str);
+        console.log(query);
         var request = $http({
             method: "POST",
             url: "php/get_geners_hist.php",
             data: $.param({
-                cluster: str,
+                cluster: query,
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
@@ -1612,7 +1617,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if (data != "0") {
                 $scope.geners_modal = data['data'];
                 ////console.log('init_cases - success');
-               console.log($scope.geners_modal);
+                console.log($scope.geners_modal);
 
             } else {
                 ////console.log('init_case - failed');
