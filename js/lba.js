@@ -815,6 +815,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.bg = 'NA';
     $scope.jbg = 'NA';
     $scope.income = 'NA';
+    $scope.dvrs_test = '';
 
     $scope.analyze_cluster = function (keys)
     {
@@ -1249,6 +1250,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
             var obi = '';
             var hobi = '';
+            var obi2 = '';
             if (data != "0") {
 
                 $scope.cluster = data['data'];
@@ -1256,8 +1258,12 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
                     hobi += ("mfiID='" + $scope.cluster[x]['id'] +"' or ");
+                    obi2 += ("C1='" + $scope.cluster[x]['id'] +"' or ");
+
 
                 }
+
+                $scope.dvrs_test = obi2;
                 var len = obi.length;
                 var len2 = hobi.length;
                 $scope.cluste_ids = hobi;
@@ -1372,7 +1378,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             method: "POST",
             url: "php/get_geners_hist.php",
             data: $.param({
-                cluster: str,
+                cluster: $scope.dvrs_test,
             }),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
