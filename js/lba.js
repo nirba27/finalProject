@@ -1340,10 +1340,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.get_genres_hist = function()
     {
         var query = '';
-        for (x in $scope.cluster) {
-            query += ("C1=" + $scope.cluster[x]['id'] +" or ");
 
-        }
         query = query.substr(0,query.length-3);
         var News = [];
         var Comedy = [];
@@ -1356,25 +1353,30 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var str = '';
         if($scope.topic.includes('child'))
         {
-            str = "C2='000000007156' OR C2='00000000bce6' OR ";
+            query = "C2='000000007156' OR C2='00000000bce6' OR ";
         }
         else if($scope.topic.includes('sport'))
         {
-            str = "C2='00000000bce6' OR C2='000003e2dfd5' OR ";
+            query = "C2='00000000bce6' OR C2='000003e2dfd5' OR ";
         }
         else if($scope.topic.includes('darama'))
         {
-            str = "C2='000000009e6d' OR C2='000003e2afce' OR C2='000003e29b7b' OR ";
+            query = "C2='000000009e6d' OR C2='000003e2afce' OR C2='000003e29b7b' OR ";
         }
         else
         {
-            str = "C2='00000000dcbf' OR C2='000003e2dfd5'  OR C2='000003e2d34f' OR ";
+            query = "C2='00000000dcbf' OR C2='000003e2dfd5'  OR C2='000003e2d34f' OR ";
         }
         // console.log($scope.dvrs);
 
         for(i in $scope.dvrs)
         {
             str +=  "C2='" +  $scope.dvrs[i]['DVR'] + "' OR ";
+
+        }
+
+        for (x in $scope.cluster) {
+            query += ("C1=" + $scope.cluster[x]['id'] +" or ");
 
         }
 
