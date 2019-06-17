@@ -1251,6 +1251,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             if (data != "0") {
 
                 $scope.cluster = data['data'];
+
+                var query = '';
+                for (x in $scope.cluster) {
+                    query += ("C1=" + $scope.cluster[x]['id'] +" or ");
+
+                }
+                query = query.substr(0,query.length-3);
+
                 hobi = "mfiID='6' OR ";
                 for (x in $scope.cluster) {
                     obi += ("id='" + $scope.cluster[x]['id'] +"' or ");
@@ -1272,7 +1280,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     method: "POST",
                     url: "php/get_hours_mfi.php",
                     data: $.param({
-                        cluster: hobi,
+                        cluster: query,
                     }),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
