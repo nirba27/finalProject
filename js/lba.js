@@ -1341,7 +1341,6 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     {
         var query = '';
 
-        query = query.substr(0,query.length-3);
         var News = [];
         var Comedy = [];
         var Drama = [];
@@ -1379,6 +1378,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             query += ("C1=" + $scope.cluster[x]['id'] +" or ");
 
         }
+        query = query.substr(0,query.length-3);
 
         str = str.substr(0,str.length-3)
         console.log(query);
