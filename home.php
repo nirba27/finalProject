@@ -1347,8 +1347,10 @@ if ( isset( $_SESSION['user_id'] ) ) {
                     <script src="lib/d3.min.js" type="text/javascript"></script>
                     <script src="lib/packages.js" type="text/javascript"></script>
                     <script src="lib/concept-map.js" type="text/javascript"></script>
-                    <div id="graph" class="conceptmap"></div>
-                    <div id="graph-info"></div>
+                    <div id="plot_div">
+                        <div id="graph" class="conceptmap"></div>
+                        <div id="graph-info"></div>
+                    </div>
                 </div>
             </section>
 

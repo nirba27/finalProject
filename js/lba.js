@@ -330,147 +330,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         });
     }
-    $scope.getJson_1 = function(ids)
-    {
-        var request = $http({
-            method: "POST",
-            url: "php/getJson.php",
-            data: $.param({
-                cluster: ids,
-            }),
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }); //request
-        request.then(function (data) {
-            ////console.log(data['data']);
-            if(data!=0)
-            {
-                var theme = [];
-                var pres = [];
-                var ditems = [];
-                var data = data['data'];
-                var records_dict = {};
-                for(x in data)
-                {
-                    var id = String(data[x]['id']);
-                    var records = data[x]['records'];
-                    var records = records.split(' ');
-                    var links = data[x]['key'];
-                    var links = links.split(' ');
-                    for(i in records)
-                    {
-                        if(!(pres.includes(id)))
-                        {
-                            pres.push(id);
-                        }
-                        if(!(records[i] in ditems))
-                        {
-                            ditems.push(records[i]);
-                        }
-                        if (records[i] in records_dict)
-                        {
-                            records_dict[records[i]].push(id);
-                        }
-                        else
-                        {
-                            records_dict[records[i]]=[];
-                            records_dict[records[i]].push(id);
-                        }
-                        for(j in links)
-                        {
-                            var tlink = (links[j]);
-                            if(!(theme.includes(tlink)))
-                            {
-                                theme.push(tlink);
-                            }
-                            if(!(records_dict[records[i]].includes(tlink)))
-                            {
-                                records_dict[records[i]].push(tlink);
-                            }
-                        }
 
-
-                    }
-
-                }
-                //console.log(records_dict);
-                //console.log(theme);
-                //console.log(pres);
-                var ditems = []
-                var themes = []
-                var perspectives = []
-                var cnt = 0;
-                for(i in records_dict)
-                {
-                    var ditem = {
-                        'type': 'ditem',
-                        'name': i,
-                        'description': 'desc',
-                        'ditem': cnt,
-                        'date': '',
-                        'slug': i,
-                        'links': records_dict[i],
-                    };
-                    cnt += 1;
-                    ditems.push(ditem);
-                }
-
-
-                pres.forEach(function(entry) {
-                    var pres = {
-                        "type": "perspective",
-                        "name": entry,
-                        "description": "",
-                        "slug": entry,
-                        "count": "10",
-                        "group": ""
-                    };
-                    perspectives.push(pres);
-                });
-
-
-                theme.forEach(function(entry) {
-                    var theme = {
-                        "type": "perspective",
-                        "name": entry,
-                        "description": "",
-                        "slug": entry,
-                        "count": "10",
-                        "group": ""
-                    };
-                    themes.push(theme);
-                });
-
-                var array = {
-                    'ditems' : ditems,
-                    'themes' : themes,
-                    'perspectives' : perspectives
-                };
-
-                $('#graph').empty();
-                $('#graph-info').empty();
-
-                var request = $http({
-                    method: "POST",
-                    url: "php/writeJson.php",
-                    data: $.param({
-                        array: array,
-                    }),
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-                }); //request
-                request.then(function (data) {
-
-                    d3.select("#graph").selectAll("svg").remove();
-
-
-
-                    d3.json("php/myfile2.json", function(dataJson) {
-                        var plot = new ConceptMap("graph", "graph-info", dataJson);
-                    });
-                })
-
-            }
-        })
-    }
     $scope.getJson = function(ids)
     {
         var request = $http({
@@ -639,6 +499,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     'themes' : themes,
                     'perspectives' : perspectives
                 }
+
+                //$("#plot_div").empty();
+                $("#graph").empty();
+                $("#graph-info").empty()
+
 
                 var request = $http({
                     method: "POST",
@@ -937,7 +802,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 }
                 else if(key=='talk')
                 {
-                    $scope.fa = 'chair';
+                    $scope.fa = 'couch';
                     $scope.bg = 'https://media.giphy.com/media/XFza8e9pHT7Ak/giphy.gif';
                     $scope.jbg = 'https://ewedit.files.wordpress.com/2018/10/150470_dsc00532.jpg';
 
@@ -948,9 +813,21 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
                     $scope.jbg = 'https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5b4950931ae6cf0f403ed82f/1531531430252/skyscraper.jpg?format=2500w';
                 }
+                else if(key=='news1')
+                {
+                    $scope.fa = 'newspaper';
+                    $scope.bg = 'https://media3.giphy.com/media/26BRIL53texMuRZra/source.gif';
+                    $scope.jbg = 'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/yiJ8SoW/news-background-with-spinning-earth-on-blue-background_nhvbb5ang__F0000.png';
+                }
+                else if(key=='entertainment1')
+                {
+                    $scope.fa = 'video';
+                    $scope.bg = 'https://media.giphy.com/channel_assets/entertainment/h2UuV7nZZyrT.gif';
+                    $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
+                }
                 else
                 {
-                    $scope.fa = 'other';
+                    $scope.fa = 'tv';
                     $scope.bg = 'https://media.giphy.com/media/XhT868oxljs88/giphy.gif';
                     $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
                 }
@@ -981,24 +858,30 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 {
                     $scope.animateValue('el',999199, 999999, 1000);
                     $scope.homeVal = 'Very High';
+                    $scope.nt = 'Very High';
 
                 }
                 else if ($scope.translate(key).includes('High'))
                 {
                     $scope.animateValue('el',599199, 599999, 1000);
                     $scope.homeVal = 'High';
+                    $scope.nt = 'High';
+
 
                 }
                 else if($scope.translate(key).includes('Low'))
                 {
                     $scope.animateValue('el',399199, 399999, 1000);
                     $scope.homeVal = 'Low';
+                    $scope.nt = 'Low';
 
                 }
                 else
                 {
                     $scope.animateValue('el',499199, 499999, 10000);
                     $scope.homeVal = 'Medium';
+                    $scope.nt = 'Medium';
+
                 }
             }
 
@@ -1006,6 +889,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
         if($scope.topic=='NA')
         {
+            $scope.topic ='other';
             $scope.fa = 'other';
             $scope.bg = 'https://media3.giphy.com/media/GY2ukNpIJ9JXW/source.gif';
             $scope.jbg = 'http://www.pptback.com/uploads/general-red-stage-backgrounds-powerpoint.jpg';
