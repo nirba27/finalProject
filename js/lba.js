@@ -766,7 +766,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             {
                 $scope.numberAdults = trans_key;
             }
-            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk') || key.includes('other')) && $scope.topic=='NA')
+            else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk') || key.includes('other') || key.includes('news')) && $scope.topic=='NA')
             {
                 $scope.topic = key;
                 if(key=='sports1')
