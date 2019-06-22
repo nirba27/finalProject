@@ -533,7 +533,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         document.getElementById('ctn_btn').style.display='none';
 
         var width = 1;
-        var id = setInterval(frame, 90);
+        var id = setInterval(frame, 100);
         function frame() {//////console.log(width);
             if (width >= 100) {
                 width++;
