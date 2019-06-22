@@ -1456,8 +1456,9 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     <hr class="mb-5">
 
+                    <div class="col-sm-12">
                     <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Recommended Programs,Topics and Genres</h2>
-                    <!--Grid row-->
+                    </div><!--Grid row-->
                     <div class="row wow fadeIn">
 
                     <!-- Card deck -->
