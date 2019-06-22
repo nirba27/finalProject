@@ -1453,6 +1453,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
                     </div>
 
+                    <h2 class="h2 text-center mb-5 font-weight-bold blue-grey-text">Recommended Programs,Topic and Genres</h2>
 
                     <!-- Card deck -->
                     <div ng-hide='top' class="card-deck wow fadeInUp col-sm-12 mb-4"" style="margin-left:20px">
