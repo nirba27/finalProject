@@ -46,6 +46,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.sucess = 1;
     $scope.statistics = 1;
     $scope.top = 1;
+    $scope.top = 1;
     $scope.data = 1;
     $scope.res = 1;
     $scope.loading = 1;
@@ -733,7 +734,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             var trans_key = $scope.translate(key);
 
             cnt +=1;
-            if (cnt==15)
+            if (cnt==30)
             {
                 break;
             }
