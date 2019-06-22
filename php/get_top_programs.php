@@ -20,27 +20,24 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 $cluster = (stripslashes($_POST['cluster']));
 
-$tsql= "SELECT TOP 7 * FROM mfi_final WHERE $cluster ";
+$tsql= "SELECT * FROM top_prog WHERE $cluster";
+//echo ($tsql);
 
 $getResults= sqlsrv_query($conn, $tsql);
 //echo ("Reading data from table" . PHP_EOL);
-#if ($getResults == FALSE)
-    //echo (sqlsrv_errors());
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
 
 $array = array();
-
-//echo $tsql;
-
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
     $array[] = array(
-        'id' => $row['id'],
-        'records' => $row['records'],
-        'key'=>$row['mkey'],
+        'pname'=>$row['pname'],
+        'cover'=>$row['_cover'],
+        'genre'=>$row['genre'],
+        'views'=>$row['views']
+
     );
 }
-
 echo json_encode($array);
 sqlsrv_free_stmt($getResults);
-
-
 ?>

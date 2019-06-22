@@ -45,6 +45,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.sucess = 1;
     $scope.sucess = 1;
     $scope.statistics = 1;
+    $scope.top = 1;
     $scope.data = 1;
     $scope.res = 1;
     $scope.loading = 1;
@@ -342,7 +343,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log('Json' + data['data']);
+           //console.log('Json' + data['data']);
             if(data!=0)
             {
                 var soft_clustering = {}
@@ -531,7 +532,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         document.getElementById('ctn_btn').style.display='none';
 
         var width = 1;
-        var id = setInterval(frame, 80);
+        var id = setInterval(frame, 90);
         function frame() {//////console.log(width);
             if (width >= 100) {
                 width++;
@@ -720,18 +721,36 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
 
         // Create a new array with only the first 5 items
-        //console.log(items);
+        console.log(items);
         var radar_cnt = [1,1,1,1,1,1];
 
+        var cnt =0;
+        var arr = [];
+        var check = ['comedy1','children1','sports1','knowledge1','show1','talk','action1','drama','news1','other1'];
         for(i in items)
         {
-            if(items[i][0]!='0')
-            {
-                pie_labels.push($scope.translate(items[i][0]));
-                pie_count.push(items[i][1]);
-            }
             var key = items[i][0];
             var trans_key = $scope.translate(key);
+
+            cnt +=1;
+            if (cnt==15)
+            {
+                break;
+            }
+
+            if(key!='0')
+            {
+                if(!(arr.includes(trans_key)))
+                {
+                    if(!(check.includes(trans_key)))
+                    {
+                        pie_labels.push(trans_key);
+                        pie_count.push(items[i][1]);
+                        arr.push(trans_key);
+                    }
+                }
+
+            }
             //console.log(trans_key);
             if(trans_key.includes('Net') && $scope.nt=='NA')
             {
@@ -926,6 +945,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         var ctxP = document.getElementById("pieChart2").getContext('2d');
         var myPieChart = new Chart(ctxP, {
             type: 'pie',
+
             data: {
                 labels: pie_labels,
                 datasets: [{
@@ -945,12 +965,43 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.age_low = '';
     $scope.age_top = '';
     $scope.get_audience = function () {
+        var query = '';
+        for(i in $scope.selectedGenre2)
+        {
+            query+=" genre='"+$scope.selectedGenre2[i] +"' OR ";
+        }
+        query = query.substr(0,query.length-3);
+       //console.log(query);
+        var request = $http({
+            method: "POST",
+            url: "php/get_top_programs.php",
+            data: $.param({
+                cluster: query,
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }); //request
+        request.then(function (data) {
+           //console.log(data);
+            if (data != "0") {
+                $scope.top_prog = data['data'];
+
+            } else {
+                ////console.log('init_case - failed');
+            }
+        }); //success
+
         var genre = $scope.selectedGenre2;
-        console.log(genre);
+       //console.log(genre);
         if (genre=='')
         {
+            $scope.top = 1;
             genre = ['News'];
         }
+        else
+        {
+            $scope.top = 0;
+        }
+
         var query = '';
         for(i in genre) {
             query += "genre='" + genre[i] + "' OR ";
@@ -992,22 +1043,22 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         //////console.log($scope.educ);
         //.log($scope.occu);
         var income = '';
-        console.log($scope.income_low);
+       //console.log($scope.income_low);
 
-        if($scope.income_low > 700000)
+        if($scope.income_low >= 700000)
         {
             income = 'very';
         }
-        else  if ($scope.income_low > 300000 && $scope.income_top < 500000)
+        else  if ($scope.income_low >= 300000 && $scope.income_top <= 500000)
         {
             income = 'med';
         }
 
-        else if($scope.income_low > 500000  && $scope.income_top < 700000)
+        else if($scope.income_low >= 500000  && $scope.income_top <= 700000)
         {
             income = 'high';
         }
-        else if ($scope.income_low > 0  && $scope.income_top < 300000)
+        else if ($scope.income_low >= 0  && $scope.income_top <= 300000)
         {
             income = 'low';
         }
@@ -1018,7 +1069,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
 
 
-        console.log(income);
+       //console.log(income);
 
         var gender = '';
         if ($scope.Gender == 'F')
@@ -1076,16 +1127,16 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             }
         }
 
-        console.log(gender + ',' +
+       console.log(gender + ',' +
             $scope.maritial + ',' +
             $scope.source + ',' +
             $scope.educ + ',' +
-            $scope.occu+ ',' +
-            $scope.children+ ',' +
-            $scope.vehicles+ ','+
-            $scope.hh_num+ ','+
+            $scope.occu + ',' +
+            $scope.children + ',' +
+            $scope.vehicles + ','+
+            $scope.hh_num + ','+
             income+ ','+
-            $scope.topic)
+            $scope.topic);
         var request = $http({
             method: "POST",
             url: "php/get_audience_mfi.php",
@@ -1105,7 +1156,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //request
         request.then(function (data) {
             var temp_data = data['data'];
-            console.log(data);
+            //console.log(data);
             var keys = {};
             for(i in temp_data)
             {
@@ -1159,7 +1210,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                 $scope.obi = [];
                 $scope.graph = [];
 
-                console.log(hobi);
+               ////console.log(hobi);
                 var request = $http({
                     method: "POST",
                     url: "php/get_hours_mfi.php",
@@ -1169,7 +1220,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }); //request
                 request.then(function (data) {
-                    console.log(data['data']);
+                    //console.log(data['data']);
                     if (data != "0") {
                         $scope.obi = data['data'][0];
                         ////console.log($scope.obi);
@@ -1250,7 +1301,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         {
             query = "C2='00000000dcbf' OR C2='000003e2dfd5'  OR C2='000003e2d34f' OR ";
         }
-        // console.log($scope.dvrs);
+        ////console.log($scope.dvrs);
 
         for(i in $scope.dvrs)
         {
@@ -1265,7 +1316,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         query = query.substr(0,query.length-3);
 
         str = str.substr(0,str.length-3)
-        console.log(query);
+       ////console.log(query);
         var request = $http({
             method: "POST",
             url: "php/get_geners_hist.php",
@@ -1277,7 +1328,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         request.then(function (data) {
             //console.log(data['data']);
             if (data != "0") {
-                console.log(data["data"]);
+                //console.log(data["data"]);
                 for(i in data["data"])
                 {
                     if(i==0 || i==1)
@@ -1413,7 +1464,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
                     }
                 });
             } else {
-                console.log('init_case - failed');
+               //console.log('init_case - failed');
             }
         }); //success
         event.preventDefault();
@@ -1439,7 +1490,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data);
+           ////console.log(data);
             if (data != "0") {
                 $scope.sign_message = 'Success';
                 $('#signup').modal('hide');
@@ -1465,9 +1516,9 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            console.log(data);
+          // //console.log(data);
             if (data != "0") {
-                console.log('Sent');
+               //console.log('Sent');
             }
             else {
 
@@ -1475,9 +1526,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //success
     }
 
+    $scope.top_prog = [];
     $scope.get_dvrs = function()
     {
-        console.log($scope.cluster_id_check);
+       //console.log($scope.cluster_id_check);
         var id =  $scope.cluster_id_check;
         var request = $http({
             method: "POST",
@@ -1489,13 +1541,14 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }); //request
         request.then(function (data) {
             if (data != "0") {
-                console.log(data['data']);
+               //console.log(data['data']);
                 $scope.dvrs_modal = data['data'];
             }
             else {
 
             }
         }); //success
+
 
 
         var request = $http({
@@ -1507,11 +1560,11 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }); //request
         request.then(function (data) {
-            //console.log(data['data']);
+           //console.log(data['data']);
             if (data != "0") {
                 $scope.geners_modal = data['data'];
                 ////console.log('init_cases - success');
-                console.log($scope.geners_modal);
+               //console.log($scope.geners_modal);
 
             } else {
                 ////console.log('init_case - failed');
@@ -1772,7 +1825,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
     $scope.linechart = function (obi)
     {
 
-        console.log(obi);
+       //console.log(obi);
         var ctxL = document.getElementById("lineChart2").getContext('2d');
         var myLineChart = new Chart(ctxL, {
             type: 'line',

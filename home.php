@@ -747,6 +747,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
         </section>
         <!--Section: Data-->
         <section id="data" ng-hide="data">
+
             <h2 class="h2 text-center mb-5">Audience Targeting</h2>
             <p class="lead">Please insert the information about the audience you are looking for</p>
 
@@ -1451,9 +1452,37 @@ if ( isset( $_SESSION['user_id'] ) ) {
                         <!--/.Card-->
 
                     </div>
-                    <!--Grid column-->
 
-                <!--Grid column-->
+
+                    <!-- Card deck -->
+                    <div ng-hide='top' class="card-deck wow fadeInUp col-sm-12 mb-4"" style="margin-left:20px">
+                        <!-- Card -->
+                        <div ng-repeat="x in top_prog | limitTo:5" class="card unique-color-dark white-text col-sm-2 mb-4 z-depth-1-half " >
+                            <!--Card image-->
+                            <div class="view overlay" style="margin-top: 15px;">
+                                <img class="card-img-top" src="{{x.cover}}">
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+
+                                <!--Title-->
+                                <h5 class="card-title">{{x.pname}}</h5>
+                                <!--Text-->
+                                <p class="card-text">{{x.genre}}</p>
+                                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+                    </div>
+                    <!-- Card deck -->
+
+                    <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
                     <!--Card-->
