@@ -1064,7 +1064,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         {
             income = 'high';
         }
-        else if ($scope.income_low >= 0  && $scope.income_top <= 300000)
+        else if ($scope.income_low > 0  && $scope.income_top <= 300000)
         {
             income = 'low';
         }
