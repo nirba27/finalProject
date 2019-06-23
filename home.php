@@ -1229,8 +1229,8 @@ if ( isset( $_SESSION['user_id'] ) ) {
                                 <i class="fas fa-globe-europe fa-5x indigo-text"></i>
                             </div>
                             <div class="col-3">
-                                <h5 class="feature-title font-weight-bold blue-grey-text">Ethnic origin</h5>
-                                <h2 class="grey-text"> {{ethnic}}</h2>
+                                <h5 class="feature-title font-weight-bold blue-grey-text">Number of Generations</h5>
+                                <h2 class="grey-text"> {{gen}}</h2>
                             </div>
                         <div class="col-1 ">
                             <i class="fas fa-baby-carriage fa-4x blue-text"></i>

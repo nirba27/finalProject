@@ -42,6 +42,7 @@ app.service('fileUpload', ['$http', function ($http) {
 
 app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
 
+    $scope.gen = 'NA';
     $scope.sucess = 1;
     $scope.sucess = 1;
     $scope.statistics = 1;
@@ -785,6 +786,10 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
             else if((trans_key.includes('Adults') || trans_key.includes('people'))  && $scope.numberAdults=='NA')
             {
                 $scope.numberAdults = trans_key;
+            }
+            else if((trans_key.includes('Gen')  && $scope.gen=='NA'))
+            {
+                $scope.gen = trans_key;
             }
             else if((key.includes('sports') || key.includes('comedy') || key.includes('knowledge') || key.includes('children') || key.includes('action') || key.includes('drama') || key.includes('talk') || key.includes('other') || key.includes('news')) && $scope.topic=='NA')
             {
