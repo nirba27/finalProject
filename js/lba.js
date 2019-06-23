@@ -1070,7 +1070,7 @@ app.controller('ng-cases', function ($scope, $http, $interval, fileUpload) {
         }
         else
         {
-            income = '';
+            income = 'null';
 
         }
 
